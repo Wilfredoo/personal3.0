@@ -16,6 +16,8 @@ const shake = keyframes`
   100% { transform: translate(0px, -1px) rotate(-0.5deg); }
 `;
 const HomeContainer = styled.div`
+animation: ${shake} 0.5s;
+animation-delay: 25s; // start animation after 5s delay
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,10 +32,11 @@ const ImageContainer = styled.div`
     width: 170px;
     height: 170px;
     align-self: center;
-
-    @media (min-width: 768px) {
+    animation: ${shake} 0.5s;
+    animation-delay: 5s; // start animation after 5s delay
+    @media (min-width: 1000px) {
         position:absolute;
-        bottom: -200px;
+        bottom: -170px;
         width: 200px;
         height: 200px;
     }
@@ -45,8 +48,8 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 50%;
   animation: ${shake} 0.5s;
-  animation-delay: 5s; // start animation after 5s delay
-@media (min-width: 768px) {
+  animation-delay: 10s; // start animation after 5s delay
+@media (min-width: 1000px) {
     position:absolute;
     left: -80px;
 }
@@ -55,6 +58,8 @@ const Image = styled.img`
 `;
 
 const TitleContainer = styled.div`
+animation: ${shake} 0.5s;
+animation-delay: 17s; // start animation after 5s delay
 flex-grow: 1;
 display: flex;
 flex-direction: column;
@@ -64,10 +69,12 @@ margin: 20px 0;
 `;
 
 const ParentContainer = styled.div`
+animation: ${shake} 0.5s;
+animation-delay: 50s; // start animation after 5s delay
 display: flex;
 position: absolute;
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     left: -70px;
 }
 
@@ -82,7 +89,8 @@ const Title = styled.p`
     color: black;  /* inherit color from parent */
     text-decoration: none;  /* remove underline */
   }
-
+  animation: ${shake} 0.5s;
+  animation-delay: 30s; // start animation after 5s delay
 
 `;
 
