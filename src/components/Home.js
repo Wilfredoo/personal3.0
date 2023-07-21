@@ -27,12 +27,15 @@ const HomeContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
+    align-self: center;
 
     @media (min-width: 768px) {
         position:absolute;
         bottom: -200px;
+        width: 200px;
+        height: 200px;
     }
     `;
 
