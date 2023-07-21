@@ -66,9 +66,11 @@ margin: 20px 0;
 const ParentContainer = styled.div`
 display: flex;
 position: absolute;
+
 @media (max-width: 768px) {
-    left: -80px;
+    left: -70px;
 }
+
 width: -webkit-fill-available;
 
 
