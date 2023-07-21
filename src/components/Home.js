@@ -16,8 +16,6 @@ const shake = keyframes`
   100% { transform: translate(0px, -1px) rotate(-0.5deg); }
 `;
 const HomeContainer = styled.div`
-animation: ${shake} 0.5s;
-animation-delay: 25s; // start animation after 5s delay
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +31,7 @@ const ImageContainer = styled.div`
     height: 170px;
     align-self: center;
     animation: ${shake} 0.5s;
-    animation-delay: 5s; // start animation after 5s delay
+    animation-delay: 10s; // start animation after 5s delay
     @media (min-width: 1000px) {
         position:absolute;
         bottom: -170px;
@@ -48,7 +46,7 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 50%;
   animation: ${shake} 0.5s;
-  animation-delay: 10s; // start animation after 5s delay
+  animation-delay: 20s; // start animation after 5s delay
 @media (min-width: 1000px) {
     position:absolute;
     left: -80px;
@@ -59,7 +57,7 @@ const Image = styled.img`
 
 const TitleContainer = styled.div`
 animation: ${shake} 0.5s;
-animation-delay: 17s; // start animation after 5s delay
+animation-delay: 30s; // start animation after 5s delay
 flex-grow: 1;
 display: flex;
 flex-direction: column;
@@ -69,8 +67,6 @@ margin: 20px 0;
 `;
 
 const ParentContainer = styled.div`
-animation: ${shake} 0.5s;
-animation-delay: 50s; // start animation after 5s delay
 display: flex;
 position: absolute;
 
@@ -90,7 +86,7 @@ const Title = styled.p`
     text-decoration: none;  /* remove underline */
   }
   animation: ${shake} 0.5s;
-  animation-delay: 30s; // start animation after 5s delay
+  animation-delay: 60s; // start animation after 5s delay
 
 `;
 
