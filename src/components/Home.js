@@ -99,45 +99,47 @@ const Message = styled.p`
 
 
 const Home = () => {
+    // eslint-disable-next-line
     const [picture, setPicture] = useState(Math.random() < 0.5 ? picture1 : picture2);
+
     const [message, setMessage] = useState(null);
 
-  const copyEmailToClipboard = (e) => {
-    e.preventDefault();
+    const copyEmailToClipboard = (e) => {
+        e.preventDefault();
 
-    // Replace 'your.email@example.com' with your actual email
-    navigator.clipboard.writeText('inbox@wilfredocasas.com').then(() => {
-      setMessage('Email copied to clipboard!');
+        // Replace 'your.email@example.com' with your actual email
+        navigator.clipboard.writeText('inbox@wilfredocasas.com').then(() => {
+            setMessage('Email copied to clipboard!');
 
-      // After 3 seconds, hide the message
-      setTimeout(() => {
-        setMessage(null);
-      }, 3000);
-    })
-    .catch((err) => {
-      // You can handle errors here
-      console.error('Could not copy email: ', err);
-    });
-  };
+            // After 3 seconds, hide the message
+            setTimeout(() => {
+                setMessage(null);
+            }, 3000);
+        })
+            .catch((err) => {
+                // You can handle errors here
+                console.error('Could not copy email: ', err);
+            });
+    };
 
     return (
-      <HomeContainer>
-        <ParentContainer>
-          <ImageContainer>
-            <Image src={picture} alt="Me" onClick={copyEmailToClipboard} />
-          </ImageContainer>
-          <TitleContainer>
-            <Title><a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer">Software Developer</a></Title>
-            <Title><a href="https://youtu.be/kzLK-LVLFsc" target="_blank" rel="noopener noreferrer">Filmmaker</a></Title>
-            <Title><a href="https://www.jobdirecto.com/" target="_blank" rel="noopener noreferrer">Entrepreneur</a></Title>
-          </TitleContainer>
-        </ParentContainer>
+        <HomeContainer>
+            <ParentContainer>
+                <ImageContainer>
+                    <Image src={picture} alt="Me" onClick={copyEmailToClipboard} />
+                </ImageContainer>
+                <TitleContainer>
+                    <Title><a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer">Software Developer</a></Title>
+                    <Title><a href="https://youtu.be/kzLK-LVLFsc" target="_blank" rel="noopener noreferrer">Filmmaker</a></Title>
+                    <Title><a href="https://www.jobdirecto.com/" target="_blank" rel="noopener noreferrer">Entrepreneur</a></Title>
+                </TitleContainer>
+            </ParentContainer>
 
-        {message && <Message>{message}</Message>}
+            {message && <Message>{message}</Message>}
 
-      </HomeContainer>
+        </HomeContainer>
     );
-  };
-  
+};
+
 
 export default Home;
