@@ -92,7 +92,7 @@ const Message = styled.p`
   color: white;
   background: #2D4356;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 1.5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   left: 50%; // Move it to the horizontal center
   transform: translateX(-50%); // Center it horizontally
