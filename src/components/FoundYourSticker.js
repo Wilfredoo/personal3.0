@@ -64,12 +64,12 @@ const CopyIcon = styled.img`
 `;
 
 const FoundYourSticker = () => {
-  const [status, setStatus] = useState({
-    flat: 'Still on the hunt.',
-    taxAdvisor: 'The quest continues.',
-    job: 'Pursuit underway.'
-  });
-  // eslint-disable-next-line no-unused-vars
+    const [status] = useState({
+        flat: 'not yet found',
+        taxAdvisor: 'not yet found',
+        job: 'not yet found'
+      });
+      
 
 
   const [showContact, setShowContact] = useState(false);
