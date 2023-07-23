@@ -69,6 +69,8 @@ const FoundYourSticker = () => {
     taxAdvisor: 'The quest continues.',
     job: 'Pursuit underway.'
   });
+  // eslint-disable-next-line no-unused-vars
+
 
   const [showContact, setShowContact] = useState(false);
   const contactNumber = "+4915781295360";
