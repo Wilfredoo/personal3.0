@@ -34,7 +34,6 @@ const ImageContainer = styled.div`
     animation-delay: 10s; // start animation after 5s delay
     @media (min-width: 1000px) {
         position:absolute;
-        bottom: -170px;
         width: 200px;
         height: 200px;
     }
