@@ -56,11 +56,27 @@ const ContactInfo = styled.p`
   margin-top: 20px;
 `;
 
-
 const CopyIcon = styled.img`
   width: 16px;
   height: 16px;
   margin-right: 5px;
+`;
+
+const ConfirmationMessage = styled.div`
+  position: fixed;         // Fix the position on the screen
+  bottom: 20px;            // Position it 20px from the bottom
+  left: 50%;               // Center it horizontally
+  transform: translateX(-50%); // Ensure it's perfectly centered
+  background-color: #2ecc71; // Green background
+  color: white;            // White text color
+  padding: 10px 20px;      // Some padding for aesthetics
+  border-radius: 5px;      // Rounded corners
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); // Slight shadow for depth
+  font-weight: bold;       // Bold font
+  z-index: 1000;           // High z-index to ensure it's on top of other elements
+  text-align: center;
+  width: max-content;
+
 `;
 
 const FoundYourSticker = () => {
@@ -73,6 +89,7 @@ const FoundYourSticker = () => {
 
 
   const [showContact, setShowContact] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
   const contactNumber = "+4915781295360";
 
   const handleClick = () => {
@@ -81,6 +98,9 @@ const FoundYourSticker = () => {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(contactNumber);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000); // hide after 2 seconds
+
   };
 
   return (
@@ -98,6 +118,8 @@ const FoundYourSticker = () => {
           <CopyIcon src={copyIcon} alt="Copy" />
           {contactNumber}
         </CopyButton>
+        {isCopied && <ConfirmationMessage>Copied to clipboard!</ConfirmationMessage>}
+
       </div>
     )}
 
