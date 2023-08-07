@@ -72,12 +72,15 @@ const ConfirmationMessage = styled.div`
   padding: 10px 20px;      // Some padding for aesthetics
   border-radius: 5px;      // Rounded corners
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); // Slight shadow for depth
-  font-weight: bold;       // Bold font
   z-index: 1000;           // High z-index to ensure it's on top of other elements
   text-align: center;
   width: max-content;
-
 `;
+
+const LastUpdated = styled.p`
+  font-style: italic;
+`;
+
 
 const FoundYourSticker = () => {
     const [status] = useState({
@@ -85,11 +88,10 @@ const FoundYourSticker = () => {
         taxAdvisor: 'not yet found',
         job: 'not yet found'
       });
-      
-
 
   const [showContact, setShowContact] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
   const contactNumber = "+4915781295360";
 
   const handleClick = () => {
@@ -100,8 +102,24 @@ const FoundYourSticker = () => {
     navigator.clipboard.writeText(contactNumber);
     setIsCopied(true);
     setTimeout(() => setIsCopied(false), 2000); // hide after 2 seconds
-
   };
+
+  const formatDate = (isoString) => {
+    const date = new Date(isoString);
+    
+    const getOrdinal = (n) => {
+      const s = ["th", "st", "nd", "rd"],
+            v = n % 100;
+      return n + (s[(v-20)%10] || s[v] || s[0]);
+    }
+  
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June", 
+      "July", "August", "September", "October", "November", "December"
+    ];
+  
+    return `${getOrdinal(date.getDate())} of ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+  };  
 
   return (
     <Container>
@@ -136,6 +154,7 @@ const FoundYourSticker = () => {
         <li>Tax Advisor: {status.taxAdvisor}</li>
         <li>Job: {status.job}</li>
       </ul>
+      <LastUpdated>Last updated on {formatDate(lastUpdated)}</LastUpdated>
     </Container>
   );
 };
