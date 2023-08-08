@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga4";
 
 const TRACKING_ID = "G-65B2W1RSZ2"; // Replace with your GA Tracking ID
 ReactGA.initialize(TRACKING_ID);
-ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA.send('pageview', window.location.pathname + window.location.search);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
