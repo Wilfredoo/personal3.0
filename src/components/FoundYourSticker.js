@@ -91,6 +91,7 @@ const FoundYourSticker = () => {
 
   const [showContact, setShowContact] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
   const contactNumber = "+4915781295360";
 
