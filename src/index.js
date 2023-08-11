@@ -7,7 +7,8 @@ import ReactGA from "react-ga4";
 
 const TRACKING_ID = "G-65B2W1RSZ2"; // Replace with your GA Tracking ID
 ReactGA.initialize(TRACKING_ID);
-ReactGA.send('pageview', window.location.pathname + window.location.search);
+// ReactGA.send('pageview', window.location.pathname + window.location.search);
+ReactGA.send({ hitType: 'pageview', page: window.location.pathname + window.location.search });
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
