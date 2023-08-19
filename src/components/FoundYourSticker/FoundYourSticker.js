@@ -13,22 +13,27 @@ import {
   LastUpdated
 } from './Styles';
 
-
 const FoundYourSticker = () => {
-    const [status] = useState({
-        flat: 'not yet found',
-        taxAdvisor: 'not yet found',
-        job: 'not yet found'
-      });
+  const [status] = useState({
+    flat: 'not yet found',
+    taxAdvisor: 'not yet found',
+    job: 'not yet found'
+  });
 
   const [showContact, setShowContact] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
-  // eslint-disable-next-line no-unused-vars
-  const [lastUpdated, setLastUpdated] = useState(new Date().toISOString());
   const contactNumber = "+4915781295360";
 
   const handleClick = () => {
     setShowContact(true);
+
+    if (window.gtag) { // Make sure gtag is available
+      window.gtag('event', 'click', {
+          'event_category': 'button',
+          'event_label': 'YES Button Clicked',
+          'value': 1
+      });
+  }
   };
 
   const handleCopy = () => {
@@ -37,20 +42,40 @@ const FoundYourSticker = () => {
     setTimeout(() => setIsCopied(false), 2000); // hide after 2 seconds
   };
 
-  const formatDate = (isoString) => {
-    const date = new Date(isoString);
-    
+  const getHash = (str) => {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+  };
+
+  const getLastUpdatedDate = () => {
+    const now = new Date();
+    const yearMonthString = `${now.getFullYear()}-${now.getMonth()}`;
+    const hash = getHash(yearMonthString);
+    const interval = (hash % 3) + 3; // Get a number between 3 and 5
+
+    let lastUpdatedDay = Math.floor(now.getDate() / interval) * interval;
+    lastUpdatedDay = lastUpdatedDay || interval; // Ensure it's not 0
+
+    return new Date(now.getFullYear(), now.getMonth(), lastUpdatedDay);
+  };
+
+  const formatDate = (date) => {
     const getOrdinal = (n) => {
       const s = ["th", "st", "nd", "rd"],
             v = n % 100;
       return n + (s[(v-20)%10] || s[v] || s[0]);
     }
-  
+
     const monthNames = [
       "January", "February", "March", "April", "May", "June", 
       "July", "August", "September", "October", "November", "December"
     ];
-  
+
     return `${getOrdinal(date.getDate())} of ${monthNames[date.getMonth()]} ${date.getFullYear()}`;
   };  
 
@@ -87,7 +112,7 @@ const FoundYourSticker = () => {
         <li>Tax Advisor: {status.taxAdvisor}</li>
         <li>Job: {status.job}</li>
       </ul>
-      <LastUpdated>Last updated on {formatDate(lastUpdated)}</LastUpdated>
+      <LastUpdated>Last updated on {formatDate(getLastUpdatedDate())}</LastUpdated>
     </Container>
   );
 };
