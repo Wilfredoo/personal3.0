@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
-import copyIcon from '../../assets/images/copy.png'; // adjust this according to your file path
 
 import {
   Container,
   Title,
   Subtitle,
   Button,
-  CopyButton,
+  WhatsappButton,
   ContactInfo,
-  CopyIcon,
-  ConfirmationMessage,
   LastUpdated
 } from './Styles';
 
@@ -89,11 +86,9 @@ const FoundYourSticker = () => {
       {showContact && (
       <div>
         <ContactInfo>Simply write me on Whatsapp and we'll take it from there:</ContactInfo>
-        <CopyButton onClick={openWhatsapp}>
-          <CopyIcon src={copyIcon} alt="Copy" />
+        <WhatsappButton onClick={openWhatsapp}>
           {contactNumber}
-        </CopyButton>
-        {/* {isCopied && <ConfirmationMessage>Copied to clipboard!</ConfirmationMessage>} */}
+        </WhatsappButton>
 
       </div>
     )}
