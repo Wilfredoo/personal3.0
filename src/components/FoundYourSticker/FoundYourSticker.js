@@ -21,7 +21,6 @@ const FoundYourSticker = () => {
   });
 
   const [showContact, setShowContact] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
   const contactNumber = "+4915781295360";
 
   const handleClick = () => {
@@ -94,7 +93,7 @@ const FoundYourSticker = () => {
           <CopyIcon src={copyIcon} alt="Copy" />
           {contactNumber}
         </CopyButton>
-        {isCopied && <ConfirmationMessage>Copied to clipboard!</ConfirmationMessage>}
+        {/* {isCopied && <ConfirmationMessage>Copied to clipboard!</ConfirmationMessage>} */}
 
       </div>
     )}
