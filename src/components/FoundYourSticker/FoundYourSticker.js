@@ -34,12 +34,12 @@ const FoundYourSticker = () => {
           'value': 1
       });
   }
+
   };
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(contactNumber);
-    setIsCopied(true);
-    setTimeout(() => setIsCopied(false), 2000); // hide after 2 seconds
+  const openWhatsapp = () => {
+    const whatsappUrl = `https://wa.me/4915781295360`; 
+    window.open(whatsappUrl, '_blank'); // This opens a new tab or window
   };
 
   const getHash = (str) => {
@@ -89,8 +89,8 @@ const FoundYourSticker = () => {
 
       {showContact && (
       <div>
-        <ContactInfo>Simply write me on Whatsapp - or Signal or Telegram - and we'll take it from there:</ContactInfo>
-        <CopyButton onClick={handleCopy}>
+        <ContactInfo>Simply write me on Whatsapp and we'll take it from there:</ContactInfo>
+        <CopyButton onClick={openWhatsapp}>
           <CopyIcon src={copyIcon} alt="Copy" />
           {contactNumber}
         </CopyButton>
