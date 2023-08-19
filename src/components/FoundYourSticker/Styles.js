@@ -31,7 +31,7 @@ export const Button = styled.button`
   }
 `;
 
-export const CopyButton = styled.button`
+export const WhatsappButton = styled.button`
   background: #2ecc71;
   border: none;
   color: white;
@@ -51,27 +51,6 @@ export const CopyButton = styled.button`
 export const ContactInfo = styled.p`
   color: #16a085;
   margin-top: 20px;
-`;
-
-export const CopyIcon = styled.img`
-  width: 16px;
-  height: 16px;
-  margin-right: 5px;
-`;
-
-export const ConfirmationMessage = styled.div`
-  position: fixed;         // Fix the position on the screen
-  bottom: 20px;            // Position it 20px from the bottom
-  left: 50%;               // Center it horizontally
-  transform: translateX(-50%); // Ensure it's perfectly centered
-  background-color: #2ecc71; // Green background
-  color: white;            // White text color
-  padding: 10px 20px;      // Some padding for aesthetics
-  border-radius: 5px;      // Rounded corners
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); // Slight shadow for depth
-  z-index: 1000;           // High z-index to ensure it's on top of other elements
-  text-align: center;
-  width: max-content;
 `;
 
 export const LastUpdated = styled.p`
