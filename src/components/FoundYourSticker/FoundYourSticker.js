@@ -86,10 +86,11 @@ const FoundYourSticker = () => {
       {showContact && (
       <div>
         <ContactInfo>Simply write me on Whatsapp and we'll take it from there:</ContactInfo>
+
         <WhatsappButton onClick={openWhatsapp}>
+        <img src={`${process.env.PUBLIC_URL}/whatsapp-icon.png`} alt="Share Icon" style={{ marginRight: '8px', verticalAlign: 'middle', width: "15px" }} />
           {contactNumber}
         </WhatsappButton>
-
       </div>
     )}
 

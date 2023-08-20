@@ -42,7 +42,7 @@ export const WhatsappButton = styled.button`
   display: flex;
   align-items: center;
   height: 50px;
-
+  display: flex;
   &:hover {
     background: #27ae60;
   }
