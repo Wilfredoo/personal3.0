@@ -72,8 +72,8 @@ const WelcomeText = styled.h1`
 const Curriculum = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/Résumé_Wilfredo.pdf`;
-    link.download = 'CV Wilfredo.pdf';
+    link.href = `${process.env.PUBLIC_URL}/Resume_Wilfredo.pdf`;
+    link.download = 'Resume_Wilfredo.pdf';
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
