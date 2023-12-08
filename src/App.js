@@ -17,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cv" element={<Curriculum />} />
-        <Route path="/videowork" element={<VideoWorkRedirect />} />
+        <Route path="/film" element={<VideoWorkRedirect />} />
       </Routes>
     </Router>
   );
