@@ -135,7 +135,7 @@ const Home = () => {
                 </ImageContainer>
                 <TitleContainer>
                     <Title><a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer">Software Developer</a></Title>
-                    <Title><a href="https://youtu.be/kzLK-LVLFsc" target="_blank" rel="noopener noreferrer">Filmmaker</a></Title>
+                    <Title><a href="https://www.youtube.com/@wilcas5349/featured" target="_blank" rel="noopener noreferrer">Filmmaker</a></Title>
                     <Title><a href="https://www.jobdirecto.com/" target="_blank" rel="noopener noreferrer">Entrepreneur</a></Title>
                 </TitleContainer>
             </ParentContainer>
