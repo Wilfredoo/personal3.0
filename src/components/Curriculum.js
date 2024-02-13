@@ -84,7 +84,7 @@ const Curriculum = () => {
     <Wrapper>
       <WelcomeText>Fancy a peek at my CV? </WelcomeText>
       <p>Grab it right here</p>
-      <p>(don't worry, it's not a virus).</p>
+      <p>(don't worry, it's not a virus)</p>
       <Arrow>↓</Arrow>
       <Button onClick={handleDownload}>Download Resume</Button>
     </Wrapper>
