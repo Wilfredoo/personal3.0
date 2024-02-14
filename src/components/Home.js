@@ -20,13 +20,14 @@ import {
 } from './styles';
 
 const Home = () => {
-    const [picture, setPicture] = useState(Math.random() < 0.5 ? picture1 : picture2);
+    const [picture] = useState(Math.random() < 0.5 ? picture1 : picture2);
     const [currentView, setCurrentView] = useState(null);
     const [message, setMessage] = useState(null);
     const [isShaking, setIsShaking] = useState(false);
 
 
-    const handleImageClick = () => {
+    const handleImageClick = (e) => {
+        copyEmailToClipboard(e)
         setIsShaking(true);
         setTimeout(() => setIsShaking(false), 500); // Reset shaking after animation duration
     };
