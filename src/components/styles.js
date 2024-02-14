@@ -157,4 +157,8 @@ margin: 2rem
 `;
 
 export const Text = styled.p`
+a {
+    color: #A94438;  /* inherit color from parent */
+    text-decoration: none;  /* remove underline */
+  }
 `;
