@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 export const shake = keyframes`
   0% { transform: translate(1px, 1px) rotate(0deg); }
@@ -12,6 +12,8 @@ export const shake = keyframes`
   80% { transform: translate(0px, -1px) rotate(0.5deg); }
   90% { transform: translate(1px, 1px) rotate(0deg); }
   100% { transform: translate(0px, -1px) rotate(-0.5deg); }
+
+  
 `;
 export const HomeContainer = styled.div`
   display: flex;
@@ -28,8 +30,6 @@ export const ImageContainer = styled.div`
     width: 170px;
     height: 170px;
     align-self: center;
-    animation: ${shake} 0.5s;
-    animation-delay: 10s; // start animation after 5s delay
     @media (min-width: 1000px) {
         position:absolute;
         width: 200px;
@@ -38,11 +38,52 @@ export const ImageContainer = styled.div`
     `;
 
 export const Image = styled.img`
-  width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    animation: ${props => props.isShaking ? css`${shake} 0.5s` : 'none'};
+
+    @media (min-width: 1000px) {
+      position: absolute;
+      left: -80px;
+    }
+  `;
+
+
+
+export const Arrow = styled.img`
+  width: 50%;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
-  animation: ${shake} 0.5s;
+@media (min-width: 1000px) {
+    position:absolute;
+    left: -80px;
+}
+
+ 
+`;
+
+export const GithubIcon = styled.img`
+  width: 20%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  animation-delay: 20s; // start animation after 5s delay
+@media (min-width: 1000px) {
+    position:absolute;
+    left: -80px;
+}
+
+ 
+`;
+
+export const YoutubeIcon = styled.img`
+  width: 20%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
   animation-delay: 20s; // start animation after 5s delay
 @media (min-width: 1000px) {
     position:absolute;
@@ -109,4 +150,11 @@ export const DetailContainer = styled.div`
     from { opacity: 0; }
     to { opacity: 1; }
   }
+`;
+
+export const TextContainer = styled.div`
+margin: 2rem
+`;
+
+export const Text = styled.p`
 `;

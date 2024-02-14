@@ -3,6 +3,9 @@ import picture1 from '../assets/images/picture_1.png';
 import picture2 from '../assets/images/picture_2.png';
 import arrow from '../assets/images/arrow.png';
 
+import SoftwareDeveloper from './SoftwareDeveloper';
+import Filmmaker from './Filmmaker';
+import Entrepreneur from './Entrepreneur';
 
 import {
     HomeContainer,
@@ -12,16 +15,22 @@ import {
     ParentContainer,
     Title,
     Message,
-    DetailContainer // Ensure this is defined in your styles.js
-} from './styles'; // Adjust the path as necessary
+    DetailContainer,
+    Arrow
+} from './styles';
 
 const Home = () => {
     const [picture, setPicture] = useState(Math.random() < 0.5 ? picture1 : picture2);
     const [currentView, setCurrentView] = useState(null);
     const [message, setMessage] = useState(null);
-    const [fadeDetail, setFadeDetail] = useState(false); // New state to control fade animations
+    const [isShaking, setIsShaking] = useState(false);
 
 
+    const handleImageClick = () => {
+        setIsShaking(true);
+        setTimeout(() => setIsShaking(false), 500); // Reset shaking after animation duration
+    };
+    
     
     const copyEmailToClipboard = (e) => {
         e.preventDefault();
@@ -36,11 +45,11 @@ const Home = () => {
     const renderDetailView = () => {
         switch (currentView) {
             case 'Software Developer':
-                return <p>Your detailed text about being a Software Developer...</p>;
+                return <SoftwareDeveloper />;
             case 'Filmmaker':
-                return <p>Your detailed text about being a Filmmaker...</p>;
+                return <Filmmaker />;
             case 'Entrepreneur':
-                return <p>Your detailed text about being an Entrepreneur...</p>;
+                return <Entrepreneur />;
             default:
                 return null; // Or some default content
         }
@@ -53,14 +62,15 @@ const Home = () => {
                     {renderDetailView()}
                     <ImageContainer>
 
-                    <Image src={arrow} alt="arrow" onClick={handleViewChange(null)} />
+                    <Arrow src={arrow} alt="arrow" onClick={handleViewChange(null)} />
                     </ImageContainer>
 
                 </DetailContainer>
             ) : (
                 <ParentContainer>
                     <ImageContainer>
-                        <Image src={picture} alt="Me" onClick={copyEmailToClipboard} />
+                        <Image src={picture} alt="Me" onClick={handleImageClick} isShaking={isShaking} />
+
                     </ImageContainer>
                     <TitleContainer>
                         <Title onClick={handleViewChange('Software Developer')}>Software Developer</Title>
