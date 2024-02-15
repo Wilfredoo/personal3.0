@@ -23,11 +23,12 @@ export const HomeContainer = styled.div`
   text-align: center; /* Center align text content */
   font-family: 'Lunasima', sans-serif;
   background-color: #FDF4F5; /* Change background color */
-
   @media (min-width: 600px) {
   justify-content: start;
 
   }
+
+ 
 `;
 
 export const ArrowContainer = styled.div`
@@ -148,6 +149,11 @@ export const Message = styled.p`
 `;
 
 export const DetailContainer = styled.div`
+@media (orientation: landscape) and (max-width: 768px) {
+    height: 100%;
+  background-color: #FDF4F5; /* Change background color */
+
+  }
   animation: fadeIn 0.5s;
   opacity: 1; // Start fully visible
   transition: opacity 0.5s ease-in-out;
