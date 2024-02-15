@@ -111,8 +111,12 @@ display: flex;
 position: absolute;
 transition: opacity 0.5s ease-in-out;
 
+
 @media (max-width: 1000px) {
     left: -70px;
+}
+
+@media (min-width: 1000px) {
 }
 
 width: -webkit-fill-available;
@@ -147,6 +151,8 @@ export const DetailContainer = styled.div`
   animation: fadeIn 0.5s;
   opacity: 1; // Start fully visible
   transition: opacity 0.5s ease-in-out;
+width: 100%;
+
 
   @keyframes fadeIn {
     from { opacity: 0; }

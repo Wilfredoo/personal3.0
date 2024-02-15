@@ -30,7 +30,7 @@ const Home = () => {
     const handleImageClick = (e) => {
         copyEmailToClipboard(e)
         setIsShaking(true);
-        setTimeout(() => setIsShaking(false), 500); // Reset shaking after animation duration
+        setTimeout(() => setIsShaking(false), 1000); // Reset shaking after animation duration
     };
     
     
@@ -38,7 +38,7 @@ const Home = () => {
         e.preventDefault();
         navigator.clipboard.writeText('inbox@wilfredocasas.com').then(() => {
             setMessage('Your inquisitive spirit hasn’t gone unnoticed - as a gesture of acknowledgment, my email is now copied to your clipboard.');
-            setTimeout(() => setMessage(null), 3000);
+            setTimeout(() => setMessage(null), 5000);
         }).catch((err) => console.error('Could not copy email: ', err));
     };
 
