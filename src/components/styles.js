@@ -44,6 +44,7 @@ export const ArrowContainer = styled.div`
 export const ImageContainer = styled.div`
     width: 170px;
     height: 170px;
+    zIndex: 3;
     align-self: center;
     @media (min-width: 1000px) {
         position:absolute;
