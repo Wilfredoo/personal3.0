@@ -37,7 +37,7 @@ const Home = () => {
     const copyEmailToClipboard = (e) => {
         e.preventDefault();
         navigator.clipboard.writeText('inbox@wilfredocasas.com').then(() => {
-            setMessage('As a reward for your curiosity, my email is now copied to your clipboard.');
+            setMessage('Your inquisitive spirit hasn’t gone unnoticed - as a gesture of acknowledgment, my email is now copied to your clipboard.');
             setTimeout(() => setMessage(null), 3000);
         }).catch((err) => console.error('Could not copy email: ', err));
     };
