@@ -12,7 +12,8 @@ const SoftwareDeveloper = () => (
     <Text>Later, I joined <a href="https://www.endava.com/" target="_blank" rel="noopener noreferrer">Endava</a>, where I worked for 2 years on different projects, the most notable being <a href="https://www.ardplus.de/" target="_blank" rel="noopener noreferrer">ARD+ for Smart TVs</a>.</Text>
     <Text>Currently, I help with the development of our site <a href="https://www.jobdirecto.com" target="_blank" rel="noopener noreferrer">Jobdirecto</a>, where my best friend, <a href="https://jneidel.com/" target="_blank" rel="noopener noreferrer">Jonathan</a>, serves as the CTO.</Text>
 
-    <GithubIcon src={github} alt="github" />
+   
+    <a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer"> <GithubIcon src={github} alt="github" /></a>
 
   </TextContainer>
 );
