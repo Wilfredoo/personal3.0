@@ -16,7 +16,8 @@ import {
     Title,
     Message,
     DetailContainer,
-    Arrow
+    Arrow,
+    ArrowContainer
 } from './styles';
 
 const Home = () => {
@@ -61,10 +62,10 @@ const Home = () => {
             {currentView ? (
                 <DetailContainer>
                     {renderDetailView()}
-                    <ImageContainer>
+                    <ArrowContainer>
 
                     <Arrow src={arrow} alt="arrow" onClick={handleViewChange(null)} />
-                    </ImageContainer>
+                    </ArrowContainer>
 
                 </DetailContainer>
             ) : (

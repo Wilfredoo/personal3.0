@@ -24,7 +24,21 @@ export const HomeContainer = styled.div`
   font-family: 'Lunasima', sans-serif;
   background-color: #FDF4F5; /* Change background color */
 
+  @media (min-width: 600px) {
+  justify-content: start;
+
+  }
 `;
+
+export const ArrowContainer = styled.div`
+    display: flex;
+    margin-left: 30px;
+
+    @media (min-width: 600px) {
+        margin-left: 50px;
+    }
+    `;
+
 
 export const ImageContainer = styled.div`
     width: 170px;
@@ -53,44 +67,33 @@ export const Image = styled.img`
 
 
 export const Arrow = styled.img`
-  width: 50%;
+  width: 130px;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
-@media (min-width: 1000px) {
-    position:absolute;
-    left: -80px;
-}
 
- 
 `;
 
 export const GithubIcon = styled.img`
-  width: 20%;
+margin-top: 20px;
+  width: 50px;
   height: auto;
   object-fit: cover;
   border-radius: 50%;
   animation-delay: 20s; // start animation after 5s delay
-@media (min-width: 1000px) {
-    position:absolute;
-    left: -80px;
+  @media (min-width: 1000px) {
+  width: 50px;
 }
-
- 
 `;
 
 export const YoutubeIcon = styled.img`
-  width: 20%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 50%;
-  animation-delay: 20s; // start animation after 5s delay
-@media (min-width: 1000px) {
-    position:absolute;
-    left: -80px;
-}
+margin-top: 20px;
 
- 
+width: 50px;
+height: auto;
+object-fit: cover;
+border-radius: 50%;
+animation-delay: 20s; // start animation after 5s delay 
 `;
 
 export const TitleContainer = styled.div`
@@ -101,7 +104,6 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-margin: 20px 0;
 `;
 
 export const ParentContainer = styled.div`
@@ -153,10 +155,27 @@ export const DetailContainer = styled.div`
 `;
 
 export const TextContainer = styled.div`
-margin: 2rem
+margin: 20px 30px 0 30px;
+text-align: end;
+
+    @media (min-width: 600px) {
+        margin: 20px 10% 0 40%;
+        text-align: center;
+    }
+
 `;
 
 export const Text = styled.p`
+text-align: justify;
+font-size: 14px;
+line-height: 2;
+
+@media (min-width: 600px) {
+    line-height: 2;
+font-size: 16px;
+
+}
+
 a {
     color: #A94438;  /* inherit color from parent */
     text-decoration: none;  /* remove underline */
