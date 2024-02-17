@@ -42,6 +42,7 @@ export const ArrowContainer = styled.div`
 
 
 export const ImageContainer = styled.div`
+
     width: 170px;
     height: 170px;
     align-self: center;
@@ -117,6 +118,7 @@ animation-delay: 20s; // start animation after 5s delay
 `;
 
 export const TitleContainer = styled.div`
+
 animation: ${shake} 0.5s;
 animation-delay: 30s; // start animation after 5s delay
 flex-grow: 1;
@@ -127,6 +129,16 @@ align-items: center;
 `;
 
 export const ParentContainer = styled.div`
+animation: fadeIn 0.5s;
+opacity: 1; // Start fully visible
+transition: opacity 0.5s ease-in-out;
+width: 100%;
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 display: flex;
 position: absolute;
 transition: opacity 0.5s ease-in-out;

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import picture1 from '../assets/images/picture_1.png';
 import picture2 from '../assets/images/picture_2.png';
 import arrow from '../assets/images/arrow.png';
-
 import SoftwareDeveloper from './SoftwareDeveloper';
 import Filmmaker from './Filmmaker';
 import Entrepreneur from './Entrepreneur';
@@ -25,14 +24,20 @@ const Home = () => {
     const [currentView, setCurrentView] = useState(null);
     const [message, setMessage] = useState(null);
     const [isShaking, setIsShaking] = useState(false);
-
+    const [animate, setAnimate] = useState(false);
 
     const handleImageClick = (e) => {
         copyEmailToClipboard(e)
         setIsShaking(true);
         setTimeout(() => setIsShaking(false), 1000); // Reset shaking after animation duration
     };
-    
+
+
+    useEffect(() => {
+        setCurrentView(null);
+
+        setAnimate(true); // start with animation on initial mount
+    }, []);
     
     const copyEmailToClipboard = (e) => {
         e.preventDefault();
@@ -42,8 +47,13 @@ const Home = () => {
         }).catch((err) => console.error('Could not copy email: ', err));
     };
 
-    const handleViewChange = (view) => () => setCurrentView(view);
+ 
 
+    const handleViewChange = (view) => () => {
+        setAnimate(false); // reset animation
+        setCurrentView(view);
+        setTimeout(() => setAnimate(true), 10); // slight delay to reapply the animation class
+    };
     const renderDetailView = () => {
         switch (currentView) {
             case 'Software Developer':
@@ -60,19 +70,16 @@ const Home = () => {
     return (
         <HomeContainer>
             {currentView ? (
-                <DetailContainer>
+                <DetailContainer className={animate ? 'fadeIn' : ''}>
                     {renderDetailView()}
                     <ArrowContainer>
-
-                    <Arrow src={arrow} alt="arrow" onClick={handleViewChange(null)} />
+                        <Arrow src={arrow} alt="arrow" onClick={handleViewChange(null)} />
                     </ArrowContainer>
-
                 </DetailContainer>
             ) : (
                 <ParentContainer>
                     <ImageContainer>
                         <Image src={picture} alt="Me" onClick={handleImageClick} isShaking={isShaking} />
-
                     </ImageContainer>
                     <TitleContainer>
                         <Title onClick={handleViewChange('Software Developer')}>Software Developer</Title>
@@ -84,6 +91,5 @@ const Home = () => {
             {message && <Message>{message}</Message>}
         </HomeContainer>
     );
-};
-
+            }
 export default Home;
