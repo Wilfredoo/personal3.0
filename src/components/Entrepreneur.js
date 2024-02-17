@@ -1,5 +1,9 @@
 import React from 'react';
 import { Text, TextContainer } from './styles';
+import github from '../assets/images/github.png';
+import {
+    DummyIcon
+} from './styles';
 
 const Entrepreneur = () => (
     <TextContainer>
@@ -12,6 +16,8 @@ const Entrepreneur = () => (
              target="_blank" rel="noopener noreferrer">Bamberg</a>, a boardgame which enjoyed small scale global 
              distribution and which I am now advancing into a new version called <a href="https://www.instagram.com/play_ayakucho/" 
              target="_blank" rel="noopener noreferrer">Ayakucho</a>.</Text>
+    <a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer"> <DummyIcon src={github} alt="github" /></a>
+
     </TextContainer>
 );
 

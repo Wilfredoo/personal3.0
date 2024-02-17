@@ -44,12 +44,12 @@ export const ArrowContainer = styled.div`
 export const ImageContainer = styled.div`
     width: 170px;
     height: 170px;
-    zIndex: 3;
     align-self: center;
     @media (min-width: 1000px) {
         position:absolute;
         width: 200px;
         height: 200px;
+
     }
     `;
 
@@ -58,11 +58,15 @@ export const Image = styled.img`
     height: auto;
     object-fit: cover;
     border-radius: 50%;
+
     animation: ${props => props.isShaking ? css`${shake} 0.5s` : 'none'};
 
     @media (min-width: 1000px) {
       position: absolute;
       left: -80px;
+    z-index: 3;
+
+
     }
   `;
 
@@ -86,6 +90,20 @@ margin-top: 20px;
   @media (min-width: 1000px) {
   width: 50px;
 }
+`;
+
+export const DummyIcon = styled.img`
+margin-top: 20px;
+  width: 20px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  animation-delay: 20s; // start animation after 5s delay
+  @media (min-width: 1000px) {
+  width: 50px;
+}
+pointer-events: none; /* Makes the link not clickable */
+    visibility: hidden;
 `;
 
 export const YoutubeIcon = styled.img`
@@ -147,6 +165,9 @@ export const Message = styled.p`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   left: 50%; // Move it to the horizontal center
   transform: translateX(-50%); // Center it horizontally
+  min-width: 300px;
+  
+
 `;
 
 export const DetailContainer = styled.div`
@@ -155,6 +176,12 @@ export const DetailContainer = styled.div`
   background-color: #FDF4F5; /* Change background color */
 
   }
+
+  @media (max-width: 1000px) {
+    height: 100%;
+    margin-top: 50px;
+
+}
   animation: fadeIn 0.5s;
   opacity: 1; // Start fully visible
   transition: opacity 0.5s ease-in-out;
