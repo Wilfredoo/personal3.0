@@ -28,6 +28,10 @@ const Home = () => {
 
     const handleImageClick = (e) => {
         copyEmailToClipboard(e)
+         // Add vibration here. The device will vibrate for 500 milliseconds.
+    if (navigator.vibrate) {
+        navigator.vibrate(500); // Vibrate for half a second
+    }
         setIsShaking(true);
         setTimeout(() => setIsShaking(false), 1000); // Reset shaking after animation duration
     };
