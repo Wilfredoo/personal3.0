@@ -7,7 +7,7 @@ import Curriculum from './components/Curriculum';
 import VideoWorkRedirect from './components/VideoWorkRedirect';
 import BadVideoWorkRedirect from './components/BadVideoWorkRedirect';
 import BerlinBreakIn from './components/BerlinBreakIn';
-
+import Cacao from './components/Cacao/Cacao';
 
 const TRACKING_ID = "G-65B2W1RSZ2";
 
@@ -23,6 +23,7 @@ function App() {
         <Route path="/film" element={<VideoWorkRedirect />} />
         <Route path="/badfilm" element={<BadVideoWorkRedirect />} />
         <Route path="/berlin-break-in" element={<BerlinBreakIn />} />
+        <Route path="/cacao" element={<Cacao />} />
       </Routes>
     </Router>
   );
