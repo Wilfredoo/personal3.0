@@ -1,13 +1,13 @@
 const translations = {
     en: {
-        welcomeText: "Welcome to my online chocolate shop.",
+        welcomeText: "Welcome to my chocolate shop.",
         introText: "Choosing a chocolate bar usually involves a trade-off between health and pleasure. To eliminate this compromise, I make my bars with raw ingredients and minimal processing, allowing you to enjoy the best of both worlds.",
         ingredientsProcesses: "What this chocolate has",
         whatMakesUnique: "What this chocolate does not have",
         processInfo: "How to order a chocolate bar (Berlin only)",
         chocolateInfo: [
             "Cacao: Bio, organic, and fair trade. Sourced from Peruvian farmers.",
-            "Cacao Butter: Also bio and organic, sourced from the same Peruvian locations as the cacao.",
+            "Cacao Butter: Same as the cacao and sourced from the same Peruvian farmers.",
             "Honey: Raw and unfiltered to preserve all nutritional properties. Sourced from Brandenburg.",
             "Sea Salt"
         ],
@@ -17,7 +17,7 @@ const translations = {
                 "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color. However, this can lead to the loss of up to 90% of the beneficial flavonoids.",
                 "Cocoa powder: Processed cacao that has undergone various processes, such as the Broma process, to facilitate preservation and complex logistics, but at the cost of its natural flavor and nutritional properties.",
                 "Sugar: No trace of sugar in Wilfredo's kitchen.",
-                "Color additives, preservatives, or any kind of enhancer: not found here.",
+                "Color additives, preservatives, or any kind of enhancer.",
             ]
         ],
         orderInstructions: [
@@ -27,7 +27,7 @@ const translations = {
         ],
         orderForm: {
             quantityLabel: "Quantity",
-            priceLabel: "Price (in Euros)",
+            priceLabel: "Price",
             priceAdjustmentText: "Adjust the price according to your budget, and we'll go from there.",
             deliveryOptionLabel: "Delivery Option",
             shipToAddressOption: "Ship to my address",
@@ -43,7 +43,7 @@ const translations = {
         footer: "Something not working as expected? Send me a message on Signal or WhatsApp to +4915781295360 with your complaints."
     },
     de: {
-        welcomeText: "Willkommen in meinem Online-Schokoladenshop.",
+        welcomeText: "Willkommen in meinem Schokola denshop.",
         introText: "Die Wahl eines Schokoriegels bedeutet oft, sich zwischen Gesundheit und Genuss zu entscheiden. Um diesen Kompromiss zu vermeiden, stelle ich meine Riegel aus rohen Zutaten und mit minimaler Verarbeitung her, sodass Sie das Beste aus beiden Welten genießen können.",
         ingredientsProcesses: "Was diese Schokolade enthält",
         whatMakesUnique: "Was diese Schokolade nicht enthält",
@@ -71,7 +71,7 @@ const translations = {
         ],
         orderForm: {
             quantityLabel: "Menge",
-            priceLabel: "Preis (in Euro)",
+            priceLabel: "Preis",
             priceAdjustmentText: "Pass den Preis nach deinem Budget an, und dann schauen wir weiter.",
             deliveryOptionLabel: "Lieferoption",
             shipToAddressOption: "An meine Adresse schicken",

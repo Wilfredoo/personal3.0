@@ -55,6 +55,12 @@ export const Label = styled.label`
   color: ${cacaoPowder};
 `;
 
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center; // Align items vertically in the center
+  gap: 5px; // Adds a little space between the input and the euro symbol
+`;
+
 export const Input = styled.input`
   padding: 8px;
   margin-top: 5px;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { OrderFormStyle, Label, Input, SubmitButton, PriceInput, InfoText, RadioButtonLabel, RadioButton, ArrowButton, QuantityInputWrapper, TextArea } from './styles';
+import { OrderFormStyle, Label, Input, SubmitButton, PriceInput, InfoText, RadioButtonLabel, InputContainer, RadioButton, ArrowButton, QuantityInputWrapper, TextArea } from './styles';
 
 const OrderForm = ({ language, translations }) => {
   const [name, setName] = useState('');
@@ -76,6 +76,7 @@ const OrderForm = ({ language, translations }) => {
       </Label>
       <Label>
       <Label>{formTranslations.priceLabel}:</Label>
+      <InputContainer>
 
   <PriceInput
     type="number"
@@ -84,9 +85,14 @@ const OrderForm = ({ language, translations }) => {
     onChange={(e) => setPrice(Number(e.target.value))}
     required
   />
+  <InfoText>€</InfoText>
+  </InputContainer>
+
        <InfoText>{formTranslations.priceAdjustmentText}</InfoText>
 
 </Label>
+
+
       <Label>
       <Label>{formTranslations.deliveryOptionLabel}:</Label>
         <RadioButtonLabel>
