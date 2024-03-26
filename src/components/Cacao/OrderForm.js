@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { OrderFormStyle, Label, Input, SubmitButton, PriceInput, InfoText, RadioButtonLabel, RadioButton, ArrowButton, QuantityInputWrapper, TextArea } from './styles';
 
-const OrderForm = () => {
+const OrderForm = ({ language, translations }) => {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState(''); // New state for last name
   const [address, setAddress] = useState('');
   const [extraInstructions, setExtraInstructions] = useState(''); // New state for extra instructions
   const [quantity, setQuantity] = useState(3);
   const [price, setPrice] = useState(0);
-  const [shipping, setShipping] = useState('inPerson');
+  const [shipping, setShipping] = useState('ship');
+
+  const formTranslations = translations.orderForm;
 
   useEffect(() => {
     const initialPrice = calculatePrice(quantity);
@@ -23,17 +25,30 @@ const OrderForm = () => {
   };
 
   const sendWhatsAppMessage = () => {
-    const chosenName = name;
-    const deliveryMethod = shipping === 'ship' ? `Ship to my address: ${address}` : "Give me my chocolate in person";
-    const message = `I would like some chocolate. Here is the info you need:\n\n` +
+    let deliveryDetails = '';
+  
+    if (shipping === 'ship') {
+      deliveryDetails = `Delivery Type: Shipping\n` +
+                        `Address: ${address}\n` +
+                        `Name: ${(name.trim() || lastName.trim()) ? `${name.trim()} ${lastName.trim()}` : 'N/A'}\n` +
+                        `Extra Instructions: ${extraInstructions || 'None'}`;
+    } else if (shipping === 'inPerson') {
+      deliveryDetails = `Delivery Type: In-Person Pickup\n` +
+                        `Extra Instructions: ${extraInstructions || 'None'}`;
+    }
+    
+    const message = `Chocolate Order Request:\n` +
+                    `--------------------------\n` +
                     `Quantity: ${quantity}\n` +
                     `Price: ${price} euros\n` +
-                    `Name: ${chosenName}\n` +
-                    `${deliveryMethod}`;
-
+                    `--------------------------\n` +
+                    `${deliveryDetails}`;
+  
     const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
+  
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,10 +56,13 @@ const OrderForm = () => {
     // Reset form fields or handle submission state as needed
   };
 
+
+
   return (
     <OrderFormStyle onSubmit={handleSubmit}>
       <Label>
-        Quantity:
+              <Label>{formTranslations.quantityLabel}:</Label>
+
         <QuantityInputWrapper>
           <ArrowButton type="button" onClick={() => setQuantity(prev => Math.max(1, prev - 1))}>-</ArrowButton>
           <Input
@@ -57,7 +75,8 @@ const OrderForm = () => {
         </QuantityInputWrapper>
       </Label>
       <Label>
-  Price:
+      <Label>{formTranslations.priceLabel}:</Label>
+
   <PriceInput
     type="number"
     value={price}
@@ -65,13 +84,11 @@ const OrderForm = () => {
     onChange={(e) => setPrice(Number(e.target.value))}
     required
   />
-  <InfoText>
-    If you think the price is too high or too low, adjust it according to your
-    budget, and we'll go from there.
-  </InfoText>
+       <InfoText>{formTranslations.priceAdjustmentText}</InfoText>
+
 </Label>
       <Label>
-        Delivery Option:
+      <Label>{formTranslations.deliveryOptionLabel}:</Label>
         <RadioButtonLabel>
           <RadioButton
             type="radio"
@@ -80,7 +97,7 @@ const OrderForm = () => {
             checked={shipping === 'ship'}
             onChange={() => setShipping('ship')}
           />
-          Ship to my address
+          {formTranslations.shipToAddressOption}
         </RadioButtonLabel>
         <RadioButtonLabel>
           <RadioButton
@@ -90,33 +107,28 @@ const OrderForm = () => {
             checked={shipping === 'inPerson'}
             onChange={() => setShipping('inPerson')}
           />
-          Give me my chocolate in person
+          {formTranslations.inPersonOption}
         </RadioButtonLabel>
       </Label>
       
       {shipping === 'ship' && (
         <>
           <Label>
-            Name:
-            <Input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder="First Name" />
+            <Input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder={formTranslations.firstNamePlaceholder} />
           </Label>
           <Label>
-            Last Name:
-            <Input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required placeholder="Last Name" />
+            <Input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required placeholder={formTranslations.lastNamePlaceholder} />
           </Label>
           <Label>
-            Address: 
-            <Input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required placeholder="Your shipping address" />
+            <Input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required placeholder={formTranslations.addressPlaceholder} />
           </Label>
           <Label>
-            Extra Instructions:
-            <TextArea value={extraInstructions} onChange={(e) => setExtraInstructions(e.target.value)} placeholder="Any additional delivery instructions?" />
+            <TextArea value={extraInstructions} onChange={(e) => setExtraInstructions(e.target.value)} placeholder={formTranslations.extraInstructionsPlaceholder}/>
           </Label>
         </>
       )}
-      <SubmitButton type="submit">Submit Order</SubmitButton>
-      <InfoText>Clicking on 'Submit Order' will open WhatsApp and preformat a message that you can send me with your order details.</InfoText>
-
+      <SubmitButton type="submit">{formTranslations.submitOrderButton}</SubmitButton>
+      <InfoText>{formTranslations.submitOrderExplanation}</InfoText>
     </OrderFormStyle>
   );
 };

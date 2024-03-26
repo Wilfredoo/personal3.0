@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 
+// Use a warm, creamy color for the background, reminiscent of white chocolate.
+const cream = '#f5f5f5';
+const darkChocolate = '#3e2723'; // A rich brown color like dark chocolate.
+const milkChocolate = '#795548'; // A lighter brown, akin to milk chocolate.
+const cacaoPowder = '#5d4037'; // This is a medium brown, similar to cacao powder.
+const chocolateAccent = '#d7ccc8'; // A light chocolate accent for hover states.
+
 // Existing Styled components
 export const Container = styled.div`
   font-family: Arial, sans-serif;
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
+  background-color: ${cream}; // A light creamy background for the container.
 `;
 
 export const Title = styled.h1`
-  color: #4E342E;
+  color: ${darkChocolate};
 `;
 
 export const Section = styled.section`
@@ -17,7 +25,7 @@ export const Section = styled.section`
 `;
 
 export const SectionTitle = styled.h2`
-  color: #6D4C41;
+  color: ${milkChocolate};
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -25,17 +33,17 @@ export const SectionTitle = styled.h2`
 `;
 
 export const Info = styled.p`
-  color: #5D4037;
+  color: ${cacaoPowder};
   line-height: 1.6;
 `;
 
 export const ToggleSymbol = styled.span`
   font-size: 20px;
+  color: ${milkChocolate}; // Consistent with the SectionTitle color.
 `;
 
-// New styles for the OrderForm component
 export const OrderFormStyle = styled.form`
-  background: #f5f5f5;
+  background: ${cream};
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -44,40 +52,21 @@ export const OrderFormStyle = styled.form`
 export const Label = styled.label`
   display: block;
   margin: 10px 0;
-  color: #6D4C41;
+  color: ${cacaoPowder};
 `;
 
 export const Input = styled.input`
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid ${chocolateAccent};
   border-radius: 4px;
-  width: calc(100% - 16px); /* Adjusts input width to account for padding */
+  width: calc(100% - 16px);
   display: block;
-`;
-
-export const Select = styled.select`
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  display: block;
-`;
-
-export const CheckBoxLabel = styled.label`
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-`;
-
-export const CheckBox = styled.input`
-  margin-left: 10px;
 `;
 
 export const SubmitButton = styled.button`
   padding: 10px 15px;
-  background-color: #6D4C41;
+  background-color: ${darkChocolate};
   color: white;
   border: none;
   border-radius: 4px;
@@ -85,16 +74,27 @@ export const SubmitButton = styled.button`
   display: block;
   margin-top: 20px;
   width: 100%;
+
+  &:hover {
+    background-color: ${milkChocolate}; // A lighter chocolate color for the button hover state.
+  }
 `;
 
 export const LanguageButton = styled.button`
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #9575CD;
+  background-color: ${milkChocolate};
   color: white;
   border: none;
   cursor: pointer;
+
+  &:hover {
+    background-color: ${darkChocolate}; // Darker color on hover for the language button.
+  }
 `;
+
+// ... Rest of your styled components remain unchanged
+
 
 export const PriceInput = styled(Input)`
   width: 100px; // Adjusted width for the price input

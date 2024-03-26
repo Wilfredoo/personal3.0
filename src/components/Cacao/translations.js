@@ -1,60 +1,93 @@
-
 const translations = {
-  en: {
-    welcomeText: "Welcome to my online chocolate store.",
-    ingredientsProcesses: "Ingredients and Processes I follow",
-    whatMakesUnique: "What makes this chocolate unique",
-    howToGetBar: "How to get a bar of chocolate",
-    chocolateInfo: `Cacao: raw, bio and fairtrade from Peruvian farmers
-Cacao butter: bio and fairtrade, from the same source as the cacao
-Honey: raw and unfiltered to keep all the nutritional properties intact, regional to keep it sustainable
-A pinch of sea salt`,
-    uniqueChocolateText: `When we get a bar of chocolate, we usually have to decide between health and pleasure. I don't like the compromise, which is why I decided to make this primal bar of chocolate with raw ingredients and minimal processing, so that I can enjoy the best of both worlds.
+    en: {
+        welcomeText: "Welcome to my online chocolate shop.",
+        introText: "Choosing a chocolate bar usually involves a trade-off between health and pleasure. To eliminate this compromise, I make my bars with raw ingredients and minimal processing, allowing you to enjoy the best of both worlds.",
+        ingredientsProcesses: "What this chocolate has",
+        whatMakesUnique: "What this chocolate does not have",
+        processInfo: "Order a chocolate bar",
+        chocolateInfo: [
+            "Cacao: raw, organic, and fair trade from Peruvian farmers.",
+            "Cacao butter: also organic and fair trade, sourced from the same locations as the cacao.",
+            "Honey: raw and unfiltered, preserving all nutritional properties, and regionally sourced to ensure sustainability.",
+            "Sea salt: a pinch is added for flavor enhancement."
+        ],
+        uniqueChocolateText: [
+            "Choosing a chocolate bar often means deciding between health and pleasure. I wanted to eliminate this compromise, which is why I've created a bar using raw ingredients and minimal processing—allowing for the enjoyment of both worlds.",
+            "Contrastingly, other chocolate bars may undergo several processes:",
+            [
+                "Potassium carbonate is added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color, but this can lead to the loss of up to 90% of the beneficial flavonoids.",
+                "Sugar, particularly refined sugar, is often criticized for its negative health impact.",
+                "Color additives, preservatives, and enhancers are commonly used to increase market appeal.",
+                "Cocoa powder is used in scenarios involving complex logistics or other processed forms of cacao."
+            ]
+        ],
+        orderInstructions: [
+            "Place your order below.",
+            "Once I have enough orders for a batch of 10 bars, you'll get a confirmation and payment instructions via WhatsApp.",
+            "After payment, I'll start making your chocolate bar and will ensure it gets to you promptly."
+        ],
+        orderForm: {
+            quantityLabel: "Quantity",
+            priceLabel: "Price (in Euros)",
+            priceAdjustmentText: "Adjust the price according to your budget, and we'll go from there.",
+            deliveryOptionLabel: "Delivery Option",
+            shipToAddressOption: "Ship to my address",
+            inPersonOption: "Give me my chocolate in person",
+            firstNamePlaceholder: "First Name",
+            lastNamePlaceholder: "Last Name",
+            addressPlaceholder: "Your shipping address",
+            extraInstructionsPlaceholder: "Any additional delivery instructions?",
+            submitOrderButton: "Submit Order",
+            submitOrderExplanation: "Clicking on 'Submit Order' will open WhatsApp and preformat a message that you can send me with your order details.",
+        },
+        languageButton: "Zu Deutsch wechseln",
+        footer: "Something not working as expected? Send me a message on Signal or WhatsApp to +4915781295360 with your complaints."
+    },
+    de: {
+        welcomeText: "Willkommen in meinem Online-Schokoladenshop.",
+        introText: "Die Wahl eines Schokoriegels bedeutet oft, sich zwischen Gesundheit und Genuss zu entscheiden. Um diesen Kompromiss zu vermeiden, stelle ich meine Riegel aus rohen Zutaten und mit minimaler Verarbeitung her, sodass Sie das Beste aus beiden Welten genießen können.",
+        ingredientsProcesses: "Was diese Schokolade enthält",
+        whatMakesUnique: "Was diese Schokolade nicht hat",
+        howToGetBar: "Wie du deine Schokoladentafel bekommst",
+        processInfo: "Bestelle einen Schokoladenriegel",
+        chocolateInfo: [
+            "Kakao: roh, bio und fair gehandelt von peruanischen Bauern.",
+            "Kakaobutter: auch bio und fair gehandelt, bezogen aus denselben Gegenden wie der Kakao.",
+            "Honig: roh und ungefiltert, um alle Nährwerte zu erhalten, und regional bezogen, um Nachhaltigkeit zu gewährleisten.",
+            "Meersalz: Eine Prise zur Geschmacksverstärkung hinzugefügt."
+        ],
+        uniqueChocolateText: [
+            "Wenn du dich für eine Schokoladentafel entscheidest, steht oft die Wahl zwischen Gesundheit und Genuss an. Ich wollte diesen Kompromiss nicht eingehen, weshalb ich eine Tafel mit rohen Zutaten und minimaler Verarbeitung kreiert habe – so kannst du beides in vollen Zügen genießen.",
+            "Im Gegensatz dazu gehen andere Schokoladenriegel durch mehrere Prozesse:",
+            [
+                "Kaliumcarbonat wird beim 'Dutch Process' hinzugefügt, um die natürliche Bitterkeit des Kakaos zu mindern und seine Farbe zu vertiefen, was jedoch bis zu 90% der nützlichen Flavonoide kosten kann.",
+                "Zucker, insbesondere raffinierter Zucker, wird oft wegen seiner negativen gesundheitlichen Auswirkungen kritisiert.",
+                "Farbzusätze, Konservierungsmittel und Verstärker werden häufig genutzt, um die Marktattraktivität zu erhöhen.",
+                "Kakaopulver wird in Szenarien verwendet, die eine komplexe Logistik oder andere verarbeitete Kakaoformen benötigen."
+            ]
+        ],
+        orderInstructions: [
+            "Bestell unten.",
+            "Sobald ich genug Bestellungen für 10 Riegel zusammenhabe, kriegst du eine Bestätigung und die Zahlungsinformationen per WhatsApp.",
+            "Nach der Zahlung leg ich los mit deinem Schokoriegel und sorg dafür, dass er schnell bei dir ist."
+        ],
+        orderForm: {
+            quantityLabel: "Menge",
+            priceLabel: "Preis (in Euro)",
+            priceAdjustmentText: "Pass den Preis nach deinem Budget an, und dann schauen wir weiter.",
+            deliveryOptionLabel: "Lieferoption",
+            shipToAddressOption: "An meine Adresse schicken",
+            inPersonOption: "Ich möchte meine Schokolade persönlich abholen",
+            firstNamePlaceholder: "Vorname",
+            lastNamePlaceholder: "Nachname",
+            addressPlaceholder: "Deine Versandadresse",
+            extraInstructionsPlaceholder: "Zusätzliche Lieferanweisungen?",
+            submitOrderButton: "Bestellung aufgeben",
+            submitOrderExplanation: "Wenn du auf 'Bestellung aufgeben' klickst, öffnet sich WhatsApp und du kannst mir eine Nachricht mit deinen Bestelldetails schicken.",
+        },
+        languageButton: "Zu Englisch wechseln",
+        footer: "Läuft etwas nicht wie erwartet? Schick mir eine Nachricht über Signal oder WhatsApp an +4915781295360 mit deinen Beschwerden."
+    }
+};
 
-Other bars of chocolate go through a few or many of the following processes:
-- Potassium carbonate: added during the "dutch process" to reduce the natural bitterness of cacao, darken the color, but at the cost of losing a significant amount of cacao's beneficial properties (60% to 90% of flavonoids).
-- Sugar: refined sugar, widely criticized for its health effects.
-- Color additives, preservatives, color enhancers: used in the competitive market to enhance appeal.
-- Cocoa powder: used when dealing with complex logistics or other forms of processed cacao.
-
-If any information here is incorrect, please write to me at cacao@wilfredocasas.com so I can verify my sources.
-
-Price: You can get a bar for 5 euros. The price is high, but I promise to craft your chocolate bar as if it were for myself, aiming for the highest taste quality without sacrificing the benefits of cacao.`,
-    orderInstructions: `1. Make an order below. 
-2. Once I have enough orders (producing in batches of 10), you'll receive a confirmation via Whatsapp or Signal with payment instructions.
-3. Wait for your chocolate bar to arrive. I'll keep you updated on the logistics.`,
-    orderFormTitle: "Order Your Chocolate",
-    quantityLabel: "Quantity (Bars):",
-    submitButton: "Submit",
-    languageButton: "Auf Deutsch wechseln"
-  },
-  de: {
-    welcomeText: "Danke, dass du den QR-Code gescannt hast!",
-    ingredientsProcesses: "Zutaten und Verfahren, die ich befolge",
-    whatMakesUnique: "Was macht diese Schokolade einzigartig",
-    howToGetBar: "Wie man eine Tafel Schokolade bekommt",
-    chocolateInfo: `Kakao: roh, bio und fairtrade von peruanischen Bauern
-Kakaobutter: bio und fairtrade, aus derselben Quelle wie der Kakao
-Honig: roh und ungefiltert, um alle Nährstoffe zu bewahren, regional um Nachhaltigkeit zu gewährleisten
-Eine Prise Meersalz`,
-    uniqueChocolateText: `Wenn wir eine Tafel Schokolade bekommen, müssen wir uns üblicherweise zwischen Gesundheit und Genuss entscheiden. Ich mag diesen Kompromiss nicht, deshalb habe ich beschlossen, diese ursprüngliche Schokoladentafel mit rohen Zutaten und minimaler Verarbeitung herzustellen, sodass ich das Beste aus beiden Welten genießen kann.
-
-Andere Schokoladentafeln durchlaufen einige oder viele der folgenden Prozesse:
-- Kaliumcarbonat: wird während des "Dutch-Process" hinzugefügt, um die natürliche Bitterkeit des Kakaos zu reduzieren, die Farbe zu verdunkeln, aber auf Kosten des Verlusts einer signifikanten Menge der nützlichen Eigenschaften des Kakaos (60% bis 90% der Flavonoide).
-- Zucker: raffinierter Zucker, weitgehend kritisiert wegen seiner gesundheitlichen Auswirkungen.
-- Farbzusätze, Konservierungsmittel, Farbverstärker: werden im Wettbewerbsmarkt verwendet, um die Attraktivität zu erhöhen.
-- Kakaopulver: verwendet, wenn man mit komplexen Logistiken oder anderen Formen von verarbeitetem Kakao umgeht.
-
-Falls irgendwelche Informationen hier falsch sind, bitte schreiben Sie mir anIf any information here is incorrect, please write to me at cacao@wilfredocasas.com so I can verify my sources.
-`,
-    orderInstructions: `Price: You can get a bar for 5 euros or three bars for 12 euros. The price is high, but I promise to craft your chocolate bar as if it were for myself, aiming for the highest taste quality without sacrificing the benefits of cacao. 1. Make an order below. 
-2. Once I have enough orders (producing in batches of 10), you'll receive a confirmation via Whatsapp or Signal with payment instructions.
-3. Wait for your chocolate bar to arrive. I'll keep you updated on the logistics.`,
-    orderFormTitle: "Order Your Chocolate",
-    quantityLabel: "Quantity (Bars):",
-    submitButton: "Submit",
-    languageButton: "Auf Deutsch wechseln"
-  }
-}
-
-  export default translations;
+export default translations;

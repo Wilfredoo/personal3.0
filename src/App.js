@@ -24,6 +24,7 @@ function App() {
         <Route path="/badfilm" element={<BadVideoWorkRedirect />} />
         <Route path="/berlin-break-in" element={<BerlinBreakIn />} />
         <Route path="/cacao" element={<Cacao />} />
+        <Route path="/kakao" element={<Cacao />} />
       </Routes>
     </Router>
   );

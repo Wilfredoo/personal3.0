@@ -13,36 +13,37 @@ import {
   LanguageButton,
   Footer
 } from './styles';
-import translations from './translations'; // Ensure the path to your translations file is correct
+import translations from './translations'; // Adjust the path as needed
 import OrderForm from './OrderForm';
 
 const Cacao = () => {
   const [language, setLanguage] = useState('en');
   const [activeSection, setActiveSection] = useState('');
-  const [quantity, setQuantity] = useState('');
 
   const t = translations[language];
 
-  const handleLanguageToggle = () => {
-    setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
-  };
+  const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
 
-  const toggleSection = (section) => {
-    setActiveSection(prevSection => prevSection === section ? '' : section);
-  };
+  const toggleSection = (section) => setActiveSection(prevSection => prevSection === section ? '' : section);
 
   return (
     <Container>
       <LanguageButton onClick={handleLanguageToggle}>{t.languageButton}</LanguageButton>
-
       <Title>{t.welcomeText}</Title>
-
+      <Info>{t.introText}</Info>
       <Section>
         <SectionTitle onClick={() => toggleSection('chocolateInfo')}>
-          {t.ingredientsProcesses}<ToggleSymbol>{activeSection === 'chocolateInfo' ? '−' : '+'}</ToggleSymbol>
+          {t.ingredientsProcesses}
+          <ToggleSymbol>{activeSection === 'chocolateInfo' ? '−' : '+'}</ToggleSymbol>
         </SectionTitle>
         {activeSection === 'chocolateInfo' && (
-          <Info>{t.chocolateInfo}</Info>
+          <Info>
+            <ul>
+              {t.chocolateInfo.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </Info>
         )}
       </Section>
 
@@ -51,23 +52,49 @@ const Cacao = () => {
           {t.whatMakesUnique}<ToggleSymbol>{activeSection === 'howItWorks' ? '−' : '+'}</ToggleSymbol>
         </SectionTitle>
         {activeSection === 'howItWorks' && (
-          <Info>{t.uniqueChocolateText}</Info>
+          <Info>
+            {t.uniqueChocolateText.map((text, index) => {
+              // If it's a string, render it as a paragraph
+              if (typeof text === 'string') {
+                return <p key={index}>{text}</p>;
+              }
+              // If it's an array, map over it and create list items
+              if (Array.isArray(text)) {
+                return (
+                  <ul key={index}>
+                    {text.map((item, itemIndex) => (
+                      <li key={itemIndex}>{item}</li>
+                    ))}
+                  </ul>
+                );
+              }
+              return null;
+            })}
+          </Info>
         )}
       </Section>
 
       <Section>
-        <SectionTitle onClick={() => toggleSection('orderForm')}>
-          {t.howToGetBar}<ToggleSymbol>{activeSection === 'orderForm' ? '−' : '+'}</ToggleSymbol>
+        <SectionTitle onClick={() => toggleSection('processInfo')}>
+          {t.processInfo}
+          <ToggleSymbol>{activeSection === 'processInfo' ? '−' : '+'}</ToggleSymbol>
         </SectionTitle>
-        {activeSection === 'orderForm' && (
+        {activeSection === 'processInfo' && (
           <>
-          <Info>{t.orderInstructions}</Info>
-          <OrderForm />
+            <Info>
+              <ol>
+                {t.orderInstructions.map((step, index) => (
+                  <li key={index}>{step}</li>
+                ))}
+              </ol>
+            </Info>
+            <OrderForm language={language} translations={t} />
           </>
         )}
       </Section>
+
       <Footer>
-        Something not working as expected? Send me a message on Signal or WhatsApp to +4915781295360 with your complaints.
+        {t.footer}
       </Footer>
     </Container>
   );
