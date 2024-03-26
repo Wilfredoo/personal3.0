@@ -110,7 +110,6 @@ const OrderForm = ({ language, translations }) => {
           {formTranslations.inPersonOption}
         </RadioButtonLabel>
       </Label>
-      
       {shipping === 'ship' && (
         <>
           <Label>

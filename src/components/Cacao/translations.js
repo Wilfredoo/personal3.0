@@ -12,18 +12,16 @@ const translations = {
             "Sea salt: a pinch is added for flavor enhancement."
         ],
         uniqueChocolateText: [
-            "Choosing a chocolate bar often means deciding between health and pleasure. I wanted to eliminate this compromise, which is why I've created a bar using raw ingredients and minimal processing—allowing for the enjoyment of both worlds.",
-            "Contrastingly, other chocolate bars may undergo several processes:",
             [
-                "Potassium carbonate is added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color, but this can lead to the loss of up to 90% of the beneficial flavonoids.",
-                "Sugar, particularly refined sugar, is often criticized for its negative health impact.",
-                "Color additives, preservatives, and enhancers are commonly used to increase market appeal.",
-                "Cocoa powder is used in scenarios involving complex logistics or other processed forms of cacao."
+                "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color. However, this can lead to the loss of up to 90% of the beneficial flavonoids.",
+                "Cocoa powder: Processed cacao that has undergone various processes, such as the Broma process, to facilitate preservation and complex logistics, but at the cost of its natural flavor and nutritional properties.",
+                "Sugar: No trace of sugar in Wilfredo's kitchen.",
+                "Color additives, preservatives, or any kind of enhancer: not found here.",
             ]
         ],
         orderInstructions: [
             "Place your order below.",
-            "Once I have enough orders for a batch of 10 bars, you'll get a confirmation and payment instructions via WhatsApp.",
+            "Once I have enough orders for a batch of 10 bars, you'll get payment instructions via WhatsApp.",
             "After payment, I'll start making your chocolate bar and will ensure it gets to you promptly."
         ],
         orderForm: {
@@ -57,18 +55,16 @@ const translations = {
             "Meersalz: Eine Prise zur Geschmacksverstärkung hinzugefügt."
         ],
         uniqueChocolateText: [
-            "Wenn du dich für eine Schokoladentafel entscheidest, steht oft die Wahl zwischen Gesundheit und Genuss an. Ich wollte diesen Kompromiss nicht eingehen, weshalb ich eine Tafel mit rohen Zutaten und minimaler Verarbeitung kreiert habe – so kannst du beides in vollen Zügen genießen.",
-            "Im Gegensatz dazu gehen andere Schokoladenriegel durch mehrere Prozesse:",
             [
-                "Kaliumcarbonat wird beim 'Dutch Process' hinzugefügt, um die natürliche Bitterkeit des Kakaos zu mindern und seine Farbe zu vertiefen, was jedoch bis zu 90% der nützlichen Flavonoide kosten kann.",
-                "Zucker, insbesondere raffinierter Zucker, wird oft wegen seiner negativen gesundheitlichen Auswirkungen kritisiert.",
-                "Farbzusätze, Konservierungsmittel und Verstärker werden häufig genutzt, um die Marktattraktivität zu erhöhen.",
-                "Kakaopulver wird in Szenarien verwendet, die eine komplexe Logistik oder andere verarbeitete Kakaoformen benötigen."
+                "Kaliumkarbonat: Wird normalerweise während des 'Dutch-Verfahrens' hinzugefügt, um die natürliche Bitterkeit des Kakaos zu reduzieren und seine Farbe zu vertiefen. Dies kann jedoch zum Verlust von bis zu 90% der vorteilhaften Flavonoide führen.",
+                "Kakaopulver: Verarbeiteter Kakao, der verschiedene Verfahren wie das Broma-Verfahren durchlaufen hat, um die Konservierung und komplexe Logistik zu erleichtern, allerdings auf Kosten seines natürlichen Geschmacks und seiner Nährstoffeigenschaften.",
+                "Zucker: Keine Spur von Zucker in Wilfredos Küche.",
+                "Farbzusätze, Konservierungsmittel oder jegliche Art von Verstärkern: Nicht vorhanden.",
             ]
-        ],
+        ],             
         orderInstructions: [
             "Bestell unten.",
-            "Sobald ich genug Bestellungen für 10 Riegel zusammenhabe, kriegst du eine Bestätigung und die Zahlungsinformationen per WhatsApp.",
+            "Sobald ich genug Bestellungen für 10 Riegel zusammenhabe, kriegst du die Zahlungsinformationen per WhatsApp.",
             "Nach der Zahlung leg ich los mit deinem Schokoriegel und sorg dafür, dass er schnell bei dir ist."
         ],
         orderForm: {

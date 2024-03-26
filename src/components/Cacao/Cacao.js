@@ -88,7 +88,6 @@ const Cacao = () => {
           </>
         )}
       </Section>
-
       <Footer>
         {t.footer}
       </Footer>
