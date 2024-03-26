@@ -4,7 +4,7 @@ const translations = {
         introText: "Choosing a chocolate bar usually involves a trade-off between health and pleasure. To eliminate this compromise, I make my bars with raw ingredients and minimal processing, allowing you to enjoy the best of both worlds.",
         ingredientsProcesses: "What this chocolate has",
         whatMakesUnique: "What this chocolate does not have",
-        processInfo: "How to order a chocolate bar",
+        processInfo: "How to order a chocolate bar (Berlin only)",
         chocolateInfo: [
             "Cacao: Bio, organic, and fair trade. Sourced from Peruvian farmers.",
             "Cacao Butter: Also bio and organic, sourced from the same Peruvian locations as the cacao.",
@@ -48,7 +48,7 @@ const translations = {
         ingredientsProcesses: "Was diese Schokolade enthält",
         whatMakesUnique: "Was diese Schokolade nicht enthält",
         howToGetBar: "Wie du deine Schokoladentafel bekommst",
-        processInfo: "Wie bestellst du eine Tafel Schokolade",
+        processInfo: "Wie bestellst du eine Tafel Schokolade (nur für Berlin)",
         chocolateInfo: [
             "Kakao: Bio, ökologisch und fair gehandelt. Bezogen von peruanischen Bauern.",
             "Kakaobutter: Ebenfalls bio und ökologisch, bezogen aus denselben peruanischen Anbaugebieten wie der Kakao.",
