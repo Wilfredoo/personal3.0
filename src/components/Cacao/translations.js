@@ -6,11 +6,12 @@ const translations = {
         whatMakesUnique: "What this chocolate does not have",
         processInfo: "Order a chocolate bar",
         chocolateInfo: [
-            "Cacao: raw, organic, and fair trade from Peruvian farmers.",
-            "Cacao butter: also organic and fair trade, sourced from the same locations as the cacao.",
-            "Honey: raw and unfiltered, preserving all nutritional properties, and regionally sourced to ensure sustainability.",
-            "Sea salt: a pinch is added for flavor enhancement."
+            "Cacao: Bio, organic, and fair trade. Sourced from Peruvian farmers.",
+            "Cacao Butter: Also bio and organic, sourced from the same Peruvian locations as the cacao.",
+            "Honey: Raw and unfiltered to preserve all nutritional properties. Sourced from Brandenburg.",
+            "Sea Salt"
         ],
+        
         uniqueChocolateText: [
             [
                 "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color. However, this can lead to the loss of up to 90% of the beneficial flavonoids.",
@@ -49,11 +50,12 @@ const translations = {
         howToGetBar: "Wie du deine Schokoladentafel bekommst",
         processInfo: "Bestelle einen Schokoladenriegel",
         chocolateInfo: [
-            "Kakao: roh, bio und fair gehandelt von peruanischen Bauern.",
-            "Kakaobutter: auch bio und fair gehandelt, bezogen aus denselben Gegenden wie der Kakao.",
-            "Honig: roh und ungefiltert, um alle Nährwerte zu erhalten, und regional bezogen, um Nachhaltigkeit zu gewährleisten.",
-            "Meersalz: Eine Prise zur Geschmacksverstärkung hinzugefügt."
+            "Kakao: Bio, ökologisch und fair gehandelt. Bezogen von peruanischen Bauern.",
+            "Kakaobutter: Ebenfalls bio und ökologisch, bezogen aus denselben peruanischen Anbaugebieten wie der Kakao.",
+            "Honig: Roh und ungefiltert, um alle Nährstoffeigenschaften zu bewahren. Bezogen aus Brandenburg.",
+            "Meersalz"
         ],
+        
         uniqueChocolateText: [
             [
                 "Kaliumkarbonat: Wird normalerweise während des 'Dutch-Verfahrens' hinzugefügt, um die natürliche Bitterkeit des Kakaos zu reduzieren und seine Farbe zu vertiefen. Dies kann jedoch zum Verlust von bis zu 90% der vorteilhaften Flavonoide führen.",
