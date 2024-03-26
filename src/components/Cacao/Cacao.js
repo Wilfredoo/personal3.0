@@ -6,10 +6,6 @@ import {
   SectionTitle,
   Info,
   ToggleSymbol,
-  OrderFormStyle,
-  Label,
-  Input,
-  SubmitButton,
   LanguageButton,
   Footer
 } from './styles';

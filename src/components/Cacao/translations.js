@@ -47,7 +47,7 @@ const translations = {
         welcomeText: "Willkommen in meinem Online-Schokoladenshop.",
         introText: "Die Wahl eines Schokoriegels bedeutet oft, sich zwischen Gesundheit und Genuss zu entscheiden. Um diesen Kompromiss zu vermeiden, stelle ich meine Riegel aus rohen Zutaten und mit minimaler Verarbeitung her, sodass Sie das Beste aus beiden Welten genießen können.",
         ingredientsProcesses: "Was diese Schokolade enthält",
-        whatMakesUnique: "Was diese Schokolade nicht hat",
+        whatMakesUnique: "Was diese Schokolade nicht enthält",
         howToGetBar: "Wie du deine Schokoladentafel bekommst",
         processInfo: "Bestelle einen Schokoladenriegel",
         chocolateInfo: [
