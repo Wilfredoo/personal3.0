@@ -1,6 +1,6 @@
 const translations = {
     en: {
-        welcomeText: "Welcome to my chocolate shop.",
+        welcomeText: "Welcome to my online Chocolaterie.",
         introText: "Choosing a chocolate bar usually involves a trade-off between health and pleasure. To eliminate this compromise, I make my bars with raw ingredients and minimal processing, allowing you to enjoy the best of both worlds.",
         ingredientsProcesses: "What this chocolate has",
         whatMakesUnique: "What this chocolate does not have",
@@ -43,7 +43,7 @@ const translations = {
         footer: "Something not working as expected? Send me a message on Signal or WhatsApp to +4915781295360 with your complaints."
     },
     de: {
-        welcomeText: "Willkommen in meinem Schokoladenshop.",
+        welcomeText: "Willkommen in meiner Online-Chocolaterie.",
         introText: "Die Wahl eines Schokoriegels bedeutet oft, sich zwischen Gesundheit und Genuss zu entscheiden. Um diesen Kompromiss zu vermeiden, stelle ich meine Riegel aus rohen Zutaten und mit minimaler Verarbeitung her, sodass Sie das Beste aus beiden Welten genießen können.",
         ingredientsProcesses: "Was diese Schokolade enthält",
         whatMakesUnique: "Was diese Schokolade nicht enthält",
