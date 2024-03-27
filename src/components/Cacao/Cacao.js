@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Container,
   Section,
@@ -7,26 +7,66 @@ import {
   Info,
   ToggleSymbol,
   LanguageButton,
-  Footer
+  Footer,
+  VideoWrapper,
+  StyledIframe,
+  TryChocolateButton,
+  ButtonContainer
 } from './styles';
 import translations from './translations'; // Adjust the path as needed
 import OrderForm from './OrderForm';
+import { useLocation } from 'react-router-dom'; // Import useLocation hook
+
 
 const Cacao = () => {
+  const location = useLocation(); // Use the useLocation hook to get the current location object
   const [language, setLanguage] = useState('en');
   const [activeSection, setActiveSection] = useState('');
+  const orderSectionRef = useRef(null); // Create a ref for the order section
 
   const t = translations[language];
 
+  useEffect(() => {
+    // Set language based on path whenever the location changes
+    setLanguage(location.pathname.includes('/kakao') ? 'de' : 'en');
+  }, [location]);
+
   const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
 
-  const toggleSection = (section) => setActiveSection(prevSection => prevSection === section ? '' : section);
+  // const toggleSection = (section) => setActiveSection(prevSection => prevSection === section ? '' : section);
+
+  const toggleSection = (section) => {
+    setActiveSection(prevSection => prevSection === section ? '' : section);
+    if (section === 'processInfo') {
+      // Ensure that the section is expanded
+      setTimeout(() => {
+        orderSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 0); // Timeout ensures the section is visible before scrolling
+    }
+  };
+
+  const handleTryChocolateClick = () => {
+    toggleSection('processInfo');
+  };
 
   return (
     <Container>
-      <LanguageButton onClick={handleLanguageToggle}>{t.languageButton}</LanguageButton>
+      <ButtonContainer>
+        <LanguageButton onClick={handleLanguageToggle}>{t.languageButton}</LanguageButton>
+        <TryChocolateButton onClick={handleTryChocolateClick}>
+          {t.trySomeChocolate}
+        </TryChocolateButton>
+      </ ButtonContainer>
       <Title>{t.welcomeText}</Title>
       <Info>{t.introText}</Info>
+      <VideoWrapper>
+        <StyledIframe
+          src="https://www.youtube.com/embed/wtpuxyX8xV4"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </VideoWrapper>
       <Section>
         <SectionTitle onClick={() => toggleSection('chocolateInfo')}>
           {t.ingredientsProcesses}
@@ -42,7 +82,6 @@ const Cacao = () => {
           </Info>
         )}
       </Section>
-
       <Section>
         <SectionTitle onClick={() => toggleSection('howItWorks')}>
           {t.whatMakesUnique}<ToggleSymbol>{activeSection === 'howItWorks' ? '−' : '+'}</ToggleSymbol>
@@ -70,7 +109,7 @@ const Cacao = () => {
         )}
       </Section>
 
-      <Section>
+      <Section ref={orderSectionRef}>
         <SectionTitle onClick={() => toggleSection('processInfo')}>
           {t.processInfo}
           <ToggleSymbol>{activeSection === 'processInfo' ? '−' : '+'}</ToggleSymbol>

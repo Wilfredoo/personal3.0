@@ -4,14 +4,13 @@ const translations = {
         introText: "Choosing a chocolate bar usually involves a trade-off between health and pleasure. To eliminate this compromise, I make my bars with raw ingredients and minimal processing, allowing you to enjoy the best of both worlds.",
         ingredientsProcesses: "What this chocolate has",
         whatMakesUnique: "What this chocolate does not have",
-        processInfo: "How to order a chocolate bar (Berlin only)",
+        processInfo: "How to get a bar of this chocolate (for now, Berlin only)",
         chocolateInfo: [
             "Cacao: Bio, organic, and fair trade. Sourced from Peruvian farmers.",
             "Cacao Butter: Same as the cacao and sourced from the same Peruvian farmers.",
             "Honey: Raw and unfiltered to preserve all nutritional properties. Sourced from Brandenburg.",
             "Sea Salt"
         ],
-        
         uniqueChocolateText: [
             [
                 "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color. However, this can lead to the loss of up to 90% of the beneficial flavonoids.",
@@ -40,15 +39,16 @@ const translations = {
             submitOrderExplanation: "Clicking on 'Submit Order' will open WhatsApp and preformat a message that you can send me with your order details.",
         },
         languageButton: "Zu Deutsch wechseln",
+        trySomeChocolate: "Get some chocolate",
         footer: "Something not working as expected? Send me a message on Signal or WhatsApp to +4915781295360 with your complaints."
     },
     de: {
-        welcomeText: "Willkommen in meinem Schokola denshop.",
+        welcomeText: "Willkommen in meinem Schokoladenshop.",
         introText: "Die Wahl eines Schokoriegels bedeutet oft, sich zwischen Gesundheit und Genuss zu entscheiden. Um diesen Kompromiss zu vermeiden, stelle ich meine Riegel aus rohen Zutaten und mit minimaler Verarbeitung her, sodass Sie das Beste aus beiden Welten genießen können.",
         ingredientsProcesses: "Was diese Schokolade enthält",
         whatMakesUnique: "Was diese Schokolade nicht enthält",
         howToGetBar: "Wie du deine Schokoladentafel bekommst",
-        processInfo: "Wie bestellst du eine Tafel Schokolade (nur für Berlin)",
+        processInfo: "Wie bestellst du eine Tafel dieser Schokolade (Vorerst nur in Berlin)",
         chocolateInfo: [
             "Kakao: Bio, ökologisch und fair gehandelt. Bezogen von peruanischen Bauern.",
             "Kakaobutter: Ebenfalls bio und ökologisch, bezogen aus denselben peruanischen Anbaugebieten wie der Kakao.",
@@ -84,6 +84,7 @@ const translations = {
             submitOrderExplanation: "Wenn du auf 'Bestellung aufgeben' klickst, öffnet sich WhatsApp und du kannst mir eine Nachricht mit deinen Bestelldetails schicken.",
         },
         languageButton: "Zu Englisch wechseln",
+        trySomeChocolate: "Schokolade bestellen",
         footer: "Läuft etwas nicht wie erwartet? Schick mir eine Nachricht über Signal oder WhatsApp an +4915781295360 mit deinen Beschwerden."
     }
 };

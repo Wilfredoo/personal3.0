@@ -37,6 +37,22 @@ export const Info = styled.p`
   line-height: 1.6;
 `;
 
+export const VideoWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* Aspect ratio 16:9 */
+  height: 0;
+`;
+
+export const StyledIframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+`;
+
 export const ToggleSymbol = styled.span`
   font-size: 20px;
   color: ${milkChocolate}; // Consistent with the SectionTitle color.
@@ -86,21 +102,38 @@ export const SubmitButton = styled.button`
   }
 `;
 
+export const TryChocolateButton = styled.button`
+  margin-left: 1rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: ${darkChocolate};
+
+  color: white; // White text to stand out against a darker background
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Optional: shadow for depth
+  transition: background-color 0.3s; // Smooth transition for hover effect
+
+  &:hover {
+    background-color: ${darkChocolate}; // Consistent with LanguageButton hover
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 20px; // To match the LanguageButton's margin-top
+`;
+
 export const LanguageButton = styled.button`
-  margin-top: 20px;
+background-color: ${chocolateAccent}; // Use a distinctive color to stand out
+
   padding: 10px 15px;
   background-color: ${milkChocolate};
   color: white;
   border: none;
   cursor: pointer;
-
-  &:hover {
-    background-color: ${darkChocolate}; // Darker color on hover for the language button.
-  }
+  transition: background-color 0.3s; // Smooth transition for hover effect
 `;
-
-// ... Rest of your styled components remain unchanged
-
 
 export const PriceInput = styled(Input)`
   width: 100px; // Adjusted width for the price input
