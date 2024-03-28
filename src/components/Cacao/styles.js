@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import copyIcon from '../../assets/images/copy.png'; // Adjust the path as necessary
 
 // Use a warm, creamy color for the background, reminiscent of white chocolate.
 const cream = '#f5f5f5';
@@ -194,4 +195,169 @@ export const ArrowButton = styled.button`
 export const QuantityInputWrapper = styled.div`
   display: flex;
   align-items: center;
+`;
+
+// batch orders
+
+export const OrderList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+`;
+
+export const OrderItem = styled.li`
+  background-color: ${cream};
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: ${cacaoPowder};
+`;
+
+export const OrderDetail = styled.div`
+  margin-bottom: 5px;
+`;
+
+export const OrderHeader = styled.h3`
+  margin: 0;
+  color: ${milkChocolate};
+  font-weight: 600; /* 'semibold' typically corresponds to 600 in font-weight */
+`;
+
+export const EmphasizedText = styled.strong`
+  font-weight: bold;
+`;
+
+
+export const EmphasizedTextHeader = styled.strong`
+  font-size: 1.2rem; // Smaller font size for button text
+
+
+`;
+
+
+export const OrderText = styled.p`
+  margin: 5px 0;
+  color: ${cacaoPowder};
+`;
+
+export const HighlightContainer = styled.div`
+  margin-top: 20px;
+  background-color: ${chocolateAccent};
+  padding: 15px;
+  border-radius: 5px;
+  color: ${darkChocolate};
+`;
+
+// In your styles.js
+
+
+
+export const PaymentInfo = styled.section`
+  margin-top: 20px;
+  padding: 15px;
+  background-color: ${cream};
+  border: 1px solid ${chocolateAccent};
+  border-radius: 5px;
+`;
+
+export const CopyButton = styled.button`
+  background-color: ${milkChocolate};
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px; // Reduced padding for a more compact button
+  display: inline-flex; // Changed to inline-flex to avoid taking full width
+  align-items: center;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-size: 0.8rem; // Smaller font size for button text
+  gap: 5px; // Spacing between the icon and the text
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Subtle shadow for depth
+
+  &:hover {
+    background-color: ${darkChocolate};
+  }
+
+  img {
+    width: 16px; // Restrict the size of the icon
+    height: 16px; // Restrict the size of the icon
+  }
+
+  &.clicked {
+    background-color: #ffc107; // Change to a color of your choice
+    transition: background-color 0.3s ease; // Smooth transition
+  }
+`;
+
+
+// Styled Components for the PaymentInfo
+
+export const PaymentMethodList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0; // Remove margin-top for direct integration into the PaymentInfo box
+`;
+
+export const PaymentMethodItem = styled.li`
+  background-color: ${cream};
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: auto 1fr auto; // Use grid to align items
+  align-items: center;
+  gap: 10px;
+  border: 1px solid ${chocolateAccent}; // subtle border instead of left border
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+export const PaymentIcon = styled.span`
+  font-size: 1.5rem; // Increase size for better visual impact
+`;
+
+export const PaymentDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 0.9rem; // Slightly larger font for readability
+  color: ${darkChocolate}; // Use darkChocolate for text to match the Title
+`;
+
+export const CopyTextButton = styled.button`
+  background-color: ${milkChocolate};
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: min-content;
+
+  &:hover {
+    background-color: ${darkChocolate};
+  }
+
+  img {
+    width: 12px; // Reduced size for the copy icon
+    height: 12px;
+    margin-right: 5px; // Added margin for spacing between icon and text
+  }
+`;
+
+// Use this styled component for individual account details
+export const AccountDetail = styled.div`
+  color: ${cacaoPowder};
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;

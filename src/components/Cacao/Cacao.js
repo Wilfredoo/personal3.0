@@ -11,18 +11,24 @@ import {
   VideoWrapper,
   StyledIframe,
   TryChocolateButton,
-  ButtonContainer
+  ButtonContainer,
+  HighlightContainer,
+  EmphasizedText
 } from './styles';
 import translations from './translations'; // Adjust the path as needed
 import OrderForm from './OrderForm';
 import { useLocation } from 'react-router-dom'; // Import useLocation hook
-
+import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Cacao = () => {
   const location = useLocation(); // Use the useLocation hook to get the current location object
   const [language, setLanguage] = useState('en');
   const [activeSection, setActiveSection] = useState('');
   const orderSectionRef = useRef(null); // Create a ref for the order section
+  const [searchParams] = useSearchParams();
+  const referralUsername = searchParams.get('referral');
+  const batchName = searchParams.get('batch');
 
   const t = translations[language];
 
@@ -44,6 +50,44 @@ const Cacao = () => {
       }, 0); // Timeout ensures the section is visible before scrolling
     }
   };
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
+  function renderSharedMessage(language, referralUsername, batchName) {
+    // Capitalize the first letter of batchName
+    const capitalizedBatchName = capitalizeFirstLetter(batchName);
+    
+    const message = translations[language].sharedMessage
+      .replace(/{referralUsername}/g, referralUsername)
+      .replace(/{batchName}/g, capitalizedBatchName);
+  
+    return (
+      <HighlightContainer>
+        {message.split('\n').map((line, index) => {
+          const lineElements = line.split(new RegExp(`(${referralUsername}|${capitalizedBatchName})`)).map((part, idx) => {
+            if (part === referralUsername) {
+              return <EmphasizedText key={idx}>{referralUsername}</EmphasizedText>;
+            } else if (part === capitalizedBatchName) {
+              return (
+                <Link to={`/cacao/batch/${batchName}`} style={{ textDecoration: 'underline', color: 'inherit' }} key={idx}>
+                  <EmphasizedText>{capitalizedBatchName}</EmphasizedText>
+                </Link>
+              );
+            } else {
+              return part;
+            }
+          });
+  
+          return <p key={index}>{lineElements}</p>;
+        })}
+      </HighlightContainer>
+    );
+  }
+  
+  
+  
+  
 
   const handleTryChocolateClick = () => {
     toggleSection('processInfo');
@@ -51,6 +95,7 @@ const Cacao = () => {
 
   return (
     <Container>
+      {referralUsername && batchName && renderSharedMessage(language, referralUsername, batchName)}
       <ButtonContainer>
         <LanguageButton onClick={handleLanguageToggle}>{t.languageButton}</LanguageButton>
         <TryChocolateButton onClick={handleTryChocolateClick}>

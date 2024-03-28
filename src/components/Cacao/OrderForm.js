@@ -9,6 +9,7 @@ const OrderForm = ({ language, translations }) => {
   const [quantity, setQuantity] = useState(3);
   const [price, setPrice] = useState(0);
   const [shipping, setShipping] = useState('ship');
+  const [recommenderUsername, setRecommenderUsername] = useState('');
 
   const formTranslations = translations.orderForm;
 
@@ -29,33 +30,37 @@ const OrderForm = ({ language, translations }) => {
       return 12 + (quantity - 3) * 4;
     }
   };
-  
+
 
   const sendWhatsAppMessage = () => {
     let deliveryDetails = '';
-  
+
     if (shipping === 'ship') {
       deliveryDetails = `Delivery Type: Shipping\n` +
-                        `Address: ${address}\n` +
-                        `Name: ${(name.trim() || lastName.trim()) ? `${name.trim()} ${lastName.trim()}` : 'N/A'}\n` +
-                        `Extra Instructions: ${extraInstructions || 'None'}`;
+        `Address: ${address}\n` +
+        `Name: ${(name.trim() || lastName.trim()) ? `${name.trim()} ${lastName.trim()}` : 'N/A'}\n` +
+        `Extra Instructions: ${extraInstructions || 'None'}`;
     } else if (shipping === 'inPerson') {
       deliveryDetails = `Delivery Type: In-Person Pickup\n` +
-                        `Extra Instructions: ${extraInstructions || 'None'}`;
+        `Extra Instructions: ${extraInstructions || 'None'}`;
     }
-    
-    const message = `Chocolate Order Request:\n` +
-                    `--------------------------\n` +
-                    `Quantity: ${quantity}\n` +
-                    `Price: ${price} euros\n` +
-                    `--------------------------\n` +
-                    `${deliveryDetails}`;
+
+    let recommenderSection = recommenderUsername.trim() 
+    ? `Recommended by: ${recommenderUsername}\n` 
+    : '';
   
+  const message = `Chocolate Order Request:\n` +
+                  `--------------------------\n` +
+                  `Quantity: ${quantity}\n` +
+                  `Price: ${price} euros\n` +
+                  `--------------------------\n` +
+                  `${deliveryDetails}\n` +
+                  `${recommenderSection}`;
     const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
-  
-  
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +73,7 @@ const OrderForm = ({ language, translations }) => {
   return (
     <OrderFormStyle onSubmit={handleSubmit}>
       <Label>
-              <Label>{formTranslations.quantityLabel}:</Label>
+        <Label>{formTranslations.quantityLabel}:</Label>
 
         <QuantityInputWrapper>
           <ArrowButton type="button" onClick={() => setQuantity(prev => Math.max(1, prev - 1))}>-</ArrowButton>
@@ -82,26 +87,26 @@ const OrderForm = ({ language, translations }) => {
         </QuantityInputWrapper>
       </Label>
       <Label>
-      <Label>{formTranslations.priceLabel}:</Label>
-      <InputContainer>
+        <Label>{formTranslations.priceLabel}:</Label>
+        <InputContainer>
 
-  <PriceInput
-    type="number"
-    value={price}
-    placeholder="Euros"
-    onChange={(e) => setPrice(Number(e.target.value))}
-    required
-  />
-  <InfoText>€</InfoText>
-  </InputContainer>
+          <PriceInput
+            type="number"
+            value={price}
+            placeholder="Euros"
+            onChange={(e) => setPrice(Number(e.target.value))}
+            required
+          />
+          <InfoText>€</InfoText>
+        </InputContainer>
 
-       <InfoText>{formTranslations.priceAdjustmentText}</InfoText>
+        <InfoText>{formTranslations.priceAdjustmentText}</InfoText>
 
-</Label>
+      </Label>
 
 
       <Label>
-      <Label>{formTranslations.deliveryOptionLabel}:</Label>
+        <Label>{formTranslations.deliveryOptionLabel}:</Label>
         <RadioButtonLabel>
           <RadioButton
             type="radio"
@@ -123,22 +128,54 @@ const OrderForm = ({ language, translations }) => {
           {formTranslations.inPersonOption}
         </RadioButtonLabel>
       </Label>
-      {shipping === 'ship' && (
-        <>
-          <Label>
-            <Input type="text" value={name} onChange={(e) => setName(e.target.value)} required placeholder={formTranslations.firstNamePlaceholder} />
-          </Label>
-          <Label>
-            <Input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} required placeholder={formTranslations.lastNamePlaceholder} />
-          </Label>
-          <Label>
-            <Input type="text" value={address} onChange={(e) => setAddress(e.target.value)} required placeholder={formTranslations.addressPlaceholder} />
-          </Label>
-          <Label>
-            <TextArea value={extraInstructions} onChange={(e) => setExtraInstructions(e.target.value)} placeholder={formTranslations.extraInstructionsPlaceholder}/>
-          </Label>
-        </>
-      )}
+ {shipping === 'ship' && (
+  <>
+    <Label>
+      <Input 
+        type="text" 
+        value={name} 
+        onChange={(e) => setName(e.target.value)} 
+        required 
+        placeholder={formTranslations.firstNamePlaceholder} 
+      />
+    </Label>
+    <Label>
+      <Input 
+        type="text" 
+        value={lastName} 
+        onChange={(e) => setLastName(e.target.value)} 
+        required 
+        placeholder={formTranslations.lastNamePlaceholder} 
+      />
+    </Label>
+    <Label>
+      <Input 
+        type="text" 
+        value={address} 
+        onChange={(e) => setAddress(e.target.value)} 
+        required 
+        placeholder={formTranslations.addressPlaceholder} 
+      />
+    </Label>
+    <Label>
+      <TextArea 
+        value={extraInstructions} 
+        onChange={(e) => setExtraInstructions(e.target.value)} 
+        placeholder={formTranslations.extraInstructionsPlaceholder} 
+      />
+    </Label>
+    <Label>
+      {formTranslations.recommenderUsernameLabel}:
+      <Input
+        type="text"
+        value={recommenderUsername}
+        onChange={(e) => setRecommenderUsername(e.target.value)}
+        placeholder={formTranslations.recommenderUsernamePlaceholder}
+      />
+    </Label>
+  </>
+)}
+
       <SubmitButton type="submit">{formTranslations.submitOrderButton}</SubmitButton>
       <InfoText>{formTranslations.submitOrderExplanation}</InfoText>
     </OrderFormStyle>

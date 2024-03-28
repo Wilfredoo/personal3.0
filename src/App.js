@@ -26,7 +26,8 @@ function App() {
         <Route path="/berlin-break-in" element={<BerlinBreakIn />} />
         <Route path="/cacao" element={<Cacao />} />
         <Route path="/kakao" element={<Cacao />} />
-        <Route path="/cacao/batch/:number" element={<BatchOrders />} />
+        <Route path="/cacao/batch/:batchName" element={<BatchOrders />} />
+        <Route path="/kakao/batch/:batchName" element={<BatchOrders />} />
       </Routes>
     </Router>
   );
