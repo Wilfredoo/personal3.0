@@ -165,10 +165,8 @@ const OrderForm = ({ language, translations }) => {
         placeholder={formTranslations.extraInstructionsPlaceholder} 
       />
     </Label>
-
     <Label>
     <InfoText>{formTranslations.recommenderUsernameLabel}</InfoText>
-
       <Input
         type="text"
         value={recommenderUsername}
