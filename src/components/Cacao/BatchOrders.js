@@ -20,16 +20,13 @@ import {
   Info,
   EmphasizedText
 } from "./styles"
-import copyIcon from '../../assets/images/copy.png'; // Adjust the path as necessary
+import copyIcon from '../../assets/images/copy.png';
 
-
-// Mock data representing batches mapped to orders
 const batchData = {
   capybara: [
     { username: "RecklessCapybara", quantity: 1, orderStatus: "not received" },
     { username: "WanderingCapybara", quantity: 3, orderStatus: "not received" },
   ],
-  // Add other animal names and their orders
 };
 
 const BatchOrders = () => {
