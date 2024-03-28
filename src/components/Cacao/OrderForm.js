@@ -9,7 +9,9 @@ const OrderForm = ({ language, translations }) => {
   const [quantity, setQuantity] = useState(3);
   const [price, setPrice] = useState(0);
   const [shipping, setShipping] = useState('ship');
-  const [recommenderUsername, setRecommenderUsername] = useState('');
+  const searchParams = new URLSearchParams(window.location.search);
+  const referralUsernameFromURL = searchParams.get('referral');
+  const [recommenderUsername, setRecommenderUsername] = useState(referralUsernameFromURL || '');
 
   const formTranslations = translations.orderForm;
 
@@ -45,18 +47,18 @@ const OrderForm = ({ language, translations }) => {
         `Extra Instructions: ${extraInstructions || 'None'}`;
     }
 
-    let recommenderSection = recommenderUsername.trim() 
-    ? `Recommended by: ${recommenderUsername}\n` 
-    : '';
-  
-  const message = `CHOCOLATE ORDER REQUEST:\n` +
-                  `--------------------------\n` +
-                  `Quantity: ${quantity}\n` +
-                  `Price: ${price} euros\n` +
-                  `--------------------------\n` +
-                  `${deliveryDetails}\n` +
-                  `--------------------------\n` +
-                  `${recommenderSection}`;
+    let recommenderSection = recommenderUsername.trim()
+      ? `Recommended by: ${recommenderUsername}\n`
+      : '';
+
+    const message = `CHOCOLATE ORDER REQUEST:\n` +
+      `--------------------------\n` +
+      `Quantity: ${quantity}\n` +
+      `Price: ${price} euros\n` +
+      `--------------------------\n` +
+      `${deliveryDetails}\n` +
+      `--------------------------\n` +
+      `${recommenderSection}`;
     const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -129,52 +131,52 @@ const OrderForm = ({ language, translations }) => {
           {formTranslations.inPersonOption}
         </RadioButtonLabel>
       </Label>
- {shipping === 'ship' && (
-  <>
-    <Label>
-      <Input 
-        type="text" 
-        value={name} 
-        onChange={(e) => setName(e.target.value)} 
-        required 
-        placeholder={formTranslations.firstNamePlaceholder} 
-      />
-    </Label>
-    <Label>
-      <Input 
-        type="text" 
-        value={lastName} 
-        onChange={(e) => setLastName(e.target.value)} 
-        required 
-        placeholder={formTranslations.lastNamePlaceholder} 
-      />
-    </Label>
-    <Label>
-      <Input 
-        type="text" 
-        value={address} 
-        onChange={(e) => setAddress(e.target.value)} 
-        required 
-        placeholder={formTranslations.addressPlaceholder} 
-      />
-    </Label>
-    <Label>
-      <TextArea 
-        value={extraInstructions} 
-        onChange={(e) => setExtraInstructions(e.target.value)} 
-        placeholder={formTranslations.extraInstructionsPlaceholder} 
-      />
-    </Label>
-    <Label>
-    <InfoText>{formTranslations.recommenderUsernameLabel}</InfoText>
-      <Input
-        type="text"
-        value={recommenderUsername}
-        onChange={(e) => setRecommenderUsername(e.target.value)}
-      />
-    </Label>
-  </>
-)}
+      {shipping === 'ship' && (
+        <>
+          <Label>
+            <Input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder={formTranslations.firstNamePlaceholder}
+            />
+          </Label>
+          <Label>
+            <Input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+              placeholder={formTranslations.lastNamePlaceholder}
+            />
+          </Label>
+          <Label>
+            <Input
+              type="text"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              required
+              placeholder={formTranslations.addressPlaceholder}
+            />
+          </Label>
+          <Label>
+            <TextArea
+              value={extraInstructions}
+              onChange={(e) => setExtraInstructions(e.target.value)}
+              placeholder={formTranslations.extraInstructionsPlaceholder}
+            />
+          </Label>
+          <Label>
+            <InfoText>{formTranslations.recommenderUsernameLabel}</InfoText>
+            <Input
+              type="text"
+              value={recommenderUsername}
+              onChange={(e) => setRecommenderUsername(e.target.value)}
+            />
+          </Label>
+        </>
+      )}
       <SubmitButton type="submit">{formTranslations.submitOrderButton}</SubmitButton>
       <InfoText>{formTranslations.submitOrderExplanation}</InfoText>
     </OrderFormStyle>
