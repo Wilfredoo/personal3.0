@@ -49,12 +49,13 @@ const OrderForm = ({ language, translations }) => {
     ? `Recommended by: ${recommenderUsername}\n` 
     : '';
   
-  const message = `Chocolate Order Request:\n` +
+  const message = `CHOCOLATE ORDER REQUEST:\n` +
                   `--------------------------\n` +
                   `Quantity: ${quantity}\n` +
                   `Price: ${price} euros\n` +
                   `--------------------------\n` +
                   `${deliveryDetails}\n` +
+                  `--------------------------\n` +
                   `${recommenderSection}`;
     const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -164,18 +165,18 @@ const OrderForm = ({ language, translations }) => {
         placeholder={formTranslations.extraInstructionsPlaceholder} 
       />
     </Label>
+
     <Label>
-      {formTranslations.recommenderUsernameLabel}:
+    <InfoText>{formTranslations.recommenderUsernameLabel}</InfoText>
+
       <Input
         type="text"
         value={recommenderUsername}
         onChange={(e) => setRecommenderUsername(e.target.value)}
-        placeholder={formTranslations.recommenderUsernamePlaceholder}
       />
     </Label>
   </>
 )}
-
       <SubmitButton type="submit">{formTranslations.submitOrderButton}</SubmitButton>
       <InfoText>{formTranslations.submitOrderExplanation}</InfoText>
     </OrderFormStyle>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   OrderList,
@@ -34,7 +34,7 @@ const batchData = {
 };
 
 const BatchOrders = () => {
-  
+
   const { batchName } = useParams();
   const [clickedButtons, setClickedButtons] = useState(Array(batchData[batchName].length).fill(false));
 
@@ -48,9 +48,9 @@ const BatchOrders = () => {
   const totalBarsOrdered = orders.reduce((total, order) => total + order.quantity, 0);
   const isBatchReadyForProduction = totalBarsOrdered >= 10;
 
-  const copyToClipboard = (text, order, index) => {
+  const copyReferralLinkToClipboard = (text, order, index) => {
     const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://wilfredocasas.com'; // Change the production URL accordingly
-    
+
     navigator.clipboard.writeText(`${baseURL}/cacao?referral=${order.username}&batch=${batchName}`).then(() => {
       // Handle success (show a message, etc.)
       const updatedClickedButtons = [...clickedButtons];
@@ -64,6 +64,16 @@ const BatchOrders = () => {
     }, (err) => {
       // Handle failure (possibly notify the user that the copy failed)
       console.error('Failed to copy: ', err);
+    });
+  };
+
+  const copyPaymentDetailsToClipboard = (text) => {
+    navigator.clipboard.writeText(text).then(() => {
+      // Handle success (show a message, etc.)
+      console.log('Payment details copied to clipboard');
+    }, (err) => {
+      // Handle failure (possibly notify the user that the copy failed)
+      console.error('Failed to copy payment details: ', err);
     });
   };
   
@@ -86,12 +96,12 @@ const BatchOrders = () => {
             <OrderText>Payment status: {order.paymentStatus || "unpaid"}</OrderText>
             <OrderText>Order: {order.orderStatus}</OrderText>
             <CopyButton
-  onClick={() => copyToClipboard(`http://localhost:3000/cacao?referral=${order.username}&batch=${batchName}`, order, index)}
-  className={clickedButtons[index] ? 'clicked' : ''}
->
-            <img src={copyIcon} alt="Copy" />
-            Referral Link
-          </CopyButton>
+              onClick={() => copyReferralLinkToClipboard(`http://localhost:3000/cacao?referral=${order.username}&batch=${batchName}`, order, index)}
+              className={clickedButtons[index] ? 'clicked' : ''}
+            >
+              <img src={copyIcon} alt="Copy" />
+              Referral Link
+            </CopyButton>
 
           </OrderItem>
         ))}
@@ -116,7 +126,7 @@ const BatchOrders = () => {
             <PaymentDetails>
               <AccountDetail><strong>PayPal:</strong> binancewil@protonmail.com</AccountDetail>
             </PaymentDetails>
-            <CopyTextButton onClick={() => copyToClipboard('binancewil@protonmail.com')}>
+            <CopyTextButton onClick={() => copyPaymentDetailsToClipboard('binancewil@protonmail.com')}>
               <img src={copyIcon} alt="Copy" />
               Copy
             </CopyTextButton>
@@ -128,7 +138,7 @@ const BatchOrders = () => {
               <AccountDetail>Name: YAHIR WILFREDO CASAS FARACH</AccountDetail>
               <AccountDetail>IBAN: DE87 1001 1001 2620 8897 48</AccountDetail>
             </PaymentDetails>
-            <CopyTextButton onClick={() => copyToClipboard('DE87 1001 1001 2620 8897 48')}>
+            <CopyTextButton onClick={() => copyPaymentDetailsToClipboard('DE87 1001 1001 2620 8897 48')}>
               <img src={copyIcon} alt="Copy" />
               Copy
             </CopyTextButton>

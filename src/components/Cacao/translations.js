@@ -8,7 +8,7 @@ const translations = {
         
         Thank you!
         
-        Wilfredo`, 
+        Wilfredo`,
         welcomeText: "Welcome to my online Chocolaterie.",
         introText: "Choosing a chocolate bar usually involves a trade-off between health and pleasure. To eliminate this compromise, I make my bars with raw ingredients and minimal processing, allowing you to enjoy the best of both worlds.",
         ingredientsProcesses: "What this chocolate has",
@@ -20,7 +20,6 @@ const translations = {
             "Honey: Raw and unfiltered to preserve all nutritional properties. Sourced from Brandenburg.",
             "Sea Salt"
         ],
-        recommenderUsernameLabel: "If someone recommended you here, write their username so they can get a free bar",
         uniqueChocolateText: [
             [
                 "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color. However, this can lead to the loss of up to 90% of the beneficial flavonoids.",
@@ -45,9 +44,11 @@ const translations = {
             firstNamePlaceholder: "First Name",
             lastNamePlaceholder: "Last Name",
             addressPlaceholder: "Your shipping address",
-            extraInstructionsPlaceholder: "Any additional delivery instructions?",
+            extraInstructionsPlaceholder: "Any additional instructions?",
             submitOrderButton: "Submit Order",
             submitOrderExplanation: "Clicking on 'Submit Order' will open WhatsApp and preformat a message that you can send me with your order details.",
+            recommenderUsernameLabel: "If someone recommended you here, write their username and they'll get a free bar:",
+
         },
         languageButton: "Zu Deutsch wechseln",
         trySomeChocolate: "Get some chocolate",
@@ -70,7 +71,6 @@ const translations = {
         whatMakesUnique: "Was diese Schokolade nicht enthält",
         howToGetBar: "Wie du deine Schokoladentafel bekommst",
         processInfo: "Wie bestellst du eine Tafel dieser Schokolade (Vorerst nur in Berlin)",
-        recommenderUsernameLabel: "If someone recommended you here, write their username so they can get a free bar",
 
         chocolateInfo: [
             "Kakao: Bio, ökologisch und fair gehandelt. Bezogen von peruanischen Bauern.",
@@ -102,9 +102,10 @@ const translations = {
             firstNamePlaceholder: "Vorname",
             lastNamePlaceholder: "Nachname",
             addressPlaceholder: "Deine Versandadresse",
-            extraInstructionsPlaceholder: "Zusätzliche Lieferanweisungen?",
+            extraInstructionsPlaceholder: "Zusätzliche Anweisungen?",
             submitOrderButton: "Bestellung aufgeben",
             submitOrderExplanation: "Wenn du auf 'Bestellung aufgeben' klickst, öffnet sich WhatsApp und du kannst mir eine Nachricht mit deinen Bestelldetails schicken.",
+            recommenderUsernameLabel: "Wenn dich jemand hier empfohlen hat, schreibe ihren Benutzernamen, und sie erhalten eine kostenlose Schokoladenriegel.",
         },
         languageButton: "Zu Englisch wechseln",
         trySomeChocolate: "Schokolade bestellen",

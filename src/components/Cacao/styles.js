@@ -229,8 +229,6 @@ export const EmphasizedText = styled.strong`
 
 export const EmphasizedTextHeader = styled.strong`
   font-size: 1.2rem; // Smaller font size for button text
-
-
 `;
 
 
