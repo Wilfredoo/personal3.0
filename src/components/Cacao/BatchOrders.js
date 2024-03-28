@@ -14,7 +14,6 @@ import {
   CopyTextButton,
   PaymentMethodList,
   PaymentMethodItem,
-  PaymentIcon,
   PaymentDetails,
   AccountDetail,
   EmphasizedTextHeader,
