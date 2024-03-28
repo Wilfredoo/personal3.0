@@ -18,11 +18,18 @@ const OrderForm = ({ language, translations }) => {
   }, [quantity]);
 
   const calculatePrice = (quantity) => {
-    const pricePerBar = 5;
-    const discountPerThreeBars = 3;
-    const numberOfDiscounts = Math.floor(quantity / 3);
-    return (quantity * pricePerBar) - (numberOfDiscounts * discountPerThreeBars);
+    if (quantity === 1) {
+      return 5; // Cost for 1 bar
+    } else if (quantity === 2) {
+      return 9; // Cost for 2 bars
+    } else if (quantity === 3) {
+      return 12; // Cost for 3 bars
+    } else {
+      // Cost for the first 3 bars + 4 euros for each additional bar
+      return 12 + (quantity - 3) * 4;
+    }
   };
+  
 
   const sendWhatsAppMessage = () => {
     let deliveryDetails = '';
