@@ -1,14 +1,10 @@
 import styled from 'styled-components';
-import copyIcon from '../../assets/images/copy.png'; // Adjust the path as necessary
-
-// Use a warm, creamy color for the background, reminiscent of white chocolate.
 const cream = '#f5f5f5';
 const darkChocolate = '#3e2723'; // A rich brown color like dark chocolate.
 const milkChocolate = '#795548'; // A lighter brown, akin to milk chocolate.
 const cacaoPowder = '#5d4037'; // This is a medium brown, similar to cacao powder.
 const chocolateAccent = '#d7ccc8'; // A light chocolate accent for hover states.
 
-// Existing Styled components
 export const Container = styled.div`
   font-family: Arial, sans-serif;
   max-width: 800px;
