@@ -85,13 +85,6 @@ const BatchOrders = () => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  const askForUsername = () => {
-    const message = "Hey Wilfredo, what's my username?";
-    const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-
   return (
     <Container>
       <LanguageButton onClick={handleLanguageToggle}>{t.languageButton}</LanguageButton>
