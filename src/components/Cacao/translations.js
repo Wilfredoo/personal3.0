@@ -7,7 +7,7 @@ const translations = {
         If you're interested in trying some of my handcrafted chocolate alongside {referralUsername}, please make sure to mention their username while placing the order. This way, they will get a free bar.
         
         Thank you!
-        
+
         Wilfredo`,
         welcomeText: "Welcome to my online Chocolaterie.",
         promptText: "Please enter the name of your batch (uppercase or lowercase doesn't matter).",
@@ -29,11 +29,11 @@ const translations = {
                 "Color additives, preservatives, or any kind of enhancer.",
             ]
         ],
-        orderInstructions: [
-            "Gib deine Bestellung unten ein, um die Zahlungsinformationen zu erhalten.",
-            "Nachdem ich Bestellungen für 10 Schokoladenriegel erhalten habe, werde ich mit der Produktion beginnen.",
-            "Danach kannst du erwarten, dass deine Bestellung innerhalb von 2 bis 3 Tagen fertig und an dich geliefert wird."
-        ]
+      orderInstructions: [
+  "Enter your order below. You will receive payment details shortly after.",
+  "After I have received orders for 10 chocolate bars, I will start production.",
+  "After that, you can expect your order to be ready and delivered to you within 2 to 3 days."
+]
         ,
         orderForm: {
             quantityLabel: "Quantity",
@@ -116,10 +116,10 @@ const translations = {
             ]
         ],
         orderInstructions: [
-            "Bestell unten.",
-            "Sobald ich genug Bestellungen für 10 Riegel zusammenhabe, kriegst du die Zahlungsinformationen per WhatsApp.",
-            "Nach der Zahlung leg ich los mit deinem Schokoriegel und sorg dafür, dass er schnell bei dir ist."
-        ],
+            "Gib deine Bestellung unten ein. Die Zahlungsdetails erhältst du kurz darauf.",
+            "Nachdem ich Bestellungen für 10 Schokoladenriegel erhalten habe, beginne ich mit der Produktion.",
+            "Danach kannst du erwarten, dass deine Bestellung innerhalb von 2 bis 3 Tagen fertiggestellt und an dich geliefert wird."
+          ],          
         orderForm: {
             quantityLabel: "Menge",
             priceLabel: "Preis",
