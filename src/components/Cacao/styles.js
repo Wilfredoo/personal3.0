@@ -153,6 +153,13 @@ export const InfoText = styled.p`
   font-size: 0.8rem;
 `;
 
+export const SmallInfoText = styled.p`
+  color: #5D4037;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+`;
+
 export const Footer = styled.footer`
   margin-top: 20px;
   padding-top: 20px;
@@ -212,7 +219,7 @@ export const OrderDetail = styled.div`
   margin-bottom: 5px;
 `;
 
-export const OrderHeader = styled.h3`
+export const OrderHeader = styled.h4`
   margin: 0;
   color: ${milkChocolate};
   font-weight: 600; /* 'semibold' typically corresponds to 600 in font-weight */
@@ -236,7 +243,7 @@ export const OrderText = styled.p`
 export const HighlightContainer = styled.div`
   margin-top: 20px;
   background-color: ${chocolateAccent};
-  padding: 15px;
+  padding: 5px 15px 5px 15px;
   border-radius: 5px;
   color: ${darkChocolate};
 `;

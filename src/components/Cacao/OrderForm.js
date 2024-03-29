@@ -12,7 +12,6 @@ const OrderForm = ({ language, translations }) => {
   const searchParams = new URLSearchParams(window.location.search);
   const referralUsernameFromURL = searchParams.get('referral');
   const [recommenderUsername, setRecommenderUsername] = useState(referralUsernameFromURL || '');
-
   const formTranslations = translations.orderForm;
 
   useEffect(() => {

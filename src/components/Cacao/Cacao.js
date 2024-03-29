@@ -29,8 +29,11 @@ const Cacao = () => {
   const [searchParams] = useSearchParams();
   const referralUsername = searchParams.get('referral');
   const batchName = searchParams.get('batch');
-
   const t = translations[language];
+
+  const ENGLISH_VIDEO_URL = "https://www.youtube.com/embed/wtpuxyX8xV4";
+  const GERMAN_VIDEO_URL = "https://youtube.com/embed/MgcQt64ZxNg";
+  const videoUrl = language === 'de' ? GERMAN_VIDEO_URL : ENGLISH_VIDEO_URL;
 
   useEffect(() => {
     // Set language based on path whenever the location changes
@@ -86,7 +89,7 @@ const Cacao = () => {
   }
   
   
-  
+
   
 
   const handleTryChocolateClick = () => {
@@ -105,8 +108,8 @@ const Cacao = () => {
       <Title>{t.welcomeText}</Title>
       <Info>{t.introText}</Info>
       <VideoWrapper>
-        <StyledIframe
-          src="https://www.youtube.com/embed/wtpuxyX8xV4"
+         <StyledIframe
+          src={videoUrl}
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
