@@ -20,7 +20,6 @@ import {
   NormalButton,
   OrderDateText,
   Subtitle,
-  ButtonWrapper,
   Info,
   UserNameAndQuantity,
   HomeButton,
