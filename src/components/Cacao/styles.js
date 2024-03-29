@@ -17,6 +17,13 @@ export const Title = styled.h1`
   color: ${darkChocolate};
 `;
 
+export const Subtitle = styled.h3`
+  color: ${darkChocolate};
+  font-size: 15px;
+  text-align: center;
+
+`;
+
 export const Section = styled.section`
   margin: 20px 0;
 `;
@@ -100,7 +107,6 @@ export const SubmitButton = styled.button`
 `;
 
 export const TryChocolateButton = styled.button`
-  margin-left: 1rem;
   padding: 10px 15px;
   cursor: pointer;
   background-color: ${darkChocolate};
@@ -118,18 +124,33 @@ export const TryChocolateButton = styled.button`
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 20px; // To match the LanguageButton's margin-top
 `;
 
-export const LanguageButton = styled.button`
-background-color: ${chocolateAccent}; // Use a distinctive color to stand out
-
+export const NormalButton = styled.button`
+margin-right: 10px;
+  background-color: ${chocolateAccent};
   padding: 10px 15px;
   background-color: ${milkChocolate};
   color: white;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s; // Smooth transition for hover effect
+  transition: background-color 0.3s;
+`;
+
+export const ButtonWrapper = styled.div`
+  margin-bottom: 10px;
+`;
+
+
+export const HomeButton = styled.button`
+  margin-right: 10px;
+  background-color: ${chocolateAccent};
+  padding: 10px 15px;
+  background-color: ${milkChocolate};
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 `;
 
 export const PriceInput = styled(Input)`
@@ -200,30 +221,53 @@ export const QuantityInputWrapper = styled.div`
   align-items: center;
 `;
 
-// batch orders
-
 export const OrderList = styled.ul`
   list-style-type: none;
   padding: 0;
+border-radius: 5px;
 `;
 
 export const OrderItem = styled.li`
-  background-color: ${cream};
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
   color: ${cacaoPowder};
+  border-top: 0.5px solid ${cacaoPowder};
+`;
+
+export const OrderDateText = styled.p`
+  font-style: italic;
+  font-size: 0.8em; /* Smaller font size for the date */
+  align-self: flex-end; /* Position the date to the right */
+  margin-top: auto; /* Push the date to the bottom of the container */
+`;
+
+export const OrderHeader = styled.h4`
+  margin: 0;
+  color: ${milkChocolate};
+
+  & > * { // Target all direct children
+    color: inherit; // This makes sure that children inherit the text color from OrderHeader
+    font-weight: inherit; // They also inherit the font-weight
+  }
+`;
+
+export const UserNameAndQuantity = styled.span`
+  font-weight: bold; // This will override the inherited font-weight
+  margin-right: 5px;
+  color: ${darkChocolate}; // Override color if needed, or remove if you want to inherit from OrderHeader
+`;
+
+export const OrderHeaderText = styled.span`
+  // Specific styles here will override those from OrderHeader
+  font-weight: normal; // If you want to ensure it's not bold
+  color: ${milkChocolate}; // Same as OrderHeader, but explicitly set if needed
 `;
 
 export const OrderDetail = styled.div`
   margin-bottom: 5px;
 `;
 
-export const OrderHeader = styled.h4`
-  margin: 0;
-  color: ${milkChocolate};
-  font-weight: 600; /* 'semibold' typically corresponds to 600 in font-weight */
-`;
 
 export const EmphasizedText = styled.strong`
   font-weight: bold;
@@ -244,9 +288,15 @@ export const HighlightContainer = styled.div`
   margin-top: 20px;
   background-color: ${chocolateAccent};
   padding: 5px 15px 5px 15px;
-  border-radius: 5px;
+  border-radius: 2px;
   color: ${darkChocolate};
 `;
+
+
+
+
+
+
 
 // In your styles.js
 

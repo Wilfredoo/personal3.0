@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams, useNavigate } from 'react-router-dom';
+
 import {
   OrderList,
   OrderItem,
@@ -16,22 +17,31 @@ import {
   PaymentMethodItem,
   PaymentDetails,
   AccountDetail,
-  LanguageButton,
+  NormalButton,
+  OrderDateText,
+  Subtitle,
+  ButtonWrapper,
   Info,
+  UserNameAndQuantity,
+  HomeButton,
+  OrderHeaderText
 } from "./styles"
 import copyIcon from '../../assets/images/copy.png';
 import batchData from './Data/BatchData';
 import translations from './translations'; // Adjust the path as needed
-import { useLocation } from 'react-router-dom'; // Import useLocation hook
+import moment from 'moment'; // Import Moment.js
+import 'moment/locale/de'  // without this line it didn't work
 
 const BatchOrders = () => {
   const location = useLocation(); // Use the useLocation hook to get the current location object
-
   const { batchName } = useParams();
-  const [clickedButtons, setClickedButtons] = useState(Array(batchData[batchName].length).fill(false));
+  const batch = batchData[batchName];
   const [language, setLanguage] = useState('en'); // Default to English
-
+  const [orders, setOrders] = useState([]);
+  const navigate = useNavigate();
   const t = translations[language]; // Access translations based on the current language
+  const [clickedButtons, setClickedButtons] = useState([]);
+
 
   useEffect(() => {
     // Set language based on path whenever the location changes
@@ -40,13 +50,38 @@ const BatchOrders = () => {
 
   const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
 
-  const orders = batchData[batchName];
+  useEffect(() => {
+    // Update moment locale when language changes
+    moment.locale(language === 'de' ? 'de' : 'en');
+    // Initialize or update orders based on batch
+    if (batch) {
+      const updatedOrders = batch.map(order => ({
+        ...order,
+        orderDateFromNow: moment(order.orderDate, "DD/MM/YY").fromNow()
+      }));
+      setOrders(updatedOrders);
+      // Also update clickedButtons based on the batch length
+      setClickedButtons(Array(batch.length).fill(false));
+    }
+  }, [batch, language]);
 
-  if (!orders) {
-    // If there's no data for the batch, you might want to redirect or show a message
-    return <Container><Title>Batch not found</Title></Container>;
+
+  if (!batch) {
+    // Here you handle the case where the batch does not exist
+    // You could also use a redirect here instead of rendering a message
+    return (
+      <Container>
+        <Title>Batch not found</Title>
+      </Container>
+    );
   }
 
+  const navigateToHomePage = () => {
+    // Determine the homepage URL based on the current language
+    const homepageURL = language === 'de' ? '/kakao' : '/cacao';
+    // Use the navigate function to navigate
+    navigate(homepageURL);
+  };
 
   const totalBarsOrdered = orders.reduce((total, order) => total + order.quantity, 0);
   const barsNeededForProduction = 10;
@@ -70,6 +105,7 @@ const BatchOrders = () => {
     });
   };
 
+  const sortedOrders = orders.sort((a, b) => moment(b.orderDate, "DD/MM/YY") - moment(a.orderDate, "DD/MM/YY"));
 
   const copyPaymentDetailsToClipboard = (text) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -87,9 +123,16 @@ const BatchOrders = () => {
 
   return (
     <Container>
-      <LanguageButton onClick={handleLanguageToggle}>{t.languageButton}</LanguageButton>
-      <Title>{t.batchOrders.title.replace("{batchName}", capitalizeFirstLetter(batchName))}</Title>
+      <HomeButton onClick={navigateToHomePage}>{t.batchOrders.goToHomePage}</HomeButton>
+      <NormalButton onClick={handleLanguageToggle}>{t.languageButton}</NormalButton>
+      <Title>{t.batchOrders.title}</Title>
+      <Info>
+        {t.batchOrders.introInfo}
+      </Info>
+
       <HighlightContainer>
+        <Subtitle>{t.batchOrders.overview}</Subtitle>
+        <Info>{t.batchOrders.batchNameLine.replace("{batchName}", capitalizeFirstLetter(batchName))}</Info>
         <Info>
           {t.batchOrders.totalBarsOrdered.replace("{totalBarsOrdered}", totalBarsOrdered)}
         </Info>
@@ -99,24 +142,30 @@ const BatchOrders = () => {
         <Info>
           {isBatchReadyForProduction ? t.batchOrders.statusReady : t.batchOrders.statusNotReady.replace("{remainingBarsNeeded}", remainingBarsNeeded).replace("(s)", remainingBarsNeeded > 1 ? "s" : "")}
         </Info>
-
       </HighlightContainer>
       <OrderList>
-        {orders.map((order, index) => (
+        <Subtitle>{t.batchOrders.orders}</Subtitle>
+        {sortedOrders.map((order, index) => (
           <OrderItem key={index}>
             <OrderHeader>
               {language === 'de'
-                ? t.batchOrders.ordered
-                  .replace("{username}", order.username)
-                  .replace("{quantity}", order.quantity.toString())
-                  .replace("Tafel", order.quantity > 1 ? "Tafeln" : "Tafel")
-                : t.batchOrders.ordered
-                  .replace("{username}", order.username)
-                  .replace("{quantity}", order.quantity.toString())
-                  .replace("(s)", order.quantity > 1 ? "s" : "")
+                ? <>
+                  <UserNameAndQuantity>
+                    {order.username} {order.quantity.toString()} {order.quantity > 1 ? "Tafeln" : "Tafel"}
+                  </UserNameAndQuantity>
+                  <OrderHeaderText>{t.batchOrders.orderedText}</OrderHeaderText>
+                </>
+                : <>
+                  <UserNameAndQuantity>
+                    {order.username} ordered {order.quantity.toString()} {order.quantity > 1 ? "bars" : "bar"}
+                  </UserNameAndQuantity>
+                  <OrderHeaderText>{t.batchOrders.orderedText}</OrderHeaderText>
+                </>
               }
             </OrderHeader>
-
+            <OrderDateText>
+              {t.batchOrders.orderDate.replace("{orderDateFromNow}", order.orderDateFromNow)}
+            </OrderDateText>
             <OrderText>
               {t.batchOrders.paymentStatus.replace("{paymentStatus}", order.paymentStatus || "unpaid")}
             </OrderText>
@@ -140,6 +189,7 @@ const BatchOrders = () => {
               <img src={copyIcon} alt={t.batchOrders.copyReferralLink} />
               {t.batchOrders.copyReferralLink}
             </CopyButton>
+
           </OrderItem>
         ))}
         <InfoText>

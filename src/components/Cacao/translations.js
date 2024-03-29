@@ -10,6 +10,7 @@ const translations = {
         
         Wilfredo`,
         welcomeText: "Welcome to my online Chocolaterie.",
+        promptText: "Please enter the name of your batch (uppercase or lowercase doesn't matter).",
         introText: "Choosing a chocolate bar usually involves a trade-off between health and pleasure. To eliminate this compromise, I make my bars with raw ingredients and minimal processing, allowing you to enjoy the best of both worlds.",
         ingredientsProcesses: "What this chocolate has",
         whatMakesUnique: "What this chocolate does not have",
@@ -51,11 +52,13 @@ const translations = {
 
         },
         batchOrders: {
-            title: "Batch {batchName}",
-            totalBarsOrdered: "Total orders: {totalBarsOrdered} bars",
-            goal: "Goal to start production: 10 bars",
+            goToHomePage:"Back Home",
+            title: "Status Page",
+            batchNameLine: "Name of your batch: {batchName}",
+            totalBarsOrdered: "Total orders to date: {totalBarsOrdered} bars",
+            goal: "Goal: 10 bars",
             statusReady: "Production in progress",
-            statusNotReady: "Status: Waiting for {remainingBarsNeeded} more orders",
+            statusNotReady: "Status: Waiting for {remainingBarsNeeded} more orders to start production.",
             referralLinkInfo: "Share your referral link to speed up reaching our 10 bar goal. Plus, you'll receive a free bar for every new user who places an order using your username.",
             forgotUsername: "Forgot your username? Simply click here and ask Wilfredo",
             paymentInstructions: "To pay for your order, please use one of the following methods:",
@@ -65,13 +68,18 @@ const translations = {
             iban: "IBAN: DE87 1001 1001 2620 8897 48",
             copyButton: "Copy",
             referralLinkButton: "Referral Link",
-            ordered: "{username} ordered {quantity} serious bar(s) of chocolate",
+            ordered: "{username} ordered {quantity} bar(s) of chocolate",
             paymentStatus: "Payment status: {paymentStatus}",
             orderStatus: "Order: {orderStatus}",
             copyReferralLink: "Referral Link",
+            orderDate: "{orderDateFromNow}",
+            overview: "Overview",
+            orders: "Orders",
+            introInfo: "Here you will find everything related to the status of your order + payment details at the bottom of the page."
         },
         languageButton: "Zu Deutsch wechseln",
         trySomeChocolate: "Get some chocolate",
+        checkOrderStatus: "See my order status",
         footer: "Something not working as expected? Send me a message on Signal or WhatsApp to +4915781295360 with your complaints."
     },
     de: {
@@ -91,7 +99,7 @@ const translations = {
         whatMakesUnique: "Was diese Schokolade nicht enthält",
         howToGetBar: "Wie du deine Schokoladentafel bekommst",
         processInfo: "Wie bestellst du eine Tafel dieser Schokolade (Vorerst nur in Berlin)",
-
+        promptText: "Bitte gib den Namen deines Batches ein, Groß- oder Kleinschreibung spielt keine Rolle.",
         chocolateInfo: [
             "Kakao: Bio, ökologisch und fair gehandelt. Bezogen von peruanischen Bauern.",
             "Kakaobutter: Ebenfalls bio und ökologisch, bezogen aus denselben peruanischen Anbaugebieten wie der Kakao.",
@@ -127,13 +135,14 @@ const translations = {
             submitOrderExplanation: "Wenn du auf 'Bestellung aufgeben' klickst, öffnet sich WhatsApp und du kannst mir eine Nachricht mit deinen Bestelldetails schicken.",
             recommenderUsernameLabel: "Wenn dich jemand hier empfohlen hat, schreibe ihren Benutzernamen, und sie erhalten eine kostenlose Schokoladenriegel.",
         },
-
         batchOrders: {
-            title: "Charge {batchName}",
+            goToHomePage:"Starseite",
+            title: "Statusseite",
+            batchNameLine: "Name of your order group: {batchName}",
             totalBarsOrdered: "Insgesamt bestellte Riegel: {totalBarsOrdered}",
-            goal: "Ziel, um mit der Produktion zu beginnen: 10 Riegel",
+            goal: "Ziel: 10 Riegel",
             statusReady: "Produktion läuft",
-            statusNotReady: "Status: Warten auf {remainingBarsNeeded} weitere Bestellungen",            
+            statusNotReady: "Status: Warten auf {remainingBarsNeeded} weitere Bestellungen, um die Produktion zu starten.",            
             referralLinkInfo: "Teile deinen Empfehlungslink, um unser Ziel von 10 Riegeln schneller zu erreichen. Zusätzlich erhältst du für jeden Neukunden, der mit deinem Benutzernamen bestellt, einen kostenlosen Riegel.",
             forgotUsername: "Hast du deinen Benutzernamen vergessen? Einfach hier klicken und Wilfredo fragen",
             paymentInstructions: "Um deine Bestellung zu bezahlen, nutze bitte eine der folgenden Methoden:",
@@ -143,15 +152,21 @@ const translations = {
             iban: "IBAN: DE87 1001 1001 2620 8897 48",
             copyButton: "Kopieren",
             referralLinkButton: "Empfehlungslink",
-            ordered: "{username} hat {quantity} ernsthafte Tafel Schokolade bestellt",
+            ordered: "{username} hat {quantity} Tafel Schokolade bestellt",
             paymentStatus: "Zahlungsstatus: {paymentStatus}",
             orderStatus: "Bestellung: {orderStatus}",
-            copyReferralLink: "Empfehlungslink"
+            copyReferralLink: "Empfehlungslink",
+            orderDate: "{orderDateFromNow}",
+            overview: "Übersicht",
+            orders: "Bestellungen",
+            introInfo: "Hier finden Sie alles zum Status Ihrer Bestellung + Zahlungsdetails am Ende der Seite."
+            
         },
         
-        languageButton: "Zu Englisch wechseln",
+        languageButton: "Change to English",
         trySomeChocolate: "Schokolade bestellen",
-        footer: "Läuft etwas nicht wie erwartet? Schick mir eine Nachricht über Signal oder WhatsApp an +4915781295360 mit deinen Beschwerden."
+        footer: "Läuft etwas nicht wie erwartet? Schick mir eine Nachricht über Signal oder WhatsApp an +4915781295360 mit deinen Beschwerden.",
+        checkOrderStatus: "Bestellung verfolgen"
     }
 };
 

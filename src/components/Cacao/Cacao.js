@@ -6,7 +6,7 @@ import {
   SectionTitle,
   Info,
   ToggleSymbol,
-  LanguageButton,
+  NormalButton,
   Footer,
   VideoWrapper,
   StyledIframe,
@@ -15,17 +15,18 @@ import {
   HighlightContainer,
   EmphasizedText
 } from './styles';
-import translations from './translations'; // Adjust the path as needed
+import translations from './translations';
 import OrderForm from './OrderForm';
-import { useLocation } from 'react-router-dom'; // Import useLocation hook
+import { useLocation } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Cacao = () => {
-  const location = useLocation(); // Use the useLocation hook to get the current location object
+  const location = useLocation();
   const [language, setLanguage] = useState('en');
   const [activeSection, setActiveSection] = useState('');
-  const orderSectionRef = useRef(null); // Create a ref for the order section
+  const orderSectionRef = useRef(null);
   const [searchParams] = useSearchParams();
   const referralUsername = searchParams.get('referral');
   const batchName = searchParams.get('batch');
@@ -34,6 +35,7 @@ const Cacao = () => {
   const ENGLISH_VIDEO_URL = "https://www.youtube.com/embed/wtpuxyX8xV4";
   const GERMAN_VIDEO_URL = "https://youtube.com/embed/MgcQt64ZxNg";
   const videoUrl = language === 'de' ? GERMAN_VIDEO_URL : ENGLISH_VIDEO_URL;
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Set language based on path whenever the location changes
@@ -86,11 +88,15 @@ const Cacao = () => {
         })}
       </HighlightContainer>
     );
-  }
+  } 
   
-  
-
-  
+  const handleCheckOrderStatus = () => {
+    const userInput = prompt(t.promptText);
+    if (userInput) {
+      const routePath = language === 'de' ? '/kakao/batch' : '/cacao/batch';
+      navigate(`${routePath}/${userInput.trim().toLowerCase()}`); // Assumes batch names and usernames are stored in lowercase
+    }
+  };
 
   const handleTryChocolateClick = () => {
     toggleSection('processInfo');
@@ -100,10 +106,14 @@ const Cacao = () => {
     <Container>
       {referralUsername && batchName && renderSharedMessage(language, referralUsername, batchName)}
       <ButtonContainer>
-        <LanguageButton onClick={handleLanguageToggle}>{t.languageButton}</LanguageButton>
+        <NormalButton onClick={handleLanguageToggle}>{t.languageButton}</NormalButton>
+        <NormalButton onClick={handleCheckOrderStatus}>
+          {t.checkOrderStatus} {/* You need to add this to your translations */}
+        </NormalButton>
         <TryChocolateButton onClick={handleTryChocolateClick}>
           {t.trySomeChocolate}
         </TryChocolateButton>
+        
       </ ButtonContainer>
       <Title>{t.welcomeText}</Title>
       <Info>{t.introText}</Info>
