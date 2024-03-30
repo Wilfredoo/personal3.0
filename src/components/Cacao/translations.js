@@ -23,7 +23,7 @@ const translations = {
         ],
         uniqueChocolateText: [
             [
-                "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color. However, this can lead to the loss of up to 90% of the beneficial flavonoids.",
+                "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color, which can lead to the loss of up to 90% of the beneficial flavonoids.",
                 "Cocoa powder: Processed cacao that has undergone various processes, such as the Broma process, to facilitate preservation and complex logistics, but at the cost of its natural flavor and nutritional properties.",
                 "Sugar: No trace of sugar in Wilfredo's kitchen.",
                 "Color additives, preservatives, or any kind of enhancer.",
