@@ -73,7 +73,7 @@ const Curriculum = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = `${process.env.PUBLIC_URL}/Resume_Developer.pdf`;
-    link.download = 'Resume_Developer.pdf';
+    link.download = 'Resume_Wilfredo.pdf';
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
