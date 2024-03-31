@@ -150,7 +150,7 @@ const BatchOrders = () => {
               {language === 'de'
                 ? <>
                   <UserNameAndQuantity>
-                    {order.username} {order.quantity.toString()} {order.quantity > 1 ? "Tafeln" : "Tafel"}
+                    {order.username} hat {order.quantity.toString()} {order.quantity > 1 ? "Tafeln" : "Tafel"} bestellt
                   </UserNameAndQuantity>
                   <OrderHeaderText>{t.batchOrders.orderedText}</OrderHeaderText>
                 </>

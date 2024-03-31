@@ -152,7 +152,6 @@ const translations = {
             iban: "IBAN: DE87 1001 1001 2620 8897 48",
             copyButton: "Kopieren",
             referralLinkButton: "Empfehlungslink",
-            ordered: "{username} hat {quantity} Tafel Schokolade bestellt",
             paymentStatus: "Zahlungsstatus: {paymentStatus}",
             orderStatus: "Bestellung: {orderStatus}",
             copyReferralLink: "Empfehlungslink",
