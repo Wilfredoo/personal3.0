@@ -6,7 +6,7 @@ const batchData = {
       quantity: 1,
       paymentStatus:
         "unpaid",
-      orderStatus: "not received",
+      orderStatus: "not delivered",
       hint: "KG",
       orderDate: "26/03/24"
     },
@@ -15,7 +15,7 @@ const batchData = {
       quantity: 3,
       paymentStatus:
         "unpaid",
-      orderStatus: "not received",
+      orderStatus: "not delivered",
       hint: "JN",
       orderDate: "26/03/24"
     },
@@ -23,11 +23,19 @@ const batchData = {
       username: "CuriousCapybara",
       quantity: 2,
       paymentStatus:
-        "unpaid",
-      orderStatus: "not received",
+        "paid",
+      orderStatus: "not delivered",
       hint: "MS",
       orderDate: "28/03/24"
     },
+    {
+      username: "CosmicCapybara",
+      quantity: 3,
+      price: 12,
+      orderStatus: "not delivered",
+      name: "FH",
+      orderDate: "30/03/24"
+    }
     // Add more batches and users as needed
   ],
   // Additional batches can
