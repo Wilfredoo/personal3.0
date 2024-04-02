@@ -23,8 +23,8 @@ const translations = {
         ],
         uniqueChocolateText: [
             [
-                "Potassium carbonate: Usually added during the 'Dutch process' to reduce cacao's natural bitterness and darken its color, which can lead to the loss of up to 90% of the beneficial flavonoids.",
-                "Cocoa powder: Processed cacao that has undergone various processes, such as the Broma process, to facilitate preservation and complex logistics, but at the cost of its natural flavor and nutritional properties.",
+                "Potassium carbonate: an alkalizing agent used during a method called the Dutch process to soften cacao's bitterness and enhance its color, potentially reducing flavonoid content by up to 90%. The extent of its use in chocolate production is unclear, as it's applied during processing and not listed as an ingredient in the final product.",
+                "Cocoa powder: Processed cacao that has undergone various processes, such as the Broma process, to facilitate long term preservation, but at the cost of its natural flavor and nutritional properties.",
                 "Sugar: No trace of sugar in Wilfredo's kitchen.",
                 "Color additives, preservatives, or any kind of enhancer.",
             ]
@@ -109,7 +109,7 @@ const translations = {
 
         uniqueChocolateText: [
             [
-                "Kaliumkarbonat: Wird normalerweise während des 'Dutch-Verfahrens' hinzugefügt, um die natürliche Bitterkeit des Kakaos zu reduzieren und seine Farbe zu vertiefen. Dies kann jedoch zum Verlust von bis zu 90% der vorteilhaften Flavonoide führen.",
+                "Kaliumkarbonat: ein Alkalisierungsmittel, das während eines Verfahrens namens niederländischer Prozess verwendet wird, um die Bitterkeit von Kakao zu mildern und seine Farbe zu verbessern, was potenziell den Flavonoidgehalt um bis zu 90% reduzieren kann. Wie weit es in der Schokoladenherstellung verwendet wird, bleibt unklar, da es während der Verarbeitung eingesetzt und nicht als Zutat im Endprodukt aufgeführt wird.",
                 "Kakaopulver: Verarbeiteter Kakao, der verschiedene Verfahren wie das Broma-Verfahren durchlaufen hat, um die Konservierung und komplexe Logistik zu erleichtern, allerdings auf Kosten seines natürlichen Geschmacks und seiner Nährstoffeigenschaften.",
                 "Zucker: Keine Spur von Zucker in Wilfredos Küche.",
                 "Farbzusätze, Konservierungsmittel oder jegliche Art von Verstärkern: Nicht vorhanden.",
