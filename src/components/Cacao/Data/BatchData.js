@@ -31,10 +31,18 @@ const batchData = {
     {
       username: "CosmicCapybara",
       quantity: 3,
-      price: 12,
       orderStatus: "not delivered",
+      paymentStatus: "paid",
       name: "FH",
       orderDate: "30/03/24"
+    },
+    {
+      username: "CosmicCapybara",
+      quantity: 1,
+      orderStatus: "not delivered",
+      paymentStatus: "unpaid",
+      name: "SA",
+      orderDate: "02/04/24"
     }
     // Add more batches and users as needed
   ],
