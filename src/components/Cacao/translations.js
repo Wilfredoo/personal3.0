@@ -62,7 +62,7 @@ const translations = {
             referralLinkInfo: "Share your referral link to speed up reaching our 10 bar goal. Plus, you'll receive a free bar for every new user who places an order using your username.",
             forgotUsername: "Forgot your username? Simply click here and ask Wilfredo",
             paymentInstructions: "To pay for your order, please use one of the following methods:",
-            paypalInfo: "PayPal: inbox@wilfredocasas.com",
+            paypalInfo: "PayPal: binancewil@protonmail.com",
             transferInfo: "Transfer",
             accountName: "Name: YAHIR WILFREDO CASAS FARACH",
             iban: "IBAN: DE87 1001 1001 2620 8897 48",
@@ -106,7 +106,6 @@ const translations = {
             "Honig: Roh und ungefiltert, um alle Nährstoffeigenschaften zu bewahren. Bezogen aus Brandenburg.",
             "Meersalz"
         ],
-
         uniqueChocolateText: [
             [
                 "Kaliumkarbonat: ein Alkalisierungsmittel, das während eines Verfahrens namens niederländischer Prozess verwendet wird, um die Bitterkeit von Kakao zu mildern und seine Farbe zu verbessern, was potenziell den Flavonoidgehalt um bis zu 90% reduzieren kann. Wie weit es in der Schokoladenherstellung verwendet wird, bleibt unklar, da es während der Verarbeitung eingesetzt und nicht als Zutat im Endprodukt aufgeführt wird.",

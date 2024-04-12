@@ -31,6 +31,7 @@ const batchData = {
     {
       username: "CosmicCapybara",
       quantity: 3,
+      recommendedBy: "RecklessCapybara",
       orderStatus: "not delivered",
       paymentStatus: "paid",
       name: "FH",
@@ -44,6 +45,19 @@ const batchData = {
       name: "SA",
       orderDate: "02/04/24"
     }
+    // Add more batches and users as needed
+  ],
+  meerkat: [
+    {
+      username: "MysticMeerkat",
+      quantity: 2,
+      paymentStatus:
+        "unpaid",
+      orderStatus: "not delivered",
+      hint: "BF",
+      orderDate: "10/04/24"
+    },
+   
     // Add more batches and users as needed
   ],
   // Additional batches can

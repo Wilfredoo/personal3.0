@@ -40,7 +40,9 @@ const BatchOrders = () => {
   const navigate = useNavigate();
   const t = translations[language]; // Access translations based on the current language
   const [clickedButtons, setClickedButtons] = useState([]);
+  const recommenders = new Set(batch.map(order => order.recommendedBy).filter(Boolean));
 
+  console.log("recommenders", recommenders)
 
   useEffect(() => {
     // Set language based on path whenever the location changes
@@ -75,6 +77,29 @@ const BatchOrders = () => {
     );
   }
 
+  const calculateTotalBars = (orders) => {
+    let total = 0;
+    const recommenders = new Set(); // Track recommenders
+  
+    // Calculate total based on order quantity
+    orders.forEach(order => {
+      total += order.quantity;
+      if (order.recommendedBy) {
+        recommenders.add(order.recommendedBy); // Add recommender to set
+      }
+    });
+  
+    // Add an extra bar for each unique recommender
+    orders.forEach(order => {
+      if (recommenders.has(order.username)) {
+        total += 1; // Add an extra bar for being a recommender
+      }
+    });
+  
+    return total;
+  };
+  
+
   const navigateToHomePage = () => {
     // Determine the homepage URL based on the current language
     const homepageURL = language === 'de' ? '/kakao' : '/cacao';
@@ -82,7 +107,8 @@ const BatchOrders = () => {
     navigate(homepageURL);
   };
 
-  const totalBarsOrdered = orders.reduce((total, order) => total + order.quantity, 0);
+  const totalBarsOrdered = calculateTotalBars(orders);
+
   const barsNeededForProduction = 10;
   const remainingBarsNeeded = barsNeededForProduction - totalBarsOrdered;
   const isBatchReadyForProduction = remainingBarsNeeded <= 0;
