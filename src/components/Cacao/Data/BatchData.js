@@ -5,7 +5,7 @@ const batchData = {
       username: "RecklessCapybara",
       quantity: 1,
       paymentStatus:
-        "unpaid",
+        "paid",
       orderStatus: "not delivered",
       hint: "KG",
       orderDate: "26/03/24"
@@ -52,7 +52,7 @@ const batchData = {
       username: "MysticMeerkat",
       quantity: 2,
       paymentStatus:
-        "unpaid",
+        "paid",
       orderStatus: "not delivered",
       hint: "BF",
       orderDate: "10/04/24"
