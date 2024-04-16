@@ -30,9 +30,9 @@ const translations = {
             ]
         ],
       orderInstructions: [
-  "Enter your order below. You will receive payment details shortly after.",
-  "After I have received orders for 10 chocolate bars, I will start production.",
-  "After that, you can expect your order to be ready and delivered to you within 2 to 3 days."
+          "After I have received orders for 10 chocolate bars, I will start production.",
+          "Enter your order below. You will receive payment details shortly after.",
+          "This chocolate takes time. Expect your bar to be ready in 5 days to 1 month after production begins."
 ]
         ,
         orderForm: {
@@ -117,7 +117,7 @@ const translations = {
         orderInstructions: [
             "Gib deine Bestellung unten ein. Die Zahlungsdetails erhältst du kurz darauf.",
             "Nachdem ich Bestellungen für 10 Schokoladenriegel erhalten habe, beginne ich mit der Produktion.",
-            "Danach kannst du erwarten, dass deine Bestellung innerhalb von 2 bis 3 Tagen fertiggestellt und an dich geliefert wird."
+            "Die Herstellung dieser Schokolade dauert seine Zeit. Erwarte, dass deine Tafel zwischen 5 Tagen und einem Monat nach Produktionsbeginn fertig ist."
           ],          
         orderForm: {
             quantityLabel: "Menge",
