@@ -60,9 +60,20 @@ const batchData = {
         "paid",
       orderStatus: "not delivered",
       hint: "BF",
-      orderDate: "10/04/24"
+      orderDate: "10/04/24",
+      language: "EN"
+
     },
-   
+    {
+      username: "DaringMeerkat",
+      quantity: 3,
+      paymentStatus:
+        "unpaid",
+      orderStatus: "not delivered",
+      hint: "SC",
+      orderDate: "16/04/24",
+      language: "EN"
+    },
     // Add more batches and users as needed
   ],
   // Additional batches can
