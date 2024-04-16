@@ -20,16 +20,8 @@ const OrderForm = ({ language, translations }) => {
   }, [quantity]);
 
   const calculatePrice = (quantity) => {
-    if (quantity === 1) {
-      return 5; // Cost for 1 bar
-    } else if (quantity === 2) {
-      return 9; // Cost for 2 bars
-    } else if (quantity === 3) {
-      return 12; // Cost for 3 bars
-    } else {
-      // Cost for the first 3 bars + 4 euros for each additional bar
-      return 12 + (quantity - 3) * 4;
-    }
+    // Fixed price per bar
+    return 5 * quantity;
   };
 
 

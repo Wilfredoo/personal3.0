@@ -8,7 +8,8 @@ const batchData = {
         "paid",
       orderStatus: "not delivered",
       hint: "KG",
-      orderDate: "26/03/24"
+      orderDate: "26/03/24",
+      language: "EN"
     },
     {
       username: "WanderingCapybara",
@@ -17,7 +18,8 @@ const batchData = {
         "unpaid",
       orderStatus: "not delivered",
       hint: "JN",
-      orderDate: "26/03/24"
+      orderDate: "26/03/24",
+      language: "DE"
     },
     {
       username: "CuriousCapybara",
@@ -26,7 +28,8 @@ const batchData = {
         "paid",
       orderStatus: "not delivered",
       hint: "MS",
-      orderDate: "28/03/24"
+      orderDate: "28/03/24",
+      language: "DE"
     },
     {
       username: "CosmicCapybara",
@@ -35,7 +38,8 @@ const batchData = {
       orderStatus: "not delivered",
       paymentStatus: "paid",
       name: "FH",
-      orderDate: "30/03/24"
+      orderDate: "30/03/24",
+      language: "DE"
     },
     {
       username: "VibrantCapybara",
@@ -43,7 +47,8 @@ const batchData = {
       orderStatus: "not delivered",
       paymentStatus: "unpaid",
       name: "SA",
-      orderDate: "02/04/24"
+      orderDate: "02/04/24",
+      language: "EN"
     }
     // Add more batches and users as needed
   ],
