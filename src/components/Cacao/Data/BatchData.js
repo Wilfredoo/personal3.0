@@ -68,7 +68,7 @@ const batchData = {
       username: "DaringMeerkat",
       quantity: 3,
       paymentStatus:
-        "unpaid",
+        "paid",
       orderStatus: "not delivered",
       hint: "SC",
       orderDate: "16/04/24",
