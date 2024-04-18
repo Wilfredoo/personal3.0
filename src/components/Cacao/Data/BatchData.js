@@ -70,8 +70,18 @@ const batchData = {
       paymentStatus:
         "paid",
       orderStatus: "not delivered",
-      hint: "SC",
+      hint: "SebFootball",
       orderDate: "16/04/24",
+      language: "EN"
+    },
+    {
+      username: "ChivalrousMeerkat",
+      quantity: 1,
+      paymentStatus:
+        "unpaid",
+      orderStatus: "not delivered",
+      hint: "MiFootball",
+      orderDate: "18/04/24",
       language: "EN"
     },
     // Add more batches and users as needed
