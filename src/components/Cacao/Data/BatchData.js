@@ -6,7 +6,7 @@ const batchData = {
       quantity: 1,
       paymentStatus:
         "paid",
-      orderStatus: "not delivered",
+      orderStatus: "Delivered",
       hint: "KG",
       orderDate: "26/03/24",
       language: "EN"
@@ -16,7 +16,7 @@ const batchData = {
       quantity: 3,
       paymentStatus:
         "unpaid",
-      orderStatus: "not delivered",
+      orderStatus: "Delivered",
       hint: "JN",
       orderDate: "26/03/24",
       language: "DE"
@@ -26,7 +26,7 @@ const batchData = {
       quantity: 2,
       paymentStatus:
         "paid",
-      orderStatus: "not delivered",
+      orderStatus: "Delivered",
       hint: "MS",
       orderDate: "28/03/24",
       language: "DE"
