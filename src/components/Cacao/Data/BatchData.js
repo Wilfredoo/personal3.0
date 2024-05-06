@@ -15,7 +15,7 @@ const batchData = {
       username: "WanderingCapybara",
       quantity: 3,
       paymentStatus:
-        "unpaid",
+        "paid",
       orderStatus: "Delivered",
       hint: "JN",
       orderDate: "26/03/24",
@@ -35,7 +35,7 @@ const batchData = {
       username: "CosmicCapybara",
       quantity: 3,
       recommendedBy: "RecklessCapybara",
-      orderStatus: "not delivered",
+      orderStatus: "Delivered",
       paymentStatus: "paid",
       name: "FH",
       orderDate: "30/03/24",
@@ -44,8 +44,8 @@ const batchData = {
     {
       username: "VibrantCapybara",
       quantity: 1,
-      orderStatus: "not delivered",
-      paymentStatus: "unpaid",
+      orderStatus: "Delivered",
+      paymentStatus: "paid",
       name: "SA",
       orderDate: "02/04/24",
       language: "EN"
