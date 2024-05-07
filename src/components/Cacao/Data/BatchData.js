@@ -7,7 +7,7 @@ const batchData = {
       paymentStatus:
         "paid",
       orderStatus: "Delivered",
-      hint: "KG",
+      hint: "Kathy G.",
       orderDate: "26/03/24",
       language: "EN"
     },
@@ -17,7 +17,7 @@ const batchData = {
       paymentStatus:
         "paid",
       orderStatus: "Delivered",
-      hint: "JN",
+      hint: "Jon",
       orderDate: "26/03/24",
       language: "DE"
     },
@@ -27,7 +27,7 @@ const batchData = {
       paymentStatus:
         "paid",
       orderStatus: "Delivered",
-      hint: "MS",
+      hint: "Manuel S.",
       orderDate: "28/03/24",
       language: "DE"
     },
@@ -37,7 +37,7 @@ const batchData = {
       recommendedBy: "RecklessCapybara",
       orderStatus: "Delivered",
       paymentStatus: "paid",
-      name: "FH",
+      name: "Franziska H.",
       orderDate: "30/03/24",
       language: "DE"
     },
@@ -46,7 +46,7 @@ const batchData = {
       quantity: 1,
       orderStatus: "Delivered",
       paymentStatus: "paid",
-      name: "SA",
+      name: "Sid Flag",
       orderDate: "02/04/24",
       language: "EN"
     }
@@ -59,7 +59,7 @@ const batchData = {
       paymentStatus:
         "paid",
       orderStatus: "not delivered",
-      hint: "BF",
+      hint: "Blake F.",
       orderDate: "10/04/24",
       language: "EN"
 
@@ -70,7 +70,7 @@ const batchData = {
       paymentStatus:
         "paid",
       orderStatus: "not delivered",
-      hint: "SebFootball",
+      hint: "Sebastian Flag",
       orderDate: "16/04/24",
       language: "EN"
     },
@@ -78,9 +78,9 @@ const batchData = {
       username: "ChivalrousMeerkat",
       quantity: 1,
       paymentStatus:
-        "unpaid",
+        "paid",
       orderStatus: "not delivered",
-      hint: "MiFootball",
+      hint: "Michael Flag",
       orderDate: "18/04/24",
       language: "EN"
     },
@@ -88,9 +88,9 @@ const batchData = {
       username: "CuriousMeerkat",
       quantity: 3,
       paymentStatus:
-        "unpaid",
+        "paid",
       orderStatus: "not delivered",
-      hint: "ReHe",
+      hint: "Rebecca H.",
       orderDate: "04/05/24",
       language: "DE"
     },
