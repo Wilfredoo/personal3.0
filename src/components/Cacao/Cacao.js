@@ -28,7 +28,7 @@ import { useNavigate } from 'react-router-dom';
 const Cacao = () => {
   const location = useLocation();
   const [language, setLanguage] = useState('en');
-  // const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState('');
   const orderSectionRef = useRef(null);
   const [searchParams] = useSearchParams();
   const referralUsername = searchParams.get('referral');
@@ -111,6 +111,8 @@ const Cacao = () => {
   // const handleTryChocolateClick = () => {
   //   toggleSection('processInfo');
   // };
+
+  activeSection = "asdasdasd" // just to use it, get rid of this line whenever u activate store again
 
   return (
     <Container>
