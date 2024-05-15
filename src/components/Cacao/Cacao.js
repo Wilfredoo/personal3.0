@@ -19,7 +19,7 @@ import {
 } from './styles';
 
 import translations from './translations';
-import OrderForm from './OrderForm';
+// import OrderForm from './OrderForm';
 import { useLocation } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -28,7 +28,7 @@ import { useNavigate } from 'react-router-dom';
 const Cacao = () => {
   const location = useLocation();
   const [language, setLanguage] = useState('en');
-  const [activeSection, setActiveSection] = useState('');
+  // const [activeSection, setActiveSection] = useState('');
   const orderSectionRef = useRef(null);
   const [searchParams] = useSearchParams();
   const referralUsername = searchParams.get('referral');
@@ -38,7 +38,7 @@ const Cacao = () => {
 
   const ENGLISH_VIDEO_URL = "https://www.youtube.com/embed/wtpuxyX8xV4";
   const GERMAN_VIDEO_URL = "https://youtube.com/embed/MgcQt64ZxNg";
-  const videoUrl = language === 'de' ? GERMAN_VIDEO_URL : ENGLISH_VIDEO_URL;
+  // const videoUrl = language === 'de' ? GERMAN_VIDEO_URL : ENGLISH_VIDEO_URL;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Cacao = () => {
     setLanguage(location.pathname.includes('/kakao') ? 'de' : 'en');
   }, [location]);
 
-  const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
+  // const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
 
   // const toggleSection = (section) => setActiveSection(prevSection => prevSection === section ? '' : section);
 
@@ -68,10 +68,7 @@ const Cacao = () => {
     window.open(whatsappUrl, '_blank');
   };
   
-  const togglePausedStatus = () => {
-    setIsPaused(prevStatus => !prevStatus);
-  };
-  
+
   function renderSharedMessage(language, referralUsername, batchName) {
     // Capitalize the first letter of batchName
     const capitalizedBatchName = capitalizeFirstLetter(batchName);
@@ -103,17 +100,17 @@ const Cacao = () => {
     );
   } 
   
-  const handleCheckOrderStatus = () => {
-    const userInput = prompt(t.promptText);
-    if (userInput) {
-      const routePath = language === 'de' ? '/kakao/batch' : '/cacao/batch';
-      navigate(`${routePath}/${userInput.trim().toLowerCase()}`); // Assumes batch names and usernames are stored in lowercase
-    }
-  };
+  // const handleCheckOrderStatus = () => {
+  //   const userInput = prompt(t.promptText);
+  //   if (userInput) {
+  //     const routePath = language === 'de' ? '/kakao/batch' : '/cacao/batch';
+  //     navigate(`${routePath}/${userInput.trim().toLowerCase()}`); // Assumes batch names and usernames are stored in lowercase
+  //   }
+  // };
 
-  const handleTryChocolateClick = () => {
-    toggleSection('processInfo');
-  };
+  // const handleTryChocolateClick = () => {
+  //   toggleSection('processInfo');
+  // };
 
   return (
     <Container>
