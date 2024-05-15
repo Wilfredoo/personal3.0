@@ -21,7 +21,6 @@ export const PausedMessage = styled.div`
   font-size: 1.5em;
   text-align: center;
   z-index: 9999;             /* Ensure it's on top of all other elements */
-  pointer-events: none;      /* Prevent any interactions with elements behind */
 
   p {
     margin: 0 0 20px 0;
