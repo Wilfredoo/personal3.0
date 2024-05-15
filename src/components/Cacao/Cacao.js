@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Container,
-  // Section,
-  // Title,
-  // SectionTitle,
-  // Info,
-  // ToggleSymbol,
-  // NormalButton,
-  // Footer,
-  // VideoWrapper,
-  // StyledIframe,
-  // TryChocolateButton,
-  // ButtonContainer,
+  Section,
+  Title,
+  SectionTitle,
+  Info,
+  ToggleSymbol,
+  NormalButton,
+  Footer,
+  VideoWrapper,
+  StyledIframe,
+  TryChocolateButton,
+  ButtonContainer,
   HighlightContainer,
   EmphasizedText,
   PausedMessage,
@@ -19,7 +19,7 @@ import {
 } from './styles';
 
 import translations from './translations';
-// import OrderForm from './OrderForm';
+import OrderForm from './OrderForm';
 import { useLocation } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -38,7 +38,7 @@ const Cacao = () => {
 
   const ENGLISH_VIDEO_URL = "https://www.youtube.com/embed/wtpuxyX8xV4";
   const GERMAN_VIDEO_URL = "https://youtube.com/embed/MgcQt64ZxNg";
-  // const videoUrl = language === 'de' ? GERMAN_VIDEO_URL : ENGLISH_VIDEO_URL;
+  const videoUrl = language === 'de' ? GERMAN_VIDEO_URL : ENGLISH_VIDEO_URL;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const Cacao = () => {
     setLanguage(location.pathname.includes('/kakao') ? 'de' : 'en');
   }, [location]);
 
-  // const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
+  const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
 
   // const toggleSection = (section) => setActiveSection(prevSection => prevSection === section ? '' : section);
 
@@ -100,19 +100,18 @@ const Cacao = () => {
     );
   } 
   
-  // const handleCheckOrderStatus = () => {
-  //   const userInput = prompt(t.promptText);
-  //   if (userInput) {
-  //     const routePath = language === 'de' ? '/kakao/batch' : '/cacao/batch';
-  //     navigate(`${routePath}/${userInput.trim().toLowerCase()}`); // Assumes batch names and usernames are stored in lowercase
-  //   }
-  // };
+  const handleCheckOrderStatus = () => {
+    const userInput = prompt(t.promptText);
+    if (userInput) {
+      const routePath = language === 'de' ? '/kakao/batch' : '/cacao/batch';
+      navigate(`${routePath}/${userInput.trim().toLowerCase()}`); // Assumes batch names and usernames are stored in lowercase
+    }
+  };
 
-  // const handleTryChocolateClick = () => {
-  //   toggleSection('processInfo');
-  // };
+  const handleTryChocolateClick = () => {
+    toggleSection('processInfo');
+  };
 
-  activeSection = "asdasdasd" // just to use it, get rid of this line whenever u activate store again
 
   return (
     <Container>
@@ -128,7 +127,7 @@ const Cacao = () => {
          
        </>
       )}
-        {/* 
+        
         
       <ButtonContainer>
         <NormalButton onClick={handleLanguageToggle}>{t.languageButton}</NormalButton>
@@ -164,8 +163,8 @@ const Cacao = () => {
             </ul>
           </Info>
         )}
-      </Section> */}
-      {/* <Section>
+      </Section>
+      <Section>
         <SectionTitle onClick={() => toggleSection('howItWorks')}>
           {t.whatMakesUnique}<ToggleSymbol>{activeSection === 'howItWorks' ? '−' : '+'}</ToggleSymbol>
         </SectionTitle>
@@ -190,9 +189,9 @@ const Cacao = () => {
             })}
           </Info>
         )}
-      </Section> */}
+      </Section>
 
-      {/* <Section ref={orderSectionRef}>
+      <Section ref={orderSectionRef}>
         <SectionTitle onClick={() => toggleSection('processInfo')}>
           {t.processInfo}
           <ToggleSymbol>{activeSection === 'processInfo' ? '−' : '+'}</ToggleSymbol>
@@ -212,7 +211,7 @@ const Cacao = () => {
       </Section>
       <Footer>
         {t.footer}
-      </Footer> */}
+      </Footer>
     </Container>
   );
 };
