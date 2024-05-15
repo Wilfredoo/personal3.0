@@ -5,6 +5,45 @@ const milkChocolate = '#795548'; // A lighter brown, akin to milk chocolate.
 const cacaoPowder = '#5d4037'; // This is a medium brown, similar to cacao powder.
 const chocolateAccent = '#d7ccc8'; // A light chocolate accent for hover states.
 
+
+export const PausedMessage = styled.div`
+  position: fixed;          /* Fixed positioning to cover the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  flex-direction: column;   /* Arrange elements in a column */
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 9999;             /* Ensure it's on top of all other elements */
+  pointer-events: none;      /* Prevent any interactions with elements behind */
+
+  p {
+    margin: 0 0 20px 0;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    pointer-events: auto;    /* Allow clicking the button */
+  }
+
+  button:hover {
+    background-color: #128C7E;
+  }
+`;
+
 export const Container = styled.div`
   font-family: Arial, sans-serif;
   max-width: 800px;

@@ -13,8 +13,11 @@ import {
   TryChocolateButton,
   ButtonContainer,
   HighlightContainer,
-  EmphasizedText
+  EmphasizedText,
+  PausedMessage,
+
 } from './styles';
+
 import translations from './translations';
 import OrderForm from './OrderForm';
 import { useLocation } from 'react-router-dom';
@@ -29,6 +32,7 @@ const Cacao = () => {
   const orderSectionRef = useRef(null);
   const [searchParams] = useSearchParams();
   const referralUsername = searchParams.get('referral');
+  const [isPaused, setIsPaused] = useState(true); // State to manage the paused status
   const batchName = searchParams.get('batch');
   const t = translations[language];
 
@@ -58,6 +62,15 @@ const Cacao = () => {
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+  const sendWhatsAppMessage = () => {
+    const message = "Let me know once I can get chocolate again!";
+    const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+  
+  const togglePausedStatus = () => {
+    setIsPaused(prevStatus => !prevStatus);
+  };
   
   function renderSharedMessage(language, referralUsername, batchName) {
     // Capitalize the first letter of batchName
@@ -105,10 +118,23 @@ const Cacao = () => {
   return (
     <Container>
       {referralUsername && batchName && renderSharedMessage(language, referralUsername, batchName)}
+      {isPaused && (
+        <>
+        <PausedMessage>
+          {"My chocolaterie is temporarily closed. If you'd like to know once I open it again, click here."}
+          <button onClick={sendWhatsAppMessage}>
+         {"Serious Chocolate Waiting List"}
+       </button>
+        </PausedMessage>
+         
+       </>
+      )}
+        {/* 
+        
       <ButtonContainer>
         <NormalButton onClick={handleLanguageToggle}>{t.languageButton}</NormalButton>
         <NormalButton onClick={handleCheckOrderStatus}>
-          {t.checkOrderStatus} {/* You need to add this to your translations */}
+          {t.checkOrderStatus}
         </NormalButton>
         <TryChocolateButton onClick={handleTryChocolateClick}>
           {t.trySomeChocolate}
@@ -139,8 +165,8 @@ const Cacao = () => {
             </ul>
           </Info>
         )}
-      </Section>
-      <Section>
+      </Section> */}
+      {/* <Section>
         <SectionTitle onClick={() => toggleSection('howItWorks')}>
           {t.whatMakesUnique}<ToggleSymbol>{activeSection === 'howItWorks' ? '−' : '+'}</ToggleSymbol>
         </SectionTitle>
@@ -165,9 +191,9 @@ const Cacao = () => {
             })}
           </Info>
         )}
-      </Section>
+      </Section> */}
 
-      <Section ref={orderSectionRef}>
+      {/* <Section ref={orderSectionRef}>
         <SectionTitle onClick={() => toggleSection('processInfo')}>
           {t.processInfo}
           <ToggleSymbol>{activeSection === 'processInfo' ? '−' : '+'}</ToggleSymbol>
@@ -187,7 +213,7 @@ const Cacao = () => {
       </Section>
       <Footer>
         {t.footer}
-      </Footer>
+      </Footer> */}
     </Container>
   );
 };
