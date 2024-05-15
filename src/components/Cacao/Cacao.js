@@ -32,7 +32,7 @@ const Cacao = () => {
   const orderSectionRef = useRef(null);
   const [searchParams] = useSearchParams();
   const referralUsername = searchParams.get('referral');
-  const [isPaused, setIsPaused] = useState(true); // State to manage the paused status
+const isPaused= true
   const batchName = searchParams.get('batch');
   const t = translations[language];
 
@@ -49,6 +49,7 @@ const Cacao = () => {
   const handleLanguageToggle = () => setLanguage(prevLang => prevLang === 'en' ? 'de' : 'en');
 
   // const toggleSection = (section) => setActiveSection(prevSection => prevSection === section ? '' : section);
+
 
   const toggleSection = (section) => {
     setActiveSection(prevSection => prevSection === section ? '' : section);
