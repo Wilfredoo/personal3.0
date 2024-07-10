@@ -11,15 +11,6 @@ const move = keyframes`
   }
 `;
 
-// Keyframes for the glowing button and text
-const neonGlow = keyframes`
-  0%, 100% {
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
-  }
-  50% {
-    text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff, 0 0 80px #00ffff;
-  }
-`;
 
 const reducedNeonGlow = keyframes`
   0%, 100% {
