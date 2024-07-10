@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ReactGA from "react-ga4";
 import Home from './components/Home';
 import Curriculum from './components/Curriculum';
+import FilmCurriculum from './components/FilmCurriculum';
 import VideoWorkRedirect from './components/VideoWorkRedirect';
 import BerlinBreakIn from './components/BerlinBreakIn';
 import Cacao from './components/Cacao/Cacao';
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cv" element={<Curriculum />} />
+        <Route path="/resume" element={<FilmCurriculum />} />
         <Route path="/film" element={<VideoWorkRedirect />} />
         <Route path="/scripts" element={<ScriptsRedirect />} />
         <Route path="/berlin-break-in" element={<BerlinBreakIn />} />
