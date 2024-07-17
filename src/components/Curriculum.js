@@ -41,10 +41,22 @@ const Wrapper = styled.div`
 `;
 
 const Arrow = styled.div`
-  color: #333; // Normal text color, no glow
+  color: #333;
   animation: ${move} 1.5s ease-in-out infinite;
   font-size: 2rem;
   margin-bottom: 20px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Button = styled.button`
@@ -63,17 +75,31 @@ const Button = styled.button`
   }
 `;
 
+const Label = styled.div`
+  color: #333;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+`;
+
 const WelcomeText = styled.h1`
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 20px;
 `;
 
+const Note = styled.p`
+  color: #333;
+  margin-top: 35px;
+  font-size: 1rem;
+`;
+
 const Curriculum = () => {
-  const handleDownload = () => {
+  const handleDownload = (lang) => {
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/Resume_Developer.pdf`;
-    link.download = 'Resume_Wilfredo.pdf';
+    link.href = lang === 'EN'
+      ? `${process.env.PUBLIC_URL}/Resume_Developer_English.pdf`
+      : `${process.env.PUBLIC_URL}/Resume_Developer_German.pdf`;
+    link.download = lang === 'EN' ? 'Resume_Wilfredo_English.pdf' : 'Resume_Wilfredo_German.pdf';
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
@@ -82,11 +108,21 @@ const Curriculum = () => {
 
   return (
     <Wrapper>
-      <WelcomeText>Fancy a peek at my CV? </WelcomeText>
+      <WelcomeText>Fancy a peek at my CV?</WelcomeText>
       <p>Grab it right here</p>
-      <p>(don't worry, it's not a virus)</p>
-      <Arrow>↓</Arrow>
-      <Button onClick={handleDownload}>Download Resume</Button>
+      <ButtonContainer>
+        <ButtonWrapper>
+          <Label>English</Label>
+          <Arrow>↓</Arrow>
+          <Button onClick={() => handleDownload('EN')}>Resume</Button>
+        </ButtonWrapper>
+        <ButtonWrapper>
+          <Label>Deutsch</Label>
+          <Arrow>↓</Arrow>
+          <Button onClick={() => handleDownload('DE')}>Lebenslauf</Button>
+        </ButtonWrapper>
+      </ButtonContainer>
+      <Note>(don't worry, it's not a virus)</Note>
     </Wrapper>
   );
 };

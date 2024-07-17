@@ -167,7 +167,7 @@ const FilmCurriculum = () => {
     link.href = lang === 'EN' 
       ? `${process.env.PUBLIC_URL}/Resume_Film_English.pdf`
       : `${process.env.PUBLIC_URL}/Resume_Film_German.pdf`;
-    link.download = lang === 'EN' ? 'Resume_Film_English.pdf' : 'Resume_Film_German.pdf';
+    link.download = lang === 'EN' ? 'Resume_Wilfredo_English.pdf' : 'Resume_Wilfredo_German.pdf';
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
