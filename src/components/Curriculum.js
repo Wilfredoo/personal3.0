@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-// Keyframes for the moving arrow
 const move = keyframes`
   0% {
     transform: translateY(-5px);
@@ -29,13 +28,6 @@ const Wrapper = styled.div`
   @media (max-width: 500px) {
     padding: 10px;
   }
-`;
-
-const Arrow = styled.div`
-  color: #333;
-  animation: ${move} 1.5s ease-in-out infinite;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
 `;
 
 const ButtonContainer = styled.div`
