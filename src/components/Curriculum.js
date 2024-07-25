@@ -1,17 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const move = keyframes`
-  0% {
-    transform: translateY(-5px);
-  }
-  50% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-5px);
-  }
-`;
 
 const Wrapper = styled.div`
   display: flex;
