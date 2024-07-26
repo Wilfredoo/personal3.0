@@ -49,6 +49,7 @@ const Button = styled.button`
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
+  height: 60px;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
   font-weight: bold;
