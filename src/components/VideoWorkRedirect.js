@@ -7,7 +7,7 @@ const VideoWorkRedirect = () => {
 
   useEffect(() => {
     // Replace with your YouTube channel URL
-    window.location.href = 'https://www.youtube.com/@wilcas5349/featured';
+    window.location.href = 'https://www.youtube.com/watch?v=3oe0rYLOG7k';
   }, [navigate]);
 
   return null; // Return null since this component doesn't render anything
