@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Curriculum from './components/Curriculum';
 import FilmCurriculum from './components/FilmCurriculum';
 import VideoWorkRedirect from './components/VideoWorkRedirect';
+import ShortFilmsRedirect from './components/ShortFilmsRedirect';
 import BerlinBreakIn from './components/BerlinBreakIn';
 import Cacao from './components/Cacao/Cacao';
 import BatchOrders from './components/Cacao/BatchOrders';
@@ -23,7 +24,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cv" element={<Curriculum />} />
         <Route path="/resume" element={<FilmCurriculum />} />
-        <Route path="/film" element={<VideoWorkRedirect />} />
+        <Route path="/reel" element={<VideoWorkRedirect />} />
+        <Route path="/films" element={<ShortFilmsRedirect />} />
+        <Route path="/film" element={<ShortFilmsRedirect />} />
         <Route path="/scripts" element={<ScriptsRedirect />} />
         <Route path="/berlin-break-in" element={<BerlinBreakIn />} />
         <Route path="/cacao" element={<Cacao />} />
