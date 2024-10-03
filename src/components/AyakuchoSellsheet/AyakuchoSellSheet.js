@@ -75,33 +75,48 @@ const SellSheet = () => {
       </Section>
       {/* More Section */}
       <Section>
-        <h3 onClick={() => setShowMore(!showMore)}>Links of Interest {showMore ? '▲' : '▼'}</h3>
-        {showMore && (
-          <List>
-            <ListItem>
-              <VideoLink href="https://www.youtube.com/playlist?list=PLmT80T_P4eJb4IzNmhMLs0QHrnNKyphD5" target="_blank">Video impressions of Ayakucho</VideoLink>
-            </ListItem>
-            <ListItem>
-              <ImageLink href="https://www.instagram.com/play_ayakucho/" target="_blank">Instagram Page of Ayakucho</ImageLink>
-            </ListItem>
-            <ListItem>
-              <a href="https://boardgamegeek.com/boardgame/342455/bamberg" target="_blank">Bamberg's BGG page</a>
-            </ListItem>
-            <ListItem>
-              <a href="https://boardgamegeek.com/thread/3128189/werewolves-done-right-english-german-review" target="_blank">An unsolicited written review of Bamberg by one of our most passionate backers</a>
-            </ListItem>
-            <ListItem>
-              <a href="https://www.youtube.com/watch?v=MFkhvvn7TAw&t=395" target="_blank">An unsolicited video review by YouTuber BrettBallet</a>
-            </ListItem>
-            <ListItem>
-              <a href="https://www.kickstarter.com/projects/bamberg/bamberg-a-thrilling-game-of-social-deduction" target="_blank">No-budget successful Kickstarter for Bamberg</a>
-            </ListItem>
-            <ListItem>
-              <a href="https://www.instagram.com/ma.stak/" target="_blank">Instagram of the artist Maria Stankievič</a>
-            </ListItem>
-          </List>
-        )}
-      </Section>
+  <h3 onClick={() => setShowMore(!showMore)}>Links of Interest {showMore ? '▲' : '▼'}</h3>
+  {showMore && (
+    <List>
+      <ListItem>
+        <VideoLink href="https://www.youtube.com/playlist?list=PLmT80T_P4eJb4IzNmhMLs0QHrnNKyphD5" target="_blank" rel="noreferrer noopener">
+          Video impressions of Ayakucho
+        </VideoLink>
+      </ListItem>
+      <ListItem>
+        <ImageLink href="https://www.instagram.com/play_ayakucho/" target="_blank" rel="noreferrer noopener">
+          Instagram Page of Ayakucho
+        </ImageLink>
+      </ListItem>
+      <ListItem>
+        <a href="https://boardgamegeek.com/boardgame/342455/bamberg" target="_blank" rel="noreferrer noopener">
+          Bamberg's BGG page
+        </a>
+      </ListItem>
+      <ListItem>
+        <a href="https://boardgamegeek.com/thread/3128189/werewolves-done-right-english-german-review" target="_blank" rel="noreferrer noopener">
+          An unsolicited written review of Bamberg by one of our most passionate backers
+        </a>
+      </ListItem>
+      <ListItem>
+        <a href="https://www.youtube.com/watch?v=MFkhvvn7TAw&t=395" target="_blank" rel="noreferrer noopener">
+          An unsolicited video review by YouTuber BrettBallet
+        </a>
+      </ListItem>
+      <ListItem>
+        <a href="https://www.kickstarter.com/projects/bamberg/bamberg-a-thrilling-game-of-social-deduction" target="_blank" rel="noreferrer noopener">
+          No-budget successful Kickstarter for Bamberg
+        </a>
+      </ListItem>
+      <ListItem>
+        <a href="https://www.instagram.com/ma.stak/" target="_blank" rel="noreferrer noopener">
+          Instagram of the artist Maria Stankievič
+        </a>
+      </ListItem>
+    </List>
+  )}
+</Section>
+
 
     
 
