@@ -53,7 +53,7 @@ const SellSheet = () => {
         {showUniqueFeatures && (
           <List>
             <ListItem>
-              <strong>Unique Sessions:</strong> Every game round is different, thanks to the dynamic exchange of information through event cards and varied game modes, ensuring no two games are ever the same.
+              <strong>A new game  Sessions:</strong> Every game round is different, thanks to the dynamic exchange of information through event cards and varied game modes, ensuring no two games are ever the same.
             </ListItem>
             <ListItem>
               <strong>Flexible Game Modes:</strong> Multiple game modes cater to different player preferences, offering a range of dynamics and complexity suitable for both casual and experienced players.
