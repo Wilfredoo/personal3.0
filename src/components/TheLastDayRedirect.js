@@ -2,14 +2,14 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ScriptsRedirect = () => {
+const TheLastDayRedirect = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    window.location.href = 'https://mega.nz/folder/ZadlyShC#QTbmsmGba8HH1OwE-33jxQ';
+    window.location.href = 'https://youtu.be/80EaG6NRaJ8';
   }, [navigate]);
 
   return null;
 };
 
-export default ScriptsRedirect;
+export default TheLastDayRedirect;
