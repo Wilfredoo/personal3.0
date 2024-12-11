@@ -6,7 +6,7 @@ const TheLastDayRedirect = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    window.location.href = 'https://youtu.be/80EaG6NRaJ8';
+    window.location.href = 'https://youtu.be/KeXW96sXbbI';
   }, [navigate]);
 
   return null;
