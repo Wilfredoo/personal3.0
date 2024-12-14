@@ -4,15 +4,12 @@ import youtubeIcon from '../assets/images/youtube.png'; // Ensure the path is co
 
 const Filmmaker = () => (
   <TextContainer>
-    <Text>One day back in 2022, I thought: why not make some short films?</Text>
+    <Text>One day I thought: why not make some short films?</Text>
     <Text>
-      This tiny idea turned into an absurdly ambitious challenge—to make one a week until I had reached 52 films after a year.
+      This idea turned into an absurd and ambitious challenge—to make one short a week until I had reached 52 in a year.
     </Text>
     <Text>
-    I fell short by less than half, but the result was still pretty good; festival selections and meeting great folks along the way.
-    </Text>
-    <Text>
-    More, longer, better films are in sight.
+    I fell short by less than half, but along came festival selections, inspiring folks, and a clear vision for the films to come.
 </Text>
     <a
       href="https://www.youtube.com/channel/UC49b2y2ABFThhLKsmlC6KAw"

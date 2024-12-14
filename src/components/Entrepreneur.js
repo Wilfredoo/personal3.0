@@ -1,25 +1,24 @@
 import React from 'react';
-import { Text, TextContainer } from './styles';
-import github from '../assets/images/github.png';
-import {
-    DummyIcon
-} from './styles';
+import { Text, TextContainer, DummyIcon } from './styles';
+import github from '../assets/images/github.png'; // Ensure the path is correct
 
 const Entrepreneur = () => (
-    <TextContainer>
-        <Text>I started <a href="https://www.youtube.com/watch?v=96SIiKY6qBs" 
-             target="_blank" rel="noopener noreferrer">my first business</a> back in Lima of 2011, and boy, did the difference between real entrepreneurship and the business books shocked me.</Text>
-        <Text>For the next 10 years, I startuped at least a dozen more ideas. Some went far, most didn't.</Text>
-        <Text>The most notable successes were <a href="https://www.jobdirecto.com" target="_blank" rel="noopener noreferrer">Jobdirecto</a>,
-         which up to date has connected tens of thousands of Hispanic immigrants with jobs across New York. </Text>
-        <Text>And <a href="https://boardgamegeek.com/boardgame/342455/bamberg" 
-             target="_blank" rel="noopener noreferrer">Bamberg</a>, a boardgame which enjoyed small scale global 
-             distribution and which I am now advancing into a new version called <a href="https://www.instagram.com/play_ayakucho/" 
-             target="_blank" rel="noopener noreferrer">Ayakucho</a>.</Text>
-    <a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer"> <DummyIcon src={github} alt="github" /></a>
+  <TextContainer>
+    <Text>
+      For over a decade, I’ve started a dozen ideas across three different cities, some which worked, most which didn’t.
+    </Text>
+    <Text>
+  Successes include <a href="https://www.jobdirecto.com" target="_blank" rel="noopener noreferrer">Jobdirecto</a>, connecting thousands of Hispanic immigrants with jobs in New York, and <a href="https://boardgamegeek.com/boardgame/342455/bamberg" target="_blank" rel="noopener noreferrer">Bamberg</a>, a board game with global distribution, now evolving into <a href="https://www.instagram.com/play_ayakucho/" target="_blank" rel="noopener noreferrer">Ayakucho</a>.
+</Text>
 
-    </TextContainer>
+<Text>
+  I now apply this experience at <a href="https://www.heidi-hire.com/en/home" target="_blank" rel="noopener noreferrer">Heidi</a>, using my unorthodox thinking and guerrilla-style approach to lead business development and operations in South America.
+</Text>
+
+<a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer">
+      <DummyIcon src={github} alt="github" />
+    </a>
+  </TextContainer>
 );
 
 export default Entrepreneur;
-
