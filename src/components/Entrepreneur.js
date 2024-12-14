@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, TextContainer, DummyIcon } from './styles';
-import github from '../assets/images/github.png'; // Ensure the path is correct
+import { Text, TextContainer, LinkedinIcon } from './styles';
+import linkedinIcon from '../assets/images/linkedin.png'; // Ensure the path is correct
 
 const Entrepreneur = () => (
   <TextContainer>
@@ -15,10 +15,13 @@ const Entrepreneur = () => (
   I now apply this experience at <a href="https://www.heidi-hire.com/en/home" target="_blank" rel="noopener noreferrer">Heidi</a>, using my unorthodox thinking and guerrilla-style approach to lead business development and operations in South America.
 </Text>
 
-<a href="https://github.com/Wilfredoo" target="_blank" rel="noopener noreferrer">
-      <DummyIcon src={github} alt="github" />
-    </a>
-  </TextContainer>
+<a
+      href="https://www.linkedin.com/in/wilfredocasas/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <LinkedinIcon src={linkedinIcon} alt="Linkedin" />
+    </a>  </TextContainer>
 );
 
 export default Entrepreneur;

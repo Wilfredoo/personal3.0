@@ -117,6 +117,16 @@ border-radius: 50%;
 animation-delay: 20s; // start animation after 5s delay 
 `;
 
+export const LinkedinIcon = styled.img`
+margin-top: 20px;
+
+width: 50px;
+height: auto;
+object-fit: cover;
+border-radius: 50%;
+animation-delay: 20s; // start animation after 5s delay 
+`;
+
 export const TitleContainer = styled.div`
 
 animation: ${shake} 0.5s;
