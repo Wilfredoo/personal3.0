@@ -119,14 +119,17 @@ const Curriculum = () => {
   const [language, setLanguage] = useState('EN');
 
   const handleDownload = (resumeType) => {
+    const languageSuffix = language === 'EN' ? 'English' : 'German';
+    const fileName = `Wilfredo_${resumeType}_${languageSuffix}.pdf`;
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/Resume_${resumeType}_${language === 'EN' ? 'English' : 'German'}.pdf`;
-    link.download = `Resume_${resumeType}_${language === 'EN' ? 'English' : 'German'}.pdf`;
+    link.href = `${process.env.PUBLIC_URL}/${fileName}`;
+    link.download = fileName;
     link.style.display = 'none';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+};
+
 
   const toggleLanguage = () => {
     setLanguage(language === 'EN' ? 'DE' : 'EN');
