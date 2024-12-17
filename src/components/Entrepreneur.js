@@ -5,7 +5,7 @@ import linkedinIcon from '../assets/images/linkedin.png'; // Ensure the path is 
 const Entrepreneur = () => (
   <TextContainer>
     <Text>
-      For over a decade, I’ve started a dozen ideas across three different cities, some which worked, most which didn’t.
+      For over a decade, I’ve started a dozen ideas across three different cities. Most did not work, but some did.
     </Text>
     <Text>
   Successes include <a href="https://www.jobdirecto.com" target="_blank" rel="noopener noreferrer">Jobdirecto</a>, connecting thousands of Hispanic immigrants with jobs in New York, and <a href="https://boardgamegeek.com/boardgame/342455/bamberg" target="_blank" rel="noopener noreferrer">Bamberg</a>, a board game with global distribution, now evolving into <a href="https://www.instagram.com/play_ayakucho/" target="_blank" rel="noopener noreferrer">Ayakucho</a>.
