@@ -12,7 +12,7 @@ const Entrepreneur = () => (
 </Text>
 
 <Text>
-  I now apply this experience at <a href="https://www.heidi-hire.com/en/home" target="_blank" rel="noopener noreferrer">Heidi</a>, using my unorthodox thinking and guerrilla-style approach to lead business development and operations in South America.
+  I now apply this experience at <a href="https://www.heidi-hire.com/en/home" target="_blank" rel="noopener noreferrer">heidi</a>, using my unorthodox thinking and guerrilla-style approach to lead business development and operations in South America.
 </Text>
 
 <a
