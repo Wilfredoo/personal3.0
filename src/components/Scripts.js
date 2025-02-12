@@ -22,12 +22,6 @@ const Container = styled.div`
 
 `;
 
-const Title = styled.h1`
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-`;
-
 const ScriptList = styled.ul`
     list-style: none;
     padding: 0;
