@@ -48,10 +48,9 @@ const texts = {
       "Languages: German, English, Spanish, German Sign Language (DGS)",
       "Musical Skills: Singing, Guitar, Keyboard, Drums",
       "Sports: Parkour, Martial Arts, Gymnastics",
-      "Dance: Contemporary, Improvisational, Ballet, Salsa, Lindy Hop",
+      "Dance: Contemporary, Improvisational, Ballet, Salsa, Tango, Lindy Hop",
       "Driver's License: B (EU)",
-      "Location: Berlin, Germany",
-      "Wohnort: Frankfurt am Main"
+      "Location: Frankfurt am Main, Leipzig, Berlin",
     ]
   },
   DE: {
@@ -68,10 +67,9 @@ const texts = {
       "Sprachen: Deutsch, Englisch, Spanisch, Deutsche Gebärdensprache (DGS)",
       "Musikalische Fähigkeiten: Gesang, Gitarre, Keyboard, Schlagzeug",
       "Sport: Parkour, Kampfsport, Gymnastik",
-      "Tanz: Zeitgenössisch, Improvisiert, Ballett, Salsa, Lindy Hop",
+      "Tanz: Zeitgenössisch, Improv, Ballett, Salsa, Tango, Lindy Hop",
       "Führerschein: B (EU)",
-      "Standort: Berlin, Deutschland",
-      "Wohnort: Frankfurt am Main"
+      "Standort: Frankfurt am Main, Leipzig, Berlin",
     ]
   }
 };
