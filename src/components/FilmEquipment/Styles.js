@@ -1,3 +1,4 @@
+// FilmEquipmentStyles.js
 import styled, { keyframes } from 'styled-components';
 
 const gradientAnimation = keyframes`
@@ -10,7 +11,7 @@ export const EquipmentContainer = styled.div`
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
-  background: linear-gradient(135deg, #2c3e50, #8e44ad, #f39c12);
+  background: linear-gradient(135deg, #34495e, #8e44ad, #f39c12);
   background-size: 200% 200%;
   animation: ${gradientAnimation} 10s ease infinite;
   border-radius: 12px;
@@ -31,8 +32,7 @@ export const EquipmentHeader = styled.h2`
 
 export const SectionTitle = styled.h3`
   font-size: 1.8rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin: 2rem 0 1rem;
   color: #f39c12;
   border-bottom: 1px solid #e67e22;
   padding-bottom: 0.3rem;
@@ -55,7 +55,7 @@ export const EquipmentItem = styled.li`
 
 export const VideoEmbed = styled.div`
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   margin-bottom: 1.5rem;
@@ -71,7 +71,7 @@ export const VideoEmbed = styled.div`
 `;
 
 export const ContactLink = styled.a`
-  color: #f39c12;
+  color: #f1c40f;
   text-decoration: none;
   font-weight: bold;
   &:hover {
@@ -81,7 +81,7 @@ export const ContactLink = styled.a`
 
 export const TranslateButton = styled.button`
   display: block;
-  margin: 2rem auto 0;
+  margin: 0 auto 1rem;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
@@ -95,4 +95,11 @@ export const TranslateButton = styled.button`
   &:hover {
     background: #34495e;
   }
+`;
+
+export const Divider = styled.hr`
+  border: none;
+  height: 1px;
+  background: rgba(236, 240, 241, 0.3);
+  margin: 2rem 0;
 `;
