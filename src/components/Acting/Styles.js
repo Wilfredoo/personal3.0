@@ -69,6 +69,14 @@ export const ReelText = styled.p`
   letter-spacing: 3px;
 `;
 
+export const SmallText = styled.span`
+  display: block;
+  font-size: 0.8rem; /* Smaller size for the second line */
+  margin-top: 5px;
+  line-height: 1;
+    text-transform: none; /* Ensures text is not capitalized */
+
+`;
 
 
 export const ParentContainer = styled.div`

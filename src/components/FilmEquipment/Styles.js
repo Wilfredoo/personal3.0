@@ -1,23 +1,31 @@
-// FilmEquipmentStyles.js
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const gradientAnimation = keyframes`
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+`;
 
 export const EquipmentContainer = styled.div`
   max-width: 700px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: 'Open Sans', sans-serif;
-  color: #333;
+  background: linear-gradient(135deg, #2c3e50, #8e44ad, #f39c12);
+  background-size: 200% 200%;
+  animation: ${gradientAnimation} 10s ease infinite;
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  color: #ecf0f1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(236, 240, 241, 0.3);
 `;
 
 export const EquipmentHeader = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #2c3e50;
-  border-bottom: 2px solid #ccc;
+  color: #f1c40f;
+  border-bottom: 2px solid #f39c12;
   padding-bottom: 0.5rem;
 `;
 
@@ -25,8 +33,8 @@ export const SectionTitle = styled.h3`
   font-size: 1.8rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #34495e;
-  border-bottom: 1px solid #ddd;
+  color: #f39c12;
+  border-bottom: 1px solid #e67e22;
   padding-bottom: 0.3rem;
 `;
 
@@ -39,7 +47,7 @@ export const EquipmentList = styled.ul`
 export const EquipmentItem = styled.li`
   font-size: 1.1rem;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid rgba(236, 240, 241, 0.3);
   &:last-child {
     border-bottom: none;
   }
@@ -63,7 +71,7 @@ export const VideoEmbed = styled.div`
 `;
 
 export const ContactLink = styled.a`
-  color: #2980b9;
+  color: #f39c12;
   text-decoration: none;
   font-weight: bold;
   &:hover {
