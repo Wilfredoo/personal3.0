@@ -85,58 +85,16 @@ const Acting = () => {
       <VideoSection>
         <VideoEmbed>
           <iframe
-            src="https://www.youtube.com/embed/mKwZ8FTQYxw"
+            src="https://www.youtube.com/embed/lmzfSlaTOB4"
             title="Acting Video 1"
             allowFullScreen
           />
         </VideoEmbed>
-        <VideoEmbed>
-          <iframe
-            src="https://www.youtube.com/embed/B4MadiHGSyI"
-            title="Acting Video 2"
-            allowFullScreen
-          />
-        </VideoEmbed>
       </VideoSection>
-
-      <VideoSection>
-        <VideoEmbed>
-          <iframe
-            src="https://www.youtube.com/embed/_NIp7kmIN_o"
-            title="Acting Video 3"
-            allowFullScreen
-          />
-        </VideoEmbed>
-        <VideoEmbed>
-          <iframe
-            src="https://www.youtube.com/embed/1UJaR4jh98A"
-            title="Acting Video 4"
-            allowFullScreen
-          />
-        </VideoEmbed>
-        <VideoEmbed>
-          <iframe
-            src="https://www.youtube.com/embed/qsXkQj-uHZU"
-            title="Acting Video 5"
-            allowFullScreen
-          />
-        </VideoEmbed>
-        <VideoEmbed>
-          <iframe
-            src="https://www.youtube.com/embed/JJlWZUrJYxw"
-            title="Acting Video 6"
-            allowFullScreen
-          />
-        </VideoEmbed>
-      </VideoSection>
-
       <ImageGrid>
       <ProfileImage src={photos[currentIndex]} alt={`Wilfredo ${currentIndex + 1}`} />
       <NewPhotoButton onClick={handleNext}>New Photo</NewPhotoButton>
       </ImageGrid>
-
-     
-
       <InfoSection>
         <h3>{currentText.moreAbout}</h3>
         <InfoList>

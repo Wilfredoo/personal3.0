@@ -4,7 +4,7 @@ import Curriculum from './components/Curriculum';
 import FilmCurriculum from './components/FilmCurriculum';
 import Scripts from './components/Scripts';
 import Acting from './components/Acting/Acting';
-
+import FilmEquipment from './components/FilmEquipment/FilmEquipment';
 
 // Redirect Components
 import Redirector from './components/Redirector';
@@ -20,6 +20,7 @@ const routes = [
     { path: "/", component: <Home /> },
     { path: "/cv", component: <Curriculum /> },
     { path: "/acting", component: <Acting /> },
+    { path: "/filmequipment", component: <FilmEquipment /> },
     { path: "/resume", component: <FilmCurriculum /> },
     { path: "/ayakucho", component: <SellSheet /> },
     { path: "/cacao", component: <Cacao /> },
