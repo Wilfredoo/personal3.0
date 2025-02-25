@@ -22,17 +22,7 @@ import wilfredo4 from '../../assets/images/wilfredo_4.jpeg';
 
 const photos = [wilfredo1, wilfredo2, wilfredo3, wilfredo4];
 
-const PhotoSlider = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const handleNext = () => setCurrentIndex((prev) => (prev + 1) % photos.length);
-    
-    return (
-      <>
-        <ProfileImage src={photos[currentIndex]} alt={`Wilfredo ${currentIndex + 1}`} />
-        <NewPhotoButton onClick={handleNext}>New Photo</NewPhotoButton>
-      </>
-    );
-  };
+
 const texts = {
   EN: {
     header: "Wilfredo Casas",

@@ -1,16 +1,18 @@
 import styled, { keyframes } from 'styled-components';
-// Tagline remains unchanged for tagline1
+
 export const Tagline = styled.p`
   position: relative;
   font-size: 1.4rem;
   text-align: center;
+  padding: 5px;
   margin: 0 auto 1rem;
   line-height: 1.4;
   font-style: italic;
-  color: #F4CCE9;
+  color: #E53888;
   overflow: hidden;
   z-index: 1;
 
+background: cornsilk;
   &::before {
     content: "";
     position: absolute;
@@ -18,26 +20,13 @@ export const Tagline = styled.p`
     left: -150%;
     width: 50%;
     height: 100%;
-    background: linear-gradient(120deg, transparent 0%, hotpink 50%, transparent 100%);
     transform: skewX(-20deg);
-    animation: shineEffect 10s infinite;
     pointer-events: none;
     z-index: 2;
     mix-blend-mode: screen;
   }
-
-  @keyframes shineEffect {
-    0% {
-      left: -150%;
-    }
-    50% {
-      left: 150%;
-    }
-    100% {
-      left: 150%;
-    }
-  }
 `;
+
 
 
 /* Neon stroke approach for improved readability */
@@ -71,6 +60,7 @@ export const FlashyTagline = styled.p`
   margin: 0 auto 2rem;
   font-weight: bold;
   color: #f2f700;
+  background: #B771E5;
   text-transform: uppercase;
   animation: ${neonGlow} 1.2s infinite alternate;
 `;
@@ -134,36 +124,32 @@ export const Header = styled.h1`
   box-shadow: 0 0 10px #ff0;
 `;
 
-
-
-
-
-
-
-/* Translate button: single column, bigger, friendlier style */
 export const TranslateButton = styled.button`
   display: block;
   margin: 2rem auto;
   padding: 1rem 2rem;
   font-size: 1.3rem;
   font-family: 'Arial Black', sans-serif;
-  background: linear-gradient(45deg, #ff0080, #00ffea, #ffff00);
+  background: linear-gradient(45deg, #15F5BA, #A3D8FF);
+  background-size: 200%;
   color: #000;
-  border: 3px solid #fff;
-  border-radius: 8px;
+  border: 2px solid #fff;
+  border-radius: 12px;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 2px;
-  text-shadow: 1px 1px 2px #fff;
-  box-shadow: 0 0 10px #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-shadow: 1px 1px 3px #fff;
+  box-shadow: 0 0 15px #94FFD8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
 
   &:hover {
     transform: scale(1.05) rotate(-1deg);
-    box-shadow: 0 0 20px #ff0, 0 0 40px #ff0 inset;
+    box-shadow: 0 0 25px #A3D8FF;
   }
 `;
+
+
 
 /* Single-column video section for all screen sizes */
 export const VideoSection = styled.div`
