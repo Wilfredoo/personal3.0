@@ -65,6 +65,9 @@ export const FlashyTagline = styled.p`
   animation: ${neonGlow} 1.2s infinite alternate;
 `;
 
+export const ReelText = styled.p`
+  letter-spacing: 3px;
+`;
 
 
 
@@ -122,6 +125,8 @@ export const Header = styled.h1`
   font-size: 2.5rem;
   font-weight: bold;
   box-shadow: 0 0 10px #ff0;
+letter-spacing: 8px;
+
 `;
 
 export const TranslateButton = styled.button`

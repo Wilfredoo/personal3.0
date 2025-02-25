@@ -13,7 +13,8 @@ import {
   InfoItem,
   ProfileImage,
 NewPhotoButton,
-  ParentContainer
+  ParentContainer,
+  ReelText
 } from './Styles';
 import wilfredo1 from '../../assets/images/wilfredo_1.png';
 import wilfredo2 from '../../assets/images/wilfredo_2.png';
@@ -90,6 +91,7 @@ const Acting = () => {
             allowFullScreen
           />
         </VideoEmbed>
+        <ReelText>The clips in the reel above are mostly auditions from 2025 for short films across Germany. While a couple of auditions didn’t land me the roles, the rest did, and those projects are currently in post-production. Some of these auditions were fully improvised, while others stayed true to the script. Enjoy!</ReelText>
       </VideoSection>
       <ImageGrid>
       <ProfileImage src={photos[currentIndex]} alt={`Wilfredo ${currentIndex + 1}`} />
