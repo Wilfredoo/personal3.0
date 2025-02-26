@@ -14,7 +14,7 @@ import {
 
 const texts = {
   EN: {
-    header: "Film Equipment & Services",
+    header: "Videography & Storytelling",
     equipment: {
       Camera: ["Blackmagic Pocket Cinema Camera 4K"],
       Lenses: [
@@ -44,7 +44,7 @@ const texts = {
     buttonText: "Switch to German"
   },
   DE: {
-    header: "Filmausrüstung & Dienstleistungen",
+    header: "Videografie & Storytelling",
     equipment: {
       Kamera: ["Blackmagic Pocket Cinema Camera 4K"],
       Objektive: [
@@ -83,6 +83,7 @@ const FilmEquipment = () => {
   return (
     <EquipmentContainer>
       <EquipmentHeader>{currentText.header}</EquipmentHeader>
+
       <TranslateButton onClick={toggleLanguage}>
         {currentText.buttonText}
       </TranslateButton>
