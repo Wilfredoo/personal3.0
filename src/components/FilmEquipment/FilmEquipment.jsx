@@ -37,7 +37,7 @@ const texts = {
       "Creative Lighting: Innovative setups using Aputure MC Lights, lightstands, and reflectors."
     ],
     videoTitle: "My Film Reel",
-    videoURL: "https://www.youtube.com/embed/80mtHMe30S4",
+    videoURL: "https://www.youtube.com/embed/QznlG6t6W8s",
     contact: "Contact me on WhatsApp: +49 15781295360",
     location: "Based in Frankfurt, Berlin & Leipzig – available throughout Germany",
     price: "Rates starting at €200/day",
@@ -67,7 +67,7 @@ const texts = {
       "Kreative Beleuchtung: Innovative Setups mit Aputure MC Lights, Lichtständern und Reflektoren."
     ],
     videoTitle: "Mein Film-Reel",
-    videoURL: "https://www.youtube.com/embed/80mtHMe30S4",
+    videoURL: "https://www.youtube.com/embed/QznlG6t6W8s",
     contact: "Kontaktieren Sie mich via WhatsApp: +49 15781295360",
     location: "Standorte: Frankfurt, Berlin & Leipzig – deutschlandweit einsatzbereit",
     price: "Preise ab 250€ pro Tag (verhandelbar)",

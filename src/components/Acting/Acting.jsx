@@ -75,7 +75,6 @@ const Acting = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const handleNext = () => setCurrentIndex((prev) => (prev + 1) % photos.length);
 
-
     return (
         <ParentContainer>
             <Container>
@@ -87,7 +86,7 @@ const Acting = () => {
                         "Zur deutschen Version, bitte."
                     ) : (
                         <>
-                            English motherfucker
+                            English
                             <SmallText>Do you speak it?</SmallText>
                             </>
                     )}
