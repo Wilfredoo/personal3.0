@@ -21,8 +21,12 @@ import wilfredo1 from '../../assets/images/wilfredo_1.png';
 import wilfredo2 from '../../assets/images/wilfredo_2.png';
 import wilfredo3 from '../../assets/images/wilfredo_3.png';
 import wilfredo4 from '../../assets/images/wilfredo_4.jpeg';
+import wilfredo5 from '../../assets/images/wilfredo_5.jpeg';
+import wilfredo6 from '../../assets/images/wilfredo_6.jpeg';
+import wilfredo7 from '../../assets/images/wilfredo_7.png';
 
-const photos = [wilfredo1, wilfredo2, wilfredo3, wilfredo4];
+
+const photos = [wilfredo1, wilfredo2, wilfredo3, wilfredo4, wilfredo5, wilfredo6, wilfredo7];
 
 
 const texts = {
