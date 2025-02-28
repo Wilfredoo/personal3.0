@@ -21,6 +21,7 @@ const routes = [
     { path: "/cv", component: <Curriculum /> },
     { path: "/acting", component: <Acting /> },
     { path: "/filmequipment", component: <FilmEquipment /> },
+    { path: "/videography", component: <FilmEquipment /> },
     { path: "/resume", component: <FilmCurriculum /> },
     { path: "/ayakucho", component: <SellSheet /> },
     { path: "/cacao", component: <Cacao /> },
