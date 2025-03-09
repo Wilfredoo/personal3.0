@@ -25,8 +25,6 @@ import wilfredo5 from '../../assets/images/wilfredo_5.jpeg';
 import wilfredo7 from '../../assets/images/wilfredo_7.png';
 import wilfredo8 from '../../assets/images/wilfredo_8.jpg';
 
-
-
 const photos = [wilfredo1, wilfredo2, wilfredo3, wilfredo4,wilfredo7, wilfredo5 , wilfredo8];
 
 
