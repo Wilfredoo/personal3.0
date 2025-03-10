@@ -37,7 +37,7 @@ const Film = () => {
   return (
     <Container>
       <Button onClick={() => navigate("/films")}>SHORTS</Button>
-      <Button onClick={() => navigate("/videography")}>VIDEOGRAPHY</Button>
+      <Button onClick={() => navigate("/videography")}>SERVICES</Button>
       <Button onClick={() => navigate("/cv")}>RESUME</Button>
       <Button onClick={() => navigate("/acting")}>ACTING</Button>
     </Container>
