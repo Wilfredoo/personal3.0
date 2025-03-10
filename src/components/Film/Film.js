@@ -16,16 +16,6 @@ const Container = styled.div`
   text-transform: uppercase;
 `;
 
-const Title = styled.h1`
-  font-size: 8vw;
-  font-weight: 900;
-  background: #000;
-  color: #fff;
-  padding: 10px;
-  margin: 0;
-  width: 100%;
-`;
-
 const Button = styled.button`
   background: #000;
   color: #fff;
