@@ -13,8 +13,6 @@ const Redirector = () => {
     const { type } = useParams();
     const navigate = useNavigate();
 
-    console.log("redirector", type)
-
     useEffect(() => {
         console.log("Redirector called with type:", type);
 
@@ -25,7 +23,8 @@ const Redirector = () => {
         }
 
         console.log(`Redirecting to: ${redirects[type]}`);
-            window.location.href = redirects[type];
+        // Open the link in a new tab
+        window.open(redirects[type], '_blank');
 
     }, [type, navigate]);
 
