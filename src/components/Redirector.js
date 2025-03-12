@@ -13,18 +13,18 @@ const Redirector = () => {
     const { type } = useParams();
     const navigate = useNavigate();
 
+    console.log("redirector", type)
+
     useEffect(() => {
         console.log("Redirector called with type:", type);
 
         if (!type || !redirects[type]) {
-            console.error(`Error: No valid redirect found for type '${type}'`);
+            console.error("Error");
             navigate('/');
             return;
         }
 
-        console.log(`Redirecting to: ${redirects[type]}`);
-        // Open the link in a new tab
-        window.open(redirects[type], '_blank');
+            window.location.href = redirects[type];
 
     }, [type, navigate]);
 

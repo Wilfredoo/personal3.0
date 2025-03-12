@@ -36,8 +36,8 @@ const Film = () => {
   const navigate = useNavigate();
   return (
     <Container>
-      <Button onClick={() => navigate("/films")}>SHORTS</Button>
-      <Button onClick={() => navigate("/videography")}>SERVICES</Button>
+<Button onClick={() => window.open("https://www.youtube.com/playlist?list=PLmT80T_P4eJZv_n7VBQzn-aGZZjZ7_wxE", "_blank")}>SHORTS</Button>
+<Button onClick={() => navigate("/videography")}>SERVICES</Button>
       <Button onClick={() => navigate("/cv")}>RESUME</Button>
       <Button onClick={() => navigate("/acting")}>ACTING</Button>
     </Container>
