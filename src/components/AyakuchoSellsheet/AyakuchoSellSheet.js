@@ -18,7 +18,7 @@ const SellSheet = () => {
 
       {/* Embedded Video */}
       <VideoEmbed 
-          src="https://www.youtube.com/embed/YwN1Q7n6njA" 
+          src="https://www.youtube.com/embed/KSrXyIQeAUo" 
           title="Ayakucho Board Game Overview" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowFullScreen
@@ -30,7 +30,7 @@ const SellSheet = () => {
         {showKeyInfo && (
           <>
             <Paragraph><strong>Players:</strong> 6 to 12</Paragraph>
-            <Paragraph><strong>Playtime:</strong> 30 to 45 minutes</Paragraph>
+            <Paragraph><strong>Playtime:</strong> 20 to 50 minutes</Paragraph>
             <Paragraph><strong>Age Range:</strong> 12+</Paragraph>
             <Paragraph><strong>Game Components:</strong> 18 Gossip Event cards, 15 Stress Event cards, 12 Role cards, 4 Team reveal cards, 12 Voting wheels, 12 Number tokens, 1 Game board, 6 Game modes, 1 Rulebook.</Paragraph>
           </>
@@ -53,14 +53,15 @@ const SellSheet = () => {
         {showUniqueFeatures && (
           <List>
             <ListItem>
-              <strong>A new game  Sessions:</strong> Every game round is different, thanks to the dynamic exchange of information through event cards and varied game modes, ensuring no two games are ever the same.
+              <strong>Infinite Paths:</strong> Each player randomly receives a public number token, determining their information exchanges. This creates endless possibilities, ensuring no two games are alike.
             </ListItem>
             <ListItem>
-              <strong>Flexible Game Modes:</strong> Multiple game modes cater to different player preferences, offering a range of dynamics and complexity suitable for both casual and experienced players.
+              <strong>Non-Binary Anonymous Voting System:</strong> Ever wondered how different Werewolf would be if players could somehow vote anonymously for which players to kill? Ayakucho introduces this possibility for the first time seen in a social deduction game.
             </ListItem>
             <ListItem>
-              <strong>First Non-Binary Anonymous Voting System:</strong> Ayakucho introduces the first-ever non-binary anonymous voting, allowing players to vote for any individual in secret—something never seen in a social deduction game.
+              <strong>Custom Modes</strong> While there are general rules as a foundation, players can choose from different game modes based on their experience level and time availability. Plus, they can even create their own!
             </ListItem>
+           
           </List>
         )}
       </Section>
@@ -69,7 +70,7 @@ const SellSheet = () => {
         <h3 onClick={() => setShowDemons(!showDemons)}>Demons of Peru {showDemons ? '▲' : '▼'}</h3>
         {showDemons && (
           <Paragraph>
-            Inspired by Peruvian folklore, Ayakucho features Andean and Amazonian demonology. Players encounter mythical creatures and ancient spirits, adding depth to the game's strategic and immersive experience.
+            Inspired by Peruvian folklore and demonology, the game immerses players in a mystical world filled with eerie creatures, fear and wonder, for ancient spirits and supernatural events.
           </Paragraph>
         )}
       </Section>
@@ -80,37 +81,37 @@ const SellSheet = () => {
     <List>
       <ListItem>
         <VideoLink href="https://www.youtube.com/playlist?list=PLmT80T_P4eJb4IzNmhMLs0QHrnNKyphD5" target="_blank" rel="noreferrer noopener">
-          Video impressions of Ayakucho
+          More video impressions of Ayakucho
         </VideoLink>
       </ListItem>
       <ListItem>
         <ImageLink href="https://www.instagram.com/play_ayakucho/" target="_blank" rel="noreferrer noopener">
-          Instagram Page of Ayakucho
+          Instagram Page
         </ImageLink>
       </ListItem>
       <ListItem>
         <a href="https://boardgamegeek.com/boardgame/342455/bamberg" target="_blank" rel="noreferrer noopener">
-          Bamberg's BGG page
+          BGG page of Bamberg (previous name of the game)
         </a>
       </ListItem>
       <ListItem>
         <a href="https://boardgamegeek.com/thread/3128189/werewolves-done-right-english-german-review" target="_blank" rel="noreferrer noopener">
-          An unsolicited written review of Bamberg by one of our most passionate backers
+          Review by one of our most passionate backers
         </a>
       </ListItem>
       <ListItem>
         <a href="https://www.youtube.com/watch?v=MFkhvvn7TAw&t=395" target="_blank" rel="noreferrer noopener">
-          An unsolicited video review by YouTuber BrettBallet
+          An unsolicited review by content creator BrettBallet (minute 6:35)
         </a>
       </ListItem>
       <ListItem>
         <a href="https://www.kickstarter.com/projects/bamberg/bamberg-a-thrilling-game-of-social-deduction" target="_blank" rel="noreferrer noopener">
-          No-budget successful Kickstarter for Bamberg
+          Small but successful Kickstarter for Bamberg
         </a>
       </ListItem>
       <ListItem>
         <a href="https://www.instagram.com/ma.stak/" target="_blank" rel="noreferrer noopener">
-          Instagram of the artist Maria Stankievič
+          Instagram artist Maria Stankevich
         </a>
       </ListItem>
     </List>
