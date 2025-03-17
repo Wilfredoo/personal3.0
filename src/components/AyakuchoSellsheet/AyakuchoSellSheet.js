@@ -56,10 +56,10 @@ const SellSheet = () => {
               <strong>Infinite Paths:</strong> Each player randomly receives a public number token, determining their information exchanges. This creates endless possibilities, ensuring no two games are alike.
             </ListItem>
             <ListItem>
-              <strong>Non-Binary Anonymous Voting System:</strong> Ever wondered how different Werewolf would be if players could somehow vote anonymously for which players to kill? Ayakucho introduces this possibility for the first time seen in a social deduction game.
+              <strong>Anonymous Voting:</strong> Ever wondered how different Werewolf would be if players could somehow vote anonymously for which players to kill? Ayakucho introduces this possibility for the first time seen in a social deduction game.
             </ListItem>
             <ListItem>
-              <strong>Custom Modes</strong> While there are general rules as a foundation, players can choose from different game modes based on their experience level and time availability. Plus, they can even create their own!
+              <strong>Custom Modes:</strong> While there are general rules as a foundation, players can choose from different game modes based on their experience level and time availability. Plus, they can even create their own!
             </ListItem>
            
           </List>
