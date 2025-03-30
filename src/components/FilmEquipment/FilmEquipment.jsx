@@ -19,53 +19,52 @@ const texts = {
       Camera: ["Blackmagic Pocket Cinema Camera 4K"],
       Lenses: [
         "Sigma 30mm F1.4 DC DN Contemporary Lens (Micro Four Thirds)",
-        "Panasonic Lumix G Vario 12-35 mm / F2.8 ASPH. / Power O.I.S. (Black)"
+        "Panasonic Lumix G Vario 12-35 mm"
       ],
       Audio: [
-        "RØDE Boom Pole 3 m",
-        "Zoom H5 Recorder",
-        "Sennheiser MKH 416-P48 Boom Mic"
+        "RØDE Boom Pole (3 meters long)",
+        "Sennheiser MKH 416-P48 Boom Mic",
+        "Zoom H5 Recorder"
       ],
       Accessories: [
-        "Manfrotto Befree Live Travel Video Tripod"
+        "Manfrotto Live Travel Tripod"
       ]
     },
     skills: [
       "Camera Operation: Skilled in both handheld and static setups for versatile shooting.",
-      "Post-Production Mastery: Expert in DaVinci Resolve for cutting, audio mixing and color grading.",
-      "Professional Audio: Superior audio recording for crystal-clear sound.",
-      "Creative Lighting: Innovative setups using Aputure MC Lights, lightstands, and reflectors."
+      "Professional Audio: audio recording both indoor and outdoor for crystal-clear sound.",
+      "Post-Production: cutting, audio mixing and color grading in Davinci Resolve Studio.",
     ],
     videoTitle: "My Film Reel",
     videoURL: "https://www.youtube.com/embed/QznlG6t6W8s",
     contact: "Contact me on WhatsApp: +49 15781295360",
     location: "Based in Frankfurt, Berlin & Leipzig – available throughout Germany",
-    price: "Rates starting at €200/day",
+    price: "Rates starting at €250/day for a 6-hour workday.",
     buttonText: "Switch to German"
   },
   DE: {
     header: "Videografie & Storytelling",
     equipment: {
-      Kamera: ["Blackmagic Pocket Cinema Camera 4K"],
-      Objektive: [
-        "Sigma 30mm F1,4 DC DN Contemporary Objektiv (Micro Four Thirds)",
-        "Panasonic Lumix G Vario 12-35 mm / F2.8 ASPH. / Power O.I.S. (Schwarz)"
+      Camera: ["Blackmagic Pocket Cinema Camera 4K"],
+      Lenses: [
+        "Sigma 30mm F1.4 DC DN Contemporary Lens (Micro Four Thirds)",
+        "Panasonic Lumix G Vario 12-35 mm"
       ],
       Audio: [
-        "RØDE Boompole 3 m",
-        "Zoom H5 Recorder",
-        "Sennheiser MKH 416-P48 Boom-Mikrofon"
+        "RØDE Boom Pole (3 Meter lang)",
+        "Sennheiser MKH 416-P48 Boom Mikrofon",
+        "Zoom H5 Recorder"
       ],
-      Zubehör: [
-        "Manfrotto Befree Live Reise-Videostativ"
+      Accessories: [
+        "Manfrotto Live Travel Stativ"
       ]
     },
     skills: [
-      "Kameraarbeit: Erfahren in Handheld- und statischen Aufnahmen für vielseitige Einsatzmöglichkeiten.",
-      "Postproduktions-Expertise: Experte in DaVinci Resolve für Schnitt, Audiomixing und Color Grading.",
-      "Professioneller Ton: Überlegene Audioaufnahmen für kristallklaren Klang.",
-      "Kreative Beleuchtung: Innovative Setups mit Aputure MC Lights, Lichtständern und Reflektoren."
+      "Kamerabedienung: Erfahren in Handheld- und statischen Aufbauten für vielseitige Aufnahmen.",
+      "Professionelles Audio: Audioaufnahmen sowohl drinnen als auch draußen für kristallklaren Sound.",
+      "Post-Produktion: Schneiden, Audiomischung und Farbkorrektur in Davinci Resolve Studio."
     ],
+    
     videoTitle: "Mein Film-Reel",
     videoURL: "https://www.youtube.com/embed/QznlG6t6W8s",
     contact: "Kontaktieren Sie mich via WhatsApp: +49 15781295360",

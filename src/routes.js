@@ -1,6 +1,6 @@
 // Pages
 import Home from './components/Home';
-import Curriculum from './components/Curriculum';
+import Resume from './components/Resume/Resume';
 import FilmCurriculum from './components/FilmCurriculum';
 import Scripts from './components/Scripts';
 import Acting from './components/Acting/Acting';
@@ -20,7 +20,7 @@ import SellSheet from './components/AyakuchoSellsheet/AyakuchoSellSheet';
 
 const routes = [
     { path: "/", component: <Home /> },
-    { path: "/cv", component: <Curriculum /> },
+    { path: "/cv", component: <Resume /> },
     { path: "/acting", component: <Acting /> },
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },
