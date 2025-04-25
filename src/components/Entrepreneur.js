@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, TextContainer, LinkedinIcon } from './styles';
 import linkedinIcon from '../assets/images/linkedin.png'; 
-import ReferenceLetter from './Resume/Reference';
 
 
 const Entrepreneur = () => (

@@ -32,23 +32,6 @@ const SkillButton = styled.span`
   }
 `;
 
-const Title = styled.h1`
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-`;
-
-const Summary = styled.p`
-  font-size: 1.1rem;
-  color: #555;
-`;
-
-
-const ContactGrid = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-top: 1rem;
-`;
 
 const Resume = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);

@@ -179,8 +179,6 @@ transition: opacity 0.5s ease-in-out;
 
 width: -webkit-fill-available;
 
-
-
 `;
 
 const fadeIn = keyframes`
