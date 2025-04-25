@@ -6,16 +6,9 @@ import Scripts from './components/Scripts';
 import Acting from './components/Acting/Acting';
 import FilmEquipment from './components/FilmEquipment/FilmEquipment';
 import Film from './components/Film/Film';
-
-
-// Redirect Components
 import Redirector from './components/Redirector';
-
-// Cacao Components
 import Cacao from './components/Cacao/Cacao';
 import BatchOrders from './components/Cacao/BatchOrders';
-
-// Misc
 import SellSheet from './components/AyakuchoSellsheet/AyakuchoSellSheet';
 
 const routes = [
@@ -33,7 +26,6 @@ const routes = [
     { path: "/kakao/batch/:batchName", component: <BatchOrders /> },
     { path: "/:type", component: <Redirector /> },
     { path: "/scripts", component: <Scripts /> }
-
 ];
 
 export default routes;

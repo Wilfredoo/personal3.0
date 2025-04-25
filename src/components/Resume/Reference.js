@@ -8,7 +8,7 @@ const LetterWrapper = styled.div`
 const LetterContainer = styled.div`
 
 `;
-const ReferenceLetterButton = styled.button`
+const ReferenceLetterButton = styled.span`
 
 `;
 
@@ -23,9 +23,9 @@ const ReferenceLetter = () => {
   return (
     <LetterWrapper>
       <LetterContainer>
-      <ReferenceLetterButton onClick={handleDownloadReferenceLetter}>
-  See What My Former Employer Thinks (Spoiler: They're Happy!)
-</ReferenceLetterButton>
+        <ReferenceLetterButton onClick={handleDownloadReferenceLetter}>
+          See What My Former Employer Thinks (Spoiler: They're Happy!)
+        </ReferenceLetterButton>
       </LetterContainer>
     </LetterWrapper>
   );

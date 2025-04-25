@@ -12,20 +12,36 @@ export const shake = keyframes`
   80% { transform: translate(0px, -1px) rotate(0.5deg); }
   90% { transform: translate(1px, 1px) rotate(0deg); }
   100% { transform: translate(0px, -1px) rotate(-0.5deg); }
-
-  
 `;
+
+export const CenteredScreen = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+`;
+
+const fadeInEffect = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
+export const LoadingImage = styled.img`
+  width: 120px;
+  animation: ${fadeInEffect} 0.5s ease-in-out;
+`;
+
 export const HomeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  text-align: center; /* Center align text content */
+  text-align: center;
   font-family: 'Lunasima', sans-serif;
-  background-color: #FDF4F5; /* Change background color */
+  background-color: #FDF4F5;
   @media (min-width: 600px) {
   justify-content: start;
-
   }
 
  
@@ -166,6 +182,36 @@ width: -webkit-fill-available;
 
 
 `;
+
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
+
+const fadeInLeftToRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+export const StaggeredFade = styled.div`
+  opacity: 0;
+  animation: ${fadeIn} 0.6s ease forwards;
+  animation-delay: ${props => props.delay || '0s'};
+`;
+
+export const PhotoFade = styled.div`
+  opacity: 0;
+  animation: ${fadeInLeftToRight} 0.6s ease forwards;
+  animation-delay: ${props => props.delay || '0s'};
+`;
+
 
 export const Title = styled.p`
   a {
