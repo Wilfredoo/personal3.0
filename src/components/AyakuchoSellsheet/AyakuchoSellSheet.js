@@ -42,7 +42,7 @@ const SellSheet = () => {
         <h3 onClick={() => setShowGameOverview(!showGameOverview)}>Game Overview {showGameOverview ? '▲' : '▼'}</h3>
         {showGameOverview && (
           <Paragraph>
-            Ayakucho is a social deduction game for 6 to 12 players, set in the mystical Peruvian village of Ayakucho. Players take on hidden roles, forming alliances and engaging in strategic deception. With themes based on Peruvian demonology, varied game modes, and dynamic event cards that influence the flow of information, each game session is a unique and fast-paced experience with high replayability.
+            Ayakucho is a social deduction game set in the mystical Peruvian village of Ayakucho. Players take on hidden roles, forming alliances and engaging in strategic deception. With varied game modes and dynamic events that influence the flow of information shared among players, each game session is a unique experience with high replayability.
           </Paragraph>
         )}
       </Section>
@@ -56,7 +56,7 @@ const SellSheet = () => {
               <strong>Infinite Paths:</strong> Each player randomly receives a public number token, determining their information exchanges. This creates endless possibilities, ensuring no two games are alike.
             </ListItem>
             <ListItem>
-              <strong>Non-Binary Anonymous Voting System:</strong> Ever wondered how different Werewolf would be if players could somehow vote anonymously for which players to kill? Ayakucho introduces this possibility for the first time seen in a social deduction game.
+              <strong>Anonymous Voting System:</strong> Ever wondered how different Werewolf would be if players could somehow vote anonymously for which players to kill? Ayakucho introduces this possibility.
             </ListItem>
             <ListItem>
               <strong>Custom Modes</strong> While there are general rules as a foundation, players can choose from different game modes based on their experience level and time availability. Plus, they can even create their own!
