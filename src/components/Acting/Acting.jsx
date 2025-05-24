@@ -98,7 +98,7 @@ const Acting = () => {
                 <VideoSection>
                     <VideoEmbed>
                         <iframe
-                            src="https://www.youtube.com/embed/AgHofCprjk0"
+                            src="https://www.youtube.com/embed/CAy7nA4cDtI"
                             title="Acting Video 1"
                             allowFullScreen
                         />
