@@ -35,7 +35,7 @@ const texts = {
             "Indigenous-Peruvian actor with a core skill set in improvisational theater, contemporary dance, and martial arts.",
         tagline2: "Looking for challenging roles.",
         moreAbout: "More about me",
-        reelText: "The clips in this reel feature my first film acting auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne. Most of these auditions led to roles in projects now in post-production, with a mix of improvised and scripted scenes. Enjoy the glimpse!",
+        reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
         info: [
             "Height: 175 cm",
             "Build: Athletic",
@@ -98,7 +98,7 @@ const Acting = () => {
                 <VideoSection>
                     <VideoEmbed>
                         <iframe
-                            src="https://www.youtube.com/embed/lmzfSlaTOB4"
+                            src="https://www.youtube.com/embed/AgHofCprjk0"
                             title="Acting Video 1"
                             allowFullScreen
                         />
