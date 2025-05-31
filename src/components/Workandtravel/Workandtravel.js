@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Carousel from './Carousel'
+import ExperienceCarousel from './ExperienceCarousel';
 
 const Container = styled.div`
   max-width: 900px;
@@ -111,35 +112,8 @@ const WorkAndTravel = () => {
           <br /><br />
           I made this page to share my experiences directly with potential hosts, without relying on third-party platforms—just mutual trust and honest work.
         </Text>
-        <Carousel />
       </Section>
-      <Section>
-        <Subtitle>About Me</Subtitle>
-        <Text><Label>Name:</Label> Wilfredo Casas</Text>
-        <Text><Label>Age:</Label> 32</Text>
-        <Text><Label>Nationality:</Label> Peruvian</Text>
-        <Text><Label>Languages:</Label> Spanish, English, German and some German Sign Language</Text>
-        <Text><Label>Current Location:</Label> France</Text>
-      </Section>
-
-      <Section>
-        <Subtitle>What I Can Help With</Subtitle>
-        <List>
-          <li>Gardening and forestry tasks</li>
-          <li>Animal care</li>
-          <li>Cooking and kitchen help</li>
-          <li>Cleaning, painting, general maintenance</li>
-          <li>House and pet sitting</li>
-          <li>Video Production</li>
-          <li>Software Development</li>
-
-          <Text>
-            I enjoy work that involves physical skill and strength, creative thinking, or learning new techniques. I’m especially drawn to outdoor projects, working with animals, and I’d love to gain more experience in building and craftsmanship. Always open to a challenge.
-          </Text>
-        </List>
-      </Section>
-
-      <Section>
+           <Section>
         <Subtitle>Work & Travel Experiences</Subtitle>
 
         <ExperienceCard>
@@ -197,7 +171,41 @@ const WorkAndTravel = () => {
       </Section>
 
       <Section>
-        <Subtitle>Work & Exchange Expectations</Subtitle>
+  {/* <Subtitle>Work & Travel Experiences</Subtitle>
+  <ExperienceCarousel /> */}
+</Section>
+
+      <Section>
+        <Subtitle>About Me</Subtitle>
+                <Carousel />
+
+        <Text><Label>Name:</Label> Wilfredo Casas</Text>
+        <Text><Label>Age:</Label> 32</Text>
+        <Text><Label>Nationality:</Label> Peruvian</Text>
+        <Text><Label>Languages:</Label> Spanish, English, German and some German Sign Language</Text>
+        <Text><Label>Current Location:</Label> France</Text>
+      </Section>
+
+      <Section>
+        <Subtitle>What I Can Help With</Subtitle>
+        <List>
+          <li>Gardening and forestry tasks</li>
+          <li>Animal care</li>
+          <li>Cooking and kitchen help</li>
+          <li>Cleaning, painting, general maintenance</li>
+          <li>House and pet sitting</li>
+          <li>Video Production</li>
+          <li>Software Development</li>
+
+          <Text>
+            I enjoy work that involves physical strength or creative thinking, as well as learning new skills. I’m passionate about working with animals and would like to gain more experience in craftsmanship, wildlife photography, or nature preservation. Always open to new challenges.
+          </Text>
+        </List>
+      </Section>
+
+ 
+      <Section>
+        <Subtitle>Work Expectations</Subtitle>
         <Text>
           Before starting, I like to have a clear understanding of a few basic things:
         </Text>

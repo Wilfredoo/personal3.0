@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const CarouselContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 700px;
   margin: 2rem auto;
   overflow: hidden;
   border-radius: 8px;
