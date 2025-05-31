@@ -114,7 +114,7 @@ const WorkAndTravel = () => {
         </Text>
       </Section>
            <Section>
-        <Subtitle>Work & Travel Experiences</Subtitle>
+        <Subtitle>Work Experiences 2025</Subtitle>
 
         <ExperienceCard>
           <MetaRow>
