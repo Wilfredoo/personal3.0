@@ -83,7 +83,7 @@ const ExperienceCarousel = () => {
         </MetaRow>
         <p>A lovely experience working in the Norwegian wilderness under the guidance of two wonderful hosts.</p>
         <p><strong>Projects:</strong> Tree cutting (axe and chainsaw), cabin painting, stone wall construction, cleaning. Also supported with website design and shot video footage of the project.</p>
-        <p><strong>Reference:</strong> Mona - mona_bjorgum@hotmail.com</p> 
+        <p><strong>Reference:</strong></p> 
         <ImageGallery>
           <img src="/Photos/Norway/2.jpeg" alt="Norway 2" />
           <img src="/Photos/Norway/3.jpeg" alt="Norway 3" />

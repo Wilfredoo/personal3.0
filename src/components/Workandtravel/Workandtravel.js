@@ -173,7 +173,7 @@ const WorkAndTravel = () => {
             <img src="/Photos/Norway/3.jpeg" alt="Norway 3" />
             <img src="/Photos/Norway/4.jpeg" alt="Norway 4" />
           </ImageGallery>
-          <ReferenceText><Label>Reference Contact:</Label> Mona </ReferenceText>
+          <ReferenceText><Label>Reference Contact:</Label> Mona - mona_bjorgum@hotmail.com </ReferenceText>
 
         </ExperienceCard>
       </Section>
