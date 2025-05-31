@@ -41,11 +41,10 @@ const Text = styled.p`
 `;
 
 const ReferenceText = styled.p`
-  line-height: 1.6;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   margin: 1rem 0 0 0;
-  text-align: right;
-  color: #F564A9
+  color: #555;
+  line-height: 1.5;
 `;
 
 const List = styled.ul`
@@ -126,7 +125,7 @@ const WorkAndTravel = () => {
         <ExperienceCard>
           <MetaRow>
             <div>
-              <LocationIcon src={'/Icons/Location.png'} alt="Location Icon" /> House in Occitania, France
+              <LocationIcon src={'/Icons/Location.png'} alt="Location Icon" /> Occitania, France
             </div>
             <div>
               <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> May 2025 • 1 week
@@ -136,12 +135,12 @@ const WorkAndTravel = () => {
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
           </ImageGallery>
-          <ReferenceText><Label>Reference Contact:</Label> Julien</ReferenceText>
+          <ReferenceText><Label>Reference:</Label> Julien</ReferenceText>
         </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
             <div>
-              <LocationIcon src={'/Icons/Location.png'} alt="Location Icon" /> House in Occitania, France
+              <LocationIcon src={'/Icons/Location.png'} alt="Location Icon" /> Occitania, France
             </div>
             <div>
               <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> May 2025 • 4 days
@@ -153,14 +152,14 @@ const WorkAndTravel = () => {
             <img src="/Photos/France/2.jpeg" alt="France petsitting 2" />
             <img src="/Photos/France/4.jpeg" alt="France petsitting 3" />
           </ImageGallery>
-          <ReferenceText><Label>Reference Contact:</Label> Janina</ReferenceText>
+          <ReferenceText><Label>Reference:</Label> Janina</ReferenceText>
 
         </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
 
             <div>
-              <LocationIcon src={'/Icons/Location.png'} alt="Location Icon" /> Farm in Setesdal Valley, Norway
+              <LocationIcon src={'/Icons/Location.png'} alt="Location Icon" /> Setesdal Valley, Norway
             </div>
             <div>
               <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> April 2025 • 1 month
@@ -173,7 +172,11 @@ const WorkAndTravel = () => {
             <img src="/Photos/Norway/3.jpeg" alt="Norway 3" />
             <img src="/Photos/Norway/4.jpeg" alt="Norway 4" />
           </ImageGallery>
-          <ReferenceText><Label>Reference Contact: Mona - mona_bjorgum@hotmail.com</Label> </ReferenceText>
+          <ReferenceText>
+  <Label>Reference:</Label> Mona<br />
+  <Label>Email:</Label> mona_bjorgum@hotmail.com
+</ReferenceText>
+
 
         </ExperienceCard>
       </Section>
