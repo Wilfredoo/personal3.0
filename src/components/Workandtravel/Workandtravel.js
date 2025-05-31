@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Carousel from './Carousel'
-import ExperienceCarousel from './ExperienceCarousel';
 
 const Container = styled.div`
   max-width: 900px;
