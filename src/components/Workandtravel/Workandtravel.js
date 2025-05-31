@@ -40,6 +40,14 @@ const Text = styled.p`
   font-size: 1.05rem;
 `;
 
+const ReferenceText = styled.p`
+  line-height: 1.6;
+  font-size: 1.05rem;
+  margin: 1rem 0 0 0;
+  text-align: right;
+  color: #F564A9
+`;
+
 const List = styled.ul`
   padding-left: 1.2rem;
   margin-top: 0.5rem;
@@ -128,7 +136,7 @@ const WorkAndTravel = () => {
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
           </ImageGallery>
-          <Text><Label>Reference Contact:</Label> Julien</Text>
+          <ReferenceText><Label>Reference Contact:</Label> Julien</ReferenceText>
         </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
@@ -145,7 +153,7 @@ const WorkAndTravel = () => {
             <img src="/Photos/France/2.jpeg" alt="France petsitting 2" />
             <img src="/Photos/France/4.jpeg" alt="France petsitting 3" />
           </ImageGallery>
-          <Text><Label>Reference Contact:</Label> Janina</Text>
+          <ReferenceText><Label>Reference Contact:</Label> Janina</ReferenceText>
 
         </ExperienceCard>
         <ExperienceCard>
@@ -159,13 +167,13 @@ const WorkAndTravel = () => {
             </div>
           </MetaRow>
           <Text>A lovely experience working in the Norwegian wilderness under the guidance of two wonderful hosts.</Text>
-          <Text><Label>Projects:</Label> Tree cutting (axe and chainsaw), cabin painting, stone wall construction, cleaning. Also supported with website design and shot video footage of the project.</Text>
+          <Text><Label>Projects:</Label> Tree cutting, cabin painting, stone wall construction, cleaning. Also helped with building a website and video production.</Text>
           <ImageGallery>
             <img src="/Photos/Norway/2.jpeg" alt="Norway 2" />
             <img src="/Photos/Norway/3.jpeg" alt="Norway 3" />
             <img src="/Photos/Norway/4.jpeg" alt="Norway 4" />
           </ImageGallery>
-          <Text><Label>Reference Contact:</Label> Mona </Text>
+          <ReferenceText><Label>Reference Contact:</Label> Mona </ReferenceText>
 
         </ExperienceCard>
       </Section>
