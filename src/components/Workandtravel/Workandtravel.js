@@ -125,10 +125,10 @@ const WorkAndTravel = () => {
             </div>
           </MetaRow>
           <Text> Right after my last experience, I house-sat another charming house and cared for 5 goats and 1 cat while the owner was away.</Text>
-          <Text><Label>Reference:</Label> Julien</Text>
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
           </ImageGallery>
+          <Text><Label>Reference Contact:</Label> Julien</Text>
         </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
@@ -140,14 +140,14 @@ const WorkAndTravel = () => {
             </div>
           </MetaRow>
           <Text>Here I cared for 2 dogs and 2 cats while house sitting for 4 days in a nice little home in the south of France.</Text>
-          <Text><Label>Reference:</Label> Janina</Text>
           <ImageGallery>
             <img src="/Photos/France/1.jpeg" alt="France petsitting 1" />
             <img src="/Photos/France/2.jpeg" alt="France petsitting 2" />
             <img src="/Photos/France/4.jpeg" alt="France petsitting 3" />
           </ImageGallery>
-        </ExperienceCard>
+          <Text><Label>Reference Contact:</Label> Janina</Text>
 
+        </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
 
@@ -160,12 +160,13 @@ const WorkAndTravel = () => {
           </MetaRow>
           <Text>A lovely experience working in the Norwegian wilderness under the guidance of two wonderful hosts.</Text>
           <Text><Label>Projects:</Label> Tree cutting (axe and chainsaw), cabin painting, stone wall construction, cleaning. Also supported with website design and shot video footage of the project.</Text>
-          <Text><Label>Reference:</Label> Mona </Text>
           <ImageGallery>
             <img src="/Photos/Norway/2.jpeg" alt="Norway 2" />
             <img src="/Photos/Norway/3.jpeg" alt="Norway 3" />
             <img src="/Photos/Norway/4.jpeg" alt="Norway 4" />
           </ImageGallery>
+          <Text><Label>Reference Contact:</Label> Mona </Text>
+
         </ExperienceCard>
       </Section>
 
