@@ -1,7 +1,7 @@
 // Pages
 import Home from './components/Home';
 import Curriculum from './components/Curriculum';
-import FilmCurriculum from './components/FilmCurriculum';
+import Workandtravelsecure from './components/Workandtravel/Workandtravelsecure';
 import Scripts from './components/Scripts';
 import Acting from './components/Acting/Acting';
 import FilmEquipment from './components/FilmEquipment/FilmEquipment';
@@ -25,8 +25,8 @@ const routes = [
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },
     { path: "/videography", component: <FilmEquipment /> },
-    { path: "/resume", component: <FilmCurriculum /> },
     { path: "/ayakucho", component: <SellSheet /> },
+    { path: "/workandtravel", component: <Workandtravelsecure /> },
     { path: "/cacao", component: <Cacao /> },
     { path: "/kakao", component: <Cacao /> },
     { path: "/cacao/batch/:batchName", component: <BatchOrders /> },
