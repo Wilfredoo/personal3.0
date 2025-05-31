@@ -158,7 +158,7 @@ const WorkAndTravel = () => {
               <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> April 2025 • 1 month
             </div>
           </MetaRow>
-          <Text>A lovely experience working in the Norwegian wilderness under the guindance of two wonderful hosts.</Text>
+          <Text>A lovely experience working in the Norwegian wilderness under the guidance of two wonderful hosts.</Text>
           <Text><Label>Projects:</Label> Tree cutting (axe and chainsaw), cabin painting, stone wall construction, cleaning. Also supported with website design and shot video footage of the project.</Text>
           <Text><Label>Reference:</Label> Mona </Text>
           <ImageGallery>
