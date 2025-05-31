@@ -107,7 +107,7 @@ const WorkAndTravel = () => {
         <Title>My Work & Travel Experiences</Title>
         <Text>
           Hi, I’m Wilfredo.<br /><br />
-          I travel and volunteer help wherever I go—gardens, wildlife, homes & pets, creative projects of all kinds.
+          For 2025, I’m open to opportunities involving gardens, wildlife, homes & pet sitting, and creative projects of all kinds—primarily across Europe, but open to other regions as well.
           <br /><br />
           I made this page to share my experiences directly with potential hosts, without relying on third-party platforms—just mutual trust and honest work.
         </Text>
