@@ -158,7 +158,7 @@ const WorkAndTravel = () => {
             <img src="/Photos/France/4.jpeg" alt="France petsitting 3" />
           </ImageGallery>
               <ReferenceText>
-            <Label>Reference:</Label> Janina (Julien's neighbour)<br />
+            <Label>Reference:</Label> Julien<br />
             <Label>Email:</Label> jujacob@gmail.com
           </ReferenceText>
         </ExperienceCard>
