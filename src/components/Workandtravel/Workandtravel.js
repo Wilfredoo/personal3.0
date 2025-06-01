@@ -116,7 +116,6 @@ const CollapsibleSection = ({ title, children }) => {
       <div
         style={{
           display: 'flex',
-          alignItems: 'center',
           cursor: 'pointer',
           userSelect: 'none',
           alignItems: 'baseline'
