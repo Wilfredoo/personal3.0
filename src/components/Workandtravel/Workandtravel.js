@@ -119,7 +119,7 @@ const WorkAndTravel = () => {
           I made this page to share my experiences directly with potential hosts, without relying on third-party platforms—just mutual trust and honest work.
         </Text>
       </Section>
-           <Section>
+      <Section>
         <Subtitle>Work Experiences 2025</Subtitle>
 
         <ExperienceCard>
@@ -136,6 +136,8 @@ const WorkAndTravel = () => {
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
           </ImageGallery>
           <ReferenceText><Label>Reference:</Label> Julien</ReferenceText>
+          <Label>Email:</Label> jujacob@gmail.com
+
         </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
@@ -152,8 +154,8 @@ const WorkAndTravel = () => {
             <img src="/Photos/France/2.jpeg" alt="France petsitting 2" />
             <img src="/Photos/France/4.jpeg" alt="France petsitting 3" />
           </ImageGallery>
-          <ReferenceText><Label>Reference:</Label> Janina</ReferenceText>
-
+          <ReferenceText><Label>Reference:</Label> Janina (Julien's neighbour)</ReferenceText>
+          <Label>Email:</Label> jujacob@gmail.com
         </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
@@ -173,22 +175,19 @@ const WorkAndTravel = () => {
             <img src="/Photos/Norway/4.jpeg" alt="Norway 4" />
           </ImageGallery>
           <ReferenceText>
-  <Label>Reference:</Label> Mona<br />
-  <Label>Email:</Label> mona_bjorgum@hotmail.com
-</ReferenceText>
-
-
+            <Label>Reference:</Label> Mona<br />
+            <Label>Email:</Label> mona_bjorgum@hotmail.com
+          </ReferenceText>
         </ExperienceCard>
+      </Section>
+      <Section>
+        {/* <Subtitle>Work & Travel Experiences</Subtitle>
+  <ExperienceCarousel /> */}
       </Section>
 
       <Section>
-  {/* <Subtitle>Work & Travel Experiences</Subtitle>
-  <ExperienceCarousel /> */}
-</Section>
-
-      <Section>
         <Subtitle>About Me</Subtitle>
-                <Carousel />
+        <Carousel />
 
         <Text><Label>Name:</Label> Wilfredo Casas</Text>
         <Text><Label>Age:</Label> 32</Text>
@@ -214,7 +213,7 @@ const WorkAndTravel = () => {
         </List>
       </Section>
 
- 
+
       <Section>
         <Subtitle>Work Expectations</Subtitle>
         <Text>
