@@ -147,6 +147,8 @@ const WorkAndTravel = () => {
 
       <Section>
         <Title>My Work & Travel Experiences</Title>
+        <Carousel />
+
         <Text>
           Hi, I’m Wilfredo.<br /><br />
           For 2025, I’m open to opportunities involving gardens, wildlife, homes & pet sitting, and creative projects of all kinds—primarily across Europe, but open to other regions as well.
@@ -230,7 +232,6 @@ const WorkAndTravel = () => {
         <CollapsibleSection title="About Me">
       <Section>
 
-        <Carousel />
 
         <Text><Label>Name:</Label> Wilfredo Casas</Text>
         <Text><Label>Age:</Label> 32</Text>
