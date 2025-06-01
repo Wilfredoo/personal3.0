@@ -135,8 +135,11 @@ const WorkAndTravel = () => {
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
           </ImageGallery>
-          <ReferenceText><Label>Reference:</Label> Julien</ReferenceText>
-          <Label>Email:</Label> jujacob@gmail.com
+           <ReferenceText>
+            <Label>Reference:</Label> Julien<br />
+            <Label>Email:</Label> jujacob@gmail.com
+          </ReferenceText>
+          
 
         </ExperienceCard>
         <ExperienceCard>
@@ -154,8 +157,10 @@ const WorkAndTravel = () => {
             <img src="/Photos/France/2.jpeg" alt="France petsitting 2" />
             <img src="/Photos/France/4.jpeg" alt="France petsitting 3" />
           </ImageGallery>
-          <ReferenceText><Label>Reference:</Label> Janina (Julien's neighbour)</ReferenceText>
-          <Label>Email:</Label> jujacob@gmail.com
+              <ReferenceText>
+            <Label>Reference:</Label> Janina (Julien's neighbour)<br />
+            <Label>Email:</Label> jujacob@gmail.com
+          </ReferenceText>
         </ExperienceCard>
         <ExperienceCard>
           <MetaRow>
