@@ -131,7 +131,7 @@ const WorkAndTravel = () => {
               <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> May 2025 • 1 week
             </div>
           </MetaRow>
-          <Text> Right after my last experience, I house-sat another charming house and cared for 5 goats and 1 cat while the owner was away.</Text>
+          <Text> I am pet sitting 5 goats and 1 cat in another charming house in France while the owner is away.</Text>
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
           </ImageGallery>
