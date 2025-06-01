@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import Carousel from './Carousel'
 
@@ -21,7 +21,7 @@ const MetaRow = styled.div`
 
 
 const Section = styled.section`
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 `;
 
 const Title = styled.h1`
@@ -29,8 +29,11 @@ const Title = styled.h1`
   margin-bottom: 1rem;
 `;
 
+
+
 const Subtitle = styled.h2`
-  font-size: 1.3rem;
+  font-size: 2rem;
+  font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
 `;
@@ -105,11 +108,44 @@ const DateIcon = styled.img`
   margin-right: 0.5rem;
 `;
 
+const CollapsibleSection = ({ title, children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <Section>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          cursor: 'pointer',
+          userSelect: 'none',
+          alignItems: 'baseline'
+        }}
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        
+        <Subtitle>{title}</Subtitle>
+        <img
+          src={isOpen ? '/Icons/collapseIcon.png' : '/Icons/expandIcon.png'}
+          alt={isOpen ? 'Collapse Icon' : 'Expand Icon'}
+          style={{
+            width: '26px',
+            height: '26px',
+            marginLeft: '0.7rem',
+            transition: 'transform 0.2s ease'
+          }}
+        />
+      </div>
+      {isOpen && <div>{children}</div>}
+    </Section>
+  );
+};
 
 
 const WorkAndTravel = () => {
   return (
     <Container>
+
       <Section>
         <Title>My Work & Travel Experiences</Title>
         <Text>
@@ -120,8 +156,8 @@ const WorkAndTravel = () => {
         </Text>
       </Section>
       <Section>
-        <Subtitle>Work Experiences 2025</Subtitle>
 
+      <CollapsibleSection title="My Work and Pet Sitting Experiences 2025">
         <ExperienceCard>
           <MetaRow>
             <div>
@@ -184,14 +220,17 @@ const WorkAndTravel = () => {
             <Label>Email:</Label> mona_bjorgum@hotmail.com
           </ReferenceText>
         </ExperienceCard>
+        </CollapsibleSection>
+
       </Section>
       <Section>
         {/* <Subtitle>Work & Travel Experiences</Subtitle>
   <ExperienceCarousel /> */}
       </Section>
 
+        <CollapsibleSection title="About Me">
       <Section>
-        <Subtitle>About Me</Subtitle>
+
         <Carousel />
 
         <Text><Label>Name:</Label> Wilfredo Casas</Text>
@@ -235,6 +274,25 @@ const WorkAndTravel = () => {
           I value fairness and open communication, and I always aim for a win-win setup.
         </Text>
       </Section>
+
+            <Section>
+        <Subtitle>Pet Sitting Expectations</Subtitle>
+  <Text>
+          Please let me know:
+        </Text>
+        <OrderedList>
+          <OrderedList>
+  <li>Pet care instructions — feeding, routines, medications and vet contacts.</li>
+  <li>House instructions — cleaning, plants, garbage, internet, areas to use, and whether an occasional guest is allowed.</li>
+  <li>Emergencies — emergency numbers and what to do in case of unexpected situations.</li>
+</OrderedList>
+
+        </OrderedList>
+
+        <Text>
+          I value fairness and open communication, and I always aim for a win-win setup.
+        </Text>
+      </Section>
       <Section>
         <Subtitle>Dietary Preferences</Subtitle>
         <Text>
@@ -252,6 +310,7 @@ const WorkAndTravel = () => {
 
       </Section>
 
+</CollapsibleSection>
 
     </Container>
   );
