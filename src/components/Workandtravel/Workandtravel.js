@@ -170,6 +170,9 @@ const WorkAndTravel = () => {
           <Text> I am currently pet sitting 5 goats and 1 cat in another charming house in France, as well as helping out with some tasks around the house (mostly cooking & gardening).</Text>
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
+            <img src="/Photos/France/France_Julien.jpeg" alt="France goatsitting 2" />
+            <img src="/Photos/France/France_Julien_2.jpeg" alt="France goatsitting 3" />
+
           </ImageGallery>
            <ReferenceText>
             <Label>Reference:</Label> Julien<br />
