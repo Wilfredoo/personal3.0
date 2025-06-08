@@ -153,7 +153,6 @@ const WorkAndTravel = () => {
           Hi, I’m Wilfredo.<br /><br />
           For 2025, I’m open to opportunities involving gardens, wildlife, homes & pet sitting, and creative projects of all kinds—primarily across Europe, but open to other regions as well.
           <br /><br />
-          I made this page to share my experiences directly with potential hosts, without relying on third-party platforms—just mutual trust and honest work.
         </Text>
       </Section>
       <Section>
