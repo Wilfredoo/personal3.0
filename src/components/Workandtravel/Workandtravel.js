@@ -164,10 +164,10 @@ const WorkAndTravel = () => {
               <LocationIcon src={'/Icons/Location.png'} alt="Location Icon" /> Occitania, France
             </div>
             <div>
-              <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> May 2025 • 1 week
+              <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> May 2025 • 2 weeks
             </div>
           </MetaRow>
-          <Text> I am pet sitting 5 goats and 1 cat in another charming house in France while the owner is away.</Text>
+          <Text> I am currently pet sitting 5 goats and 1 cat in another charming house in France, as well as helping out with some tasks around the house (mostly cooking & gardening).</Text>
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
           </ImageGallery>
