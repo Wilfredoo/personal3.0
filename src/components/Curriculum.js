@@ -136,8 +136,8 @@ const Curriculum = () => {
 
   const welcomeText = language === 'EN' ? "Fancy a peek at my CV?" : "Neugierig auf meinen Lebenslauf?";
   const descriptionText = language === 'EN'
-    ? "I've been doing a lot over the past decade, and navigating my unorthodox career journey can be challenging. To make things easier, I've crafted three different resumes that highlight my experience in my three core skill sets."
-    : "Ich war in den letzten zehn Jahren sehr aktiv, und es kann eine Herausforderung sein, meinen unorthodoxen Karriereweg zu navigieren. Um es Ihnen einfacher zu machen, habe ich drei verschiedene Lebensläufe erstellt, die meine Erfahrungen in meinen drei Kernkompetenzen hervorheben.";
+    ? "Below are two distinct resumes that highlight my experience in two of my core skills: entrepreneurship and software development."
+    : "Hier sind zwei unterschiedliche Lebensläufe, die meine Erfahrungen in zwei meiner wichtigsten Kompetenzen hervorheben: Unternehmertum und Softwareentwicklung.";
 
   return (
     <Wrapper>
@@ -155,12 +155,6 @@ const Curriculum = () => {
             {language === 'EN' ? 'Software Developer' : 'Software-Entwickler'}
           </Button>
           <Experience>{language === 'EN' ? 'Since 2018' : 'Seit 2018'}</Experience>
-        </ButtonWrapper>
-        <ButtonWrapper>
-          <Button onClick={() => handleDownload('Filmmaker')}>
-            {language === 'EN' ? 'Filmmaker' : 'Filmemacher'}
-          </Button>
-          <Experience>{language === 'EN' ? 'Since 2022' : 'Seit 2022'}</Experience>
         </ButtonWrapper>
       </ButtonContainer>
       <LanguageButton onClick={toggleLanguage}>
