@@ -22,7 +22,7 @@ const routes = [
     { path: "/", component: <Home /> },
     { path: "/cv", component: <Curriculum /> },
     { path: "/acting", component: <Acting /> },
-    { path: "/reference_letter", component: <Reference_letter /> },
+    { path: "/reference_letter", component: <Referenceletter /> },
 
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },
