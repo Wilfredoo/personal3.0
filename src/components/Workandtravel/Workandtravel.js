@@ -167,7 +167,7 @@ const WorkAndTravel = () => {
               <DateIcon src={'/Icons/Date.png'} alt="Date Icon" /> May 2025 • 2 weeks
             </div>
           </MetaRow>
-          <Text> I am currently pet sitting 5 goats and 1 cat in another charming house in France, as well as helping out with some tasks around the house (mostly cooking & gardening).</Text>
+          <Text> In another charming house in France, I pet-sitted 5 goats and 1 lovely cat, as well as helped out with some tasks around the house such as cleaning, cooking & gardening.</Text>
           <ImageGallery>
             <img src="/Photos/France/Goats.jpeg" alt="France goatsitting 1" />
             <img src="/Photos/France/France_Julien.jpeg" alt="France goatsitting 2" />
@@ -239,7 +239,7 @@ const WorkAndTravel = () => {
         <Text><Label>Age:</Label> 32</Text>
         <Text><Label>Nationality:</Label> Peruvian</Text>
         <Text><Label>Languages:</Label> Spanish, English, German and some German Sign Language</Text>
-        <Text><Label>Current Location:</Label> France</Text>
+        <Text><Label>Current Location:</Label> Switzerland</Text>
       </Section>
 
       <Section>
