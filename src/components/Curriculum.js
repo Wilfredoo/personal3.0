@@ -147,7 +147,15 @@ const Curriculum = () => {
     document.body.removeChild(link);
 };
 
-
+const handleReferenceDownload = () => {
+  const link = document.createElement('a');
+  link.href = `${process.env.PUBLIC_URL}/Reference_Letter.pdf`;
+  link.download = 'Reference_Letter.pdf';
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 
   const toggleLanguage = () => {
@@ -181,7 +189,7 @@ const Curriculum = () => {
         {language === 'EN' ? 'Auf Deutsch wechseln' : 'Switch to English'}
       </LanguageButton>
            
-      <MinimalButton onClick={() => window.location.href = '/Reference_Letter.pdf'}>
+      <MinimalButton onClick={() => handleReferenceDownload()}>
         {language === 'EN' ? 'Download Reference Letter' : 'Arbeitszeugnis herunterladen'}
       </MinimalButton>
 
