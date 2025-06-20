@@ -147,15 +147,7 @@ const Curriculum = () => {
     document.body.removeChild(link);
 };
 
-const handleReferenceDownload = () => {
-  const link = document.createElement('a');
-  link.href = `${process.env.PUBLIC_URL}/Reference_Letter.pdf`;
-  link.download = 'Reference_Letter.pdf';
-  link.style.display = 'none';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+
 
 
   const toggleLanguage = () => {
