@@ -19,6 +19,8 @@ const Wrapper = styled.div`
   }
 `;
 
+
+
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -59,6 +61,23 @@ const Button = styled.button`
     background-color: #555;
   }
 `;
+
+const MinimalButton = styled.button`
+  margin-top: 20px;
+  padding: 6px 12px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #E3A5C7;
+  }
+`;
+
 
 const Experience = styled.div`
   color: #666;
@@ -128,6 +147,15 @@ const Curriculum = () => {
     document.body.removeChild(link);
 };
 
+const handleReferenceDownload = () => {
+  const link = document.createElement('a');
+  link.href = `${process.env.PUBLIC_URL}/Reference_Letter.pdf`;
+  link.download = 'Reference_Letter.pdf';
+  link.style.display = 'none';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 
   const toggleLanguage = () => {
@@ -160,6 +188,12 @@ const Curriculum = () => {
       <LanguageButton onClick={toggleLanguage}>
         {language === 'EN' ? 'Auf Deutsch wechseln' : 'Switch to English'}
       </LanguageButton>
+           
+      <MinimalButton onClick={() => window.location.href = '/Reference_Letter.pdf'}>
+        {language === 'EN' ? 'Download Reference Letter' : 'Arbeitszeugnis herunterladen'}
+      </MinimalButton>
+
+
     </Wrapper>
   );
 };
