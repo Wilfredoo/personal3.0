@@ -60,7 +60,7 @@ const Button = styled.button`
 const WorkAndTravelSecure = () => {
   const [accessGranted, setAccessGranted] = useState(false);
   const [input, setInput] = useState('');
-  const correctPin = '3333'; // Change your PIN here
+  const correctPin = '1001'; // Change your PIN here
 
   const handleSubmit = (e) => {
     e.preventDefault();
