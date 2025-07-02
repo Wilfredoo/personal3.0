@@ -72,6 +72,7 @@ const texts = {
 };
 
 const Acting = () => {
+    // hello world
     const [language, setLanguage] = useState("EN");
     const toggleLanguage = () => setLanguage((prev) => (prev === "EN" ? "DE" : "EN"));
     const currentText = texts[language];
