@@ -24,9 +24,11 @@ import wilfredo4 from '../../assets/images/wilfredo_4.jpeg';
 import wilfredo5 from '../../assets/images/wilfredo_5.jpeg';
 import wilfredo7 from '../../assets/images/wilfredo_7.png';
 import wilfredo8 from '../../assets/images/wilfredo_8.jpg';
+import wilfredo9 from '../../assets/images/wilfredo_9.jpeg';
+import wilfredo10 from '../../assets/images/wilfredo_10.jpeg';
+import wilfredo11 from '../../assets/images/wilfredo_11.jpeg';
 
-const photos = [wilfredo1, wilfredo2, wilfredo3, wilfredo4,wilfredo7, wilfredo5 , wilfredo8];
-
+const photos = [wilfredo1, wilfredo2, wilfredo3, wilfredo4,wilfredo7, wilfredo5 , wilfredo8, wilfredo9, wilfredo10, wilfredo11];
 
 const texts = {
     EN: {

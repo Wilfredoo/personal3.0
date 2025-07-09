@@ -218,8 +218,7 @@ export const InfoItem = styled.li`
 
 /* Images with neon border and shadow */
 export const ProfileImage = styled.img`
-  width: 100%;
-  max-width: 400px;
+height: 350px;
   margin: 0 auto;
   border-radius: 8px;
   border: 3px solid #ff0080;
