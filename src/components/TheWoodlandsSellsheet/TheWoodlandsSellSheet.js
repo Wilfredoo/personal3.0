@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, ImageLink, VideoLink, WhatsAppLink, VideoEmbed, CoverImage
+  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, WhatsAppLink, CoverImage
 } from './styles';
 import woodlandsCover from '../../assets/images/woodlands_cover.png';
 
@@ -8,13 +8,12 @@ const SellSheet = () => {
   const [showKeyInfo, setShowKeyInfo] = useState(false);
   const [showGameOverview, setShowGameOverview] = useState(false);
   const [showUniqueFeatures, setShowUniqueFeatures] = useState(false);
-  const [showMore, setShowMore] = useState(false);
   const [showWoodlandWar, setShowWoodlandWar] = useState(false);
 
   return (
     <Container>
       <Title>The Woodlands</Title>
-      <Subtitle>A brutal tactical card game of woodland warfare where only one survives.</Subtitle>
+      <Subtitle>A brutal tactical card game of woodland warfare where only one player survives.</Subtitle>
       
       <CoverImage src={woodlandsCover} alt="The Woodlands Game Cover" />
 
