@@ -17,6 +17,7 @@ import BatchOrders from './components/Cacao/BatchOrders';
 
 // Misc
 import SellSheet from './components/AyakuchoSellsheet/AyakuchoSellSheet';
+import TheWoodlandsSellSheet from './components/TheWoodlandsSellsheet/TheWoodlandsSellSheet';
 
 const routes = [
     { path: "/", component: <Home /> },
@@ -28,6 +29,7 @@ const routes = [
     { path: "/filmequipment", component: <FilmEquipment /> },
     { path: "/videography", component: <FilmEquipment /> },
     { path: "/ayakucho", component: <SellSheet /> },
+    { path: "/thewoodlands", component: <TheWoodlandsSellSheet /> },
     { path: "/workandtravel", component: <Workandtravelsecure /> },
     { path: "/cacao", component: <Cacao /> },
     { path: "/kakao", component: <Cacao /> },
