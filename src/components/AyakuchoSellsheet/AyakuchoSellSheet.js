@@ -34,7 +34,7 @@ const SellSheet = () => {
             <Paragraph><strong>Age Range:</strong> 12+</Paragraph>
             <Paragraph><strong>Status:</strong> Advanced Prototype</Paragraph>
 
-            <Paragraph><strong>Game Components:</strong> 18 Gossip Event cards, 15 Stress Event cards, 12 Role cards, 4 Team reveal cards, 12 Voting wheels, 12 Number tokens, 1 Game board, 6 Game modes, 1 Rulebook.</Paragraph>
+            <Paragraph><strong>Game Components:</strong> 12 Stressful Event cards, 12 Role cards, 4 Team reveal cards, 12 Voting wheels, 12 Number tokens, 1 Game board, 1 unlucky bag with 12 tokens, 1 Rulebook.</Paragraph>
           </>
         )}
       </Section>
