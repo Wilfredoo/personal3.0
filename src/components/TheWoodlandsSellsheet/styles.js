@@ -87,7 +87,6 @@ export const VideoEmbed = styled.iframe`
 
 export const CoverImage = styled.img`
   width: 100%;
-  max-width: 600px;
   height: auto;
   display: block;
   border-radius: 8px;
@@ -97,7 +96,15 @@ export const CoverImage = styled.img`
 export const ImageNote = styled.p`
   font-size: 12px;
   color: #888;
-  text-align: center;
+  text-align: right;
   margin-top: 8px;
   font-style: italic;
+`;
+
+export const ImageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  max-width: 600px;
+
 `;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, WhatsAppLink, CoverImage, ImageNote
+  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, WhatsAppLink, CoverImage, ImageNote, ImageContainer
 } from './styles';
 import woodlandsCover from '../../assets/images/woodlands_cover.png';
 
@@ -13,10 +13,13 @@ const SellSheet = () => {
   return (
     <Container> 
       <Title>The Woodlands</Title>
-      <Subtitle>A brutal tactical card game of woodland warfare where only one player survives.</Subtitle>
+      <Subtitle>A tactical game of woodland warfare where only one player survives</Subtitle>
       
-      <CoverImage src={woodlandsCover} alt="The Woodlands Game Cover" />
-      <ImageNote>AI generated image</ImageNote>
+      <ImageContainer>
+        <CoverImage src={woodlandsCover} alt="The Woodlands Game Cover" />
+        <ImageNote>AI generated image</ImageNote>
+      </ImageContainer>
+      
 
       <Section>
         <h3 onClick={() => setShowKeyInfo(!showKeyInfo)}>Key Information {showKeyInfo ? '▲' : '▼'}</h3>
