@@ -29,7 +29,7 @@ const SellSheet = () => {
             <Paragraph><strong>Playtime:</strong> 15 to 25 minutes</Paragraph>
             <Paragraph><strong>Age Range:</strong> 10+</Paragraph>
             <Paragraph><strong>Status:</strong> Early Testing</Paragraph>
-            <Paragraph><strong>Game Components:</strong> 1 box, 25 cards, 30 fruit tokens, 10 dam tokens (beaver-built structures).</Paragraph>
+            <Paragraph><strong>Game Components:</strong> 1 box, 25 cards, 30 fruit tokens, 10 dam tokens (beaver structures), 1 rulebook.</Paragraph>
           </>
         )}
       </Section>
