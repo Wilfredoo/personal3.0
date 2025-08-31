@@ -44,7 +44,7 @@ const SellSheet = () => {
         <h3 onClick={() => setShowGameOverview(!showGameOverview)}>Game Overview {showGameOverview ? '▲' : '▼'}</h3>
         {showGameOverview && (
           <Paragraph>
-            Ayakucho is a social deduction game set in the mystical Peruvian village of Ayakucho. Players take on hidden roles, forming alliances and engaging in strategic deception. With varied game modes and dynamic events that influence the flow of information shared among players, each game session is a unique experience with high replayability.
+            Ayakucho is a social deduction game set in the mystical Peruvian village of Ayakucho. Players take on hidden roles, forming alliances and engaging in deception. With two different game modes and dynamic events that influence the flow of information shared among players, the game offers endless replayability.
           </Paragraph>
         )}
       </Section>
@@ -61,8 +61,7 @@ const SellSheet = () => {
               <strong>Anonymous Voting System:</strong> Ever wondered how different Werewolf would be if players could somehow vote anonymously for which players to kill? Ayakucho introduces this possibility.
             </ListItem>
             <ListItem>
-              <strong>Custom Modes</strong> While there are general rules as a foundation, players can choose from different game modes based on their experience level and time availability. Plus, they can even create their own!
-            </ListItem>
+            <strong>Two Game Modes:</strong> Players can choose between two modes—one for groups as small as 5, and another for up to 12 players, featuring 3 teams and praised by social deduction enthusiasts.            </ListItem>
            
           </List>
         )}
@@ -83,17 +82,17 @@ const SellSheet = () => {
     <List>
       <ListItem>
         <VideoLink href="https://www.youtube.com/playlist?list=PLmT80T_P4eJb4IzNmhMLs0QHrnNKyphD5" target="_blank" rel="noreferrer noopener">
-          More video impressions of Ayakucho
+          Video impressions of Ayakucho
         </VideoLink>
       </ListItem>
       <ListItem>
         <ImageLink href="https://www.instagram.com/play_ayakucho/" target="_blank" rel="noreferrer noopener">
-          Instagram Page
+          Official Instagram Page
         </ImageLink>
       </ListItem>
       <ListItem>
         <a href="https://boardgamegeek.com/boardgame/342455/bamberg" target="_blank" rel="noreferrer noopener">
-          BGG page of Bamberg (previous name of the game)
+          BGG page of Bamberg (the previous name of the game)
         </a>
       </ListItem>
       <ListItem>
@@ -103,7 +102,7 @@ const SellSheet = () => {
       </ListItem>
       <ListItem>
         <a href="https://www.youtube.com/watch?v=MFkhvvn7TAw&t=395" target="_blank" rel="noreferrer noopener">
-          A review by content creator BrettBallet (minute 6:35)
+            A review by content creator BrettBallet (minute 6:35)
         </a>
       </ListItem>
       <ListItem>
@@ -113,7 +112,7 @@ const SellSheet = () => {
       </ListItem>
       <ListItem>
         <a href="https://www.instagram.com/ma.stak/" target="_blank" rel="noreferrer noopener">
-          Instagram artist Maria Stankevich
+          Instagram of the game's artist Maria Stankevich
         </a>
       </ListItem>
     </List>
