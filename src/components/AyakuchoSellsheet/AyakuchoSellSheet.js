@@ -71,7 +71,7 @@ const SellSheet = () => {
         <h3 onClick={() => setShowDemons(!showDemons)}>Demons of Peru {showDemons ? '▲' : '▼'}</h3>
         {showDemons && (
           <Paragraph>
-            Inspired by Peruvian folklore and demonology, the game immerses players in a mystical world filled with eerie creatures, fear and wonder, for ancient spirits and supernatural events.
+            Inspired by Peruvian folklore and demonology, the game immerses players in a mystical world filled with eerie creatures, fear and wonder, ancient spirits and supernatural events.
           </Paragraph>
         )}
       </Section>
@@ -124,7 +124,6 @@ const SellSheet = () => {
 
       <Section>
         <Paragraph>If you’re interested in publishing or distributing Ayakucho, feel free to reach out:</Paragraph>
-        <Paragraph><strong>Name:</strong> Wilfredo Casas</Paragraph>
         <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
         <Paragraph><strong>WhatsApp:</strong> <WhatsAppLink href="https://wa.me/4915781295360?text=Hi%20Wilfredo%2C%20I%20came%20across%20Ayakucho%20and%20I%20think%20it%27s%20an%20amazing%20concept!%20Let%27s%20discuss%20how%20we%20can%20work%20together%20to%20bring%20this%20game%20to%20a%20wider%20audience." target="_blank">+49 157 8129 5360</WhatsAppLink></Paragraph>
       </Section>
