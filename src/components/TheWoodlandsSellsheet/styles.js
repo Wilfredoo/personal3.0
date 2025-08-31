@@ -93,3 +93,11 @@ export const CoverImage = styled.img`
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
+
+export const ImageNote = styled.p`
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 8px;
+  font-style: italic;
+`;

@@ -14,7 +14,7 @@ const SellSheet = () => {
   return (
     <Container>
       <Title>Ayakucho</Title>
-      <Subtitle>An attempt to make the ultimate game of social deduction.</Subtitle>
+      <Subtitle>Trust, betrayal, and Peruvian folklore.</Subtitle>
 
       {/* Embedded Video */}
       <VideoEmbed 
@@ -103,7 +103,7 @@ const SellSheet = () => {
       </ListItem>
       <ListItem>
         <a href="https://www.youtube.com/watch?v=MFkhvvn7TAw&t=395" target="_blank" rel="noreferrer noopener">
-          An unsolicited review by content creator BrettBallet (minute 6:35)
+          A review by content creator BrettBallet (minute 6:35)
         </a>
       </ListItem>
       <ListItem>
@@ -123,9 +123,7 @@ const SellSheet = () => {
 
     
 
-      {/* Contact Information */}
       <Section>
-        <h3>Contact Information</h3>
         <Paragraph>If you’re interested in publishing or distributing Ayakucho, feel free to reach out:</Paragraph>
         <Paragraph><strong>Name:</strong> Wilfredo Casas</Paragraph>
         <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, WhatsAppLink, CoverImage
+  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, WhatsAppLink, CoverImage, ImageNote
 } from './styles';
 import woodlandsCover from '../../assets/images/woodlands_cover.png';
 
@@ -11,11 +11,12 @@ const SellSheet = () => {
   const [showWoodlandWar, setShowWoodlandWar] = useState(false);
 
   return (
-    <Container>
+    <Container> 
       <Title>The Woodlands</Title>
       <Subtitle>A brutal tactical card game of woodland warfare where only one player survives.</Subtitle>
       
       <CoverImage src={woodlandsCover} alt="The Woodlands Game Cover" />
+      <ImageNote>AI generated image</ImageNote>
 
       <Section>
         <h3 onClick={() => setShowKeyInfo(!showKeyInfo)}>Key Information {showKeyInfo ? '▲' : '▼'}</h3>
@@ -67,7 +68,6 @@ const SellSheet = () => {
       </Section>
 
       <Section>
-        <h3>Contact Information</h3>
         <Paragraph>If you're interested in publishing or distributing The Woodlands, feel free to reach out:</Paragraph>
         <Paragraph><strong>Name:</strong> Wilfredo Casas</Paragraph>
         <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
