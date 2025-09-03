@@ -36,6 +36,7 @@ const texts = {
         tagline1:
             "Indigenous-Peruvian actor with a core skill set in improvisational theater, contemporary dance, and martial arts.",
         tagline2: "Looking for challenging roles.",
+        availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
         reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
         info: [
@@ -56,6 +57,7 @@ const texts = {
         tagline1:
             "Indigener peruanischer Schauspieler mit Kernkompetenzen im improvisatorischen Theater, zeitgenössischem Tanz und Kampfsport.",
         tagline2: "Auf der Suche nach herausfordernden Rollen.",
+        availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
         reelText: "Die Clips in diesem Reel zeigen meine ersten Schauspiel-Auditions für Filmprojekte im Jahr 2025, darunter Kurzfilme in Berlin, Offenburg, Aachen und Köln. Die meisten Auditions führten zu Rollen in Projekten, die sich derzeit in der Postproduktion befinden – mit einer Mischung aus improvisierten und geskripteten Szenen. Viel Spaß beim Anschauen!",
         info: [
@@ -87,6 +89,20 @@ const Acting = () => {
                 <Header>{currentText.header}</Header>
                 <Tagline>{currentText.tagline1}</Tagline>
                 <FlashyTagline>{currentText.tagline2}</FlashyTagline>
+                <div style={{
+                    background: 'linear-gradient(45deg, #ff0080, #00ffea)',
+                    color: '#000',
+                    padding: '15px',
+                    margin: '20px 0',
+                    borderRadius: '8px',
+                    textAlign: 'center',
+                    fontWeight: 'bold',
+                    fontSize: '1.1rem',
+                    border: '2px solid #fff',
+                    boxShadow: '0 0 15px #ff0'
+                }}>
+                    {currentText.availability}
+                </div>
                 <TranslateButton onClick={toggleLanguage}>
                     {language === "EN" ? (
                         "Zur deutschen Version, bitte."
