@@ -49,6 +49,20 @@ export const ContactLink = styled.a`
   }
 `;
 
+export const ImageGrid = styled.div`
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  justify-content: center;
+`;
+
+export const GameImage = styled.img`
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
 export const ImageLink = styled.a`
   color: #28a745;
   text-decoration: none;
