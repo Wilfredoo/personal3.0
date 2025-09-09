@@ -29,9 +29,9 @@ const SellSheet = () => {
         <h3 onClick={() => setShowKeyInfo(!showKeyInfo)}>Key Information {showKeyInfo ? '▲' : '▼'}</h3>
         {showKeyInfo && (
           <>
-            <Paragraph><strong>Players:</strong> 6 to 12</Paragraph>
-            <Paragraph><strong>Playtime:</strong> 20 to 50 minutes</Paragraph>
-            <Paragraph><strong>Age Range:</strong> 12+</Paragraph>
+            <Paragraph><strong>Players:</strong> 5 to 12</Paragraph>
+            <Paragraph><strong>Playtime:</strong> 25 minutes</Paragraph>
+            <Paragraph><strong>Age Range:</strong> 16+</Paragraph>
             <Paragraph><strong>Status:</strong> Advanced Prototype</Paragraph>
 
             <Paragraph><strong>Game Components:</strong> 12 Stressful Event cards, 12 Role cards, 4 Team reveal cards, 12 Voting wheels, 12 Number tokens, 1 Game board, 1 unlucky bag with 12 tokens, 1 Rulebook.</Paragraph>
