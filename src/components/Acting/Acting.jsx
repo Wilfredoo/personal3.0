@@ -49,7 +49,7 @@ const texts = {
             "Sports: Parkour, Martial Arts, Gymnastics",
             "Dance: Contemporary, Improvisational, Ballet, Salsa, Tango, Lindy Hop",
             "Driver's License: B (EU)",
-            "Location: Frankfurt am Main, Leipzig, Berlin.",
+            "Location: Full-time traveler, usually based in Berlin.",
         ]
     },
     DE: {
@@ -89,20 +89,6 @@ const Acting = () => {
                 <Header>{currentText.header}</Header>
                 <Tagline>{currentText.tagline1}</Tagline>
                 <FlashyTagline>{currentText.tagline2}</FlashyTagline>
-                <div style={{
-                    background: 'linear-gradient(45deg, #ff0080, #00ffea)',
-                    color: '#000',
-                    padding: '15px',
-                    margin: '20px 0',
-                    borderRadius: '8px',
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                    fontSize: '1.1rem',
-                    border: '2px solid #fff',
-                    boxShadow: '0 0 15px #ff0'
-                }}>
-                    {currentText.availability}
-                </div>
                 <TranslateButton onClick={toggleLanguage}>
                     {language === "EN" ? (
                         "Zur deutschen Version, bitte."
