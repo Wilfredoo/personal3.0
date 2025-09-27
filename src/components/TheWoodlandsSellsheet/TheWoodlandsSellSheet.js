@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import { 
-  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, WhatsAppLink, 
-  ImageGrid, GameImage
+  Container, Title, Subtitle, Section, Paragraph, List, ListItem, ContactLink, WhatsAppLink
 } from './styles';
-import woodlandsCover from '../../assets/images/Woodlands_Cover.png';
-import woodlandsSetup from '../../assets/images/Woodlands_Setup.jpg';
 
 const SellSheet = () => {
   const [showKeyInfo, setShowKeyInfo] = useState(false);
@@ -16,11 +13,6 @@ const SellSheet = () => {
     <Container> 
       <Title>The Woodlands</Title>
       <Subtitle>A tactical game of woodland warfare where only one player survives</Subtitle>
-      
-      <ImageGrid>
-        <GameImage src={woodlandsCover} alt="The Woodlands Game Cover" />
-        <GameImage src={woodlandsSetup} alt="The Woodlands Game Setup" />
-      </ImageGrid>
       
 
       <Section>

@@ -101,24 +101,4 @@ export const ImageNote = styled.p`
   font-style: italic;
 `;
 
-export const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-  max-width: 600px;
-`;
 
-export const ImageGrid = styled.div`
-  display: flex;
-  gap: 20px;
-  margin: 20px 0;
-  justify-content: center;
-`;
-
-export const GameImage = styled.img`
-  width: 380px;
-  height: 380px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-`;
