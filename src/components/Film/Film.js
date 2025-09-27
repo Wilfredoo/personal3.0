@@ -34,12 +34,19 @@ const Button = styled.button`
 
 const Film = () => {
   const navigate = useNavigate();
+
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/Filmmaker_Resume_German.pdf';
+    link.download = 'Filmmaker_Resume_German.pdf';
+    link.click();
+  };
+
   return (
     <Container>
-<Button onClick={() => window.open("https://www.youtube.com/playlist?list=PLmT80T_P4eJZv_n7VBQzn-aGZZjZ7_wxE", "_blank")}>SHORTS</Button>
-<Button onClick={() => navigate("/videography")}>SERVICES</Button>
-      <Button onClick={() => navigate("/cv")}>RESUME</Button>
-      <Button onClick={() => navigate("/acting")}>ACTING</Button>
+      <Button onClick={() => window.open("https://www.youtube.com/playlist?list=PLmT80T_P4eJZv_n7VBQzn-aGZZjZ7_wxE", "_blank")}>SHORTS</Button>
+      <Button onClick={() => navigate("/videography")}>SERVICES</Button>
+      <Button onClick={downloadResume}>RESUME</Button>
     </Container>
   );
 };
