@@ -36,8 +36,17 @@ const texts = {
       "Professional Audio: Superior audio recording for crystal-clear sound.",
       "Creative Lighting: Innovative setups using Aputure MC Lights, lightstands, and reflectors."
     ],
-    videoTitle: "My Film Reel",
-    videoURL: "https://www.youtube.com/embed/QznlG6t6W8s",
+    videos: [
+         {
+        title: "Additional Work",
+        url: "https://www.youtube.com/embed/KSrXyIQeAUo"
+      },
+      {
+        title: "My Film Reel",
+        url: "https://www.youtube.com/embed/QznlG6t6W8s"
+      },
+   
+    ],
     contact: "Contact me on WhatsApp: +49 15781295360",
     location: "Based in Frankfurt, Berlin & Leipzig – available throughout Germany",
     price: "Rates starting at €200/day",
@@ -66,8 +75,16 @@ const texts = {
       "Professioneller Ton: Überlegene Audioaufnahmen für kristallklaren Klang.",
       "Kreative Beleuchtung: Innovative Setups mit Aputure MC Lights, Lichtständern und Reflektoren."
     ],
-    videoTitle: "Mein Film-Reel",
-    videoURL: "https://www.youtube.com/embed/QznlG6t6W8s",
+    videos: [
+      {
+        title: "Mein Film-Reel",
+        url: "https://www.youtube.com/embed/QznlG6t6W8s"
+      },
+      {
+        title: "Zusätzliche Arbeiten",
+        url: "https://www.youtube.com/embed/KSrXyIQeAUo"
+      }
+    ],
     contact: "Kontaktieren Sie mich via WhatsApp: +49 15781295360",
     location: "Standorte: Frankfurt, Berlin & Leipzig – deutschlandweit einsatzbereit",
     price: "Preise ab 250€ pro Tag (verhandelbar)",
@@ -89,9 +106,11 @@ const FilmEquipment = () => {
       </TranslateButton>
       <Divider />
 
-      <VideoEmbed>
-        <iframe src={currentText.videoURL} title="Film Reel" allowFullScreen />
-      </VideoEmbed>
+      {currentText.videos.map((video, index) => (
+        <VideoEmbed key={index}>
+          <iframe src={video.url} title={video.title} allowFullScreen />
+        </VideoEmbed>
+      ))}
 
       {Object.keys(currentText.equipment).map((section, idx) => (
         <div key={idx}>
