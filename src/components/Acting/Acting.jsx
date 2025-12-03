@@ -47,13 +47,13 @@ const texts = {
             "Sports: Parkour, Martial Arts",
             "Dance: Contemporary, Improvisational, Salsa, Tango, Ballet",
             "Driver's License: B (EU)",
-            "Location: Full-time traveler, usually based in Berlin.",
+            "Location: Traveling across Europe, usually in Berlin. Open to work anywhere.",
         ]
     },
     DE: {
         header: "Wilfredo Casas",
         tagline1:
-            "Indigener peruanischer Schauspieler mit Kernkompetenzen im improvisatorischen Theater, zeitgenössischem Tanz und Kampfsport.",
+            "Indigen-peruanischer Schauspieler mit starken Improvisationsfähigkeiten und breiter schauspielerischer Bandbreite.",
         tagline2: "Auf der Suche nach herausfordernden Rollen.",
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
@@ -62,13 +62,11 @@ const texts = {
             "Größe: 175 cm",
             "Körperbau: Athletisch",
             "Ethnisches Erscheinungsbild: Indigen peruanisch / hispanisch",
-            "Nationalität: Peruanisch",
             "Sprachen: Deutsch, Englisch, Spanisch, Deutsche Gebärdensprache (DGS)",
             "Musikalische Fähigkeiten: Gesang, Gitarre, Keyboard, Schlagzeug",
-            "Sport: Parkour, Kampfsport, Gymnastik",
             "Tanz: Zeitgenössisch, Improv, Ballett, Salsa, Tango, Lindy Hop",
             "Führerschein: B (EU)",
-            "Standort: Frankfurt am Main, Leipzig, Berlin.",
+            "Standort: In ganz Europa unterwegs, meist in Berlin. Offen für Einsätze überall.",
         ]
     }
 };
