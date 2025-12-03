@@ -43,11 +43,9 @@ const texts = {
             "Height: 175 cm",
             "Build: Athletic",
             "Ethnic Appearance: Indigenous Peruvian / Hispanic",
-            "Nationality: Peruvian",
             "Languages: German, English, Spanish, German Sign Language (DGS)",
-            "Musical Skills: Singing, Guitar, Keyboard, Drums",
-            "Sports: Parkour, Martial Arts, Gymnastics",
-            "Dance: Contemporary, Improvisational, Ballet, Salsa, Tango, Lindy Hop",
+            "Sports: Parkour, Martial Arts",
+            "Dance: Contemporary, Improvisational, Salsa, Tango, Ballet",
             "Driver's License: B (EU)",
             "Location: Full-time traveler, usually based in Berlin.",
         ]
@@ -101,6 +99,13 @@ const Acting = () => {
                 </TranslateButton>
 
                 <VideoSection>
+                    <VideoEmbed>
+                        <iframe
+                            src="https://www.youtube.com/embed/qPmtH8CvUyE"
+                            title="Acting Video - Latest Work"
+                            allowFullScreen
+                        />
+                    </VideoEmbed>
                     <VideoEmbed>
                         <iframe
                             src="https://www.youtube.com/embed/NUKl-U673Y8"

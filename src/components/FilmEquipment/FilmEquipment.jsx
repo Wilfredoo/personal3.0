@@ -37,15 +37,14 @@ const texts = {
       "Creative Lighting: Innovative setups using Aputure MC Lights, lightstands, and reflectors."
     ],
     videos: [
-         {
-        title: "Additional Work",
-        url: "https://www.youtube.com/embed/KSrXyIQeAUo"
-      },
       {
         title: "My Film Reel",
         url: "https://www.youtube.com/embed/QznlG6t6W8s"
       },
-   
+      {
+        title: "Additional Work",
+        url: "https://www.youtube.com/embed/KSrXyIQeAUo"
+      }
     ],
     contact: "Contact me on WhatsApp: +49 15781295360",
     location: "Based in Frankfurt, Berlin & Leipzig – available throughout Germany",
