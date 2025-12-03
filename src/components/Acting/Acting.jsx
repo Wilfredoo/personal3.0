@@ -34,7 +34,7 @@ const texts = {
     EN: {
         header: "Wilfredo Casas",
         tagline1:
-            "Indigenous-Peruvian actor with a core skill set in improvisational theater, contemporary dance, and martial arts.",
+            "Indigenous-Peruvian actor with strong improvisational skills and a wide acting range.",
         tagline2: "Looking for challenging roles.",
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
