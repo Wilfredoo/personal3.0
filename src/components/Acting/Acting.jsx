@@ -34,7 +34,7 @@ const texts = {
     EN: {
         header: "Wilfredo Casas",
         tagline1:
-            "Indigenous-Peruvian actor with strong improvisational skills and a wide acting range.",
+            "Indigenous-Peruvian actor with improvisational skills and a wide acting range.",
         tagline2: "Looking for challenging roles.",
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
@@ -53,7 +53,7 @@ const texts = {
     DE: {
         header: "Wilfredo Casas",
         tagline1:
-            "Indigen-peruanischer Schauspieler mit starken Improvisationsfähigkeiten und breiter schauspielerischer Bandbreite.",
+            "Indigen-peruanischer Schauspieler mit Improvisationsfähigkeiten und breiter schauspielerischer Bandbreite.",
         tagline2: "Auf der Suche nach herausfordernden Rollen.",
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
