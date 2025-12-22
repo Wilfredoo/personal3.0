@@ -305,7 +305,7 @@ const WorkAndTravel = () => {
       <Section>
         <Subtitle>Contact Me</Subtitle>
         <List>
-          <li> Signal, Telegram, or WhatsApp: +49 1578 1295360</li>
+          <li> Signal, Telegram, or WhatsApp: +491757025622</li>
           <li> inbox@wilfredocasas.com</li>
 
         </List>

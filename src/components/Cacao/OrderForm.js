@@ -50,7 +50,7 @@ const OrderForm = ({ language, translations }) => {
       `${deliveryDetails}\n` +
       `--------------------------\n` +
       `${recommenderSection}`;
-    const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+491757025622?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

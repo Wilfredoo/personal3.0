@@ -46,9 +46,9 @@ const texts = {
         url: "https://www.youtube.com/embed/KSrXyIQeAUo"
       }
     ],
-    contact: "Contact me on WhatsApp: +49 15781295360",
-    location: "Based in Frankfurt, Berlin & Leipzig – available throughout Germany",
-    price: "Rates starting at €200/day",
+    contact: "Contact me on WhatsApp: +491757025622",
+    location: "Based in Berlin – available throughout Europe",
+    price: "Rates starting at €250/day",
     buttonText: "Switch to German"
   },
   DE: {
@@ -84,8 +84,8 @@ const texts = {
         url: "https://www.youtube.com/embed/KSrXyIQeAUo"
       }
     ],
-    contact: "Kontaktieren Sie mich via WhatsApp: +49 15781295360",
-    location: "Standorte: Frankfurt, Berlin & Leipzig – deutschlandweit einsatzbereit",
+    contact: "Kontaktieren Sie mich via WhatsApp: +491757025622",
+    location: "Ansässig in Berlin – europaweit verfügbar",
     price: "Preise ab 250€ pro Tag (verhandelbar)",
     buttonText: "Switch to English"
   }
@@ -134,7 +134,7 @@ const FilmEquipment = () => {
         <EquipmentItem>{currentText.location}</EquipmentItem>
         <EquipmentItem>{currentText.price}</EquipmentItem>
         <EquipmentItem>
-          <ContactLink href="https://wa.me/4915781295360" target="_blank" rel="noopener noreferrer">
+          <ContactLink href="https://wa.me/491757025622" target="_blank" rel="noopener noreferrer">
             {currentText.contact}
           </ContactLink>
         </EquipmentItem>

@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import picture1 from '../assets/images/picture_1.png';
 import picture2 from '../assets/images/picture_2.png';
 import arrow from '../assets/images/arrow.png';
-import SoftwareDeveloper from './SoftwareDeveloper';
-import Filmmaker from './Filmmaker';
-import Entrepreneur from './Entrepreneur';
+import WhatImUpTo from './WhatImUpTo';
+import Services from './Services';
 
 import {
     HomeContainer,
@@ -60,12 +59,10 @@ const Home = () => {
     };
     const renderDetailView = () => {
         switch (currentView) {
-            case 'Software Developer':
-                return <SoftwareDeveloper />;
-            case 'Filmmaker':
-                return <Filmmaker />;
-            case 'Entrepreneur':
-                return <Entrepreneur />;
+            case 'What Im Up To':
+                return <WhatImUpTo />;
+            case 'Services':
+                return <Services />;
             default:
                 return null; // Or some default content
         }
@@ -86,9 +83,8 @@ const Home = () => {
                         <Image src={picture} alt="Me" onClick={handleImageClick} isShaking={isShaking} />
                     </ImageContainer>
                     <TitleContainer>
-                        <Title onClick={handleViewChange('Software Developer')}>Software Developer</Title>
-                        <Title onClick={handleViewChange('Filmmaker')}>Filmmaker</Title>
-                        <Title onClick={handleViewChange('Entrepreneur')}>Entrepreneur</Title>
+                        <Title onClick={handleViewChange('What Im Up To')}>What I'm Up To</Title>
+                        <Title onClick={handleViewChange('Services')}>Services</Title>
                     </TitleContainer>
                 </ParentContainer>
             )}

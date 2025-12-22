@@ -34,6 +34,7 @@ export const HomeContainer = styled.div`
 export const ArrowContainer = styled.div`
     display: flex;
     margin-left: 30px;
+    margin-top: 50px;
 
     @media (min-width: 600px) {
         margin-left: 50px;
@@ -134,7 +135,7 @@ animation-delay: 30s; // start animation after 5s delay
 flex-grow: 1;
 display: flex;
 flex-direction: column;
-justify-content: space-between;
+justify-content: space-around;
 align-items: center;
 `;
 

@@ -65,7 +65,7 @@ const isPaused= true
   }
   const sendWhatsAppMessage = () => {
     const message = "Let me know once I can get chocolate again!";
-    const whatsappUrl = `https://wa.me/+4915781295360?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+491757025622?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
   
