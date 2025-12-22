@@ -3,7 +3,11 @@ import { Text, TextContainer } from './styles';
 
 const WhatImUpTo = () => (
   <TextContainer>
-    <Text>I'm currently focusing on managing <a href="http://www.jobdirecto.com" target="_blank" rel="noopener noreferrer">JobDirecto</a>, developing <a href="https://wilfredocasas.com/ayakucho" target="_blank" rel="noopener noreferrer">Ayakucho</a>, and writing my first feature film "Healing is Forgetting".</Text>
+<Text>
+  I am currently focused on growing <a href="http://www.jobdirecto.com" target="_blank" rel="noopener noreferrer">Jobdirecto</a>, 
+  further developing <a href="https://wilfredocasas.com/ayakucho" target="_blank" rel="noopener noreferrer">Ayakucho</a>, 
+  and beginning work on my first feature film, <em>Healing is Forgetting</em>.
+</Text>
   </TextContainer>
 );
 

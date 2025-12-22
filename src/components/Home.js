@@ -26,42 +26,39 @@ const Home = () => {
     const [animate, setAnimate] = useState(false);
 
     const handleImageClick = (e) => {
-        copyEmailToClipboard(e)
-         // Add vibration here. The device will vibrate for 500 milliseconds.
-    if (navigator.vibrate) {
-        navigator.vibrate(500); // Vibrate for half a second
-    }
+        copyEmailToClipboard(e);
+        // Add vibration here. The device will vibrate for 500 milliseconds.
+        if (navigator.vibrate) {
+            navigator.vibrate(500); // Vibrate for half a second
+        }
         setIsShaking(true);
         setTimeout(() => setIsShaking(false), 1000); // Reset shaking after animation duration
     };
 
-
     useEffect(() => {
         setCurrentView(null);
-
         setAnimate(true); // start with animation on initial mount
     }, []);
     
     const copyEmailToClipboard = (e) => {
         e.preventDefault();
         navigator.clipboard.writeText('inbox@wilfredocasas.com').then(() => {
-            setMessage('Your inquisitive spirit hasn’t gone unnoticed - as a gesture of acknowledgment, my email is now copied to your clipboard.');
+            setMessage('Your inquisitive spirit has not gone unnoticed - as a gesture of acknowledgment, my email is now copied to your clipboard.');
             setTimeout(() => setMessage(null), 4000);
         }).catch((err) => console.error('Could not copy email: ', err));
     };
-
- 
 
     const handleViewChange = (view) => () => {
         setAnimate(false); // reset animation
         setCurrentView(view);
         setTimeout(() => setAnimate(true), 10); // slight delay to reapply the animation class
     };
+
     const renderDetailView = () => {
         switch (currentView) {
             case 'What Im Up To':
                 return <WhatImUpTo />;
-            case 'Services':
+            case 'Work with me':
                 return <Services />;
             default:
                 return null; // Or some default content
@@ -84,12 +81,13 @@ const Home = () => {
                     </ImageContainer>
                     <TitleContainer>
                         <Title onClick={handleViewChange('What Im Up To')}>What I'm Up To</Title>
-                        <Title onClick={handleViewChange('Services')}>Services</Title>
+                        <Title onClick={handleViewChange('Work with me')}>Work with me</Title>
                     </TitleContainer>
                 </ParentContainer>
             )}
             {message && <Message>{message}</Message>}
         </HomeContainer>
     );
-            }
+};
+
 export default Home;
