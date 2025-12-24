@@ -80,7 +80,7 @@ const translations = {
         languageButton: "Zu Deutsch wechseln",
         trySomeChocolate: "Get some chocolate",
         checkOrderStatus: "See my order status",
-        footer: "Something not working as expected? Send me a message on Signal or WhatsApp to +4915781295360 with your complaints."
+        footer: "Something not working as expected? Send me a message on Signal or WhatsApp to +491757025622 with your complaints."
     },
     de: {
         sharedMessage: `Diese Seite wurde mit dir geteilt von {referralUsername}, aus der Charge {batchName}.
@@ -163,7 +163,7 @@ const translations = {
         
         languageButton: "Change to English",
         trySomeChocolate: "Schokolade bestellen",
-        footer: "Läuft etwas nicht wie erwartet? Schick mir eine Nachricht über Signal oder WhatsApp an +4915781295360 mit deinen Beschwerden.",
+        footer: "Läuft etwas nicht wie erwartet? Schick mir eine Nachricht über Signal oder WhatsApp an +491757025622 mit deinen Beschwerden.",
         checkOrderStatus: "Bestellung verfolgen"
     }
 };

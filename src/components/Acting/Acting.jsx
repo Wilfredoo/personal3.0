@@ -17,6 +17,7 @@ import {
     ReelText,
     SmallText
 } from './Styles';
+
 import wilfredo1 from '../../assets/images/wilfredo_1.png';
 import wilfredo2 from '../../assets/images/wilfredo_2.png';
 import wilfredo3 from '../../assets/images/wilfredo_3.png';
@@ -25,10 +26,36 @@ import wilfredo5 from '../../assets/images/wilfredo_5.jpeg';
 import wilfredo7 from '../../assets/images/wilfredo_7.png';
 import wilfredo8 from '../../assets/images/wilfredo_8.jpg';
 import wilfredo9 from '../../assets/images/wilfredo_9.jpeg';
-import wilfredo10 from '../../assets/images/wilfredo_10.jpeg';
-import wilfredo11 from '../../assets/images/wilfredo_11.jpeg';
+import wilfredo12 from '../../assets/images/wilfredo_12.jpg';
+import wilfredo13 from '../../assets/images/wilfredo_13.jpg';
+import wilfredo14 from '../../assets/images/wilfredo_14.jpg';
+import wilfredo15 from '../../assets/images/wilfredo_15.jpg';
+import wilfredo16 from '../../assets/images/wilfredo_16.jpg';
+import wilfredo17 from '../../assets/images/wilfredo_17.jpg';
+import wilfredo18 from '../../assets/images/wilfredo_18.jpg';
+import wilfredo19 from '../../assets/images/wilfredo_19.jpg';
+import wilfredo20 from '../../assets/images/wilfredo_20.jpg';
 
-const photos = [wilfredo1, wilfredo2, wilfredo3, wilfredo4,wilfredo7, wilfredo5 , wilfredo8, wilfredo9, wilfredo10, wilfredo11];
+const photos = [
+  wilfredo1,
+  wilfredo2,
+  wilfredo3,
+  wilfredo4,
+  wilfredo5,
+  wilfredo7,
+  wilfredo8,
+  wilfredo9,
+  wilfredo12,
+  wilfredo13,
+  wilfredo14,
+  wilfredo15,
+  wilfredo16,
+  wilfredo17,
+  wilfredo18,
+  wilfredo19,
+  wilfredo20,
+];
+
 
 const texts = {
     EN: {
