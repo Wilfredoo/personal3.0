@@ -35,6 +35,11 @@ import wilfredo17 from '../../assets/images/wilfredo_17.jpg';
 import wilfredo18 from '../../assets/images/wilfredo_18.jpg';
 import wilfredo19 from '../../assets/images/wilfredo_19.jpg';
 import wilfredo20 from '../../assets/images/wilfredo_20.jpg';
+import wilfredo21 from '../../assets/images/wilfredo_21.jpg';
+import wilfredo22 from '../../assets/images/wilfredo_22.jpg';
+import wilfredo23 from '../../assets/images/wilfredo_23.jpg';
+import wilfredo24 from '../../assets/images/wilfredo_24.jpg';
+
 
 const photos = [
   wilfredo1,
@@ -54,6 +59,11 @@ const photos = [
   wilfredo18,
   wilfredo19,
   wilfredo20,
+  wilfredo21,
+  wilfredo22,
+  wilfredo23,
+  wilfredo24,
+
 ];
 
 
