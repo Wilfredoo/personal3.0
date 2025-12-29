@@ -225,3 +225,63 @@ height: 350px;
   box-shadow: 0 0 10px #00ffea;
   display: block;
 `;
+
+export const LinksSection = styled.div`
+  margin: 30px 0;
+  text-align: center;
+`;
+
+export const LinksTitle = styled.h3`
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ffff00;
+  text-shadow: 2px 2px 4px #ff0080;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+`;
+
+export const LinksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+`;
+
+export const ProfileLink = styled.a`
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(45deg, #ff0080, #00ffea);
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  border: 3px solid #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #ff0080;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 0 25px #00ffea, 0 0 35px #ffff00;
+    border-color: #ffff00;
+    
+    &:before {
+      left: 100%;
+    }
+  }
+`;

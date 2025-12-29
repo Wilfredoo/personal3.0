@@ -15,7 +15,11 @@ import {
     NewPhotoButton,
     ParentContainer,
     ReelText,
-    SmallText
+    SmallText,
+    LinksSection,
+    LinksTitle,
+    LinksContainer,
+    ProfileLink
 } from './Styles';
 
 import wilfredo1 from '../../assets/images/wilfredo_1.png';
@@ -76,6 +80,7 @@ const texts = {
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
         reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
+        professionalProfiles: "MORE LINKS",
         info: [
             "Height: 175 cm",
             "Build: Athletic",
@@ -95,6 +100,7 @@ const texts = {
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
         reelText: "Die Clips in diesem Reel zeigen meine ersten Schauspiel-Auditions für Filmprojekte im Jahr 2025, darunter Kurzfilme in Berlin, Offenburg, Aachen und Köln. Die meisten Auditions führten zu Rollen in Projekten, die sich derzeit in der Postproduktion befinden – mit einer Mischung aus improvisierten und geskripteten Szenen. Viel Spaß beim Anschauen!",
+        professionalProfiles: "Professionelle Profile",
         info: [
             "Größe: 175 cm",
             "Körperbau: Athletisch",
@@ -162,6 +168,25 @@ const Acting = () => {
                         ))}
                     </InfoList>
                 </InfoSection>
+                <LinksSection>
+                    <LinksTitle>{currentText.professionalProfiles}</LinksTitle>
+                    <LinksContainer>
+                        <ProfileLink 
+                            href="https://www.filmmakers.eu/en/actors/wilfredo-casas" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            Filmmakers.eu Profile
+                        </ProfileLink>
+                        <ProfileLink 
+                            href="https://www.etalenta.eu/members/profile/wilfredo-casas" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            etalenta.eu Profile
+                        </ProfileLink>
+                    </LinksContainer>
+                </LinksSection>
             </Container>
         </ParentContainer>
     );
