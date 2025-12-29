@@ -250,8 +250,8 @@ export const LinksContainer = styled.div`
 export const ProfileLink = styled.a`
   display: inline-block;
   padding: 15px 30px;
-  background: linear-gradient(45deg, #ff0080, #00ffea);
-  color: #000;
+  background: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
