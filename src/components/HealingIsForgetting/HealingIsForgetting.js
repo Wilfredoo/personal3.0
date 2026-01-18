@@ -5,7 +5,6 @@ import {
   Container,
   Header,
   HeaderContent,
-  FilmBadge,
   Title,
   Byline,
   Main,
@@ -24,10 +23,6 @@ import {
 
 export default function HealingIsForgetting() {
   const [expandedSection, setExpandedSection] = useState(null);
-
-  const toggleSection = (section) => {
-    setExpandedSection(expandedSection === section ? null : section);
-  };
 
   return (
     <Container>
