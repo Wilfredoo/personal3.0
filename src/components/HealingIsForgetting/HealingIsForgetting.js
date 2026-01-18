@@ -22,7 +22,6 @@ import {
 } from './Styles';
 
 export default function HealingIsForgetting() {
-  const [expandedSection, setExpandedSection] = useState(null);
 
   return (
     <Container>
