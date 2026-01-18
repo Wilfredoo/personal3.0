@@ -18,12 +18,14 @@ import BatchOrders from './components/Cacao/BatchOrders';
 // Misc
 import SellSheet from './components/AyakuchoSellsheet/AyakuchoSellSheet';
 import TheWoodlandsSellSheet from './components/TheWoodlandsSellsheet/TheWoodlandsSellSheet';
+import HealingIsForgetting from './components/HealingIsForgetting/HealingIsForgetting';
 
 const routes = [
     { path: "/", component: <Home /> },
     { path: "/cv", component: <Curriculum /> },
     { path: "/acting", component: <Acting /> },
     { path: "/reference_letter", component: <Referenceletter /> },
+    { path: "/healingisforgetting", component: <HealingIsForgetting /> },
 
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },
