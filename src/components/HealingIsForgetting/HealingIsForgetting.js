@@ -1,6 +1,6 @@
 // HealingIsForgetting.jsx
-import React, { useState } from 'react';
-import { Film, Mail, ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
+import { Mail } from 'lucide-react';
 import {
   Container,
   Header,
@@ -13,10 +13,6 @@ import {
   Card,
   SectionTitle,
   Paragraph,
-  CollapsibleCard,
-  CollapsibleButton,
-  CollapsibleContent,
-  SubsectionTitle,
   List,
   ListItem,
   ContactCard,
