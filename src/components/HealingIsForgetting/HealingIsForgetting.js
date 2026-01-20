@@ -1,5 +1,6 @@
 // HealingIsForgetting.jsx
-import { Mail } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import {
   Container,
   Header,
@@ -17,10 +18,82 @@ import {
   ContactButton,
   Footer,
   IdeaBoardImage,
-  ImageCaption
+  ImageCaption,
+  PasswordOverlay,
+  PasswordContainer,
+  PasswordCard,
+  PasswordDescription,
+  PasswordForm,
+  PasswordInputWrapper,
+  PasswordInput,
+  TogglePasswordButton,
+  SubmitButton,
+  ErrorMessage
 } from './Styles';
 
 export default function HealingIsForgetting() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+
+  const correctPassword = 'healing2026'; // You can change this password
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password === correctPassword) {
+      setIsAuthenticated(true);
+      setError('');
+    } else {
+      setError('Incorrect password. Please try again.');
+      setPassword('');
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSubmit(e);
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <Container>
+        <PasswordOverlay>
+          <PasswordContainer>
+            <PasswordCard>
+              <Lock size={48} color="#000" />
+              <PasswordDescription>
+                Please enter the password to continue. To request it, reach out to inbox@wilfredocasas.com
+              </PasswordDescription>
+              <PasswordForm onSubmit={handleSubmit}>
+                <PasswordInputWrapper>
+                  <PasswordInput
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder="Enter password"
+                    autoFocus
+                  />
+                  <TogglePasswordButton
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                  </TogglePasswordButton>
+                </PasswordInputWrapper>
+                <SubmitButton type="submit">
+                  Unlock
+                </SubmitButton>
+              </PasswordForm>
+              {error && <ErrorMessage>{error}</ErrorMessage>}
+            </PasswordCard>
+          </PasswordContainer>
+        </PasswordOverlay>
+      </Container>
+    );
+  }
 
   return (
     <Container>

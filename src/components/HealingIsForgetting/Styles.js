@@ -366,3 +366,175 @@ export const ImageCaption = styled.p`
     margin-top: 6px;
   }
 `;
+
+// Password Protection Styles
+export const PasswordOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+`;
+
+export const PasswordContainer = styled.div`
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+`;
+
+export const PasswordCard = styled.div`
+  background: white;
+  border-radius: 12px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e4e8;
+  text-align: center;
+  
+  @media (max-width: 480px) {
+    padding: 32px 24px;
+    margin: 0 16px;
+  }
+`;
+
+export const PasswordTitle = styled.h2`
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin: 24px 0 16px 0;
+  
+  @media (max-width: 480px) {
+    font-size: 1.25rem;
+  }
+`;
+
+export const PasswordDescription = styled.p`
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  
+  @media (max-width: 480px) {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+`;
+
+export const PasswordForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+export const PasswordInputWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+export const PasswordInput = styled.input`
+  width: 100%;
+  padding: 14px 48px 14px 16px;
+  border: 2px solid #e1e4e8;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  
+  &:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  &::placeholder {
+    color: #999;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px 44px 12px 14px;
+    font-size: 15px;
+  }
+`;
+
+export const TogglePasswordButton = styled.button`
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover {
+    color: #000;
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+`;
+
+export const SubmitButton = styled.button`
+  width: 100%;
+  padding: 14px 24px;
+  background: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover {
+    background-color: #333;
+  }
+  
+  &:active {
+    background-color: #1a1a1a;
+    transform: scale(0.98);
+  }
+  
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+`;
+
+export const ErrorMessage = styled.p`
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
