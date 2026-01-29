@@ -32,6 +32,9 @@ export default function HealingIsForgetting() {
         <HeaderContent>
           <Title>Healing is Forgetting</Title>
           <Byline>A film in progress</Byline>
+          <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
+  Last updated: January 29, 2026
+</Paragraph>
         </HeaderContent>
       </Header>
 
@@ -77,12 +80,29 @@ export default function HealingIsForgetting() {
 
         <Section>
           <Card>
-            <SectionTitle>Project Status</SectionTitle>
-            <List>
-              <ListItem>Researching memory, trauma, and therapy.</ListItem>
-              <ListItem>Outlining the screenplay.</ListItem>
-              <ListItem>Looking for key collaborators—cinematography, production, financing, and writing mentorship </ListItem>
-            </List>
+          <SectionTitle>Project Status</SectionTitle>
+<Paragraph><strong>Research – Books I'm reading:</strong></Paragraph>
+<List>
+  <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb</ListItem>
+  <ListItem>"Reasons and Persons" by Derek Parfit</ListItem>
+  <ListItem>"Searching for Memory" by Daniel Schacter</ListItem>
+  <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell</ListItem>
+</List>
+
+<Paragraph><strong>Development:</strong></Paragraph>
+<List>
+  <ListItem>Outlining the screenplay.</ListItem>
+</List>
+
+<Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
+<List>
+  <ListItem>Cinematography</ListItem>
+  <ListItem>Production</ListItem>
+  <ListItem>Financing</ListItem>
+  <ListItem>Neuroscience advisor</ListItem>
+  <ListItem>Clinical psychotherapy advisor</ListItem>
+  <ListItem>Writing mentorship</ListItem>
+</List>
           </Card>
         </Section>
 
