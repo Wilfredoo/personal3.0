@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import synopses from './synopses';
 import {
   Container,
