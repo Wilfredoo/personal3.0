@@ -338,7 +338,7 @@ export const IdeaBoardImage = styled.img`
   max-width: 600px;
   height: auto;
   border-radius: 6px;
-  margin: -35px auto;
+  margin: -55px auto;
   display: block;
   transform: rotate(-90deg);
   
