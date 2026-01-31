@@ -19,6 +19,7 @@ import BatchOrders from './components/Cacao/BatchOrders';
 import SellSheet from './components/AyakuchoSellsheet/AyakuchoSellSheet';
 import TheWoodlandsSellSheet from './components/TheWoodlandsSellsheet/TheWoodlandsSellSheet';
 import HealingIsForgetting from './components/HealingIsForgetting/HealingIsForgetting';
+import EmailProof from './components/EmailProof';
 
 const routes = [
     { path: "/", component: <Home /> },
@@ -26,6 +27,7 @@ const routes = [
     { path: "/acting", component: <Acting /> },
     { path: "/reference_letter", component: <Referenceletter /> },
     { path: "/healingisforgetting", component: <HealingIsForgetting /> },
+    { path: "/emailproof", component: <EmailProof /> },
 
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },
