@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Lock, Eye, EyeOff } from 'lucide-react';
 import synopses from './synopses';
 import {
   Container,
@@ -18,11 +19,92 @@ import {
   IdeaBoardImage,
   ImageCaption,
   CollapsibleButton,
-  CollapsibleContent
+  CollapsibleContent,
+  PasswordOverlay,
+  PasswordContainer,
+  PasswordCard,
+  PasswordTitle,
+  PasswordDescription,
+  PasswordForm,
+  PasswordInputWrapper,
+  PasswordInput,
+  TogglePasswordButton,
+  SubmitButton,
+  ErrorMessage
 } from './Styles';
 
 export default function HealingIsForgetting() {
   const [showPastSynopses, setShowPastSynopses] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+
+  const CORRECT_PASSWORD = 'healing2026';
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError('');
+    
+    if (password === CORRECT_PASSWORD) {
+      setIsAuthenticated(true);
+      // Store authentication in session storage
+      sessionStorage.setItem('healing-auth', 'true');
+    } else {
+      setError('Incorrect password. Please try again.');
+      setPassword('');
+    }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  // Check if user is already authenticated on component mount
+  useEffect(() => {
+    const authStatus = sessionStorage.getItem('healing-auth');
+    if (authStatus === 'true') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  if (!isAuthenticated) {
+    return (
+      <PasswordOverlay>
+        <PasswordContainer>
+          <PasswordCard>
+            <Lock size={48} color="#000" style={{ margin: '0 auto 16px' }} />
+            <PasswordTitle>Protected Content</PasswordTitle>
+            <PasswordDescription>
+              This page is password protected. Please enter the password to access the content.
+            </PasswordDescription>
+            <PasswordForm onSubmit={handleSubmit}>
+              <PasswordInputWrapper>
+                <PasswordInput
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter password"
+                  required
+                />
+                <TogglePasswordButton
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </TogglePasswordButton>
+              </PasswordInputWrapper>
+              <SubmitButton type="submit">
+                Access Content
+              </SubmitButton>
+              {error && <ErrorMessage>{error}</ErrorMessage>}
+            </PasswordForm>
+          </PasswordCard>
+        </PasswordContainer>
+      </PasswordOverlay>
+    );
+  }
 
   return (
     <Container>
@@ -31,8 +113,8 @@ export default function HealingIsForgetting() {
           <Title>Healing is Forgetting</Title>
           <Byline>A film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-  Last updated: January 29, 2026
-</Paragraph>
+            Last updated: January 29, 2026
+          </Paragraph>
         </HeaderContent>
       </Header>
 
@@ -78,29 +160,29 @@ export default function HealingIsForgetting() {
 
         <Section>
           <Card>
-          <SectionTitle>Project Status</SectionTitle>
-<Paragraph><strong>Research – Books I'm reading:</strong></Paragraph>
-<List>
-  <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb</ListItem>
-  <ListItem>"Reasons and Persons" by Derek Parfit</ListItem>
-  <ListItem>"Searching for Memory" by Daniel Schacter</ListItem>
-  <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell</ListItem>
-</List>
+            <SectionTitle>Project Status</SectionTitle>
+            <Paragraph><strong>Research – Books I'm reading:</strong></Paragraph>
+            <List>
+              <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb</ListItem>
+              <ListItem>"Reasons and Persons" by Derek Parfit</ListItem>
+              <ListItem>"Searching for Memory" by Daniel Schacter</ListItem>
+              <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell</ListItem>
+            </List>
 
-<Paragraph><strong>Development:</strong></Paragraph>
-<List>
-  <ListItem>Outlining the screenplay.</ListItem>
-</List>
+            <Paragraph><strong>Development:</strong></Paragraph>
+            <List>
+              <ListItem>Outlining the screenplay.</ListItem>
+            </List>
 
-<Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
-<List>
-  <ListItem>Cinematography</ListItem>
-  <ListItem>Production</ListItem>
-  <ListItem>Financing</ListItem>
-  <ListItem>Neuroscience advisor</ListItem>
-  <ListItem>Clinical psychotherapy advisor</ListItem>
-  <ListItem>Writing mentorship</ListItem>
-</List>
+            <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
+            <List>
+              <ListItem>Cinematography</ListItem>
+              <ListItem>Production</ListItem>
+              <ListItem>Financing</ListItem>
+              <ListItem>Neuroscience advisor</ListItem>
+              <ListItem>Clinical psychotherapy advisor</ListItem>
+              <ListItem>Writing mentorship</ListItem>
+            </List>
           </Card>
         </Section>
 
@@ -112,10 +194,10 @@ export default function HealingIsForgetting() {
         <Section>
           <ContactCard>
             <Paragraph center>
-              Reach out to discuss:             
+              Reach out to discuss:
             </Paragraph>
             <strong></strong>
-             inbox@wilfredocasas.com
+            inbox@wilfredocasas.com
           </ContactCard>
         </Section>
       </Main>
