@@ -80,10 +80,10 @@ const texts = {
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
         reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
-                professionalProfiles: "REPRESENTATION & LINKS",
+                professionalProfiles: "REPRESENTATION",
         representation: "Represented by Alison Goodwin Talent",
 
-        professionalProfiles: "MORE LINKS",
+        professionalProfiles2: "MORE LINKS",
         info: [
             "Height: 175 cm",
             "Build: Athletic",
@@ -103,11 +103,11 @@ const texts = {
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
         reelText: "Die Clips in diesem Reel zeigen meine ersten Schauspiel-Auditions für Filmprojekte im Jahr 2025, darunter Kurzfilme in Berlin, Offenburg, Aachen und Köln. Die meisten Auditions führten zu Rollen in Projekten, die sich derzeit in der Postproduktion befinden – mit einer Mischung aus improvisierten und geskripteten Szenen. Viel Spaß beim Anschauen!",
-                professionalProfiles: "VERTRETUNG & LINKS",
+                professionalProfiles: "VERTRETUNG",
      
         representation: "Vertreten durch Alison Goodwin Talent",
 
-        professionalProfiles: "Professionelle Profile",
+        professionalProfiles2: "MEHR LINKS",
         info: [
             "Größe: 175 cm",
             "Körperbau: Athletisch",
@@ -196,7 +196,7 @@ const Acting = () => {
 >
     {currentText.representation}
 </a>
-                    <LinksTitle>{currentText.professionalProfiles}</LinksTitle>
+                    <LinksTitle>{currentText.professionalProfiles2}</LinksTitle>
                     <LinksContainer>
                         <ProfileLink 
                             href="https://www.filmmakers.eu/en/actors/wilfredo-casas" 
