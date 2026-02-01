@@ -80,6 +80,9 @@ const texts = {
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
         reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
+                professionalProfiles: "REPRESENTATION & LINKS",
+        representation: "Represented by Alison Goodwin Talent",
+
         professionalProfiles: "MORE LINKS",
         info: [
             "Height: 175 cm",
@@ -100,6 +103,10 @@ const texts = {
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
         reelText: "Die Clips in diesem Reel zeigen meine ersten Schauspiel-Auditions für Filmprojekte im Jahr 2025, darunter Kurzfilme in Berlin, Offenburg, Aachen und Köln. Die meisten Auditions führten zu Rollen in Projekten, die sich derzeit in der Postproduktion befinden – mit einer Mischung aus improvisierten und geskripteten Szenen. Viel Spaß beim Anschauen!",
+                professionalProfiles: "VERTRETUNG & LINKS",
+     
+        representation: "Vertreten durch Alison Goodwin Talent",
+
         professionalProfiles: "Professionelle Profile",
         info: [
             "Größe: 175 cm",
@@ -169,6 +176,26 @@ const Acting = () => {
                     </InfoList>
                 </InfoSection>
                 <LinksSection>
+                   <LinksTitle>{currentText.professionalProfiles}</LinksTitle>
+<a 
+    href="https://www.alisongoodwintalent.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    style={{
+        display: 'block',
+        fontSize: '1.2rem',
+        marginBottom: '25px',
+        color: '#00ffea',
+        fontWeight: 'bold',
+        letterSpacing: '1px',
+        textDecoration: 'none',
+        transition: 'color 0.3s ease'
+    }}
+    onMouseEnter={(e) => e.target.style.color = '#ffff00'}
+    onMouseLeave={(e) => e.target.style.color = '#00ffea'}
+>
+    {currentText.representation}
+</a>
                     <LinksTitle>{currentText.professionalProfiles}</LinksTitle>
                     <LinksContainer>
                         <ProfileLink 
