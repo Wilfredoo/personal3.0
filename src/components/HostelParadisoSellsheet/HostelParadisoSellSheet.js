@@ -19,11 +19,12 @@ const HostelParadisoSellSheet = () => {
   const [showHowItPlays, setShowHowItPlays] = useState(false);
   const [showScoring, setShowScoring] = useState(false);
   const [showUnique, setShowUnique] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <Container>
       <Title>Hostel Paradiso</Title>
-      <Subtitle>Aim to take ownership of the quirkiest hostel in town..</Subtitle>
+      <Subtitle>Aim to take ownership of the quirkiest hostel in town.</Subtitle>
 
       <HeroImage src={hostelParadisoImage} alt="Hostel Paradiso prototype" />
 
@@ -76,16 +77,21 @@ const HostelParadisoSellSheet = () => {
         <h3 onClick={() => setShowUnique(!showUnique)}>What makes it special {showUnique ? '▲' : '▼'}</h3>
         {showUnique && (
           <List>
-            <ListItem><strong>Dialogue Art:</strong> Every image is a two-character scene of a random nature,that invites a specific line.</ListItem>
+            <ListItem><strong>100 Unique Situations:</strong> Each image captures an unconventional two-character moment that begs for an explanation and invites multiple interpretations.</ListItem>
             <ListItem><strong>Double-Fit Writing:</strong> One line must make sense for both the shared sentence and the chosen image—bringing associative storytelling to a whole new level.</ListItem>
           </List>
         )}
       </Section>
 
       <Section>
-        <Paragraph>If you’re interested in publishing or distributing Hostel Paradiso, feel free to reach out:</Paragraph>
-        <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
-        <Paragraph><strong>WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">+49 175 702 5622</WhatsAppLink></Paragraph>
+        <h3 onClick={() => setShowContact(!showContact)}> Contact {showContact ? '▲' : '▼'}</h3>
+        {showContact && (
+          <>
+            <Paragraph>If you’re interested in publishing or distributing Hostel Paradiso, feel free to reach out:</Paragraph>
+            <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
+            <Paragraph><strong>WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">+49 175 702 5622</WhatsAppLink></Paragraph>
+          </>
+        )}
       </Section>
     </Container>
   );
