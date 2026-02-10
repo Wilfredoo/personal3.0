@@ -161,18 +161,20 @@ export default function HealingIsForgetting() {
         <Section>
           <Card>
             <SectionTitle>Project Status</SectionTitle>
-            <Paragraph><strong>Research – Books I'm reading:</strong></Paragraph>
+            <Paragraph><strong>Books to read:</strong></Paragraph>
             <List>
-              <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb</ListItem>
-              <ListItem>"Reasons and Persons" by Derek Parfit</ListItem>
-              <ListItem>"Searching for Memory" by Daniel Schacter</ListItem>
-              <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell</ListItem>
+              <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb - not yet started</ListItem> 
+              <ListItem>"Reasons and Persons" (part 3) by Derek Parfit  - not yet started</ListItem>
+              <ListItem>"Searching for Memory" by Daniel Schacter - in progress</ListItem> 
+              <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell - in progress</ListItem> 
             </List>
 
             <Paragraph><strong>Development:</strong></Paragraph>
-            <List>
-              <ListItem>Outlining the screenplay.</ListItem>
-            </List>
+              <List>
+  <ListItem><strong>Synopsis:</strong> version 3 — in progress</ListItem>
+  <ListItem><strong>Treatment:</strong> initial draft — starting</ListItem>
+</List>
+
 
             <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
             <List>
@@ -195,9 +197,9 @@ export default function HealingIsForgetting() {
           <ContactCard>
             <Paragraph center>
               Reach out to discuss:
+           <strong> inbox@wilfredocasas.com</strong>
+
             </Paragraph>
-            <strong></strong>
-            inbox@wilfredocasas.com
           </ContactCard>
         </Section>
       </Main>
