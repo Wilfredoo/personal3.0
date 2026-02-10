@@ -43,9 +43,10 @@ const HostelParadisoSellSheet = () => {
         <h3 onClick={() => setShowOverview(!showOverview)}>Game Overview {showOverview ? '▲' : '▼'}</h3>
         {showOverview && (
           <Paragraph>
-            The group draws one sentence. Each player writes a line that either replies to it or could have led to it, and
-            anchors that line to a specific hostel image featuring a dialogue between two characters. When sentences are revealed, everyone tries to guess the right
-            floor for each line. You want most people to find your floor, but not everyone.
+            Hostel Paradiso is a party game of misdirection, deduction and creative writing. Players craft short dialogue lines that must
+            fit both a shared sentence and a quirky two-character scene. When all dialogues are revealed, the group tries to
+            figure out where in the hostel each exchange took place. Your goal is to be clear enough to convince most players,
+            but ambiguous enough to fool at least one.
           </Paragraph>
         )}
       </Section>
