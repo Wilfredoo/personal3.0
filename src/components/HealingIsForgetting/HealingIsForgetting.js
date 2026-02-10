@@ -130,12 +130,11 @@ export default function HealingIsForgetting() {
 
         <Section>
           <Card>
-            <SectionTitle>Synopsis</SectionTitle>
+            <SectionTitle>Synopsis – v1.1 (Jan 2026)</SectionTitle>
             {synopses.map((syn, index) => {
               if (index === 0) {
                 return (
                   <div key={syn.version}>
-                    <Paragraph><strong>{syn.title} – {syn.version}</strong></Paragraph>
                     {syn.paragraphs.map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
                   </div>
                 );
@@ -171,19 +170,18 @@ export default function HealingIsForgetting() {
 
             <Paragraph><strong>Development:</strong></Paragraph>
               <List>
-  <ListItem><strong>Synopsis:</strong> version 3 — in progress</ListItem>
-  <ListItem><strong>Treatment:</strong> initial draft — starting</ListItem>
+  <ListItem>Synopsis: version 3 — in progress</ListItem>
+  <ListItem>Treatment: initial draft — starting</ListItem>
 </List>
 
 
             <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
             <List>
-              <ListItem>Cinematography</ListItem>
-              <ListItem>Production</ListItem>
-              <ListItem>Financing</ListItem>
+              <ListItem>Cinematographer</ListItem>
+              <ListItem>Producer</ListItem>
               <ListItem>Neuroscience advisor</ListItem>
-              <ListItem>Clinical psychotherapy advisor</ListItem>
-              <ListItem>Writing mentorship</ListItem>
+              <ListItem>Psychotherapy advisor</ListItem>
+              <ListItem>Writing mentor</ListItem>
             </List>
           </Card>
         </Section>

@@ -156,18 +156,17 @@ export const CollapsibleCard = styled.div`
 
 export const CollapsibleButton = styled.button`
   width: 100%;
-  padding: 16px 20px;
+  margin-top: 10px;
+  padding: 16px 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #f6f8fa;
-  border: none;
   cursor: pointer;
   text-align: left;
   font-size: 18px;
   font-weight: 600;
   color: #000;
-  border-bottom: 1px solid #e1e4e8;
   transition: background-color 0.2s;
   -webkit-tap-highlight-color: transparent;
   
@@ -186,7 +185,7 @@ export const CollapsibleButton = styled.button`
   }
   
   @media (max-width: 768px) {
-    padding: 14px 16px;
+    padding: 14px 5px;
     font-size: 16px;
   }
 `;
