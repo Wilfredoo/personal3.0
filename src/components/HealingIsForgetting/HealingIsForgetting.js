@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Lock, Eye, EyeOff } from 'lucide-react';
+import { Lock, Eye, EyeOff, ChevronDown, ChevronUp } from 'lucide-react';
 import synopses from './synopses';
 import {
   Container,
@@ -18,6 +18,7 @@ import {
   Footer,
   IdeaBoardImage,
   ImageCaption,
+  CollapsibleCard,
   CollapsibleButton,
   CollapsibleContent,
   PasswordOverlay,
@@ -34,19 +35,20 @@ import {
 } from './Styles';
 
 export default function HealingIsForgetting() {
-  const [showPastSynopses, setShowPastSynopses] = useState(false);
+  const [expandedPastSynopses, setExpandedPastSynopses] = useState({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const latestSynopsis = synopses[0];
+  const pastSynopses = synopses.slice(1);
 
   const CORRECT_PASSWORD = 'healing2026';
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
-    
+
     if (password === CORRECT_PASSWORD) {
       setIsAuthenticated(true);
       // Store authentication in session storage
@@ -59,6 +61,13 @@ export default function HealingIsForgetting() {
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const togglePastSynopsis = (version) => {
+    setExpandedPastSynopses((prev) => ({
+      ...prev,
+      [version]: !prev[version]
+    }));
   };
 
   // Check if user is already authenticated on component mount
@@ -114,7 +123,7 @@ export default function HealingIsForgetting() {
           <Title>Healing is Forgetting</Title>
           <Byline>A film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-            Last updated: January 29, 2026
+            Last updated: February 11, 2026
           </Paragraph>
         </HeaderContent>
       </Header>
@@ -142,19 +151,34 @@ export default function HealingIsForgetting() {
               }
               return null;
             })}
+            <p>------</p>
+            {pastSynopses.length > 0 && (
+              <>
+                <Paragraph><strong>Past Versions</strong></Paragraph>
+                {pastSynopses.map((syn, index) => {
+                  const isExpanded = Boolean(expandedPastSynopses[syn.version]);
+                  const contentId = `synopsis-past-${index}`;
 
-            <CollapsibleButton onClick={() => setShowPastSynopses(!showPastSynopses)}>
-              {showPastSynopses ? 'Hide Past Versions' : 'Show Past Versions'}
-            </CollapsibleButton>
-
-            {showPastSynopses &&
-              synopses.slice(1).map((syn) => (
-                <CollapsibleContent key={syn.version}>
-                  <Paragraph><strong>{syn.title} – {syn.version}</strong></Paragraph>
-                  {syn.paragraphs.map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
-                </CollapsibleContent>
-              ))
-            }
+                  return (
+                    <CollapsibleCard key={syn.version}>
+                      <CollapsibleButton
+                        onClick={() => togglePastSynopsis(syn.version)}
+                        aria-expanded={isExpanded}
+                        aria-controls={contentId}
+                      >
+                        <span>{syn.title} – {syn.version}</span>
+                        {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                      </CollapsibleButton>
+                      {isExpanded && (
+                        <CollapsibleContent id={contentId}>
+                          {syn.paragraphs.map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
+                        </CollapsibleContent>
+                      )}
+                    </CollapsibleCard>
+                  );
+                })}
+              </>
+            )}
           </Card>
         </Section>
 
@@ -163,17 +187,17 @@ export default function HealingIsForgetting() {
             <SectionTitle>Project Status</SectionTitle>
             <Paragraph><strong>Books to read:</strong></Paragraph>
             <List>
-              <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb - not yet started</ListItem> 
+              <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb - not yet started</ListItem>
               <ListItem>"Reasons and Persons" (part 3) by Derek Parfit  - not yet started</ListItem>
-              <ListItem>"Searching for Memory" by Daniel Schacter - in progress</ListItem> 
-              <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell - in progress</ListItem> 
+              <ListItem>"Searching for Memory" by Daniel Schacter - in progress</ListItem>
+              <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell - in progress</ListItem>
             </List>
 
             <Paragraph><strong>Development:</strong></Paragraph>
-              <List>
-  <ListItem>Synopsis: version 3 — in progress</ListItem>
-  <ListItem>Treatment: initial draft — starting</ListItem>
-</List>
+            <List>
+              <ListItem>Synopsis: version 3 — in progress</ListItem>
+              <ListItem>Treatment: initial draft — starting</ListItem>
+            </List>
 
 
             <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
@@ -196,7 +220,7 @@ export default function HealingIsForgetting() {
           <ContactCard>
             <Paragraph center>
               Reach out to discuss:
-           <strong> inbox@wilfredocasas.com</strong>
+              <strong> inbox@wilfredocasas.com</strong>
 
             </Paragraph>
           </ContactCard>

@@ -144,14 +144,6 @@ export const Paragraph = styled.p`
 `;
 
 export const CollapsibleCard = styled.div`
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  overflow: hidden;
-  
-  @media (max-width: 768px) {
-    margin-bottom: 14px;
-  }
 `;
 
 export const CollapsibleButton = styled.button`
@@ -159,16 +151,6 @@ export const CollapsibleButton = styled.button`
   margin-top: 10px;
   padding: 16px 5px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f6f8fa;
-  cursor: pointer;
-  text-align: left;
-  font-size: 18px;
-  font-weight: 600;
-  color: #000;
-  transition: background-color 0.2s;
-  -webkit-tap-highlight-color: transparent;
   
   &:hover {
     background-color: #f1f3f4;
@@ -185,8 +167,6 @@ export const CollapsibleButton = styled.button`
   }
   
   @media (max-width: 768px) {
-    padding: 14px 5px;
-    font-size: 16px;
   }
 `;
 
