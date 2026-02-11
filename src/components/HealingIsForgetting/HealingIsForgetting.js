@@ -39,6 +39,7 @@ export default function HealingIsForgetting() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
+  const latestSynopsis = synopses[0];
 
   const CORRECT_PASSWORD = 'healing2026';
 
@@ -130,7 +131,7 @@ export default function HealingIsForgetting() {
 
         <Section>
           <Card>
-            <SectionTitle>Synopsis – v1.1 (Jan 2026)</SectionTitle>
+            <SectionTitle>Synopsis – {latestSynopsis.version}</SectionTitle>
             {synopses.map((syn, index) => {
               if (index === 0) {
                 return (
