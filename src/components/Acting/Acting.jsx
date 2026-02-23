@@ -3,6 +3,7 @@ import {
     Container,
     Header,
     Tagline,
+    TaglineEmphasis,
     FlashyTagline,
     TranslateButton,
     VideoSection,
@@ -144,7 +145,19 @@ const Acting = () => {
         <ParentContainer>
             <Container>
                 <Header>{currentText.header}</Header>
-                <Tagline>{currentText.tagline1}</Tagline>
+                <Tagline>
+                    {language === "EN" ? (
+                        <>
+                            <TaglineEmphasis>EMERGING</TaglineEmphasis> Indigenous Actor
+                            <br />
+                            with IMPROVISATIONAL Skills
+                            <br />
+                            and a WIDE Acting Range.
+                        </>
+                    ) : (
+                        currentText.tagline1
+                    )}
+                </Tagline>
                 <FlashyTagline>{currentText.tagline2}</FlashyTagline>
                 <ResumeDownloadButton
                     href={`${process.env.PUBLIC_URL}/Resume_Acting_Wilfredo_Casas.pdf`}

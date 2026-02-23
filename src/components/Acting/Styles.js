@@ -27,6 +27,10 @@ background: cornsilk;
   }
 `;
 
+export const TaglineEmphasis = styled.span`
+  font-weight: 700;
+`;
+
 
 
 /* Neon stroke approach for improved readability */
