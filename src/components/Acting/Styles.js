@@ -162,6 +162,30 @@ export const TranslateButton = styled.button`
   }
 `;
 
+export const ResumeDownloadButton = styled.a`
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1.4rem;
+  padding: 0.85rem 1.3rem;
+  border: 2px solid #ffff00;
+  border-radius: 10px;
+  background: #1e1e1e;
+  color: #ffff00;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.7px;
+  font-weight: 700;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    background: #ffff00;
+    color: #111;
+  }
+`;
+
 
 
 /* Single-column video section for all screen sizes */

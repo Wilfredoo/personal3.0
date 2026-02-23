@@ -16,6 +16,7 @@ import {
     ParentContainer,
     ReelText,
     SmallText,
+    ResumeDownloadButton,
     LinksSection,
     LinksTitle,
     LinksContainer,
@@ -82,6 +83,7 @@ const texts = {
         tagline1:
             "Indigenous-Peruvian actor with improvisational skills and a wide acting range.",
         tagline2: "Looking for challenging roles.",
+        resumeButton: "Download Acting Resume (PDF)",
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
         reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
@@ -107,6 +109,7 @@ representation2: "Represented by YourActor agency, with agent Janusz Wojnar",
         tagline1:
             "Indigen-peruanischer Schauspieler mit Improvisationsfähigkeiten und breiter schauspielerischer Bandbreite.",
         tagline2: "Auf der Suche nach herausfordernden Rollen.",
+        resumeButton: "Schauspiel-Lebenslauf herunterladen (PDF)",
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
         reelText: "Die Clips in diesem Reel zeigen meine ersten Schauspiel-Auditions für Filmprojekte im Jahr 2025, darunter Kurzfilme in Berlin, Offenburg, Aachen und Köln. Die meisten Auditions führten zu Rollen in Projekten, die sich derzeit in der Postproduktion befinden – mit einer Mischung aus improvisierten und geskripteten Szenen. Viel Spaß beim Anschauen!",
@@ -143,6 +146,12 @@ const Acting = () => {
                 <Header>{currentText.header}</Header>
                 <Tagline>{currentText.tagline1}</Tagline>
                 <FlashyTagline>{currentText.tagline2}</FlashyTagline>
+                <ResumeDownloadButton
+                    href={`${process.env.PUBLIC_URL}/Resume_Acting_Wilfredo_Casas.pdf`}
+                    download="Resume_Acting_Wilfredo_Casas.pdf"
+                >
+                    {currentText.resumeButton}
+                </ResumeDownloadButton>
                 <TranslateButton onClick={toggleLanguage}>
                     {language === "EN" ? (
                         "Zur deutschen Version, bitte."
