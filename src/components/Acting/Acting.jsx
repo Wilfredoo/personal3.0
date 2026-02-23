@@ -81,7 +81,7 @@ const texts = {
     EN: {
         header: "Wilfredo Casas",
         tagline1:
-            "Indigenous-Peruvian actor with improvisational skills and a wide acting range.",
+            "Emerging Indigenous-Peruvian actor with improvisational skills and a wide acting range.",
         tagline2: "Looking for challenging roles.",
         resumeButton: "Download Acting Resume (PDF)",
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
@@ -97,7 +97,7 @@ representation2: "Represented by YourActor agency, with agent Janusz Wojnar",
             "Height: 175 cm",
             "Build: Athletic",
             "Ethnic Appearance: Indigenous Peruvian / Hispanic",
-            "Languages: German, English, Spanish, German Sign Language (DGS)",
+            "Languages: German, English, Spanish, Quechua, German Sign Language (DGS)",
             "Sports: Parkour, Martial Arts",
             "Dance: Contemporary, Improvisational, Salsa, Tango, Ballet",
             "Driver's License: B (EU)",
@@ -123,7 +123,7 @@ representation2: "Vertreten durch die Agentur YourActor, Agent Janusz Wojnar",  
             "Größe: 175 cm",
             "Körperbau: Athletisch",
             "Ethnisches Erscheinungsbild: Indigen peruanisch / hispanisch",
-            "Sprachen: Deutsch, Englisch, Spanisch, Deutsche Gebärdensprache (DGS)",
+            "Sprachen: Deutsch, Englisch, Spanisch, Quechua, Deutsche Gebärdensprache (DGS)",
             "Musikalische Fähigkeiten: Gesang, Gitarre, Keyboard, Schlagzeug",
             "Tanz: Zeitgenössisch, Improv, Ballett, Salsa, Tango, Lindy Hop",
             "Führerschein: B (EU)",
@@ -166,15 +166,8 @@ const Acting = () => {
                 <VideoSection>
                     <VideoEmbed>
                         <iframe
-                            src="https://www.youtube.com/embed/qPmtH8CvUyE"
+                            src="https://www.youtube.com/embed/1EH66VoBrZY"
                             title="Acting Video - Latest Work"
-                            allowFullScreen
-                        />
-                    </VideoEmbed>
-                    <VideoEmbed>
-                        <iframe
-                            src="https://www.youtube.com/embed/NUKl-U673Y8"
-                            title="Acting Video 1"
                             allowFullScreen
                         />
                     </VideoEmbed>
