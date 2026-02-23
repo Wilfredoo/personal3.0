@@ -90,7 +90,7 @@ const HostelParadisoSellSheet = () => {
           <>
             <Paragraph>If you’re interested in publishing or distributing Hostel Paradiso, feel free to reach out:</Paragraph>
             <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
-            <Paragraph><strong>WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">+49 175 702 5622</WhatsAppLink></Paragraph>
+            <Paragraph><strong>Signal / Telegram / WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">+491757025622</WhatsAppLink></Paragraph>
           </>
         )}
       </Section>

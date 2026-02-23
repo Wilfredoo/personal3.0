@@ -247,6 +247,69 @@ export const LinksContainer = styled.div`
   align-items: center;
 `;
 
+export const RepresentationCard = styled.div`
+  margin: 0 auto 28px;
+  padding: 18px 20px;
+  max-width: 560px;
+  border: 1px solid #3b3b3b;
+  border-radius: 12px;
+  background: #121212;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  text-align: center;
+`;
+
+export const RepresentationLink = styled.a`
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #f1f1f1;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  line-height: 1.45;
+
+  &:hover {
+    color: #ffffff;
+  }
+`;
+
+export const RepresentationText = styled.p`
+  margin: 0 0 12px;
+  color: #f1f1f1;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+  font-weight: 500;
+`;
+
+export const RepresentationContact = styled.p`
+  margin: 0;
+  color: #cfcfcf;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  letter-spacing: 0.15px;
+`;
+
+export const ContactCta = styled.div`
+  margin: 24px auto 0;
+  padding: 14px 16px;
+  max-width: 560px;
+  border: 2px solid #ffff00;
+  border-radius: 10px;
+  background: #1a1a1a;
+  text-align: center;
+`;
+
+export const ContactCtaText = styled.p`
+  margin: 0;
+  color: #ffff00;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.2px;
+`;
+
 export const ProfileLink = styled.a`
   display: inline-block;
   padding: 15px 30px;

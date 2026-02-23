@@ -19,7 +19,12 @@ import {
     LinksSection,
     LinksTitle,
     LinksContainer,
-    ProfileLink
+    ProfileLink,
+    RepresentationCard,
+    RepresentationLink,
+    RepresentationText,
+    ContactCta,
+    ContactCtaText
 } from './Styles';
 
 import wilfredo1 from '../../assets/images/wilfredo_1.png';
@@ -82,6 +87,8 @@ const texts = {
         reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
                 professionalProfiles: "REPRESENTATION",
         representation: "Represented by Alison Goodwin Talent",
+representation2: "Represented by YourActor agency, with agent Janusz Wojnar",
+        directContact: "Direct contact via Signal, Telegram, or WhatsApp: +491757025622",
 
         professionalProfiles2: "MORE LINKS",
         info: [
@@ -106,6 +113,7 @@ const texts = {
                 professionalProfiles: "VERTRETUNG",
      
         representation: "Vertreten durch Alison Goodwin Talent",
+representation2: "Vertreten durch die Agentur YourActor, Agent Janusz Wojnar",        directContact: "Direkter Kontakt via Signal, Telegram oder WhatsApp: +491757025622",
 
         professionalProfiles2: "MEHR LINKS",
         info: [
@@ -177,25 +185,16 @@ const Acting = () => {
                 </InfoSection>
                 <LinksSection>
                    <LinksTitle>{currentText.professionalProfiles}</LinksTitle>
-<a 
-    href="https://www.alisongoodwintalent.com" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    style={{
-        display: 'block',
-        fontSize: '1.2rem',
-        marginBottom: '25px',
-        color: '#00ffea',
-        fontWeight: 'bold',
-        letterSpacing: '1px',
-        textDecoration: 'none',
-        transition: 'color 0.3s ease'
-    }}
-    onMouseEnter={(e) => e.target.style.color = '#ffff00'}
-    onMouseLeave={(e) => e.target.style.color = '#00ffea'}
->
-    {currentText.representation}
-</a>
+                    <RepresentationCard>
+                        <RepresentationLink
+                            href="https://www.alisongoodwintalent.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {currentText.representation}
+                        </RepresentationLink>
+                        <RepresentationText>{currentText.representation2}</RepresentationText>
+                    </RepresentationCard>
                     <LinksTitle>{currentText.professionalProfiles2}</LinksTitle>
                     <LinksContainer>
                         <ProfileLink 
@@ -213,6 +212,9 @@ const Acting = () => {
                             etalenta.eu Profile
                         </ProfileLink>
                     </LinksContainer>
+                    <ContactCta>
+                        <ContactCtaText>{currentText.directContact}</ContactCtaText>
+                    </ContactCta>
                 </LinksSection>
             </Container>
         </ParentContainer>
