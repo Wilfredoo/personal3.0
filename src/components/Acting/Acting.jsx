@@ -156,6 +156,7 @@ const Acting = () => {
         <ParentContainer>
             <Container>
                 <Header>{currentText.header}</Header>
+                   
                 <Tagline>
                     {language === "EN" ? (
                         <>
@@ -169,20 +170,8 @@ const Acting = () => {
                         currentText.tagline1
                     )}
                 </Tagline>
-                <FlashyTagline>{currentText.tagline2}</FlashyTagline>
-                <JobUpdates>
-                    <JobLabel>{currentText.lastJobLabel}</JobLabel>
-                    <JobLine>{currentText.lastJob}</JobLine>
-                    <JobLabel>{currentText.nextJobLabel}</JobLabel>
-                    <JobLine>{currentText.nextJob}</JobLine>
-                </JobUpdates>
-                <ResumeDownloadButton
-                    href={`${process.env.PUBLIC_URL}/Resume_Acting_Wilfredo_Casas.pdf`}
-                    download="Resume_Acting_Wilfredo_Casas.pdf"
-                >
-                    {currentText.resumeButton}
-                </ResumeDownloadButton>
-                <TranslateButton onClick={toggleLanguage}>
+                 <FlashyTagline>{currentText.tagline2}</FlashyTagline>
+ <TranslateButton onClick={toggleLanguage}>
                     {language === "EN" ? (
                         "Zur deutschen Version, bitte."
                     ) : (
@@ -192,8 +181,7 @@ const Acting = () => {
                             </>
                     )}
                 </TranslateButton>
-
-                <VideoSection>
+                  <VideoSection>
                     <VideoEmbed>
                         <iframe
                             src="https://www.youtube.com/embed/1EH66VoBrZY"
@@ -203,6 +191,22 @@ const Acting = () => {
                     </VideoEmbed>
                     <ReelText>{currentText.reelText}</ReelText>
                 </VideoSection>
+               
+                <ResumeDownloadButton
+                    href={`${process.env.PUBLIC_URL}/Resume_Acting_Wilfredo_Casas.pdf`}
+                    download="Resume_Acting_Wilfredo_Casas.pdf"
+                >
+                    {currentText.resumeButton}
+                </ResumeDownloadButton>
+                <JobUpdates>
+                    <JobLabel>{currentText.lastJobLabel}</JobLabel>
+                    <JobLine>{currentText.lastJob}</JobLine>
+                    <JobLabel>{currentText.nextJobLabel}</JobLabel>
+                    <JobLine>{currentText.nextJob}</JobLine>
+                </JobUpdates>
+            
+
+              
                 <ImageGrid>
                     <ProfileImage src={photos[currentIndex]} alt={`Wilfredo ${currentIndex + 1}`} />
                     <NewPhotoButton onClick={handleNext}>New Photo</NewPhotoButton>
