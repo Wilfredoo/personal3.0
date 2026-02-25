@@ -17,6 +17,9 @@ import {
     ParentContainer,
     ReelText,
     SmallText,
+    JobUpdates,
+    JobLabel,
+    JobLine,
     ResumeDownloadButton,
     LinksSection,
     LinksTitle,
@@ -84,13 +87,17 @@ const texts = {
         tagline1:
             "Emerging Indigenous-Peruvian actor with improvisational skills and a wide acting range.",
         tagline2: "Looking for challenging roles.",
+        lastJobLabel: "Last Job",
+        lastJob: "First Love (Pierwsza Miłość) — Role: Prisoner 2 — ATM Grupa / Polsat — February 2026",
+        nextJobLabel: "Next Job",
+        nextJob: "The Human Experience (upcoming feature) — Role: The Human Tiger — Direction: Natalie McMahon — June 2026",
         resumeButton: "Download Acting Resume (PDF)",
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
-        reelText: "The clips in this reel feature my first film acting jobs & auditions from 2025, for short films in Berlin, Offenburg, Aachen and Cologne, a mix of improvised and scripted scenes. Enjoy the glimpse!",
+        reelText: "The clips in this reel feature film acting jobs from 2025 for short films in Berlin, Aachen and Cologne. Material of 2026 coming soon. Enjoy the glimpse!",
                 professionalProfiles: "REPRESENTATION",
         representation: "Represented by Alison Goodwin Talent",
-representation2: "Represented by YourActor agency, with agent Janusz Wojnar",
+representation2: "Represented by YourActor Agency",
         directContact: "Direct contact via Signal, Telegram, or WhatsApp: +491757025622",
 
         professionalProfiles2: "MORE LINKS",
@@ -110,6 +117,10 @@ representation2: "Represented by YourActor agency, with agent Janusz Wojnar",
         tagline1:
             "Indigen-peruanischer Schauspieler mit Improvisationsfähigkeiten und breiter schauspielerischer Bandbreite.",
         tagline2: "Auf der Suche nach herausfordernden Rollen.",
+        lastJobLabel: "Last Job",
+        lastJob: "First Love (Pierwsza Miłość) — Role: Prisoner 2 — ATM Grupa / Polsat — February 2026",
+        nextJobLabel: "Next Job",
+        nextJob: "The Human Experience — Role: The Human Tiger — Direction: Natalie McMahon — June 2026",
         resumeButton: "Schauspiel-Lebenslauf herunterladen (PDF)",
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
@@ -159,6 +170,12 @@ const Acting = () => {
                     )}
                 </Tagline>
                 <FlashyTagline>{currentText.tagline2}</FlashyTagline>
+                <JobUpdates>
+                    <JobLabel>{currentText.lastJobLabel}</JobLabel>
+                    <JobLine>{currentText.lastJob}</JobLine>
+                    <JobLabel>{currentText.nextJobLabel}</JobLabel>
+                    <JobLine>{currentText.nextJob}</JobLine>
+                </JobUpdates>
                 <ResumeDownloadButton
                     href={`${process.env.PUBLIC_URL}/Resume_Acting_Wilfredo_Casas.pdf`}
                     download="Resume_Acting_Wilfredo_Casas.pdf"

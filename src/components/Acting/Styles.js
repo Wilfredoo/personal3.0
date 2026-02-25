@@ -144,49 +144,86 @@ letter-spacing: 8px;
 export const TranslateButton = styled.button`
   display: block;
   margin: 2rem auto;
-  padding: 1rem 2rem;
-  font-size: 1.3rem;
+  padding: 0.9rem 1.7rem;
+  font-size: 1.05rem;
   font-family: 'Arial Black', sans-serif;
-  background: linear-gradient(45deg, #15F5BA, #A3D8FF);
-  background-size: 200%;
-  color: #000;
-  border: 2px solid #fff;
+  background: transparent;
+  color: #d8d8d8;
+  border: 2px solid #8f8f8f;
   border-radius: 12px;
   cursor: pointer;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 3px #fff;
-  box-shadow: 0 0 15px #94FFD8;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
   &:hover {
-    transform: scale(1.05) rotate(-1deg);
-    box-shadow: 0 0 25px #A3D8FF;
+    transform: translateY(-1px);
+    border-color: #cfcfcf;
+    color: #ffffff;
   }
 `;
 
 export const ResumeDownloadButton = styled.a`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
-  margin: 0 auto 1.4rem;
-  padding: 0.85rem 1.3rem;
-  border: 2px solid #ffff00;
-  border-radius: 10px;
-  background: #1e1e1e;
-  color: #ffff00;
+  margin: 0 auto 1.9rem;
+  padding: 1.3rem 2.2rem;
+  border: 4px solid #ffeb3b;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffd54f 0%, #ffb300 55%, #ff8f00 100%);
+  color: #111;
   text-decoration: none;
   text-transform: uppercase;
   font-family: 'Arial Black', sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.7px;
+  font-size: 1.25rem;
+  letter-spacing: 1.2px;
   font-weight: 700;
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+  box-shadow: 0 0 20px rgba(255, 179, 0, 0.45);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
-    transform: translateY(-1px);
-    background: #ffff00;
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #ffe082 0%, #ffc107 55%, #ffa000 100%);
     color: #111;
+    box-shadow: 0 0 30px rgba(255, 179, 0, 0.75);
+  }
+`;
+
+export const JobUpdates = styled.div`
+  margin: 0 auto 1.2rem;
+  padding: 1.2rem 1.3rem;
+  max-width: 620px;
+  border: 2px solid #4a4a4a;
+  border-radius: 12px;
+  background: #161616;
+  text-align: center;
+`;
+
+export const JobLabel = styled.p`
+  margin: 0 0 0.4rem;
+  color: #ffff00;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+`;
+
+export const JobLine = styled.p`
+  margin: 0 0 0.95rem;
+  color: #f5f5f5;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  letter-spacing: 0.2px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 `;
 
