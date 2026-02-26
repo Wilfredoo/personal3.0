@@ -85,7 +85,8 @@ export const SmallText = styled.span`
 
 export const ParentContainer = styled.div`
   margin: 0 auto;
-  max-width: auto;
+  width: 100%;
+  min-height: 100vh;
   background-color: #000;
 `;
 
@@ -283,7 +284,11 @@ export const InfoItem = styled.li`
 
 /* Images with neon border and shadow */
 export const ProfileImage = styled.img`
-height: 350px;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
   margin: 0 auto;
   border-radius: 8px;
   border: 3px solid #ff0080;
@@ -373,6 +378,61 @@ export const ContactCtaText = styled.p`
   font-weight: 700;
   line-height: 1.45;
   letter-spacing: 0.2px;
+`;
+
+export const GateCard = styled.div`
+  margin: 80px auto;
+  max-width: 520px;
+  padding: 24px;
+  border: 2px solid #3b3b3b;
+  border-radius: 12px;
+  background: #111;
+  text-align: center;
+`;
+
+export const GateTitle = styled.h2`
+  margin: 0 0 10px;
+  color: #ffff00;
+  font-size: 1.5rem;
+`;
+
+export const GateText = styled.p`
+  margin: 0 0 14px;
+  color: #e5e5e5;
+  line-height: 1.45;
+`;
+
+export const GateForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const GateInput = styled.input`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #6a6a6a;
+  background: #1c1c1c;
+  color: #fff;
+  font-size: 1rem;
+`;
+
+export const GateButton = styled.button`
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 2px solid #ffeb3b;
+  background: #ffb300;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+`;
+
+export const GateError = styled.p`
+  margin: 2px 0 0;
+  color: #ff8a80;
+  font-size: 0.95rem;
 `;
 
 export const ProfileLink = styled.a`

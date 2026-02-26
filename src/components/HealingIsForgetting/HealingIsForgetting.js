@@ -86,8 +86,8 @@ export default function HealingIsForgetting() {
             <Lock size={48} color="#000" style={{ margin: '0 auto 16px' }} />
             <PasswordTitle>Protected Content</PasswordTitle>
             <PasswordDescription>
-              This page is password protected. Please enter the password to access the content.
-            </PasswordDescription>
+This page is password-protected. Email inbox@wilfredocasas.com
+ to request the password or inquire about collaboration.            </PasswordDescription>
             <PasswordForm onSubmit={handleSubmit}>
               <PasswordInputWrapper>
                 <PasswordInput

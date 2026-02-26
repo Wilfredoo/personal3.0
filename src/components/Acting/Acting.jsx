@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Container,
     Header,
@@ -29,7 +29,14 @@ import {
     RepresentationLink,
     RepresentationText,
     ContactCta,
-    ContactCtaText
+    ContactCtaText,
+    GateCard,
+    GateTitle,
+    GateText,
+    GateForm,
+    GateInput,
+    GateButton,
+    GateError
 } from './Styles';
 
 import wilfredo1 from '../../assets/images/wilfredo_1.png';
@@ -40,7 +47,6 @@ import wilfredo5 from '../../assets/images/wilfredo_5.jpeg';
 import wilfredo7 from '../../assets/images/wilfredo_7.png';
 import wilfredo8 from '../../assets/images/wilfredo_8.jpg';
 import wilfredo9 from '../../assets/images/wilfredo_9.jpeg';
-import wilfredo12 from '../../assets/images/wilfredo_12.jpg';
 import wilfredo13 from '../../assets/images/wilfredo_13.jpg';
 import wilfredo14 from '../../assets/images/wilfredo_14.jpg';
 import wilfredo15 from '../../assets/images/wilfredo_15.jpg';
@@ -48,7 +54,6 @@ import wilfredo16 from '../../assets/images/wilfredo_16.jpg';
 import wilfredo17 from '../../assets/images/wilfredo_17.jpg';
 import wilfredo18 from '../../assets/images/wilfredo_18.jpg';
 import wilfredo19 from '../../assets/images/wilfredo_19.jpg';
-import wilfredo20 from '../../assets/images/wilfredo_20.jpg';
 import wilfredo21 from '../../assets/images/wilfredo_21.jpg';
 import wilfredo22 from '../../assets/images/wilfredo_22.jpg';
 import wilfredo23 from '../../assets/images/wilfredo_23.jpg';
@@ -64,7 +69,6 @@ const photos = [
   wilfredo7,
   wilfredo8,
   wilfredo9,
-  wilfredo12,
   wilfredo13,
   wilfredo14,
   wilfredo15,
@@ -72,13 +76,16 @@ const photos = [
   wilfredo17,
   wilfredo18,
   wilfredo19,
-  wilfredo20,
   wilfredo21,
   wilfredo22,
   wilfredo23,
   wilfredo24,
 
 ];
+
+const ACCESS_PASSWORD = "gingertea";
+const ACCESS_STORAGE_KEY = "acting_page_unlocked";
+const ENABLE_PASSWORD_PROTECTION = false;
 
 
 const texts = {
@@ -146,11 +153,56 @@ representation2: "Vertreten durch die Agentur YourActor, Agent Janusz Wojnar",  
 
 const Acting = () => {
     // hello world
+    const [isUnlocked, setIsUnlocked] = useState(false);
+    const [passwordInput, setPasswordInput] = useState("");
+    const [passwordError, setPasswordError] = useState("");
     const [language, setLanguage] = useState("EN");
     const toggleLanguage = () => setLanguage((prev) => (prev === "EN" ? "DE" : "EN"));
     const currentText = texts[language];
     const [currentIndex, setCurrentIndex] = useState(0);
     const handleNext = () => setCurrentIndex((prev) => (prev + 1) % photos.length);
+    
+    useEffect(() => {
+        if (sessionStorage.getItem(ACCESS_STORAGE_KEY) === "true") {
+            setIsUnlocked(true);
+        }
+    }, []);
+
+    const handleUnlock = (event) => {
+        event.preventDefault();
+        if (passwordInput === ACCESS_PASSWORD) {
+            sessionStorage.setItem(ACCESS_STORAGE_KEY, "true");
+            setIsUnlocked(true);
+            setPasswordError("");
+            return;
+        }
+        setPasswordError("Wrong password.");
+    };
+
+    if (ENABLE_PASSWORD_PROTECTION && !isUnlocked) {
+        return (
+            <ParentContainer>
+                <Container>
+                    <GateCard>
+                        <GateTitle>Acting Page</GateTitle>
+                        <GateText>Enter password to continue.</GateText>
+                        <GateForm onSubmit={handleUnlock}>
+                            <GateInput
+                                type="password"
+                                value={passwordInput}
+                                onChange={(event) => setPasswordInput(event.target.value)}
+                                placeholder="Password"
+                                autoComplete="current-password"
+                            />
+                            <GateButton type="submit">Unlock</GateButton>
+                        </GateForm>
+                        <GateText>Request password to inbox@wilfredocasas.com</GateText>
+                        {passwordError && <GateError>{passwordError}</GateError>}
+                    </GateCard>
+                </Container>
+            </ParentContainer>
+        );
+    }
 
     return (
         <ParentContainer>
@@ -246,6 +298,13 @@ const Acting = () => {
                             rel="noopener noreferrer"
                         >
                             etalenta.eu Profile
+                        </ProfileLink>
+                        <ProfileLink
+                            href="https://www.instagram.com/wilfredocasas.actor/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Instagram Profile
                         </ProfileLink>
                     </LinksContainer>
                     <ContactCta>
