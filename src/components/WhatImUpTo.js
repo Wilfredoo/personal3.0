@@ -8,7 +8,7 @@ const WhatImUpTo = () => (
   further developing <a href="https://wilfredocasas.com/ayakucho" target="_blank" rel="noopener noreferrer">Ayakucho</a>, 
   and beginning work on my first feature film, <a href="/healingisforgetting">Healing is Forgetting</a>.
 </Text>
-<Text>Also doing some  <a href="https://wilfredocasas.com/acting" target="_blank" rel="noopener noreferrer"></a>acting on the side.</Text>
+<Text>Also doing some  <a href="https://wilfredocasas.com/acting" target="_blank" rel="noopener noreferrer">acting</a> on the side.</Text>
   </TextContainer>
 );
 
