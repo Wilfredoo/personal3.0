@@ -85,7 +85,7 @@ const photos = [
 
 const ACCESS_PASSWORD = "gingertea";
 const ACCESS_STORAGE_KEY = "acting_page_unlocked";
-const ENABLE_PASSWORD_PROTECTION = false;
+const ENABLE_PASSWORD_PROTECTION = true;
 
 
 const texts = {
