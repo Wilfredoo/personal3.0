@@ -344,14 +344,7 @@ export const RepresentationLink = styled.a`
   }
 `;
 
-export const RepresentationText = styled.p`
-  margin: 0 0 12px;
-  color: #f1f1f1;
-  font-size: 1.05rem;
-  line-height: 1.45;
-  letter-spacing: 0.2px;
-  font-weight: 500;
-`;
+
 
 export const RepresentationContact = styled.p`
   margin: 0;

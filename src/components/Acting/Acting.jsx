@@ -27,7 +27,6 @@ import {
     ProfileLink,
     RepresentationCard,
     RepresentationLink,
-    RepresentationText,
     ContactCta,
     ContactCtaText,
     GateCard,
@@ -102,9 +101,9 @@ const texts = {
         availability: "🎬 AVAILABILITY: Currently travelling but available for shootings in Germany from September 26th to October 20th. November and December - to be confirmed.",
         moreAbout: "More about me",
         reelText: "The clips in this reel feature film acting jobs from 2025 for short films in Berlin, Aachen and Cologne. Material of 2026 coming soon. Enjoy the glimpse!",
-                professionalProfiles: "REPRESENTATION",
-        representation: "Represented by Alison Goodwin Talent",
-representation2: "Represented by YourActor Agency",
+                professionalProfiles: "Collaborations with agencies (non-exclusive):",
+        representation: "Alison Goodwin Talent",
+representation2: "YourActor Agency",
         directContact: "Direct contact via Signal, Telegram, or WhatsApp: +491757025622",
 
         professionalProfiles2: "MORE LINKS",
@@ -132,10 +131,10 @@ representation2: "Represented by YourActor Agency",
         availability: "🎬 VERFÜGBARKEIT: Aktuell auf Reisen, aber verfügbar für Dreharbeiten in Deutschland vom 26. September bis 20. Oktober. November und Dezember - noch zu bestätigen.",
         moreAbout: "Mehr über mich",
         reelText: "Die Clips in diesem Reel zeigen meine ersten Schauspiel-Auditions für Filmprojekte im Jahr 2025, darunter Kurzfilme in Berlin, Offenburg, Aachen und Köln. Die meisten Auditions führten zu Rollen in Projekten, die sich derzeit in der Postproduktion befinden – mit einer Mischung aus improvisierten und geskripteten Szenen. Viel Spaß beim Anschauen!",
-                professionalProfiles: "VERTRETUNG",
+                professionalProfiles: "Zusammenarbeit mit Agenturen (nicht exklusiv):",
      
-        representation: "Vertreten durch Alison Goodwin Talent",
-representation2: "Vertreten durch die Agentur YourActor, Agent Janusz Wojnar",        directContact: "Direkter Kontakt via Signal, Telegram oder WhatsApp: +491757025622",
+        representation: "Alison Goodwin Talent",
+representation2: "Agentur YourActor",        directContact: "Direkter Kontakt via Signal, Telegram oder WhatsApp: +491757025622",
 
         professionalProfiles2: "MEHR LINKS",
         info: [
@@ -274,6 +273,7 @@ const Acting = () => {
                 <LinksSection>
                    <LinksTitle>{currentText.professionalProfiles}</LinksTitle>
                     <RepresentationCard>
+                        <div>
                         <RepresentationLink
                             href="https://www.alisongoodwintalent.com"
                             target="_blank"
@@ -281,7 +281,18 @@ const Acting = () => {
                         >
                             {currentText.representation}
                         </RepresentationLink>
-                        <RepresentationText>{currentText.representation2}</RepresentationText>
+                        </div>
+                        <div>
+     
+                          <RepresentationLink
+                            href="  https://youractor.pl/impressum/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                   
+                      {currentText.representation2}
+                        </RepresentationLink>
+                        </div>
                     </RepresentationCard>
                     <LinksTitle>{currentText.professionalProfiles2}</LinksTitle>
                     <LinksContainer>
