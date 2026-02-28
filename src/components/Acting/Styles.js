@@ -269,6 +269,8 @@ export const InfoSection = styled.div`
   border: 2px dashed #ff0080;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
+      margin-bottom: 30px;
+}
 `;
 
 export const InfoList = styled.ul`

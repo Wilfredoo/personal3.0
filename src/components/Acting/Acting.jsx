@@ -39,6 +39,7 @@ import {
 } from './Styles';
 
 import wilfredo1 from '../../assets/images/wilfredo_1.png';
+import wilfredo30 from '../../assets/images/wilfredo_30.jpg';
 import wilfredo2 from '../../assets/images/wilfredo_2.png';
 import wilfredo3 from '../../assets/images/wilfredo_3.png';
 import wilfredo4 from '../../assets/images/wilfredo_4.jpeg';
@@ -49,13 +50,10 @@ import wilfredo9 from '../../assets/images/wilfredo_9.jpeg';
 import wilfredo13 from '../../assets/images/wilfredo_13.jpg';
 import wilfredo14 from '../../assets/images/wilfredo_14.jpg';
 import wilfredo15 from '../../assets/images/wilfredo_15.jpg';
-import wilfredo16 from '../../assets/images/wilfredo_16.jpg';
 import wilfredo17 from '../../assets/images/wilfredo_17.jpg';
 import wilfredo18 from '../../assets/images/wilfredo_18.jpg';
 import wilfredo19 from '../../assets/images/wilfredo_19.jpg';
-import wilfredo21 from '../../assets/images/wilfredo_21.jpg';
 import wilfredo22 from '../../assets/images/wilfredo_22.jpg';
-import wilfredo23 from '../../assets/images/wilfredo_23.jpg';
 import wilfredo24 from '../../assets/images/wilfredo_24.jpg';
 
 
@@ -71,14 +69,12 @@ const photos = [
   wilfredo13,
   wilfredo14,
   wilfredo15,
-  wilfredo16,
   wilfredo17,
   wilfredo18,
   wilfredo19,
-  wilfredo21,
   wilfredo22,
-  wilfredo23,
   wilfredo24,
+  wilfredo30
 
 ];
 
@@ -270,6 +266,15 @@ const Acting = () => {
                         ))}
                     </InfoList>
                 </InfoSection>
+                <VideoSection>
+                    <VideoEmbed>
+                        <iframe
+                            src="https://www.youtube.com/embed/7UNN4vHY5CU"
+                            title="Acting Video - Additional Clip"
+                            allowFullScreen
+                        />
+                    </VideoEmbed>
+                </VideoSection>
                 <LinksSection>
                    <LinksTitle>{currentText.professionalProfiles}</LinksTitle>
                     <RepresentationCard>
