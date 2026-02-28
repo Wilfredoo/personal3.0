@@ -1,7 +1,34 @@
 // synopses.js
 const synopses = [
   {
-    version: 'v3.0 (Feb 2026)',
+    version: 'v3 (Feb 2026)',
+    title: 'Synopsis',
+    paragraphs: [
+      `Sophie is a memory archivist working for the Nadorev Institute, where people go to delete their traumas in order to find inner peace.`,
+      `The technology called Neuro Emotional Editing (NEE), known colloquially as Record Editing, was developed by the Chinese military aiming to get soldiers with PTSD back into battle for as long as possible. It has now been mainstream for a few years.`,
+      `Sophie's role is to gather, make sense of, and store these memories in case they ever want to recollect them again. It's a process in which she listens to their stories and collects an array of objects related to the specific event that took place.`,
+      `So far, no patient has come back to retrieve their old memories.`,
+      `Sophie has her own set of troubles: she wants to have a baby but is unable to, she wants to get rid of recurring nightmares, she wants to—`,
+      `She does therapy on a weekly basis, which is nowadays considered outdated.`,
+      `She also uses a smartphone, which no one does anymore, as everyone nowadays uses Visors—full head, helmet-like devices where they spend several hours a day chatting with friends and colleagues, doing administrative chores, or being exposed to endless media. Technology has spiraled to a level that she is not comfortable with.`,
+      `Sophie has a strong wish to have a baby, but despite multiple attempts with her long-term partner, they have been unsuccessful.`,
+      `A sporadic but repeating memory chases Sophie's nights. Sometimes she is riding a horse, other times a machine, a man, a crowd of naked people. Her dream takes many shapes, but the feelings of increasing unease and loss of control are constant. The dream reaches a peak moments before it hits disaster.`,
+      `This nightmare stems from a childhood experience in which, during her regular horse-riding class, the animal went out of her and her coach's control. Despite leaving physically unharmed, this day would have consequences for her psyche and feelings of trust.`,
+      `The first change in Sophie's life comes when her job becomes redundant. Despite being the first company in the market to offer this service, others have appeared which do things more efficiently. A law has passed where people don't have to record their memories anymore but can simply wipe them clean. She loses her job.`,
+      `Financially stressed, she decides to leave her psychotherapist as she can't afford it anymore. This relieves her temporarily, only to find that her nightmares start creeping in strongly again.`,
+      `Tired of this, she tries NEE for the first time. Her logic is that if she can delete this childhood memory, the nightmares will leave as well. Her best friend Laura lends her a visor, and she successfully erases it. The nightmares stop coming up. She feels more loosened up, happier. Maybe she should have tried this long ago.`,
+      `She starts dating again. She meets different men and sleeps with some of them without protection, hoping to get pregnant. She eventually meets her goal, only to now find that she doesn't know who the father is. A pain in her uterus remains.`,
+      `A miscarriage happens. She is alone and devastated. As the pain becomes unbearable, she decides to erase this memory too.`,
+      `She has one hobby: making knots. She has experience doing Shibari with her partner, but also uses knots as a form of art and to hang and do things around the house.`,
+      `She starts using the visor to delete more and more moments of her life—many of her recent memories, such as an awkward encounter at the supermarket, an interview that did not go right, an embarrassing date.`,
+      `She feels light in the world, but having now erased so much of her life, loopholes start to show—moments of her life that she can't remember. She goes clubbing, she is happy, but something is missing. She is now stressed at feeling like an empty shell.`,
+      `She asks her sister if she has ever deleted her memories. She gets a positive response.`,
+      `Her sister gives her her memories back. Sophie had meticulously archived them before deleting them. She reads through it all, she cries, she tries to process it, and imagines all of these situations, feeling compassion for herself for having lived through all of this.`,
+      `A new day begins.`
+    ]
+  },
+  {
+    version: 'v2 (Feb 2026)',
     title: 'Synopsis',
     paragraphs: [
       `Sophie is a Berlin-based psychotherapist with a strong desire to have a baby.`,
@@ -23,16 +50,7 @@ const synopses = [
       `She is herself again.`
     ]
   },
-  {
-    version: 'v1.1 (Jan 2026)',
-    title: 'Synopsis',
-    paragraphs: [
-      `Sophie is a psychotherapist in a world where Neuro-Emotional Editing (NEE)—a technology originally developed by the Israeli military to treat PTSD—has just gone mainstream. Everyone is talking about it: at parties, on trains, in viral influencer videos. Clinics have months-long waiting lists. The promise is seductively simple: write down your traumatic memories, and they can be erased with a click.`,
-      `As NEE gains widespread adoption, people begin using it not only to erase severe trauma, but also minor discomforts—an argument with a stranger, a cringey moment from high school, even stepping in dog shit on the way to work—all in pursuit of the perfect day, every day.`,
-      `Sophie's practice collapses. Her last remaining patient chooses erasure over therapy. Her partner, Chen Wei-hao, leaves for Taiwan to assist soldiers suffering from PTSD amid an ongoing Chinese invasion, embracing the very technology Sophie distrusts. Meanwhile, a community in Peru rejects NEE entirely, insisting that memory—painful or not—is essential to identity.`,
-      `Unemployed and increasingly alienated in a world that no longer seems to need her, Sophie is forced to confront a deeper question: other than memories, what is lost in the process of forgetting at will? And if the absence of pain equals happiness, is it still worth pursuing happiness at the cost of identity and self?`
-    ]
-  },
+
   {
     version: 'v1.0 (Jan 2026)',
     title: 'Synopsis',
