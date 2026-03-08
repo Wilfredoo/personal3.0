@@ -21,6 +21,7 @@ import TheWoodlandsSellSheet from './components/TheWoodlandsSellsheet/TheWoodlan
 import HostelParadisoSellSheet from './components/HostelParadisoSellsheet/HostelParadisoSellSheet';
 import HealingIsForgetting from './components/HealingIsForgetting/HealingIsForgetting';
 import EmailProof from './components/EmailProof';
+import ReadShakespearePrivacyPolicy from './components/ReadShakespearePrivacyPolicy';
 
 const routes = [
     { path: "/", component: <Home /> },
@@ -29,6 +30,7 @@ const routes = [
     { path: "/reference_letter", component: <Referenceletter /> },
     { path: "/healingisforgetting", component: <HealingIsForgetting /> },
     { path: "/emailproof", component: <EmailProof /> },
+    { path: "/read-shakespeare-privacy-policy", component: <ReadShakespearePrivacyPolicy /> },
 
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },

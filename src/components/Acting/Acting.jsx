@@ -40,6 +40,8 @@ import {
 
 import wilfredo1 from '../../assets/images/wilfredo_1.png';
 import wilfredo30 from '../../assets/images/wilfredo_30.jpg';
+import wilfredo31 from '../../assets/images/wilfredo_31.png';
+import wilfredo32 from '../../assets/images/wilfredo_32.png';
 import wilfredo2 from '../../assets/images/wilfredo_2.png';
 import wilfredo3 from '../../assets/images/wilfredo_3.png';
 import wilfredo4 from '../../assets/images/wilfredo_4.jpeg';
@@ -74,8 +76,9 @@ const photos = [
   wilfredo19,
   wilfredo22,
   wilfredo24,
-  wilfredo30
-
+  wilfredo30,
+  wilfredo31,
+  wilfredo32,
 ];
 
 const ACCESS_PASSWORD = "gingertea";
