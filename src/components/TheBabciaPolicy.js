@@ -73,8 +73,7 @@ function TheBabciaPolicy() {
 
       <p>
         Some will say this doesn&apos;t help the community. To them I say: I will let
-        others be the judges of good and bad behaviour, but not take part in
-it.
+        others be the judges of good and bad behaviour, but I won't take part in it.
       </p>
 
       <p>
