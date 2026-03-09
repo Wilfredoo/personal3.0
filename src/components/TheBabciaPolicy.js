@@ -89,10 +89,12 @@ function TheBabciaPolicy() {
 
       <p>We learn, day to day.</p>
 
-      <p> I'd go as far as to say that references don't just reflect behaviour; but they shape it too. I digress.</p>
+      <p> I'd go as far as to say that references don't just reflect behaviour; but they shape it too. But I digress.</p>
+
+      
 
       <p>
-        Babcias - polish grandmas - need no incentive of reference to
+        Babcias - polish grandmas - need no incentives to
         make you feel warm, loved and welcome.
       </p>
 
