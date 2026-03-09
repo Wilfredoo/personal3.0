@@ -48,8 +48,7 @@ function TheBabciaPolicy() {
       <p>Maybe yes, maybe not.</p>
 
       <p>
-        I believe that a layer of authenticity is lost - or, be it, one of
-        artificiality is added - when either host or guest is too worried about
+        I believe that a layer of authenticity is lost - or an artificial one is added - when either host or guest is too worried about
         this topic.
       </p>
 
