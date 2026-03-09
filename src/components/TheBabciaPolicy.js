@@ -21,18 +21,24 @@ function TheBabciaPolicy() {
       <p>(reflections from the couch)</p>
 
       <p>
-        The fear of the reference is real; I&apos;ve had a young, disorganised
-        user apologise profusely after standing me up at the last minute,
+        The fear of the reference is real, and after surfing 30 couches in 1 year, some situations stand out.
+            </p>
+
+      <p>
+        
+        
+         A young, disorganised
+        user apologising profusely after standing me up at the last minute,
         their coolness turned into desperation when they did not hear back from
-        me for a couple of hours. 
+        me for a few hours (to be fair, I was too busy sorting out where to spend the night).
+
         
       </p>
           <p>
 
-        To be fair, I was too busy sorting out where to spend the night.
       </p>
           <p>
-       I&apos;ve had another being overtly kind with gifts and compliments to
+       Another being overtly kind with gifts and compliments to
         make sure I was happy during my stay, and yet another just being
         annoyingly attentive, in hope that I wouldn&apos;t feel ignored.
       </p>
@@ -63,16 +69,20 @@ function TheBabciaPolicy() {
 
       <p>
         Because of the reasons above, I am starting a new personal policy: to
-        always leave a good reference, despite the experience.
+        always leave a good reference, despite the quality of the experience.
       </p>
 
       <p>
         Some will say this doesn&apos;t help the community. To them I say: let
         others be the judges of good and bad behaviour, I will not take part in
-        that ordeal.
+it.
+      </p>
+      <p>
+Sure, a reference system is better than none, but that does not mean it's a perfect one.
       </p>
 
       <p>
+        
         References are fixed, permanent and public, but unlike them, we are not:
         we change through time, at times make great performances and others,
         embarrassing flops.
@@ -85,8 +95,10 @@ function TheBabciaPolicy() {
 
       <p>And we learn, day to day.</p>
 
+      <p>And I'd go as far as to say that references don't just reflect behaviour; they shape it too. But I digress.</p>
+
       <p>
-        Babcias, or polish for grandmas, need no incentives of a reference to
+        Babcias - polish grandmas - need no incentives of a reference to
         make you feel warm, loved and welcome.
       </p>
 
