@@ -48,8 +48,8 @@ function TheBabciaPolicy() {
       <p>Maybe yes, maybe not.</p>
 
       <p>
-        I believe that a layer of authenticity is lost - or an artificial one is added - when either host or guest is too worried about
-        this topic.
+       Despite the obvious benefits of trust and safety that a reference system gives us, I believe that a layer of authenticity is lost - or an artificial one is added - when either host or guest is too worried about
+        it.
       </p>
 
       <p>
@@ -68,18 +68,18 @@ function TheBabciaPolicy() {
         always leave a good reference, despite the quality of the experience.
       </p>
 
+        <p>
+        Let's see how long I can hold on to this.      </p>
+
       <p>
         Some will say this doesn&apos;t help the community. To them I say: let
         others be the judges of good and bad behaviour, I will not take part in
 it.
       </p>
-      <p>
-Sure, a reference system is better than none, but that does not mean it's a perfect one.
-      </p>
 
       <p>
         
-        References are fixed, permanent and public, but unlike them, we are not:
+       The issue is that references are final, permanent and public, but unlike them, we are not:
         we change through time, at times make great performances and others,
         embarrassing flops.
       </p>
@@ -91,7 +91,7 @@ Sure, a reference system is better than none, but that does not mean it's a perf
 
       <p>And we learn, day to day.</p>
 
-      <p>And I'd go as far as to say that references don't just reflect behaviour; they shape it too. But I digress.</p>
+      <p> I'd go as far as to say that references don't just reflect behaviour; but they shape it too. I digress.</p>
 
       <p>
         Babcias - polish grandmas - need no incentives of a reference to
