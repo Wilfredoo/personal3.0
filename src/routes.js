@@ -22,6 +22,7 @@ import HostelParadisoSellSheet from './components/HostelParadisoSellsheet/Hostel
 import HealingIsForgetting from './components/HealingIsForgetting/HealingIsForgetting';
 import EmailProof from './components/EmailProof';
 import ReadShakespearePrivacyPolicy from './components/ReadShakespearePrivacyPolicy';
+import TheBabciaPolicy from './components/TheBabciaPolicy';
 
 const routes = [
     { path: "/", component: <Home /> },
@@ -31,6 +32,7 @@ const routes = [
     { path: "/healingisforgetting", component: <HealingIsForgetting /> },
     { path: "/emailproof", component: <EmailProof /> },
     { path: "/read-shakespeare-privacy-policy", component: <ReadShakespearePrivacyPolicy /> },
+    { path: "/the-babcia-policy", component: <TheBabciaPolicy /> },
 
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },
