@@ -64,7 +64,7 @@ function TheBabciaPolicy() {
       </p>
 
       <p>
-        For the reasons above and to relieve any future host of unnecessary pressure, I am starting a new personal policy: to
+        For the reasons above and to relieve my future hosts of unnecessary pressure, I am starting a new personal policy: to
         always leave a good reference, regardless of the quality of the experience.
       </p>
 
