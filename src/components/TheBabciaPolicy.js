@@ -55,7 +55,7 @@ function TheBabciaPolicy() {
       <p>
         I want my hosts to be themselves and feel at ease. If my host is
         gracious enough to host me, I&apos;ll be gracious enough to emphasise their
-        good deeds, and not to mention their unflattering habits.
+        good deeds, and not to mention any unflattering habits.
       </p>
 
       <p>
@@ -72,24 +72,23 @@ function TheBabciaPolicy() {
         Let's see how long I can hold on to this.      </p>
 
       <p>
-        Some will say this doesn&apos;t help the community. To them I say: let
-        others be the judges of good and bad behaviour, I will not take part in
+        Some will say this doesn&apos;t help the community. To them I say: I will let
+        others be the judges of good and bad behaviour, but not take part in
 it.
       </p>
 
       <p>
         
-       The issue is that references are final, permanent and public, but unlike them, we are not:
+       References are final, permanent and public, but unlike them, we are not:
         we change through time, at times make great performances and others,
         embarrassing flops.
       </p>
 
       <p>
-        Regret and pride alike are meant to last temporarily, and not for
-        eternity and for everyone to see.
+        Regret and pride alike are meant to last temporarily, and not until the end of times.
       </p>
 
-      <p>And we learn, day to day.</p>
+      <p>We learn, day to day.</p>
 
       <p> I'd go as far as to say that references don't just reflect behaviour; but they shape it too. I digress.</p>
 
