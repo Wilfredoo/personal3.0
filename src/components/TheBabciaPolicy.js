@@ -9,10 +9,7 @@ const pageStyle = {
   fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
 };
 
-const titleStyle = {
-  fontSize: "2rem",
-  marginBottom: "1.25rem",
-};
+
 
 function TheBabciaPolicy() {
   return (
