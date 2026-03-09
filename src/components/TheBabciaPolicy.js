@@ -64,8 +64,8 @@ function TheBabciaPolicy() {
       </p>
 
       <p>
-        Because of the reasons above, I am starting a new personal policy: to
-        always leave a good reference, despite the quality of the experience.
+        For the reasons above and to relieve any future host of unnecessary pressure, I am starting a new personal policy: to
+        always leave a good reference, regardless of the quality of the experience.
       </p>
 
         <p>
@@ -93,7 +93,7 @@ it.
       <p> I'd go as far as to say that references don't just reflect behaviour; but they shape it too. I digress.</p>
 
       <p>
-        Babcias - polish grandmas - need no incentives of a reference to
+        Babcias - polish grandmas - need no incentive of reference to
         make you feel warm, loved and welcome.
       </p>
 
