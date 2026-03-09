@@ -18,7 +18,7 @@ function TheBabciaPolicy() {
       <p>(reflections from the couch)</p>
 
       <p>
-        The fear of the reference is real, and after surfing 30 couches in 1 year, some situations stand out.
+        Reference anxiety is real, and after surfing 30 couches in 1 year, some situations stand out.
             </p>
 
       <p>
