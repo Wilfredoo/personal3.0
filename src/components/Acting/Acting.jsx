@@ -46,39 +46,43 @@ import wilfredo2 from '../../assets/images/wilfredo_2.png';
 import wilfredo3 from '../../assets/images/wilfredo_3.png';
 import wilfredo4 from '../../assets/images/wilfredo_4.jpeg';
 import wilfredo5 from '../../assets/images/wilfredo_5.jpeg';
-import wilfredo7 from '../../assets/images/wilfredo_7.png';
 import wilfredo8 from '../../assets/images/wilfredo_8.jpg';
-import wilfredo9 from '../../assets/images/wilfredo_9.jpeg';
-import wilfredo13 from '../../assets/images/wilfredo_13.jpg';
 import wilfredo14 from '../../assets/images/wilfredo_14.jpg';
 import wilfredo15 from '../../assets/images/wilfredo_15.jpg';
 import wilfredo17 from '../../assets/images/wilfredo_17.jpg';
-import wilfredo18 from '../../assets/images/wilfredo_18.jpg';
 import wilfredo19 from '../../assets/images/wilfredo_19.jpg';
 import wilfredo22 from '../../assets/images/wilfredo_22.jpg';
 import wilfredo24 from '../../assets/images/wilfredo_24.jpg';
+import wilfredo40 from '../../assets/images/wilfredo_40.png';
+import wilfredo41 from '../../assets/images/wilfredo_41.png';
+import wilfredo42 from '../../assets/images/wilfredo_42.png';
+
 
 
 const photos = [
   wilfredo1,
+
   wilfredo2,
+    wilfredo40,
+  wilfredo41,
+  wilfredo14,
+
+  wilfredo42,
   wilfredo3,
+  wilfredo22,
+
   wilfredo4,
   wilfredo5,
-  wilfredo7,
   wilfredo8,
-  wilfredo9,
-  wilfredo13,
-  wilfredo14,
   wilfredo15,
   wilfredo17,
-  wilfredo18,
   wilfredo19,
-  wilfredo22,
   wilfredo24,
   wilfredo30,
   wilfredo31,
   wilfredo32,
+
+
 ];
 
 const ACCESS_PASSWORD = "gingertea";
