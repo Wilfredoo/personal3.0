@@ -47,7 +47,7 @@ function TheBabciaPolicy() {
       <p>
        Despite the obvious benefits of trust and safety that a reference system gives us, I believe that a layer of authenticity is lost 
        - or an artificial one is added - when either host or guest is too worried about
-        the end result of the stay, meaning, the public comment after my stay.
+        the end result, meaning, the public comment after my stay.
       </p>
 
       <p>
