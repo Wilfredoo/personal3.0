@@ -24,10 +24,9 @@ function TheBabciaPolicy() {
       <p>
         
         
-         A young, disorganised
-        user apologising profusely after standing me up at the last minute,
-        their coolness turned into desperation when they did not hear back from
-        me for a few hours (to be fair, I was too busy sorting out where to spend the night).
+        A young, disorganised
+        user apologising who stood me up at last minute without good reason, and who only started apologizing after not hearing back from me for a few hours
+       (i was not only a bit pissed but also too busy sorting out where to spend the night).
 
         
       </p>
@@ -35,21 +34,24 @@ function TheBabciaPolicy() {
 
       </p>
           <p>
-       Another being overtly kind with gifts and compliments to
-        make sure I was happy during my stay, and yet another just being
+       Another being overtly kind with gifts and compliments, and yet another just being
         annoyingly attentive, in hope that I wouldn&apos;t feel ignored.
       </p>
-
-      <p>
-        I wonder, would they have acted the same way, had I not held the magical
-        sword of the reference?
+          <p>
+            While these situations were not per-se 'bad', them 3 had somethign in common; they did not seem to be coming from a place of genuine care, but from fear of a ad reference.
       </p>
 
-      <p>Maybe yes, maybe not.</p>
+      <p>
+        Would they have acted the same way, had I not held that magical
+        sword?
+      </p>
+
+      <p>I can only guess.</p>
 
       <p>
-       Despite the obvious benefits of trust and safety that a reference system gives us, I believe that a layer of authenticity is lost - or an artificial one is added - when either host or guest is too worried about
-        it.
+       Despite the obvious benefits of trust and safety that a reference system gives us, I believe that a layer of authenticity is lost 
+       - or an artificial one is added - when either host or guest is too worried about
+        the end result of the stay, meaning, the public comment after my stay.
       </p>
 
       <p>
@@ -62,9 +64,14 @@ function TheBabciaPolicy() {
         And oh lord we all have them (I&apos;m not religious, i just like to say oh
         lord).
       </p>
+      <p>
+        Not less importantly, I've realised that, while making a good reference for a good host - most of the cases - is easy, deciding whether a host was bad, whether to leave a critical reference and what to write, is extremely consuming of my time, energy and focus.
+      </p>
+
+
 
       <p>
-        For the reasons above and to relieve my future hosts of unnecessary pressure, I am starting a personal policy: to
+        For the reasons above, to relieve my future hosts of unnecessary pressure, and make my days easier, I am starting a personal policy: to
         always leave a good reference, regardless of the quality of the experience.
       </p>
 
@@ -78,20 +85,16 @@ function TheBabciaPolicy() {
 
       <p>
         
-       References are final, permanent and public, but unlike them, we are not:
+       A last thought of my personal issue with references is that, while they are final, permanent and public; we are not -
         we change through time, at times make great performances and others,
-        embarrassing flops.
+        embarrassing flops. And few things justify having them be made public.
       </p>
 
       <p>
         Regret and pride alike are meant to last temporarily, and not until the end of times.
       </p>
 
-      <p>We learn, day to day.</p>
-
       <p> I'd go as far as to say that references don't just reflect behaviour; but they shape it too. But I digress.</p>
-
-      
 
       <p>
         Babcias - polish grandmas - need no incentives to

@@ -61,16 +61,13 @@ import wilfredo42 from '../../assets/images/wilfredo_42.png';
 
 const photos = [
   wilfredo1,
-
   wilfredo2,
-    wilfredo40,
+wilfredo40,
   wilfredo41,
   wilfredo14,
-
   wilfredo42,
   wilfredo3,
   wilfredo22,
-
   wilfredo4,
   wilfredo5,
   wilfredo8,
