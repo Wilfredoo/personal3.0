@@ -25,7 +25,7 @@ function TheBabciaPolicy() {
         
         
         A young, disorganised
-        user apologising who stood me up at last minute without good reason, and who only started apologizing after not hearing back from me for a few hours
+        user who stood me up at last minute without good reason, and who started apologizing quite profusely after not hearing back from me for a few hours
        (i was not only a bit pissed but also too busy sorting out where to spend the night).
 
         
@@ -34,11 +34,11 @@ function TheBabciaPolicy() {
 
       </p>
           <p>
-       Another being overtly kind with gifts and compliments, and yet another just being
+       Another user being overtly kind with gifts and compliments, and yet another just being
         annoyingly attentive, in hope that I wouldn&apos;t feel ignored.
       </p>
           <p>
-            While these situations were not per-se 'bad', them 3 had somethign in common; they did not seem to be coming from a place of genuine care, but from fear of a ad reference.
+            While these situations were not per se 'bad', the 3 had something in common; they did not seem to be coming from a place of genuine care, but from fear of a ad reference.
       </p>
 
       <p>
