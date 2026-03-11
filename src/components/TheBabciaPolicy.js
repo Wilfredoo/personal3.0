@@ -61,7 +61,7 @@ function TheBabciaPolicy() {
         lord).
       </p>
       <p>
-        Not less importantly, I've realised that, while making a good reference for a good host - most of the cases - is easy, deciding whether a host was bad, whether to leave a critical reference and what to write, is extremely consuming of my time, energy and focus.
+        Not less importantly, I've realised that, while making a good reference after a good experience - which is most cases - is easy, deciding whether a host was bad, whether to leave a critical reference and what to write, is extremely consuming of my time, energy and focus.
       </p>
 
 
