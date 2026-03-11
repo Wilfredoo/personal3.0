@@ -38,15 +38,11 @@ function TheBabciaPolicy() {
         annoyingly attentive, in hope that I wouldn&apos;t feel ignored.
       </p>
           <p>
-            While these situations were not per se 'bad', the 3 had something in common; they did not seem to be coming from a place of genuine care, but from fear of a ad reference.
+            While these situations were not per se 'bad', the 3 had something in common; they did not seem to be coming from a place of genuine care, but from fear of a bad reference.
       </p>
 
-      <p>
-        Would they have acted the same way, had I not held that magical
-        sword?
-      </p>
+ 
 
-      <p>I can only guess.</p>
 
       <p>
        Despite the obvious benefits of trust and safety that a reference system gives us, I believe that a layer of authenticity is lost 
