@@ -70,19 +70,13 @@ export const ImageRow = styled.div`
 
 export const GalleryRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 12px;
   margin-top: 16px;
-
-  @media (min-width: 720px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
 `;
 
 export const SmallImage = styled.img`
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: 300px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;

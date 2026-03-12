@@ -44,14 +44,13 @@ const TreeCloudMountainSea = () => {
   const [showHowItPlays, setShowHowItPlays] = useState(false);
   const [showRules, setShowRules] = useState(false);
   const [showInteraction, setShowInteraction] = useState(false);
-  const [showContact, setShowContact] = useState(false);
 
   return (
     <Container>
-      <Title>treecloudmountainsea</Title>
+      <Title>Tree Cloud Mountain Sea</Title>
       <Subtitle>A short, sharp game of hidden scoring rules and tactical blocking.</Subtitle>
 
-      <HeroImage src={cloud1} alt="treecloudmountainsea" />
+      <HeroImage src={cloud1} alt="Tree Cloud Mountain Sea" />
 
       <Section>
         <h3 onClick={() => setShowKeyInfo(!showKeyInfo)}>
@@ -73,9 +72,9 @@ const TreeCloudMountainSea = () => {
         {showOverview && (
           <>
             <Paragraph>
-              treecloudmountainsea is a quick pattern-and-deduction game for 3 to 5 players. There are 12 scoring rules in the
-              game. The full rule set is public, but each player secretly receives a different rule and tries to score it while
-              keeping it hidden.
+              Tree Cloud Mountain Sea is a quick pattern-and-deduction game for 3 to 5 players. There are 12 scoring rules in
+              the game. The full rule set is public, but each player secretly receives a different rule and tries to score it
+              while keeping it hidden.
             </Paragraph>
             <Paragraph>
               Because opponents can win by figuring out what you are trying to build, the game becomes a tug-of-war between
@@ -153,40 +152,33 @@ const TreeCloudMountainSea = () => {
       </Section>
 
       <Section>
-        <h3 onClick={() => setShowContact(!showContact)}>
-          Contact {showContact ? '▲' : '▼'}
-        </h3>
-        {showContact && (
-          <>
-            <Paragraph>
-              <strong>Email:</strong>{' '}
-              <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink>
-            </Paragraph>
-            <Paragraph>
-              <strong>Instagram:</strong>{' '}
-              <ContactLink
-                href="https://www.instagram.com/ayakuchogamelab/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                @ayakuchogamelab
-              </ContactLink>
-            </Paragraph>
-          </>
-        )}
+        <h3>Contact and links</h3>
+        <Paragraph>
+          <strong>Email:</strong>{' '}
+          <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink>
+        </Paragraph>
+        <Paragraph>
+          <strong>Instagram:</strong>{' '}
+          <ContactLink
+            href="https://www.instagram.com/ayakuchogamelab/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            @ayakuchogamelab
+          </ContactLink>
+        </Paragraph>
+      </Section>
+
+      <Section>
+        <h3>More Pictures</h3>
+        <GalleryRow>
+          <SmallImage src={cloud2} alt="Tree Cloud Mountain Sea (photo 2)" />
+        </GalleryRow>
       </Section>
 
       <Spacer />
-      <GalleryRow>
-        <SmallImage src={cloud1} alt="treecloudmountainsea (gallery 1)" />
-        <SmallImage src={cloud2} alt="treecloudmountainsea (gallery 2)" />
-        <SmallImage src={cloud1} alt="treecloudmountainsea (gallery 3)" />
-      </GalleryRow>
-      <Spacer />
 
-      <ImageRow>
-        <HeroImage src={cloud2} alt="treecloudmountainsea (2)" />
-      </ImageRow>
+
     </Container>
   );
 };
