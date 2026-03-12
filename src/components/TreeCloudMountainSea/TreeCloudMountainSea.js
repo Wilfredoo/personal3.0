@@ -9,7 +9,6 @@ import {
   ListItem,
   ContactLink,
   HeroImage,
-  ImageRow,
   GalleryRow,
   SmallImage,
   Spacer,
