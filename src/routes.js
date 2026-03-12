@@ -23,6 +23,7 @@ import HealingIsForgetting from './components/HealingIsForgetting/HealingIsForge
 import EmailProof from './components/EmailProof';
 import ReadShakespearePrivacyPolicy from './components/ReadShakespearePrivacyPolicy';
 import TheBabciaPolicy from './components/TheBabciaPolicy';
+import TreeCloudMountainSea from './components/TreeCloudMountainSea/TreeCloudMountainSea';
 
 const routes = [
     { path: "/", component: <Home /> },
@@ -33,6 +34,7 @@ const routes = [
     { path: "/emailproof", component: <EmailProof /> },
     { path: "/read-shakespeare-privacy-policy", component: <ReadShakespearePrivacyPolicy /> },
     { path: "/the-babcia-policy", component: <TheBabciaPolicy /> },
+    { path: "/treecloudmountainsea", component: <TreeCloudMountainSea /> },
 
     { path: "/film", component: <Film /> },
     { path: "/filmequipment", component: <FilmEquipment /> },

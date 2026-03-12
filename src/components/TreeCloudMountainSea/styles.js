@@ -49,15 +49,6 @@ export const ContactLink = styled.a`
   }
 `;
 
-export const WhatsAppLink = styled.a`
-  color: #25D366;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 export const HeroImage = styled.img`
   width: 100%;
   height: auto;
@@ -66,11 +57,22 @@ export const HeroImage = styled.img`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-export const GalleryRow = styled.div`
+export const ImageRow = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
   margin-top: 12px;
+
+  @media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr;
+  }
+`;
+
+export const GalleryRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 16px;
 
   @media (min-width: 720px) {
     grid-template-columns: repeat(3, 1fr);
@@ -79,12 +81,52 @@ export const GalleryRow = styled.div`
 
 export const SmallImage = styled.img`
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-export const RotatedSmallImage = styled(SmallImage)`
-  transform: rotate(180deg);
+export const Spacer = styled.div`
+  height: 18px;
+`;
+
+export const RulesTableWrap = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 12px;
+`;
+
+export const RulesTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+`;
+
+export const RulesTh = styled.th`
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  color: #1f2937;
+  background: #eef2ff;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+`;
+
+export const RulesTd = styled.td`
+  font-size: 15px;
+  color: #111827;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: top;
+`;
+
+export const Points = styled.span`
+  font-weight: 700;
+  white-space: nowrap;
 `;

@@ -10,8 +10,14 @@ import {
   ContactLink,
   WhatsAppLink,
   HeroImage,
+  GalleryRow,
+  SmallImage,
+  RotatedSmallImage,
 } from './styles';
 import hostelParadisoImage from '../../assets/images/Hostel_paradiso.jpeg';
+import hostel1 from '../../assets/images/hostel1.jpg';
+import hostel2 from '../../assets/images/hostel2.jpg';
+import hostel3 from '../../assets/images/hostel3.jpeg';
 
 const HostelParadisoSellSheet = () => {
   const [showKeyInfo, setShowKeyInfo] = useState(false);
@@ -85,11 +91,26 @@ const HostelParadisoSellSheet = () => {
       </Section>
 
       <Section>
+        <h3>More Pictures</h3>
+        <GalleryRow>
+          <SmallImage src={hostel1} alt="Hostel Paradiso (1)" />
+          <RotatedSmallImage src={hostel2} alt="Hostel Paradiso (2)" />
+          <SmallImage src={hostel3} alt="Hostel Paradiso (3)" />
+        </GalleryRow>
+      </Section>
+
+      <Section>
         <h3 onClick={() => setShowContact(!showContact)}> Contact {showContact ? '▲' : '▼'}</h3>
         {showContact && (
           <>
             <Paragraph>If you’re interested in publishing or distributing Hostel Paradiso, feel free to reach out:</Paragraph>
             <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
+            <Paragraph>
+              <strong>Instagram:</strong>{' '}
+              <ContactLink href="https://www.instagram.com/ayakuchogamelab/" target="_blank" rel="noreferrer noopener">
+                @ayakuchogamelab
+              </ContactLink>
+            </Paragraph>
             <Paragraph><strong>Signal / Telegram / WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">+491757025622</WhatsAppLink></Paragraph>
           </>
         )}
