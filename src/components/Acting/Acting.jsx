@@ -262,6 +262,15 @@ const Acting = () => {
                     <ProfileImage src={photos[currentIndex]} alt={`Wilfredo ${currentIndex + 1}`} />
                     <NewPhotoButton onClick={handleNext}>New Photo</NewPhotoButton>
                 </ImageGrid>
+                <VideoSection>
+                    <VideoEmbed>
+                        <iframe
+                            src="https://www.youtube.com/embed/lRrJgTUSww0"
+                            title="Acting Video"
+                            allowFullScreen
+                        />
+                    </VideoEmbed>
+                </VideoSection>
                 <InfoSection>
                     <h3>{currentText.moreAbout}</h3>
                     <InfoList>

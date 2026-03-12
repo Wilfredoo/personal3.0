@@ -38,6 +38,10 @@ const texts = {
     ],
     videos: [
       {
+        title: "Videography Reel",
+        url: "https://www.youtube.com/embed/OAdzy8sYx3A"
+      },
+      {
         title: "My Film Reel",
         url: "https://www.youtube.com/embed/QznlG6t6W8s"
       },
@@ -75,6 +79,10 @@ const texts = {
       "Kreative Beleuchtung: Innovative Setups mit Aputure MC Lights, Lichtständern und Reflektoren."
     ],
     videos: [
+      {
+        title: "Videografie Reel",
+        url: "https://www.youtube.com/embed/OAdzy8sYx3A"
+      },
       {
         title: "Mein Film-Reel",
         url: "https://www.youtube.com/embed/QznlG6t6W8s"
