@@ -57,16 +57,7 @@ export const HeroImage = styled.img`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-export const ImageRow = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-top: 12px;
 
-  @media (min-width: 720px) {
-    grid-template-columns: 1fr 1fr;
-  }
-`;
 
 export const GalleryRow = styled.div`
   display: grid;
