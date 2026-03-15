@@ -103,7 +103,7 @@ const texts = {
         reelText: "The clips in this reel feature film acting jobs from 2025 for short films in Berlin, Aachen and Cologne. Material of 2026 coming soon. Enjoy the glimpse!",
                 professionalProfiles: "Collaborations with agencies (non-exclusive):",
         representation: "Alison Goodwin Talent",
-representation2: "YourActor Agency",
+representation2: "Marion Arras",
         directContact: "Direct contact via Signal, Telegram, or WhatsApp: +491757025622",
 
         professionalProfiles2: "MORE LINKS",
@@ -134,7 +134,8 @@ representation2: "YourActor Agency",
                 professionalProfiles: "Zusammenarbeit mit Agenturen (nicht exklusiv):",
      
         representation: "Alison Goodwin Talent",
-representation2: "Agentur YourActor",        directContact: "Direkter Kontakt via Signal, Telegram oder WhatsApp: +491757025622",
+representation2: "Marion Arras",      
+  directContact: "Direkter Kontakt via Signal, Telegram oder WhatsApp: +491757025622",
 
         professionalProfiles2: "MEHR LINKS",
         info: [
@@ -303,7 +304,7 @@ const Acting = () => {
                         <div>
      
                           <RepresentationLink
-                            href="  https://youractor.pl/impressum/"
+                            href="  https://marionarras.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
