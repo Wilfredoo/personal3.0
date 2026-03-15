@@ -115,7 +115,7 @@ representation2: "YourActor Agency",
             "Sports: Parkour, Martial Arts",
             "Dance: Contemporary, Improvisational, Salsa, Tango, Ballet",
             "Driver's License: B (EU)",
-            "Location: Traveling across Europe, usually in Berlin. Open to work anywhere.",
+            "Location: Berlin-based, open to work anywhere.",
         ]
     },
     DE: {
@@ -145,7 +145,7 @@ representation2: "Agentur YourActor",        directContact: "Direkter Kontakt vi
             "Musikalische Fähigkeiten: Gesang, Gitarre, Keyboard, Schlagzeug",
             "Tanz: Zeitgenössisch, Improv, Ballett, Salsa, Tango, Lindy Hop",
             "Führerschein: B (EU)",
-            "Standort: In ganz Europa unterwegs, meist in Berlin. Offen für Einsätze überall.",
+            "Standort: Berlin – offen für Arbeit weltweit.",
         ]
     }
 };
