@@ -1,0 +1,53 @@
+// treatment.js
+const treatment = {
+  title: 'Treatment',
+  blocks: [
+    `SETTING`,
+    `Near future, Berlin.`,
+    `TREATMENT`,
+    `BEGINNING`,
+    `SOPHIE, is archiving the memories of a man in his mid forties. He walks her through many difficult memories of an ex-wife that left him. How they met, their first date together, the things they fought about. He has brought a few items that are related to her, which Sophie stores in a compartmentalised box.`,
+    `---`,
+    `Sophie wakes up, makes matcha. She is tying up plants in the living room using rope. They hang in the living room and look beautifully. She double checks everything and is not happy with the result, so she redoes the whole process.`,
+    `---`,
+    `Xin Liu, 39, arrives. He finds the beautiful deco that Sophie made in the living room with the hanging pots and plants. Sophie sleeps on the couch.`,
+    `---`,
+    `MORE IDEAS DON'T KNOW WHERE YET`,
+    `Sophie and Yin Liu have a date night during her ovulation. He ties her up. Then she ties him up better. Then he ties her up again. They make love.`,
+    `---`,
+    `Sophie has a nightmare, she sees herself riding a horse, she is tired, the horse seems tired too, she goes to cares herself, only to accidentally startle the horse, she tries to help but makes things worse, the horse galloping, her other self crying and not in control.`,
+    `---`,
+    `Sophie at the psycotherapist, the nightmare is mentioned, she tells about her feelings, he listens, he guides carefully.`,
+    `---`,
+    `At the party, Xin Liu, Laura and other friends. They are there for Xin Liu's birthday. People talk about different things, the war between China and Taiwan. Xin Liu's upcoming trip to Taiwan to help as a medic. And of course, NEE, the new law that passed in which people don't need to archive their memories anymore or have previous consultations. Some people, like Laura are completely against it but she doesn't speak up. Lin Xiu thinks it's a benefit to the world. Others express their opinions, most seems to be in the middle or in favor of it. People use visors. The mechanism of NEE is explained in bits, some false info some not.`,
+    `---`,
+    `An ad is shown, delete your memories, say goodbye to costly therapies! Someone is heard saying, who does therapy anymore anyway? Old people, she hears.`,
+    `---`,
+    `At work, Lukas at the lunchbreak with Sophie. She casually mentions that he's been using NEE long ago anyways.`,
+    `---`,
+    `Sophie gets the news that she is dismissed from her job.`,
+    `---`,
+    `In the train, people using visors. Some have them on, some not. We get a glimpse of the content they are following. One is doomscroling, another one watching porn, chatting with friends. They wear special gloves and use their fingers to  interact with the user interface. Sophie is using a smartphone. A couple of people look at her because of it.`,
+    `--`,
+    `At the fertility clinic, she has a talk with her doctor. She is very fertile. His spermiogramm, however, doesnt look that positive, which might be the issue. Doctor recommends her giving him zinc.`,
+    `---`,
+    `Xin Liu and Sophie have an arguement, they break up. It starts with NEE, she echoes some of Laura's opinions. Arguement leads to the infertility issue. she hurts him. He leaves. She mentions her age. She has a breakdown`,
+    `---`,
+    `She cries next to Laura and another girlfriend. This one other friend mentions, just fuck someone else, guys never want to use a condom anyway.`,
+    `---`,
+    `Xin Liu leaves to Taiwan.`,
+    `---`,
+    `Laura and Sophie at the garden. They talk and do work. Thorsten arrives too. He asks what they are talking about. They say NEE, whats that he says?`,
+    `---`,
+    `Sophie checks her calendar. Her ovulation days are coming up and Xin Liu is not there anymore. She gets into a dating app and scrolls.`,
+    `---`,
+    `Sophie on a date. She asks if they can have no visors. He is a bit confused. She says she likes to look into people's eyes. He makes a remark about her smartphone. She explains herself. He is considerably younger. They go to sleep together and wear no condom. She lies and says she is on her pill.`,
+    `---`,
+    `Sophie goes to see her mom, her sister, sisters husband and niece are there. Also her dad, who has alzheimer. They ask her how she is handling with the life changes, no more boyfriend and no more job. She mentions she is once again dating. Her niece is there and she mentions how her schoolmates are implanting fake memories, for fun. She wants to do it too. Her mom prohibits it.`,
+    `---`,
+    `Another Psycotherapie session. Sophie pretends to be better than she is. She tells Joaquin that she has to end sessions. She feels ok. He digs in deeper. She explains that it is also budget.`
+  ]
+};
+
+export default treatment;
+

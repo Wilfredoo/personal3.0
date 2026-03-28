@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Lock, Eye, EyeOff, ChevronDown, ChevronUp } from 'lucide-react';
 import synopses from './synopses';
+import treatment from './treatment';
 import {
   Container,
   Header,
@@ -42,6 +43,7 @@ export default function HealingIsForgetting() {
   const [error, setError] = useState('');
   const latestSynopsis = synopses[0];
   const pastSynopses = synopses.slice(1);
+  const isTreatmentHeading = (text) => /^[A-Z0-9 ,'-]+$/.test(text) && text.length <= 40;
 
   const CORRECT_PASSWORD = 'healing2026';
 
@@ -179,6 +181,17 @@ This page is password-protected. Email inbox@wilfredocasas.com
                 })}
               </>
             )}
+          </Card>
+        </Section>
+
+        <Section>
+          <Card>
+            <SectionTitle>{treatment.title}</SectionTitle>
+            {treatment.blocks.map((block, i) => (
+              <Paragraph key={i}>
+                {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
+              </Paragraph>
+            ))}
           </Card>
         </Section>
 
