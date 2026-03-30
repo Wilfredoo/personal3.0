@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Lock, Eye, EyeOff, ChevronDown, ChevronUp } from 'lucide-react';
 import synopses from './synopses';
-import treatment from './treatment';
+import treatments from './treatment';
 import {
   Container,
   Header,
@@ -37,6 +37,8 @@ import {
 
 export default function HealingIsForgetting() {
   const [expandedPastSynopses, setExpandedPastSynopses] = useState({});
+  const [isTreatmentExpanded, setIsTreatmentExpanded] = useState(false);
+  const [expandedPastTreatments, setExpandedPastTreatments] = useState({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -44,6 +46,8 @@ export default function HealingIsForgetting() {
   const latestSynopsis = synopses[0];
   const pastSynopses = synopses.slice(1);
   const isTreatmentHeading = (text) => /^[A-Z0-9 ,'-]+$/.test(text) && text.length <= 40;
+  const latestTreatment = treatments[0];
+  const pastTreatments = treatments.slice(1);
 
   const CORRECT_PASSWORD = 'healing2026';
 
@@ -67,6 +71,13 @@ export default function HealingIsForgetting() {
 
   const togglePastSynopsis = (version) => {
     setExpandedPastSynopses((prev) => ({
+      ...prev,
+      [version]: !prev[version]
+    }));
+  };
+
+  const togglePastTreatment = (version) => {
+    setExpandedPastTreatments((prev) => ({
       ...prev,
       [version]: !prev[version]
     }));
@@ -186,12 +197,58 @@ This page is password-protected. Email inbox@wilfredocasas.com
 
         <Section>
           <Card>
-            <SectionTitle>{treatment.title}</SectionTitle>
-            {treatment.blocks.map((block, i) => (
-              <Paragraph key={i}>
-                {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
-              </Paragraph>
-            ))}
+            <SectionTitle>Treatment</SectionTitle>
+            <CollapsibleCard>
+              <CollapsibleButton
+                onClick={() => setIsTreatmentExpanded(!isTreatmentExpanded)}
+                aria-expanded={isTreatmentExpanded}
+                aria-controls="treatment-latest"
+              >
+                <span>{latestTreatment.title} – {latestTreatment.version}</span>
+                {isTreatmentExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+              </CollapsibleButton>
+              {isTreatmentExpanded && (
+                <CollapsibleContent id="treatment-latest">
+                  {latestTreatment.blocks.map((block, i) => (
+                    <Paragraph key={i}>
+                      {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
+                    </Paragraph>
+                  ))}
+
+                  {pastTreatments.length > 0 && (
+                    <>
+                      <Paragraph><strong>Past Versions</strong></Paragraph>
+                      {pastTreatments.map((t, index) => {
+                        const isExpanded = Boolean(expandedPastTreatments[t.version]);
+                        const contentId = `treatment-past-${index}`;
+
+                        return (
+                          <CollapsibleCard key={t.version}>
+                            <CollapsibleButton
+                              onClick={() => togglePastTreatment(t.version)}
+                              aria-expanded={isExpanded}
+                              aria-controls={contentId}
+                            >
+                              <span>{t.title} – {t.version}</span>
+                              {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                            </CollapsibleButton>
+                            {isExpanded && (
+                              <CollapsibleContent id={contentId}>
+                                {t.blocks.map((block, i) => (
+                                  <Paragraph key={i}>
+                                    {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
+                                  </Paragraph>
+                                ))}
+                              </CollapsibleContent>
+                            )}
+                          </CollapsibleCard>
+                        );
+                      })}
+                    </>
+                  )}
+                </CollapsibleContent>
+              )}
+            </CollapsibleCard>
           </Card>
         </Section>
 
