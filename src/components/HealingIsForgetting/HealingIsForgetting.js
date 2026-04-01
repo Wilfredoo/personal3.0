@@ -139,7 +139,7 @@ This page is password-protected. Email inbox@wilfredocasas.com
           <Title>Healing is Forgetting</Title>
           <Byline>A film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-            Last updated: March 11, 2026
+            Last updated: April 2, 2026
           </Paragraph>
         </HeaderContent>
       </Header>
