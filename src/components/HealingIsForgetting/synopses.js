@@ -1,6 +1,37 @@
 // synopses.js
 const synopses = [
   {
+    version: 'v4.0 (Apr 2026)',
+    title: 'Synopsis',
+    paragraphs: [
+      `Sophie is a memory archivist working for the Nadorev Institute, where people go to delete their traumas in order to find inner peace.`,
+      `The technology called Neuro Emotional Editing (NEE) was developed by Chinese military aiming to get soldiers with PTSD back into battle as long as possible. It gained quick adoption and is now known as Record Editing in the western world.`,
+      `Sophie's role is to gather, make sense and store these memories in case that the patients want to recollect them back. It's a process in which she listens to their stories and collects an array of objects associated with the deleted memories.`,
+      `So far, no patient has returned to collect them back.`,
+      `Sophie biggest wish is to have a baby on her own, but after years of trying with her partner Xin Liu, they have not succeeded.`,
+      `She also suffers from recurring nightmares. Sometimes she is riding a hose, other times a machine, a man, a crowd of people. She dream takes many shapes but the feelings of increasing loss of control are constant. The dream reaches a peak moments before it hits disaster.`,
+      `This nightmare stems from a childhood experience in which, while riding a horse, the animal went out of control. Sophie's body was unharmed, but her psyche was not. The feelings of distrust and an absolute desire for certainty would stay within.`,
+      `Over time she has developed an expertise with knots, using them for securing objects around the house, making art and tying up her love partner.`,
+      `She sees her therapist Joaquin on a weekly basis. With the rise of NEE, therapy is increasingly seen as outdated and ineffective, making it a dying field.`,
+      `Nowadays everybody uses visors - full head devices where they spend several hours a day chatting with friends and colleagues, doing administrative chores or getting exposed to endless media. `,
+      `Technology has spiraled to a level that Sophie is not comfortable with, so she uses a smartphone instead.`,
+      `While she is unsure about her position towards NEE, Xin Liu embraces it and thinks that this technology will help a lot of people in need. `,
+      `This conflicting view adds to the stress of not being able to conceive. They split off and Xin Liu leaves to Taiwan to volunteer as a medic for wounded soldiers.`,
+      `On the other side, her best friend Laura strongly opposes record editing, arguing that it nature knows best and that this will backfire for many people in the long term.`,
+      `Sophie's life takes another turn when a law is passed that enables people to wipe their memories without needing to preserve them or have any previous consultations. Her job becoming redundant, she is laid off.`,
+      `Financially stressed, she leaves her psychotherapist. This relieves her temporarily, only to find that without his guidance, her nightmares start creeping in again.`,
+      `Tired of this, she tries NEE to delete her horse riding memory, hoping that the nightmares will go away as well. It works. Maybe she should have tried this long ago.`,
+      `The deletion of her childhood memory didn't just give her nightmares but also regulated her behaviour. Without it, she is now reckless. Without a partner and in order to fulfil her wish to get pregnant, she meets several men and sleeps with some of them without protection. `,
+      `She meets her goal, but now she doesn't know who the father is. `,
+      `A miscarriage occurs. She is alone and devastated. As the pain becomes unbearable, she decides to erase this memory too. A pain in her uterus remains.`,
+      `Falling rapidly into the habit of record deletion, she erases more and more moments of her life, such as an awkward encounter at the supermarket, a job interview that did not go right, a conflict with her mother, or an embarrassing date.`,
+      `Loopholes start to show, moments of her life that she can't remember. She walks lightly though her days but feeling like an empty shell.`,
+      `Noticing her state, Laura gives her a journal and a box of objects that Sophie has meticulously archived about her memories them before deleting them. She reads through them all, and tries to imagine all of these situations, feeling compassion to herself for having lived through all of this.`,
+      `She reconstructs gets back her memories by reimagining them and builds herself again from this point on.`,
+      `A new day begins.`
+    ]
+  },
+  {
     version: 'v3.1 (Mar 2026)',
     title: 'Synopsis',
     paragraphs: [
