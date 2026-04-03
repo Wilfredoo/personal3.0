@@ -206,7 +206,6 @@ const css = `
   /* ── PHONE PAIR ── */
 .dec-phones {
   display: flex;
-  justify-content: center;
   gap: 28px;
   margin-bottom: 52px;
   align-items: flex-start;
