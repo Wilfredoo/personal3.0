@@ -81,7 +81,7 @@ const css = `
   /* ── RULE ── */
   .dec-rule {
     border: none;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid black;
     margin: 52px 0;
   }
 
@@ -93,7 +93,7 @@ const css = `
     margin-bottom: 1.4em;
   }
 
-  .dec-page p:last-of-type { margin-bottom: 0; }
+  .dec-page p:last-of-type { margin-bottom: 50px; }
   .dec-page em { font-style: italic; }
 
   /* ── PHONE MOCKUP ── */
@@ -422,7 +422,13 @@ const css = `
     .dec-phone { width: 180px; height: 360px; }
     .dec-screenshot-grid { grid-template-columns: 1fr; max-width: 180px; margin: 0 auto; }
   }
+
+  .text-body {
+    margin-bottom: 15px;
+}
+
 `;
+
 
 function Styles() {
   return <style>{css}</style>;

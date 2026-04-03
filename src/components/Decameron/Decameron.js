@@ -14,16 +14,18 @@ function Decameron() {
             well beseemeth every one, yet of those is it more particularly
             required who have erst had need of comfort and have found it in any,
             amongst whom, if ever any had need thereof or held it dear or took
-            pleasure therein aforetimes, certes, I am one of these." - Opening of The Decameron by Giovanni Boccaccio
+            pleasure therein aforetimes, certes, I am one of these." 
+          </p>
+          <p >
+     
+     Opening of The Decameron by Giovanni Boccaccio
 
           </p>
-     
 
 
    
           {/* DIVIDER */}
           <hr className="dec-rule" />
-
           {/* BODY TEXT */}
           <p>
             Last year, the Italian classic The Decameron magically ended
@@ -100,10 +102,15 @@ function Decameron() {
             treasures I will find in Boccaccio's world?
           </p>
 
-          {/* DIVIDER */}
-          <hr className="dec-rule" />
 
-          {/* PHONE MOCKUP */}
+          <p className="dec-contact-line">
+            For feedback, collabs, ideas or to be one among the first testers,
+            reach out at{" "}
+            <a href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</a>
+          </p>
+
+          <p>3rd of April of 2026</p>
+
       {/* PHONE MOCKUPS */}
 <div className="dec-phones">
 
@@ -160,17 +167,6 @@ function Decameron() {
 
 
           {/* CONTACT */}
-          <hr className="dec-rule" />
-
-          <div className="">
-            Status: In development, limited testing starting soon.
-          </div>
-
-          <p className="dec-contact-line">
-            For feedback, collabs, ideas or to be one among the first testers,
-            reach out at{" "}
-            <a href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</a>
-          </p>
 
        
 
