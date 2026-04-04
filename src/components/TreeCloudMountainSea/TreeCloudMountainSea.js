@@ -47,9 +47,20 @@ const TreeCloudMountainSea = () => {
   return (
     <Container>
       <Title>Tree Cloud Mountain Sea</Title>
-      <Subtitle>A short, sharp game of hidden scoring rules and tactical blocking.</Subtitle>
+      <Subtitle>A tactical game designed to include blind people in board game communities.</Subtitle>
 
       <HeroImage src={cloud1} alt="Tree Cloud Mountain Sea" />
+
+      <Section>
+        <h3>Story</h3>
+        <Paragraph>
+          What if a game could be designed for both blind and sighted players alike?
+        </Paragraph>
+        <Paragraph>
+          A game of chess with a blind man in Budapest inspired me to create this game. Once it&apos;s ready, it will be playable
+          by blind-only groups, sighted-only groups, and mixed blind and sighted groups.
+        </Paragraph>
+      </Section>
 
       <Section>
         <h3 onClick={() => setShowKeyInfo(!showKeyInfo)}>

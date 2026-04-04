@@ -210,6 +210,13 @@ const css = `
   align-items: flex-start;
 }
 
+@media (max-width: 640px) {
+  .dec-phones {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .dec-phone-wrap {
   display: flex;
   flex-direction: column;

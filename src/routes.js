@@ -24,6 +24,9 @@ import EmailProof from './components/EmailProof';
 import ReadShakespearePrivacyPolicy from './components/ReadShakespearePrivacyPolicy';
 import TheBabciaPolicy from './components/TheBabciaPolicy';
 import Decameron from './components/Decameron/Decameron';
+import Apps from './components/Apps';
+import TheExplorationMap from './components/TheExplorationMap';
+import BoardGames from './components/BoardGames';
 
 import TreeCloudMountainSea from './components/TreeCloudMountainSea/TreeCloudMountainSea';
 
@@ -36,7 +39,10 @@ const routes = [
     { path: "/emailproof", component: <EmailProof /> },
     { path: "/read-shakespeare-privacy-policy", component: <ReadShakespearePrivacyPolicy /> },
     { path: "/the-babcia-policy", component: <TheBabciaPolicy /> },
-    { path: "/Decameron", component: <Decameron /> },
+    { path: "/decameron", component: <Decameron /> },
+    { path: "/apps", component: <Apps /> },
+    { path: "/the-exploration-map", component: <TheExplorationMap /> },
+    { path: "/board-games", component: <BoardGames /> },
 
     { path: "/treecloudmountainsea", component: <TreeCloudMountainSea /> },
 

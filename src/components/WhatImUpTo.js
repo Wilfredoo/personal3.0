@@ -2,13 +2,12 @@ import React from 'react';
 import { Text, TextContainer } from './styles';
 
 const WhatImUpTo = () => (
-  <TextContainer>
+  <TextContainer style={{ marginTop: 'clamp(20px, 10vh, 120px)' }}>
 <Text>
-  I am currently focused on growing <a href="http://www.jobdirecto.com" target="_blank" rel="noopener noreferrer">Jobdirecto</a>, 
-  further developing <a href="https://wilfredocasas.com/ayakucho" target="_blank" rel="noopener noreferrer">Ayakucho</a>, 
-  and beginning work on my first feature film, <a href="/healingisforgetting">Healing is Forgetting</a>.
+  I am currently creating <a href="/apps">cool apps</a>, designing <a href="/board-games">board games</a>,{' '}
+  <a href="https://www.instagram.com/wilfredocasas.actor/" target="_blank" rel="noopener noreferrer">acting</a>,{' '}
+  and working on my first feature film, <a href="/healingisforgetting">Healing Is Forgetting</a>.
 </Text>
-<Text>I'm also starting a career as an   <a href="https://www.instagram.com/wilfredocasas.actor/" target="_blank" rel="noopener noreferrer">actor</a> for film and tv.</Text>
   </TextContainer>
 );
 
