@@ -10,6 +10,7 @@ const SellSheet = () => {
   const [showUniqueFeatures, setShowUniqueFeatures] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [showDemons, setShowDemons] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <Container>
@@ -23,6 +24,14 @@ const SellSheet = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowFullScreen
       />
+
+      <Section>
+        <h3>Story</h3>
+        <Paragraph>
+          One day, after a game of Werewolf, I wondered: what if the voting was anonymous? Three years of work later, this is
+          the result.
+        </Paragraph>
+      </Section>
 
       {/* Key Information Section */}
       <Section>
@@ -123,9 +132,14 @@ const SellSheet = () => {
     
 
       <Section>
-        <Paragraph>If you’re interested in publishing or distributing Ayakucho, feel free to reach out:</Paragraph>
-        <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
-        <Paragraph><strong>WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Ayakucho%20and%20I%20think%20it%27s%20an%20amazing%20concept!%20Let%27s%20discuss%20how%20we%20can%20work%20together%20to%20bring%20this%20game%20to%20a%20wider%20audience." target="_blank">+49 175 702 5622</WhatsAppLink></Paragraph>
+        <h3 onClick={() => setShowContact(!showContact)}>Contact and links {showContact ? '▲' : '▼'}</h3>
+        {showContact && (
+          <>
+            <Paragraph>If you’re interested in publishing or distributing Ayakucho, feel free to reach out:</Paragraph>
+            <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
+            <Paragraph><strong>WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Ayakucho%20and%20I%20think%20it%27s%20an%20amazing%20concept!%20Let%27s%20discuss%20how%20we%20can%20work%20together%20to%20bring%20this%20game%20to%20a%20wider%20audience." target="_blank">+49 175 702 5622</WhatsAppLink></Paragraph>
+          </>
+        )}
       </Section>
     </Container>
   );

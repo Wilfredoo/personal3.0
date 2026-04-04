@@ -25,6 +25,8 @@ const HostelParadisoSellSheet = () => {
   const [showHowItPlays, setShowHowItPlays] = useState(false);
   const [showScoring, setShowScoring] = useState(false);
   const [showUnique, setShowUnique] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+  const [showMorePictures, setShowMorePictures] = useState(false);
 
   return (
     <Container>
@@ -32,6 +34,14 @@ const HostelParadisoSellSheet = () => {
       <Subtitle>Aim to take ownership of the quirkiest hostel in town.</Subtitle>
 
       <HeroImage src={hostelParadisoImage} alt="Hostel Paradiso prototype" />
+
+      <Section>
+        <h3>Story</h3>
+        <Paragraph>
+          Loving Codenames and Dixit, and having played them hundreds of times, I wanted to create a game that challenged
+          me even more. This is the result.
+        </Paragraph>
+      </Section>
 
       <Section>
         <h3 onClick={() => setShowKeyInfo(!showKeyInfo)}>Key Information {showKeyInfo ? '▲' : '▼'}</h3>
@@ -90,25 +100,31 @@ const HostelParadisoSellSheet = () => {
       </Section>
 
       <Section>
-        <h3>Contact and links</h3>
-        <Paragraph>If you’re interested in publishing or distributing Hostel Paradiso, feel free to reach out:</Paragraph>
-        <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
-        <Paragraph>
-          <strong>Instagram:</strong>{' '}
-          <ContactLink href="https://www.instagram.com/ayakuchogamelab/" target="_blank" rel="noreferrer noopener">
-            @ayakuchogamelab
-          </ContactLink>
-        </Paragraph>
-        <Paragraph><strong>Signal / Telegram / WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">+491757025622</WhatsAppLink></Paragraph>
+        <h3 onClick={() => setShowContact(!showContact)}>Contact and links {showContact ? '▲' : '▼'}</h3>
+        {showContact && (
+          <>
+            <Paragraph>If you’re interested in publishing or distributing Hostel Paradiso, feel free to reach out:</Paragraph>
+            <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
+            <Paragraph>
+              <strong>Instagram:</strong>{' '}
+              <ContactLink href="https://www.instagram.com/ayakuchogamelab/" target="_blank" rel="noreferrer noopener">
+                @ayakuchogamelab
+              </ContactLink>
+            </Paragraph>
+            <Paragraph><strong>Signal / Telegram / WhatsApp:</strong> <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">+491757025622</WhatsAppLink></Paragraph>
+          </>
+        )}
       </Section>
 
       <Section>
-        <h3>More Pictures</h3>
-        <GalleryRow>
-          <SmallImage src={hostel1} alt="Hostel Paradiso (1)" />
-          <RotatedSmallImage src={hostel2} alt="Hostel Paradiso (2)" />
-          <SmallImage src={hostel3} alt="Hostel Paradiso (3)" />
-        </GalleryRow>
+        <h3 onClick={() => setShowMorePictures(!showMorePictures)}>More Pictures {showMorePictures ? '▲' : '▼'}</h3>
+        {showMorePictures && (
+          <GalleryRow>
+            <SmallImage src={hostel1} alt="Hostel Paradiso (1)" />
+            <RotatedSmallImage src={hostel2} alt="Hostel Paradiso (2)" />
+            <SmallImage src={hostel3} alt="Hostel Paradiso (3)" />
+          </GalleryRow>
+        )}
       </Section>
     </Container>
   );

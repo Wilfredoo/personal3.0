@@ -38,11 +38,13 @@ const rules = [
 ];
 
 const TreeCloudMountainSea = () => {
-  const [showKeyInfo, setShowKeyInfo] = useState(true);
-  const [showOverview, setShowOverview] = useState(true);
+  const [showKeyInfo, setShowKeyInfo] = useState(false);
+  const [showOverview, setShowOverview] = useState(false);
   const [showHowItPlays, setShowHowItPlays] = useState(false);
   const [showRules, setShowRules] = useState(false);
   const [showInteraction, setShowInteraction] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+  const [showMorePictures, setShowMorePictures] = useState(false);
 
   return (
     <Container>
@@ -162,28 +164,38 @@ const TreeCloudMountainSea = () => {
       </Section>
 
       <Section>
-        <h3>Contact and links</h3>
-        <Paragraph>
-          <strong>Email:</strong>{' '}
-          <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink>
-        </Paragraph>
-        <Paragraph>
-          <strong>Instagram:</strong>{' '}
-          <ContactLink
-            href="https://www.instagram.com/ayakuchogamelab/"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            @ayakuchogamelab
-          </ContactLink>
-        </Paragraph>
+        <h3 onClick={() => setShowContact(!showContact)}>
+          Contact and links {showContact ? '▲' : '▼'}
+        </h3>
+        {showContact && (
+          <>
+            <Paragraph>
+              <strong>Email:</strong>{' '}
+              <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink>
+            </Paragraph>
+            <Paragraph>
+              <strong>Instagram:</strong>{' '}
+              <ContactLink
+                href="https://www.instagram.com/ayakuchogamelab/"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                @ayakuchogamelab
+              </ContactLink>
+            </Paragraph>
+          </>
+        )}
       </Section>
 
       <Section>
-        <h3>More Pictures</h3>
-        <GalleryRow>
-          <SmallImage src={cloud2} alt="Tree Cloud Mountain Sea (photo 2)" />
-        </GalleryRow>
+        <h3 onClick={() => setShowMorePictures(!showMorePictures)}>
+          More Pictures {showMorePictures ? '▲' : '▼'}
+        </h3>
+        {showMorePictures && (
+          <GalleryRow>
+            <SmallImage src={cloud2} alt="Tree Cloud Mountain Sea (photo 2)" />
+          </GalleryRow>
+        )}
       </Section>
 
       <Spacer />
