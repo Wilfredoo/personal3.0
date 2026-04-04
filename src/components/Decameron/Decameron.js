@@ -33,7 +33,7 @@ function Decameron() {
             </p>
             <p>  I decided to give
             it a try, only to realise I couldn't get past the opening pages. The
-            mix of unfamiliar words and writing of old times made the ideas
+            mix of unfamiliar words and old times writing style made the ideas
             ungraspable, despite reading them multiple times.
           </p>
 
@@ -43,15 +43,15 @@ function Decameron() {
           </p>
 
           <p>
-            Because of this, I wanted to build a solution for myself to be able
-            to read above my reading level. 
+            Because of this, I wanted to build a solution to
+            to read above my level. 
           </p>
           <p>
             
-            I am calling it Decameron and it closely mimics other reading apps, with
-            the added bonus that it grants readers the ability to get an
-            explanation of difficult words, sentences and paragraphs.
-          </p>
+            Truth to its origins, I am calling it Decameron.    </p>
+            
+            
+  
 
           <p>
             The basics: select a word, sentence or paragraph that calls for an
@@ -77,9 +77,11 @@ function Decameron() {
           </p>
 
           <p>
-            
-            I see this more as those
-            extra wheels that kids use to learn how to ride a bike. Without them,
+            It could, but I see this more as those
+            extra wheels that kids use to learn how to ride a bike. 
+            </p>
+            <p>
+            Without them,
             some will learn to ride a bike anyways but many will drop out. With them, we can
             all learn how to ride.
           </p>
@@ -91,20 +93,20 @@ function Decameron() {
           </p>
 
           <p>
-            Worst case scenario, I am the only user, but I am able to read The Decameron from start to finish,
+            Worst case, I am the only user, but at least I'll be able to read The Decameron from start to finish,
             which I'd call an absolute success. 
           </p>
             
 
           <p>
 
-            After all, who knows what
+            And who knows what
             treasures I will find in Boccaccio's world?
           </p>
 
 
           <p className="dec-contact-line">
-            For feedback, collabs, ideas or to be one among the first testers,
+            For feedback or to be one among the first testers,
             reach out at{" "}
             <a href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</a>
           </p>
