@@ -49,7 +49,7 @@ const TreeCloudMountainSea = () => {
   return (
     <Container>
       <Title>Tree Cloud Mountain Sea</Title>
-      <Subtitle>A tactical game designed to include blind people in board game communities.</Subtitle>
+      <Subtitle>A tactical game designed for both blind and sighted players.</Subtitle>
 
       <HeroImage src={cloud1} alt="Tree Cloud Mountain Sea" />
 
@@ -88,10 +88,7 @@ const TreeCloudMountainSea = () => {
               the game. The full rule set is public, but each player secretly receives a different rule and tries to score it
               while keeping it hidden.
             </Paragraph>
-            <Paragraph>
-              Because opponents can win by figuring out what you are trying to build, the game becomes a tug-of-war between
-              advancing your own scoring condition and placing pieces that block other people&apos;s plans.
-            </Paragraph>
+          
           </>
         )}
       </Section>
@@ -111,57 +108,7 @@ const TreeCloudMountainSea = () => {
         )}
       </Section>
 
-      <Section>
-        <h3 onClick={() => setShowRules(!showRules)}>
-          Rules And Scoring {showRules ? '▲' : '▼'}
-        </h3>
-        {showRules && (
-          <>
-            <Paragraph>
-              Each of the 12 rules has a different point value. Players try to create the condition for their own secret rule,
-              while preventing opponents from completing theirs.
-            </Paragraph>
-            <RulesTableWrap>
-              <RulesTable>
-                <thead>
-                  <tr>
-                    <RulesTh>#</RulesTh>
-                    <RulesTh>Rule</RulesTh>
-                    <RulesTh>Points</RulesTh>
-                  </tr>
-                </thead>
-                <tbody>
-                  {rules.map((rule) => (
-                    <tr key={rule.id}>
-                      <RulesTd>{rule.id}</RulesTd>
-                      <RulesTd>{rule.text}</RulesTd>
-                      <RulesTd><Points>{rule.points}</Points></RulesTd>
-                    </tr>
-                  ))}
-                </tbody>
-              </RulesTable>
-            </RulesTableWrap>
-          </>
-        )}
-      </Section>
 
-      <Section>
-        <h3 onClick={() => setShowInteraction(!showInteraction)}>
-          Guessing And Blocking {showInteraction ? '▲' : '▼'}
-        </h3>
-        {showInteraction && (
-          <>
-            <Paragraph>
-              A big part of the game is reading the board: what is someone trying to set up, and what rule might they be
-              holding? If you can identify an opponent&apos;s rule early, you can start placing pieces to deny their key patterns.
-            </Paragraph>
-            <Paragraph>
-              The once-per-game move adds a twist: it can complete your scoring condition at the last second, or it can be used
-              as a surprise block.
-            </Paragraph>
-          </>
-        )}
-      </Section>
 
       <Section>
         <h3 onClick={() => setShowContact(!showContact)}>

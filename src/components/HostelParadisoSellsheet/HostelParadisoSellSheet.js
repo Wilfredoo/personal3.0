@@ -103,7 +103,6 @@ const HostelParadisoSellSheet = () => {
         <h3 onClick={() => setShowContact(!showContact)}>Contact and links {showContact ? '▲' : '▼'}</h3>
         {showContact && (
           <>
-            <Paragraph>If you’re interested in publishing or distributing Hostel Paradiso, feel free to reach out:</Paragraph>
             <Paragraph><strong>Email:</strong> <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink></Paragraph>
             <Paragraph>
               <strong>Instagram:</strong>{' '}
