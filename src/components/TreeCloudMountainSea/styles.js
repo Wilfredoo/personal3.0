@@ -76,42 +76,6 @@ export const Spacer = styled.div`
   height: 18px;
 `;
 
-export const RulesTableWrap = styled.div`
-  width: 100%;
-  overflow-x: auto;
-  margin-top: 12px;
-`;
 
-export const RulesTable = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 520px;
-  background: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-`;
 
-export const RulesTh = styled.th`
-  text-align: left;
-  font-size: 14px;
-  letter-spacing: 0.3px;
-  color: #1f2937;
-  background: #eef2ff;
-  padding: 10px 12px;
-  border-bottom: 1px solid #e5e7eb;
-  white-space: nowrap;
-`;
 
-export const RulesTd = styled.td`
-  font-size: 15px;
-  color: #111827;
-  padding: 10px 12px;
-  border-bottom: 1px solid #e5e7eb;
-  vertical-align: top;
-`;
-
-export const Points = styled.span`
-  font-weight: 700;
-  white-space: nowrap;
-`;

@@ -12,11 +12,6 @@ import {
   GalleryRow,
   SmallImage,
   Spacer,
-  RulesTableWrap,
-  RulesTable,
-  RulesTh,
-  RulesTd,
-  Points,
 } from './styles';
 
 import cloud1 from '../../assets/images/cloud1.jpg';
