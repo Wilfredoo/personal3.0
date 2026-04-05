@@ -17,21 +17,6 @@ import {
 import cloud1 from '../../assets/images/cloud1.jpg';
 import cloud2 from '../../assets/images/cloud2.jpg';
 
-const rules = [
-  { id: 1, text: '3 of the same element in a straight line', points: 15 },
-  { id: 2, text: '4 of the same element in a straight line', points: 30 },
-  { id: 3, text: '3 of the same element diagonally', points: 25 },
-  { id: 4, text: '4 of the same element diagonally', points: 45 },
-  { id: 5, text: 'All 4 corners are different elements', points: 80 },
-  { id: 6, text: 'cloud - mountain - sea in a straight or diagonal line', points: 25 },
-  { id: 7, text: 'mountain - tree - mountain in a straight or diagonal line', points: 25 },
-  { id: 8, text: 'sea - sea - cloud in a straight or diagonal line', points: 25 },
-  { id: 9, text: '2x2 square with all different elements', points: 40 },
-  { id: 10, text: 'sea - tree - mountain - cloud in a straight line', points: 75 },
-  { id: 11, text: 'cloud - cloud - tree - tree in a straight line', points: 75 },
-  { id: 12, text: 'Star: 4 different elements (one in each corner)', points: 100 },
-];
-
 const TreeCloudMountainSea = () => {
   const [showKeyInfo, setShowKeyInfo] = useState(false);
   const [showOverview, setShowOverview] = useState(false);
