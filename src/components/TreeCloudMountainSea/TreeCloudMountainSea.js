@@ -36,8 +36,6 @@ const TreeCloudMountainSea = () => {
   const [showKeyInfo, setShowKeyInfo] = useState(false);
   const [showOverview, setShowOverview] = useState(false);
   const [showHowItPlays, setShowHowItPlays] = useState(false);
-  const [showRules, setShowRules] = useState(false);
-  const [showInteraction, setShowInteraction] = useState(false);
   const [showContact, setShowContact] = useState(false);
   const [showMorePictures, setShowMorePictures] = useState(false);
 
