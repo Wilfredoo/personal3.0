@@ -97,7 +97,7 @@ export default function HealingIsForgetting() {
           <Title>Healing is Forgetting</Title>
           <Byline>A film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-            Last updated: April 2, 2026
+            Last updated: April 5, 2026
           </Paragraph>
         </HeaderContent>
       </Header>
@@ -278,8 +278,7 @@ export default function HealingIsForgetting() {
 
                 <Paragraph><strong>Development:</strong></Paragraph>
                 <List>
-                  <ListItem>Synopsis: version 3 — in progress</ListItem>
-                  <ListItem>Treatment: initial draft — starting</ListItem>
+                  <ListItem>Improving Treatment</ListItem>
                 </List>
 
                 <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
