@@ -46,6 +46,7 @@ export default function HealingIsForgetting() {
   const latestTreatment = treatments[0];
   const pastTreatments = treatments.slice(1);
   const treatmentPreviewCount = 5;
+  const protectedSectionId = 'healing-protected-materials';
 
   const CORRECT_PASSWORD = 'healing2026';
   const AUTH_STORAGE_KEY = 'healing-auth-v2';
@@ -82,6 +83,11 @@ export default function HealingIsForgetting() {
     }));
   };
 
+  const scrollToProtectedMaterials = () => {
+    const el = document.getElementById(protectedSectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   // Check if user is already authenticated on component mount
   useEffect(() => {
     const authStatus = sessionStorage.getItem(AUTH_STORAGE_KEY);
@@ -116,21 +122,32 @@ export default function HealingIsForgetting() {
           <Card>
             <SectionTitle>Synopsis – {latestSynopsis.version}</SectionTitle>
             <div id="synopsis-latest">
-              {(isSynopsisExpanded
+              {((isAuthenticated && isSynopsisExpanded)
                 ? latestSynopsis.paragraphs
                 : latestSynopsis.paragraphs.slice(0, synopsisPreviewCount)
               ).map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
             </div>
 
             {latestSynopsis.paragraphs.length > synopsisPreviewCount && (
-              <CollapsibleButton
-                onClick={() => setIsSynopsisExpanded(!isSynopsisExpanded)}
-                aria-expanded={isSynopsisExpanded}
-                aria-controls="synopsis-latest"
-              >
-                <span>{isSynopsisExpanded ? 'Hide Full Synopsis' : 'Read Full Synopsis'}</span>
-                {isSynopsisExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-              </CollapsibleButton>
+              isAuthenticated ? (
+                <CollapsibleButton
+                  onClick={() => setIsSynopsisExpanded(!isSynopsisExpanded)}
+                  aria-expanded={isSynopsisExpanded}
+                  aria-controls="synopsis-latest"
+                >
+                  <span>{isSynopsisExpanded ? 'Hide Full Synopsis' : 'Read Full Synopsis'}</span>
+                  {isSynopsisExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                </CollapsibleButton>
+              ) : (
+                <CollapsibleButton
+                  onClick={scrollToProtectedMaterials}
+                  aria-expanded={false}
+                  aria-controls={protectedSectionId}
+                >
+                  <span>Unlock to read full synopsis</span>
+                  <ChevronDown size={18} />
+                </CollapsibleButton>
+              )
             )}
 
             {isAuthenticated && pastSynopses.length > 0 && (
@@ -164,7 +181,7 @@ export default function HealingIsForgetting() {
         </Section>
 
         {!isAuthenticated && (
-          <Section>
+          <Section id={protectedSectionId}>
             <Card>
               <SectionTitle>Protected Materials</SectionTitle>
               <Paragraph>

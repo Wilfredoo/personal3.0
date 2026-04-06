@@ -18,7 +18,7 @@ function TheBabciaPolicy() {
       <p>(reflections from the couch)</p>
 
       <p>
-        Reference anxiety is real, and after surfing 30 couches in 1 year (cs + bewelcome), some situations stand out.
+        Reference anxiety is real. After surfing 30 couches in 1 year (cs + bewelcome), and while most situations where truly great, some difficult situations stand out.
             </p>
 
       <p>
@@ -35,7 +35,7 @@ function TheBabciaPolicy() {
       </p>
           <p>
        Another user being overtly kind with gifts and compliments, and yet another just being
-        annoyingly attentive, in hope that I wouldn&apos;t feel ignored.
+        a bit too attentive, in hope that I wouldn&apos;t feel ignored.
       </p>
           <p>
             While these situations were not per se 'bad', the 3 had something in common; they did not seem to be coming from a place of genuine care, but from fear of a bad reference.
@@ -47,27 +47,25 @@ function TheBabciaPolicy() {
       <p>
        Despite the obvious benefits of trust and safety that a reference system gives us, I believe that a layer of authenticity is lost 
        - or an artificial one is added - when either host or guest is too worried about
-        the end result, meaning, the public comment after my stay.
+        the end result, meaning, the public comment after the stay.
       </p>
 
       <p>
         I want my hosts to be themselves and feel at ease. If my host is
         gracious enough to host me, I&apos;ll be gracious enough to emphasise their
-        good deeds, and not to mention any unflattering habits.
+        good deeds.
+      </p>
+
+          <p>
+True niceness is the opposite of obligation, and can only come from the freedom to be dismissive, uncaring, not nice. If my host doesn't have much time for us or we simply don't get along too well - as not everyone is a match - we don't have to force it.
       </p>
 
       <p>
-        And oh lord we all have them (I&apos;m not religious, i just like to say oh
-        lord).
-      </p>
-      <p>
-        Not less importantly, I've realised that, while making a good reference after a good experience - which is most cases - is easy, deciding whether a host was bad, whether to leave a critical reference and what to write, is extremely consuming of my time, energy and focus.
+        Not less importantly, I've realised that, while making a good reference after a good experience is easy - which is almost always the case - deciding whether a stay was crappy enough to leave a critical reference is extremely consuming of my time, energy and focus.
       </p>
 
-
-
       <p>
-        For the reasons above, to relieve my future hosts of unnecessary pressure, and make my days easier, I am starting a personal policy: to
+        For the reasons above, to relieve my future hosts of unnecessary pressure, and make my days easier as well, I am starting a personal policy: to
         always leave a good reference, regardless of the quality of the experience.
       </p>
 
