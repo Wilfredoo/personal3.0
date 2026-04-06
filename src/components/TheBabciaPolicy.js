@@ -18,7 +18,12 @@ function TheBabciaPolicy() {
       <p>(reflections from the couch)</p>
 
       <p>
-        Reference anxiety is real. After surfing 30 couches in 1 year (cs + bewelcome), and while most situations where truly great, some difficult situations stand out.
+        Reference anxiety is real. 
+            </p>
+        
+      <p>
+        
+        After surfing 30 couches in 1 year (cs + bewelcome), and while most situations where truly great, some difficult situations stand out.
             </p>
 
       <p>
