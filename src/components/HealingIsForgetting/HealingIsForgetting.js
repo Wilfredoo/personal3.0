@@ -103,7 +103,7 @@ export default function HealingIsForgetting() {
           <Title>Healing is Forgetting</Title>
           <Byline>A film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-            Last updated: April 5, 2026
+            Last updated: April 8, 2026
           </Paragraph>
         </HeaderContent>
       </Header>
@@ -219,7 +219,7 @@ export default function HealingIsForgetting() {
           <>
             <Section>
               <Card>
-                <SectionTitle>Treatment</SectionTitle>
+                <SectionTitle>Treatment – {latestTreatment.version}</SectionTitle>
                 {!isTreatmentExpanded &&
                   latestTreatment.blocks.slice(0, treatmentPreviewCount).map((block, i) => (
                     <Paragraph key={i}>
@@ -285,26 +285,27 @@ export default function HealingIsForgetting() {
             <Section>
               <Card>
                 <SectionTitle>Project Status</SectionTitle>
-                <Paragraph><strong>Books to read:</strong></Paragraph>
-                <List>
-                  <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb - not yet started</ListItem>
-                  <ListItem>"Reasons and Persons" (part 3) by Derek Parfit  - not yet started</ListItem>
-                  <ListItem>"Searching for Memory" by Daniel Schacter - in progress</ListItem>
-                  <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell - in progress</ListItem>
-                </List>
-
                 <Paragraph><strong>Development:</strong></Paragraph>
                 <List>
-                  <ListItem>Improving Treatment</ListItem>
+                  <ListItem>Synopsis: {latestSynopsis.version} - draft complete</ListItem>
+                  <ListItem>Treatment: {latestTreatment.version} - in progress</ListItem>
                 </List>
 
                 <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
                 <List>
-                  <ListItem>Cinematographer</ListItem>
-                  <ListItem>Producer</ListItem>
-                  <ListItem>Neuroscience advisor</ListItem>
-                  <ListItem>Psychotherapy advisor</ListItem>
-                  <ListItem>Writing mentor</ListItem>
+                  <ListItem>Producer - in progress</ListItem>
+                  <ListItem>Screenwriting mentor - in progress</ListItem>
+                  <ListItem>Cinematographer - not yet started</ListItem>
+                  <ListItem>Neuroscience advisor - not yet started</ListItem>
+                  <ListItem>Psychotherapy advisor - not yet started</ListItem>
+                </List>
+
+                <Paragraph><strong>Books to read:</strong></Paragraph>
+                <List>
+                  <ListItem>"Searching for Memory" by Daniel Schacter - in progress</ListItem>
+                  <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell - not yet started</ListItem>
+                  <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb - not yet started</ListItem>
+                  <ListItem>"Reasons and Persons" (part 3) by Derek Parfit - not yet started</ListItem>
                 </List>
               </Card>
             </Section>
