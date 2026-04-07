@@ -7,6 +7,11 @@ function Decameron() {
       <Styles />
       <div className="dec-root">
         <article className="dec-page">
+          <div className="dec-nav">
+            <a className="dec-nav-link" href="/apps">← Apps</a>
+            <span className="dec-nav-dot">·</span>
+            <a className="dec-nav-link" href="/">Home</a>
+          </div>
 
           {/* EPIGRAPH */}
           <p className="dec-epigraph">

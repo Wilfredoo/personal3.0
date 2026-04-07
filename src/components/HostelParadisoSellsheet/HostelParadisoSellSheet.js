@@ -26,10 +26,75 @@ const HostelParadisoSellSheet = () => {
   const [showScoring, setShowScoring] = useState(false);
   const [showUnique, setShowUnique] = useState(false);
   const [showContact, setShowContact] = useState(false);
-  const [showMorePictures, setShowMorePictures] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
+
+  const closeLightbox = () => setLightbox(null);
 
   return (
     <Container>
+      <style>{`
+        .top-nav {
+          margin-bottom: 14px;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.4px;
+          text-transform: uppercase;
+          color: #555;
+        }
+        .top-nav a {
+          color: #555;
+          text-decoration: none;
+        }
+        .top-nav a:hover {
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+
+        .lightbox-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.78);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 18px;
+          z-index: 9999;
+        }
+
+        .lightbox-content {
+          position: relative;
+          width: min(980px, 96vw);
+          max-height: 92vh;
+        }
+
+        .lightbox-img {
+          width: 100%;
+          max-height: 92vh;
+          object-fit: contain;
+          border-radius: 12px;
+          background: #000;
+          box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .lightbox-close {
+          position: absolute;
+          top: -12px;
+          right: -12px;
+          width: 38px;
+          height: 38px;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          background: rgba(0, 0, 0, 0.55);
+          color: #fff;
+          cursor: pointer;
+          font-size: 18px;
+          line-height: 1;
+        }
+      `}</style>
+      <div className="top-nav">
+        <a href="/board-games">← Board games</a> <span aria-hidden="true">·</span>{' '}
+        <a href="/">Home</a>
+      </div>
       <Title>Hostel Paradiso</Title>
       <Subtitle>Aim to take ownership of the quirkiest hostel in town.</Subtitle>
 
@@ -116,15 +181,50 @@ const HostelParadisoSellSheet = () => {
       </Section>
 
       <Section>
-        <h3 onClick={() => setShowMorePictures(!showMorePictures)}>More Pictures {showMorePictures ? '▲' : '▼'}</h3>
-        {showMorePictures && (
-          <GalleryRow>
-            <SmallImage src={hostel1} alt="Hostel Paradiso (1)" />
-            <RotatedSmallImage src={hostel2} alt="Hostel Paradiso (2)" />
-            <SmallImage src={hostel3} alt="Hostel Paradiso (3)" />
-          </GalleryRow>
-        )}
+        <h3>More Pictures</h3>
+        <GalleryRow>
+          <SmallImage
+            src={hostel1}
+            alt="Hostel Paradiso (1)"
+            onClick={() => setLightbox({ src: hostel1, alt: 'Hostel Paradiso (1)' })}
+          />
+          <RotatedSmallImage
+            src={hostel2}
+            alt="Hostel Paradiso (2)"
+            onClick={() => setLightbox({ src: hostel2, alt: 'Hostel Paradiso (2)', rotate: true })}
+          />
+          <SmallImage
+            src={hostel3}
+            alt="Hostel Paradiso (3)"
+            onClick={() => setLightbox({ src: hostel3, alt: 'Hostel Paradiso (3)' })}
+          />
+        </GalleryRow>
       </Section>
+
+      {lightbox && (
+        <div
+          className="lightbox-overlay"
+          role="dialog"
+          aria-modal="true"
+          onClick={closeLightbox}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') closeLightbox();
+          }}
+          tabIndex={-1}
+        >
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" type="button" onClick={closeLightbox} aria-label="Close">
+              ×
+            </button>
+            <img
+              className="lightbox-img"
+              src={lightbox.src}
+              alt={lightbox.alt}
+              style={lightbox.rotate ? { transform: 'rotate(180deg)' } : undefined}
+            />
+          </div>
+        </div>
+      )}
     </Container>
   );
 };

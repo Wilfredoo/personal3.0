@@ -15,6 +15,11 @@ const pStyle = { margin: '0.75rem 0' };
 function TheExplorationMap() {
   return (
     <main style={pageStyle}>
+      <p style={{ ...pStyle, marginBottom: '16px' }}>
+        <a href="/apps" style={{ color: '#111827', textDecoration: 'none', fontWeight: 600 }}>← Apps</a>
+        {'  '}·{'  '}
+        <a href="/" style={{ color: '#111827', textDecoration: 'none', fontWeight: 600 }}>Home</a>
+      </p>
       <h1 style={h1Style}>The Exploration Map</h1>
       <p style={pStyle}>Coming soon.</p>
     </main>
@@ -22,4 +27,3 @@ function TheExplorationMap() {
 }
 
 export default TheExplorationMap;
-

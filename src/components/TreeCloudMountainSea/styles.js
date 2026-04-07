@@ -67,15 +67,33 @@ export const GalleryRow = styled.div`
 `;
 
 export const SmallImage = styled.img`
-  height: 300px;
+  width: 100%;
+  max-width: 320px;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: zoom-in;
 `;
 
 export const Spacer = styled.div`
   height: 18px;
 `;
 
+export const TranslateButton = styled.button`
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  color: #111;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 
-
-
+  &:hover {
+    background: #f3f4f6;
+  }
+`;

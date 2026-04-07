@@ -23,6 +23,34 @@ const css = `
     padding: 96px 32px 120px;
   }
 
+  /* ── NAV ── */
+  .dec-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .dec-nav-link {
+    color: var(--mid);
+    text-decoration: none;
+  }
+
+  .dec-nav-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .dec-nav-dot {
+    opacity: 0.6;
+  }
+
   /* ── EPIGRAPH ── */
   .dec-epigraph {
     font-size: 1.1rem;

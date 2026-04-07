@@ -14,6 +14,28 @@ const SellSheet = () => {
 
   return (
     <Container>
+      <style>{`
+        .top-nav {
+          margin-bottom: 14px;
+          font-size: 14px;
+          font-weight: 600;
+          letter-spacing: 0.4px;
+          text-transform: uppercase;
+          color: #555;
+        }
+        .top-nav a {
+          color: #555;
+          text-decoration: none;
+        }
+        .top-nav a:hover {
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+      `}</style>
+      <div className="top-nav">
+        <a href="/board-games">← Board games</a> <span aria-hidden="true">·</span>{' '}
+        <a href="/">Home</a>
+      </div>
       <Title>Ayakucho</Title>
       <Subtitle>Trust, betrayal, and Peruvian folklore.</Subtitle>
 

@@ -33,6 +33,9 @@ function BoardGames() {
           text-underline-offset: 4px;
         }
       `}</style>
+      <div className="simple-links" style={{ marginBottom: '18px', fontSize: '16px', fontWeight: 600 }}>
+        <a href="/">← Home</a>
+      </div>
       <ul className="simple-links" style={listStyle}>
         <li>
           <a href="/ayakucho">Ayakucho</a>
