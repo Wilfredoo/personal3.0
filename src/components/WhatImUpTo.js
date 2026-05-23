@@ -4,9 +4,7 @@ import { Text, TextContainer } from './styles';
 const WhatImUpTo = () => (
   <TextContainer style={{ marginTop: 'clamp(20px, 10vh, 120px)' }}>
 <Text>
-  At the moment I'm making <a href="/apps"> apps</a> and <a href="/board-games">board games</a>,{' '}pursuing{' '}
-  <a href="https://www.instagram.com/wilfredocasas.actor/" target="_blank" rel="noopener noreferrer">acting</a>,{' '}
-  and working on my first feature film, <a href="/healingisforgetting">Healing Is Forgetting</a>.
+I'm working on my first feature film, <a href="/healingisforgetting">Healing Is Forgetting</a>.
 </Text>
   </TextContainer>
 );
