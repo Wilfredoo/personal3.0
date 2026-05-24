@@ -12,7 +12,7 @@ import {
   GalleryRow,
   SmallImage,
   Spacer,
-  TranslateButton,
+  LanguageSelect,
 } from './styles';
 
 import cloud1 from '../../assets/images/cloud1.jpg';
@@ -20,7 +20,6 @@ import cloud2 from '../../assets/images/cloud2.jpg';
 
 const texts = {
   EN: {
-    translateButton: 'Deutsch',
     subtitle: 'A tactical game designed for both blind and sighted players.',
     storyTitle: 'Story',
     storyP1: 'What if a game could be designed for both blind and sighted players alike?',
@@ -48,7 +47,6 @@ const texts = {
     morePicsTitle: 'More Pictures',
   },
   DE: {
-    translateButton: 'English',
     subtitle: 'Ein taktisches Spiel, entwickelt fuer blinde und sehende Spieler.',
     storyTitle: 'Geschichte',
     storyP1: 'Was waere, wenn ein Spiel sowohl fuer blinde als auch fuer sehende Menschen gemacht werden koennte?',
@@ -75,6 +73,33 @@ const texts = {
     instagramLabel: 'Instagram',
     morePicsTitle: 'Mehr Bilder',
   },
+  PT: {
+    subtitle: 'Um jogo tático desenvolvido para jogadores cegos e videntes.',
+    storyTitle: 'História',
+    storyP1: 'E se um jogo pudesse ser desenhado tanto para cegos como para videntes?',
+    storyP2:
+      'Uma partida de xadrez com um homem cego em Budapeste inspirou-me a criar este jogo. Quando estiver pronto, poderá ser jogado por grupos de cegos, grupos de videntes ou grupos mistos.',
+    keyInfoTitle: 'Informações',
+    playersLabel: 'Jogadores',
+    playtimeLabel: 'Duração',
+    hookLabel: 'Ideia central',
+    hookText: 'todos veem todas as regras de pontuação, mas ninguém sabe qual regra os outros têm.',
+    overviewTitle: 'Visão Geral',
+    overviewP1:
+      'Tree Cloud Mountain Sea é um jogo rápido de padrões e dedução para 3 a 5 jogadores. Existem 12 regras de pontuação. O conjunto completo de regras é público, mas cada jogador recebe secretamente uma regra diferente e tenta cumpri-la sem a revelar.',
+    howTitle: 'Como se Joga',
+    howList: [
+      'Todas as 12 regras de pontuação são visíveis para todos.',
+      'Cada jogador recebe 1 regra de pontuação secreta (os outros não sabem qual).',
+      'Os jogadores preenchem espaços num tabuleiro partilhado com peças (árvore / nuvem / montanha / mar).',
+      'Uma vez por jogo, cada jogador pode mover uma peça já colocada para outro espaço.',
+      'Quando o último espaço for preenchido, o jogo termina.',
+    ],
+    contactTitle: 'Contacto e Links',
+    emailLabel: 'Email',
+    instagramLabel: 'Instagram',
+    morePicsTitle: 'Mais Fotos',
+  },
 };
 
 const TreeCloudMountainSea = () => {
@@ -85,7 +110,6 @@ const TreeCloudMountainSea = () => {
   const [showContact, setShowContact] = useState(false);
   const [lightbox, setLightbox] = useState(null);
   const t = texts[language];
-  const toggleLanguage = () => setLanguage((prev) => (prev === 'EN' ? 'DE' : 'EN'));
   const closeLightbox = () => setLightbox(null);
 
   return (
@@ -155,7 +179,11 @@ const TreeCloudMountainSea = () => {
       </div>
       <Title>Tree Cloud Mountain Sea</Title>
       <Subtitle>{t.subtitle}</Subtitle>
-      <TranslateButton onClick={toggleLanguage}>{t.translateButton}</TranslateButton>
+      <LanguageSelect value={language} onChange={e => setLanguage(e.target.value)}>
+        <option value="EN">🇬🇧 English</option>
+        <option value="DE">🇩🇪 Deutsch</option>
+        <option value="PT">🇵🇹 Português</option>
+      </LanguageSelect>
 
       <HeroImage src={cloud1} alt="Tree Cloud Mountain Sea" />
 

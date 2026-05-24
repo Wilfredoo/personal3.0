@@ -97,3 +97,24 @@ export const TranslateButton = styled.button`
     background: #f3f4f6;
   }
 `;
+
+export const LanguageSelect = styled.select`
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: #ffffff;
+  color: #111;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-family: Arial, sans-serif;
+  appearance: none;
+
+  &:hover { background: #f3f4f6; }
+  &:focus { outline: none; border-color: #aaa; }
+
+  option { background: #fff; color: #111; }
+`;
