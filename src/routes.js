@@ -1,9 +1,13 @@
 // Pages
 import Home from './components/Home';
+import HomePolished from './components/HomePolished';
+import HomeNew from './components/HomeNew';
 import Curriculum from './components/Curriculum';
 import Workandtravelsecure from './components/Workandtravel/Workandtravelsecure';
 import Scripts from './components/Scripts';
 import Acting from './components/Acting/Acting';
+import ActingPolished from './components/Acting/ActingPolished';
+import ActingNew from './components/Acting/ActingNew';
 import FilmEquipment from './components/FilmEquipment/FilmEquipment';
 import Film from './components/Film/Film';
 import Referenceletter from './components/Referenceletter'
@@ -31,9 +35,13 @@ import BoardGames from './components/BoardGames';
 import TreeCloudMountainSea from './components/TreeCloudMountainSea/TreeCloudMountainSea';
 
 const routes = [
-    { path: "/", component: <Home /> },
+    { path: "/", component: <HomeNew /> },
+    { path: "/home-a", component: <HomePolished /> },
+    { path: "/home-legacy", component: <Home /> },
     { path: "/cv", component: <Curriculum /> },
     { path: "/acting", component: <Acting /> },
+    { path: "/acting-a", component: <ActingPolished /> },
+    { path: "/acting-b", component: <ActingNew /> },
     { path: "/reference_letter", component: <Referenceletter /> },
     { path: "/healingisforgetting", component: <HealingIsForgetting /> },
     { path: "/emailproof", component: <EmailProof /> },

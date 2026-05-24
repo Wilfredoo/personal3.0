@@ -1,414 +1,184 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-export const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  
-  @media (max-width: 768px) {
-    padding: 24px 16px;
-  }
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 `;
 
+/* ─── Page shell ─────────────────────────────────────────── */
+
+export const Container = styled.div`
+  min-height: 100vh;
+  background: #080808;
+  color: #9a9088;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.8;
+`;
+
+/* ─── Header ─────────────────────────────────────────────── */
+
 export const Header = styled.header`
-  margin-bottom: 40px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #e1e4e8;
-  
-  @media (max-width: 768px) {
-    margin-bottom: 32px;
-    padding-bottom: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  @media (max-width: 640px) {
+    padding: 3.5rem 1.4rem 2.5rem;
   }
 `;
 
 export const HeaderContent = styled.div`
-  margin-bottom: 16px;
-`;
-
-export const FilmBadge = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
-  color: #666;
-  font-size: 14px;
-  
-  span {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  
-  @media (max-width: 768px) {
-    font-size: 13px;
-    gap: 6px;
-  }
+  animation: ${fadeUp} 0.5s ease-out;
 `;
 
 export const Title = styled.h1`
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 12px;
-  line-height: 1.2;
-  
-  @media (max-width: 768px) {
-    font-size: 1.75rem;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-  
-  @media (max-width: 480px) {
-    font-size: 1.5rem;
-  }
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #f0ebe4;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
 `;
 
 export const Byline = styled.p`
-  color: #666;
-  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #383030;
   margin: 0;
-  
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
 `;
 
+/* ─── Main content ───────────────────────────────────────── */
+
 export const Main = styled.main`
-  margin-bottom: 40px;
-  
-  @media (max-width: 768px) {
-    margin-bottom: 32px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+  animation: ${fadeUp} 0.55s ease-out;
+
+  @media (max-width: 640px) {
+    padding: 0 1.4rem 4rem;
   }
 `;
 
 export const Section = styled.section`
-  margin-bottom: 40px;
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-  
-  @media (max-width: 768px) {
-    margin-bottom: 32px;
-  }
+  margin-top: 3.5rem;
+
+  &:last-child { margin-bottom: 0; }
 `;
 
-export const Card = styled.div`
-  margin-bottom: 20px;
-  
-  @media (max-width: 768px) {
-    margin-bottom: 16px;
-  }
-`;
+export const Card = styled.div``;
+
+/* ─── Section titles ─────────────────────────────────────── */
 
 export const SectionTitle = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 16px;
-  border-bottom: 2px solid #000;
-  padding-bottom: 6px;
-  
-  @media (max-width: 768px) {
-    font-size: 1.25rem;
-    margin-bottom: 14px;
-    padding-bottom: 5px;
-  }
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
 `;
+
+/* ─── Body text ──────────────────────────────────────────── */
 
 export const Paragraph = styled.p`
-  color: #333;
-  line-height: 1.7;
-  margin-bottom: 16px;
-  font-size: ${props => props.large ? '18px' : '16px'};
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-  
+  font-size: 1.02rem;
+  color: #8a8278;
+  line-height: 1.85;
+  margin: 0 0 1.2rem;
+  text-align: ${props => props.center ? 'center' : 'left'};
+
+  &:last-child { margin-bottom: 0; }
+
   strong {
+    color: #c0b8ae;
     font-weight: 600;
   }
-  
-  em {
-    font-style: italic;
-  }
-  
-  @media (max-width: 768px) {
-    font-size: ${props => props.large ? '16px' : '15px'};
-    line-height: 1.65;
-    margin-bottom: 14px;
-  }
+
+  em { font-style: italic; }
 `;
 
-export const CollapsibleCard = styled.div`
-`;
-
-export const CollapsibleButton = styled.button`
-  width: 100%;
-  margin-top: 10px;
-  padding: 16px 5px;
-  display: flex;
-  
-  &:hover {
-    background-color: #f1f3f4;
-  }
-  
-  &:active {
-    background-color: #e8eaed;
-  }
-  
-  svg {
-    color: #666;
-    flex-shrink: 0;
-    margin-left: 8px;
-  }
-  
-  @media (max-width: 768px) {
-  }
-`;
-
-export const CollapsibleContent = styled.div`
-  padding: 20px;
-  background: #fff;
-  
-  > div {
-    margin-bottom: 16px;
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    padding: 16px;
-    
-    > div {
-      margin-bottom: 14px;
-    }
-  }
-`;
-
-export const SubsectionTitle = styled.h3`
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 8px;
-  font-size: 18px;
-  
-  @media (max-width: 768px) {
-    font-size: 16px;
-    margin-bottom: 6px;
-  }
-`;
+/* ─── Lists ──────────────────────────────────────────────── */
 
 export const List = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1.2rem;
 `;
 
 export const ListItem = styled.li`
-  display: block;
-  margin-bottom: 10px;
-  color: #333;
-  padding-left: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: 0.93rem;
+  color: #6a6260;
+  padding: 0.5rem 0 0.5rem 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   position: relative;
-  font-size: 16px;
-  line-height: 1.6;
-  
-  &:before {
-    content: '•';
+  line-height: 1.65;
+
+  &::before {
+    content: '—';
     position: absolute;
     left: 0;
-    color: #666;
+    color: rgba(201, 168, 76, 0.35);
+    font-size: 0.78rem;
+    top: 0.55rem;
   }
-  
-  &:last-child {
-    margin-bottom: 0;
-  }
-  
-  @media (max-width: 768px) {
-    font-size: 15px;
-    margin-bottom: 8px;
-    padding-left: 18px;
-    line-height: 1.5;
-  }
+
+  &:last-child { border-bottom: none; }
 `;
 
-export const StatusCard = styled.div`
-  background: #f6f8fa;
-  border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  padding: 20px;
-  margin-bottom: 20px;
-  
-  @media (max-width: 768px) {
-    padding: 16px;
-    margin-bottom: 16px;
-  }
+/* ─── Collapsible ────────────────────────────────────────── */
+
+export const CollapsibleCard = styled.div`
+  margin-top: 1rem;
 `;
 
-export const ContactCard = styled.div`
-  text-align: left;
-  
-  @media (max-width: 768px) {
-    text-align: center;
-  }
-`;
-
-export const ContactButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: #000;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color 0.2s;
-  -webkit-tap-highlight-color: transparent;
-  min-height: 44px;
-  
-  &:hover {
-    background-color: #333;
-  }
-  
-  &:active {
-    background-color: #1a1a1a;
-  }
-  
-  @media (max-width: 768px) {
-    padding: 12px 20px;
-    font-size: 14px;
-    width: auto;
-  }
-`;
-
-export const Footer = styled.footer`
-  margin-top: 60px;
-  padding-top: 24px;
-  border-top: 1px solid #e1e4e8;
-  text-align: center;
-  
-  p {
-    color: #666;
-    font-size: 14px;
-    margin: 0;
-    line-height: 1.5;
-  }
-  
-  @media (max-width: 768px) {
-    margin-top: 48px;
-    padding-top: 20px;
-    
-    p {
-      font-size: 13px;
-    }
-  }
-`;
-
-export const IdeaBoardImage = styled.img`
-  width: 60%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 6px;
-  margin: -55px auto;
-  display: block;
-  transform: rotate(-90deg);
-  
-  @media (max-width: 768px) {
-    max-width: 100%;
-    margin: -35px auto;
-    border-radius: 4px;
-  }
-  
-  @media (max-width: 480px) {
-    margin: -20px auto
-  }
-`;
-
-export const ImageCaption = styled.p`
-  text-align: center;
-  font-style: italic;
-  color: #666;
-  font-size: 14px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  
-  @media (max-width: 768px) {
-    font-size: 13px;
-    margin-top: 6px;
-  }
-`;
-
-// Password Protection Styles
-export const PasswordOverlay = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
+export const CollapsibleButton = styled.button`
+  width: 100%;
+  background: none;
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1rem 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #484040;
+  text-align: left;
+  transition: color 0.2s;
+
+  span { flex: 1; }
+  svg { flex-shrink: 0; }
+
+  &:hover { color: #c9a84c; }
 `;
 
-export const PasswordContainer = styled.div`
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
+export const CollapsibleContent = styled.div`
+  border-left: 2px solid rgba(201, 168, 76, 0.18);
+  padding: 1.2rem 0 0.8rem 1.5rem;
+  margin-bottom: 0.5rem;
 `;
 
-export const PasswordCard = styled.div`
-  background: white;
-  border-radius: 12px;
-  padding: 40px 32px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e1e4e8;
-  text-align: center;
-  
-  @media (max-width: 480px) {
-    padding: 32px 24px;
-    margin: 0 16px;
-  }
-`;
-
-export const PasswordTitle = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #000;
-  margin: 24px 0 16px 0;
-  
-  @media (max-width: 480px) {
-    font-size: 1.25rem;
-  }
-`;
-
-export const PasswordDescription = styled.p`
-  color: #666;
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 32px;
-  
-  @media (max-width: 480px) {
-    font-size: 13px;
-    margin-bottom: 24px;
-  }
-`;
+/* ─── Password gate ──────────────────────────────────────── */
 
 export const PasswordForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
+  max-width: 320px;
+  margin-top: 0.5rem;
 `;
 
 export const PasswordInputWrapper = styled.div`
@@ -419,101 +189,118 @@ export const PasswordInputWrapper = styled.div`
 
 export const PasswordInput = styled.input`
   width: 100%;
-  padding: 14px 48px 14px 16px;
-  border: 2px solid #e1e4e8;
-  border-radius: 8px;
-  font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  padding: 0.8rem 3rem 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  color: #c8c0b6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+  box-sizing: border-box;
   outline: none;
-  
+
+  &::placeholder { color: #2e2826; }
+
   &:focus {
-    border-color: #000;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
-  }
-  
-  &::placeholder {
-    color: #999;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 12px 44px 12px 14px;
-    font-size: 15px;
+    border-color: rgba(201, 168, 76, 0.4);
+    background: rgba(255, 255, 255, 0.05);
   }
 `;
 
 export const TogglePasswordButton = styled.button`
   position: absolute;
-  right: 12px;
+  right: 10px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  color: #2e2826;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #666;
+  padding: 4px;
   transition: color 0.2s;
-  -webkit-tap-highlight-color: transparent;
-  
-  &:hover {
-    color: #000;
-  }
-  
-  &:active {
-    transform: scale(0.95);
-  }
+
+  &:hover { color: #7a7068; }
 `;
 
 export const SubmitButton = styled.button`
-  width: 100%;
-  padding: 14px 24px;
-  background: #000;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 500;
+  align-self: flex-start;
+  padding: 0.65rem 1.4rem;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.32);
+  border-radius: 4px;
+  color: #c9a84c;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
-  -webkit-tap-highlight-color: transparent;
-  
+  transition: all 0.2s;
+
   &:hover {
-    background-color: #333;
-  }
-  
-  &:active {
-    background-color: #1a1a1a;
-    transform: scale(0.98);
-  }
-  
-  &:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-    transform: none;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 12px 20px;
-    font-size: 15px;
+    background: rgba(201, 168, 76, 0.15);
+    border-color: rgba(201, 168, 76, 0.55);
   }
 `;
 
 export const ErrorMessage = styled.p`
-  color: #d32f2f;
-  font-size: 14px;
-  margin-top: 8px;
-  text-align: center;
-  animation: fadeIn 0.3s ease-in;
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-4px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  color: #a05050;
+  font-size: 0.8rem;
+  margin: 0;
+  letter-spacing: 0.02em;
+`;
+
+/* ─── Contact ────────────────────────────────────────────── */
+
+export const ContactCard = styled.div`
+  padding: 2rem 0 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+`;
+
+/* ─── Footer ─────────────────────────────────────────────── */
+
+export const Footer = styled.footer`
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #1e1a18;
+    margin: 0;
   }
+`;
+
+/* ─── Idea board ─────────────────────────────────────────── */
+
+export const IdeaBoardImage = styled.img`
+  width: 75%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 3px;
+  opacity: 0.8;
+  transform: rotate(-90deg);
+
+  @media (max-width: 640px) {
+    width: 100%;
+    margin: -20px auto;
+  }
+`;
+
+export const ImageCaption = styled.p`
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.72rem;
+  color: #2e2826;
+  margin-top: 0.8rem;
+  letter-spacing: 0.08em;
 `;

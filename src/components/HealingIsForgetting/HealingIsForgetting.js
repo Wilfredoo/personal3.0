@@ -88,6 +88,13 @@ export default function HealingIsForgetting() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  // Dark background for this page
+  useEffect(() => {
+    const prev = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = '#080808';
+    return () => { document.body.style.backgroundColor = prev; };
+  }, []);
+
   // Check if user is already authenticated on component mount
   useEffect(() => {
     const authStatus = sessionStorage.getItem(AUTH_STORAGE_KEY);
