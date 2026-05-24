@@ -414,27 +414,9 @@ const InfoItem = styled.li`
 
 /* ─── Links ──────────────────────────────────────────────── */
 
-const AgencyCard = styled.div`
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 1rem;
-`;
 
-const AgencyLink = styled.a`
-  display: block;
-  padding: 1rem 1.2rem;
-  color: #c0b8b0;
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: color 0.2s, background 0.2s;
 
-  &:last-child { border-bottom: none; }
-  &:hover { color: #fff; background: rgba(255,255,255,0.03); }
-`;
+
 
 const LinksList = styled.div`
   display: flex;
