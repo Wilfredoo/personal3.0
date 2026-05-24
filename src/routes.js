@@ -5,9 +5,7 @@ import HomeNew from './components/HomeNew';
 import Curriculum from './components/Curriculum';
 import Workandtravelsecure from './components/Workandtravel/Workandtravelsecure';
 import Scripts from './components/Scripts';
-import Acting from './components/Acting/Acting';
 import ActingPolished from './components/Acting/ActingPolished';
-import ActingNew from './components/Acting/ActingNew';
 import FilmEquipment from './components/FilmEquipment/FilmEquipment';
 import Film from './components/Film/Film';
 import Referenceletter from './components/Referenceletter'

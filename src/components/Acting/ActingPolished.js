@@ -35,7 +35,6 @@ const texts = {
     line1em: 'INDIGENOUS', line1post: ' Actor',
     line2pre: 'with ', line2em: 'IMPROVISATIONAL', line2post: ' Skills',
     line3pre: 'and a ', line3em: 'WIDE', line3post: ' Acting Range.',
-    declPre: 'Looking for',
     declMain: 'Looking for Challenging Roles.',
     lastJobLabel: 'Last Job',
     lastJob: 'First Love (Pierwsza Miłość) — Prisoner 2 — ATM Grupa / Polsat — Feb 2026',
@@ -63,8 +62,7 @@ const texts = {
     line1em: 'INDIGENER', line1post: ' Schauspieler',
     line2pre: 'mit ', line2em: 'IMPROVISATIONS­FÄHIGKEITEN', line2post: '',
     line3pre: 'und ', line3em: 'BREITER', line3post: ' schauspielerischer Bandbreite.',
-    declPre: 'Auf der Suche nach',
-    declMain: 'Herausfordernden Rollen.',
+    declMain: 'Auf der Suche nach Herausfordernden Rollen.',
     lastJobLabel: 'Letzter Job',
     lastJob: 'First Love (Pierwsza Miłość) — Prisoner 2 — ATM Grupa / Polsat — Feb 2026',
     nextJobLabel: 'Nächster Job',
@@ -214,14 +212,6 @@ const Declaration = styled.div`
   line-height: 1;
 `;
 
-const DeclPre = styled.div`
-  font-size: 0.68rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #3a3a3a;
-  font-weight: 700;
-  margin-bottom: 0.35rem;
-`;
 
 const DeclMain = styled.div`
   font-size: clamp(2.2rem, 8vw, 4rem);
