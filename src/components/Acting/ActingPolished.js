@@ -500,9 +500,7 @@ const ActingPolished = () => {
           {t.line2pre}<em>{t.line2em}</em>{t.line2post}<br />
           {t.line3pre}<em>{t.line3em}</em>{t.line3post}
         </Tagline>
-        <Declaration>
-          <DeclMain>{t.declMain}</DeclMain>
-        </Declaration>
+       
 
         <LangBtn onClick={() => setLanguage(l => l === 'EN' ? 'DE' : 'EN')}>
           {t.toggleBtn}
@@ -524,7 +522,11 @@ const ActingPolished = () => {
         >
           {t.resumeButton}
         </ResumeBtn>
+                <Divider />
 
+ <Declaration>
+          <DeclMain>{t.declMain}</DeclMain>
+        </Declaration>
         <Divider />
 
         {/* ── Jobs ── */}
