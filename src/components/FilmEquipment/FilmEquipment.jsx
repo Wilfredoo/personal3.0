@@ -31,7 +31,7 @@ const texts = {
   EN: {
     header: "Videography & Storytelling",
     subtitle: "Berlin · Worldwide",
-    currentLocation: "📍 In Portugal until June 18th",
+    currentLocation: "📍 In Portugal",
     homeBase: "Home base: Berlin, Germany",
     equipment: {
       Camera: ["Blackmagic Pocket Cinema Camera 4K"],
