@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
 import {
-  Container,
-  Title,
-  Subtitle,
-  Section,
-  Paragraph,
-  List,
-  ListItem,
-  ContactLink,
-  HeroImage,
-  GalleryRow,
-  SmallImage,
-  Spacer,
-  LanguageSelect,
+  PageWrapper, Container, TopNav, Title, Subtitle, LangTabs, LangTab,
+  HeroImage, StaticSection, Section, SectionToggle, SectionBody,
+  Paragraph, List, ListItem, ContactLink, GalleryRow, SmallImage, Spacer,
 } from './styles';
 
 import cloud1 from '../../assets/images/cloud1.jpg';
@@ -20,6 +10,7 @@ import cloud2 from '../../assets/images/cloud2.jpg';
 
 const texts = {
   EN: {
+    title: 'Tree Cloud Mountain Sea',
     subtitle: 'A tactical game designed for both blind and sighted players.',
     storyTitle: 'Story',
     storyP1: 'What if a game could be designed for both blind and sighted players alike?',
@@ -32,21 +23,23 @@ const texts = {
     hookText: "everyone sees all scoring rules, but doesn't know which rule the others have.",
     overviewTitle: 'Game Overview',
     overviewP1:
-      'Tree Cloud Mountain Sea is a quick pattern-and-deduction game for 3 to 5 players. There are 12 scoring rules in the game. The full rule set is public, but each player secretly receives a different rule and tries to score it while keeping it hidden.',
+      'Tree Cloud Mountain Sea is a quick pattern-and-deduction game for 3 to 6 players. There are 7 scoring rules in the game. The full rule set is public, but each player secretly receives a different rule and tries to score it while keeping it hidden.',
     howTitle: 'How It Plays',
     howList: [
-      'All 12 scoring rules are visible to everyone.',
+      'All 7 scoring rules are visible to everyone.',
       "Each player gets 1 secret scoring rule (others don't know which one).",
       'Players fill slots on a shared board with pieces (tree / cloud / mountain / sea).',
       'Once per game, each player can move one placed piece to a different slot.',
       'When the last slot is filled, the game ends.',
+      'Number of rules in play: 5 with 3 players, 6 with 4 or 5 players, 7 with 6 players.',
     ],
-    contactTitle: 'Contact and links',
+    contactTitle: 'Contact',
     emailLabel: 'Email',
     instagramLabel: 'Instagram',
     morePicsTitle: 'More Pictures',
   },
   DE: {
+    title: 'Baum Berg Wolke Meer',
     subtitle: 'Ein taktisches Spiel, entwickelt fuer blinde und sehende Spieler.',
     storyTitle: 'Geschichte',
     storyP1: 'Was waere, wenn ein Spiel sowohl fuer blinde als auch fuer sehende Menschen gemacht werden koennte?',
@@ -59,21 +52,23 @@ const texts = {
     hookText: 'alle sehen alle Wertungsregeln, aber niemand weiss, welche Regel die anderen haben.',
     overviewTitle: 'Spieluebersicht',
     overviewP1:
-      'Tree Cloud Mountain Sea ist ein schnelles Muster- und Deduktionsspiel fuer 3 bis 5 Spieler. Es gibt 12 Wertungsregeln. Das gesamte Regelset ist oeffentlich, aber jeder Spieler bekommt heimlich eine andere Regel und versucht, sie zu erfuellen, ohne sie zu verraten.',
+      'Baum Berg Wolke Meer ist ein schnelles Muster- und Deduktionsspiel fuer 3 bis 6 Spieler. Es gibt 7 Wertungsregeln. Das gesamte Regelset ist oeffentlich, aber jeder Spieler bekommt heimlich eine andere Regel und versucht, sie zu erfuellen, ohne sie zu verraten.',
     howTitle: 'Ablauf',
     howList: [
-      'Alle 12 Wertungsregeln sind fuer alle sichtbar.',
+      'Alle 7 Wertungsregeln sind fuer alle sichtbar.',
       'Jeder Spieler erhaelt 1 geheime Wertungsregel (die anderen wissen nicht welche).',
       'Spieler fuellen Felder auf einem gemeinsamen Brett mit Steinen (Baum / Wolke / Berg / Meer).',
       'Einmal pro Spiel darf jeder Spieler einen gelegten Stein auf ein anderes Feld verschieben.',
       'Sobald das letzte Feld belegt ist, endet das Spiel.',
+      'Anzahl der aktiven Regeln: 5 bei 3 Spielern, 6 bei 4 oder 5 Spielern, 7 bei 6 Spielern.',
     ],
-    contactTitle: 'Kontakt und Links',
+    contactTitle: 'Kontakt',
     emailLabel: 'E-Mail',
     instagramLabel: 'Instagram',
     morePicsTitle: 'Mehr Bilder',
   },
   PT: {
+    title: 'Árvore Mar Montanha Nuvem',
     subtitle: 'Um jogo tático desenvolvido para jogadores cegos e videntes.',
     storyTitle: 'História',
     storyP1: 'E se um jogo pudesse ser desenhado tanto para cegos como para videntes?',
@@ -86,16 +81,17 @@ const texts = {
     hookText: 'todos veem todas as regras de pontuação, mas ninguém sabe qual regra os outros têm.',
     overviewTitle: 'Visão Geral',
     overviewP1:
-      'Tree Cloud Mountain Sea é um jogo rápido de padrões e dedução para 3 a 5 jogadores. Existem 12 regras de pontuação. O conjunto completo de regras é público, mas cada jogador recebe secretamente uma regra diferente e tenta cumpri-la sem a revelar.',
+      'Árvore Mar Montanha Nuvem é um jogo rápido de padrões e dedução para 3 a 6 jogadores. Existem 7 regras de pontuação. O conjunto completo de regras é público, mas cada jogador recebe secretamente uma regra diferente e tenta cumpri-la sem a revelar.',
     howTitle: 'Como se Joga',
     howList: [
-      'Todas as 12 regras de pontuação são visíveis para todos.',
+      'Todas as 7 regras de pontuação são visíveis para todos.',
       'Cada jogador recebe 1 regra de pontuação secreta (os outros não sabem qual).',
       'Os jogadores preenchem espaços num tabuleiro partilhado com peças (árvore / nuvem / montanha / mar).',
       'Uma vez por jogo, cada jogador pode mover uma peça já colocada para outro espaço.',
       'Quando o último espaço for preenchido, o jogo termina.',
+      'Número de regras em jogo: 5 com 3 jogadores, 6 com 4 ou 5 jogadores, 7 com 6 jogadores.',
     ],
-    contactTitle: 'Contacto e Links',
+    contactTitle: 'Contacto',
     emailLabel: 'Email',
     instagramLabel: 'Instagram',
     morePicsTitle: 'Mais Fotos',
@@ -113,151 +109,151 @@ const TreeCloudMountainSea = () => {
   const closeLightbox = () => setLightbox(null);
 
   return (
+    <PageWrapper>
     <Container>
       <style>{`
-        .top-nav {
-          margin-bottom: 14px;
-          font-size: 14px;
-          font-weight: 600;
-          letter-spacing: 0.4px;
-          text-transform: uppercase;
-          color: #555;
-        }
-        .top-nav a {
-          color: #555;
-          text-decoration: none;
-        }
-        .top-nav a:hover {
-          text-decoration: underline;
-          text-underline-offset: 4px;
-        }
-
         .lightbox-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.78);
+          background: rgba(0,0,0,0.82);
           display: flex;
           align-items: center;
           justify-content: center;
           padding: 18px;
           z-index: 9999;
         }
-
         .lightbox-content {
           position: relative;
           width: min(980px, 96vw);
           max-height: 92vh;
         }
-
         .lightbox-img {
           width: 100%;
           max-height: 92vh;
           object-fit: contain;
           border-radius: 12px;
           background: #000;
-          box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
         }
-
         .lightbox-close {
           position: absolute;
-          top: -12px;
-          right: -12px;
-          width: 38px;
-          height: 38px;
+          top: -14px;
+          right: -14px;
+          width: 36px;
+          height: 36px;
           border-radius: 999px;
-          border: 1px solid rgba(255, 255, 255, 0.25);
-          background: rgba(0, 0, 0, 0.55);
+          border: 1px solid rgba(255,255,255,0.2);
+          background: rgba(0,0,0,0.6);
           color: #fff;
           cursor: pointer;
           font-size: 18px;
           line-height: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       `}</style>
-      <div className="top-nav">
-        <a href="/board-games">← Board games</a> <span aria-hidden="true">·</span>{' '}
+
+      <TopNav>
+        <a href="/board-games">← Board games</a>
+        <span aria-hidden="true">·</span>
         <a href="/">Home</a>
-      </div>
-      <Title>Tree Cloud Mountain Sea</Title>
+      </TopNav>
+
+      <Title>{t.title}</Title>
       <Subtitle>{t.subtitle}</Subtitle>
-      <LanguageSelect value={language} onChange={e => setLanguage(e.target.value)}>
-        <option value="EN">🇬🇧 English</option>
-        <option value="DE">🇩🇪 Deutsch</option>
-        <option value="PT">🇵🇹 Português</option>
-      </LanguageSelect>
+
+      <LangTabs>
+        {[['EN', '🇬🇧'], ['DE', '🇩🇪'], ['PT', '🇵🇹']].map(([code, flag]) => (
+          <LangTab key={code} type="button" $active={language === code} onClick={() => setLanguage(code)}>
+            {flag} {code}
+          </LangTab>
+        ))}
+      </LangTabs>
 
       <HeroImage src={cloud1} alt="Tree Cloud Mountain Sea" />
 
-      <Section>
+      <StaticSection>
         <h3>{t.storyTitle}</h3>
         <Paragraph>{t.storyP1}</Paragraph>
         <Paragraph>{t.storyP2}</Paragraph>
-      </Section>
+      </StaticSection>
 
       <Section>
-        <h3 onClick={() => setShowKeyInfo(!showKeyInfo)}>
-          {t.keyInfoTitle} {showKeyInfo ? '▲' : '▼'}
-        </h3>
+        <SectionToggle
+          type="button"
+          onClick={() => setShowKeyInfo(!showKeyInfo)}
+          aria-expanded={showKeyInfo}
+        >
+          {t.keyInfoTitle} <span className="chevron">▼</span>
+        </SectionToggle>
         {showKeyInfo && (
-          <>
-            <Paragraph><strong>{t.playersLabel}:</strong> 3 to 5</Paragraph>
+          <SectionBody>
+            <Paragraph><strong>{t.playersLabel}:</strong> 3 to 6</Paragraph>
             <Paragraph><strong>{t.playtimeLabel}:</strong> ~15 minutes</Paragraph>
             <Paragraph><strong>{t.hookLabel}:</strong> {t.hookText}</Paragraph>
-          </>
+          </SectionBody>
         )}
       </Section>
 
       <Section>
-        <h3 onClick={() => setShowOverview(!showOverview)}>
-          {t.overviewTitle} {showOverview ? '▲' : '▼'}
-        </h3>
+        <SectionToggle
+          type="button"
+          onClick={() => setShowOverview(!showOverview)}
+          aria-expanded={showOverview}
+        >
+          {t.overviewTitle} <span className="chevron">▼</span>
+        </SectionToggle>
         {showOverview && (
-          <>
+          <SectionBody>
             <Paragraph>{t.overviewP1}</Paragraph>
-          
-          </>
+          </SectionBody>
         )}
       </Section>
 
       <Section>
-        <h3 onClick={() => setShowHowItPlays(!showHowItPlays)}>
-          {t.howTitle} {showHowItPlays ? '▲' : '▼'}
-        </h3>
+        <SectionToggle
+          type="button"
+          onClick={() => setShowHowItPlays(!showHowItPlays)}
+          aria-expanded={showHowItPlays}
+        >
+          {t.howTitle} <span className="chevron">▼</span>
+        </SectionToggle>
         {showHowItPlays && (
-          <List>
-            {t.howList.map((item, idx) => (
-              <ListItem key={idx}>{item}</ListItem>
-            ))}
-          </List>
+          <SectionBody>
+            <List>
+              {t.howList.map((item, idx) => (
+                <ListItem key={idx}>{item}</ListItem>
+              ))}
+            </List>
+          </SectionBody>
         )}
       </Section>
 
-
-
       <Section>
-        <h3 onClick={() => setShowContact(!showContact)}>
-          {t.contactTitle} {showContact ? '▲' : '▼'}
-        </h3>
+        <SectionToggle
+          type="button"
+          onClick={() => setShowContact(!showContact)}
+          aria-expanded={showContact}
+        >
+          {t.contactTitle} <span className="chevron">▼</span>
+        </SectionToggle>
         {showContact && (
-          <>
+          <SectionBody>
             <Paragraph>
               <strong>{t.emailLabel}:</strong>{' '}
               <ContactLink href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</ContactLink>
             </Paragraph>
             <Paragraph>
               <strong>{t.instagramLabel}:</strong>{' '}
-              <ContactLink
-                href="https://www.instagram.com/ayakuchogamelab/"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+              <ContactLink href="https://www.instagram.com/ayakuchogamelab/" target="_blank" rel="noreferrer noopener">
                 @ayakuchogamelab
               </ContactLink>
             </Paragraph>
-          </>
+          </SectionBody>
         )}
       </Section>
 
-      <Section>
+      <StaticSection style={{ marginTop: 36 }}>
         <h3>{t.morePicsTitle}</h3>
         <GalleryRow>
           <SmallImage
@@ -266,7 +262,7 @@ const TreeCloudMountainSea = () => {
             onClick={() => setLightbox({ src: cloud2, alt: 'Tree Cloud Mountain Sea (photo 2)' })}
           />
         </GalleryRow>
-      </Section>
+      </StaticSection>
 
       <Spacer />
 
@@ -276,21 +272,17 @@ const TreeCloudMountainSea = () => {
           role="dialog"
           aria-modal="true"
           onClick={closeLightbox}
-          onKeyDown={(e) => {
-            if (e.key === 'Escape') closeLightbox();
-          }}
+          onKeyDown={e => { if (e.key === 'Escape') closeLightbox(); }}
           tabIndex={-1}
         >
-          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="lightbox-close" type="button" onClick={closeLightbox} aria-label="Close">
-              ×
-            </button>
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <button className="lightbox-close" type="button" onClick={closeLightbox} aria-label="Close">×</button>
             <img className="lightbox-img" src={lightbox.src} alt={lightbox.alt} />
           </div>
         </div>
       )}
-
     </Container>
+    </PageWrapper>
   );
 };
 

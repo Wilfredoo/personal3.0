@@ -47,6 +47,7 @@ const routes = [
     { path: "/apps", component: <Apps /> },
     { path: "/the-exploration-map", component: <TheExplorationMap /> },
     { path: "/board-games", component: <BoardGames /> },
+    { path: "/boardgames", component: <BoardGames /> },
 
     { path: "/treecloudmountainsea", component: <TreeCloudMountainSea /> },
 
