@@ -56,6 +56,7 @@ const routes = [
     { path: "/videography", component: <FilmEquipment /> },
     { path: "/ayakucho", component: <SellSheet /> },
     { path: "/hostelparadiso", component: <HostelParadisoSellSheet /> },
+    { path: "/multiversehotel", component: <HostelParadisoSellSheet /> },
     { path: "/thewoodlands", component: <TheWoodlandsSellSheet /> },
     { path: "/workandtravel", component: <Workandtravelsecure /> },
     { path: "/cacao", component: <Cacao /> },
