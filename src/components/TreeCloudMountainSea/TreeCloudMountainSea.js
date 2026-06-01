@@ -7,6 +7,8 @@ import {
 
 import cloud1 from '../../assets/images/cloud1.jpg';
 import cloud2 from '../../assets/images/cloud2.jpg';
+import tcms1 from '../../assets/images/tcms1.jpeg';
+import tcms2 from '../../assets/images/tcms2.jpeg';
 
 const texts = {
   EN: {
@@ -260,6 +262,16 @@ const TreeCloudMountainSea = () => {
             src={cloud2}
             alt="Tree Cloud Mountain Sea (photo 2)"
             onClick={() => setLightbox({ src: cloud2, alt: 'Tree Cloud Mountain Sea (photo 2)' })}
+          />
+          <SmallImage
+            src={tcms1}
+            alt="Tree Cloud Mountain Sea (photo 3)"
+            onClick={() => setLightbox({ src: tcms1, alt: 'Tree Cloud Mountain Sea (photo 3)' })}
+          />
+          <SmallImage
+            src={tcms2}
+            alt="Tree Cloud Mountain Sea (photo 4)"
+            onClick={() => setLightbox({ src: tcms2, alt: 'Tree Cloud Mountain Sea (photo 4)' })}
           />
         </GalleryRow>
       </StaticSection>

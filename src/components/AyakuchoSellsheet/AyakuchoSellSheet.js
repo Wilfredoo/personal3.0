@@ -3,6 +3,7 @@ import {
   PageWrapper, Container, TopNav, Title, Subtitle, VideoEmbed,
   StaticSection, Section, SectionToggle, SectionBody,
   Paragraph, List, ListItem, ContactLink, ImageLink, VideoLink, WhatsAppLink,
+  PhotoGrid, Photo, LightboxOverlay, LightboxImg,
 } from './styles';
 
 const SellSheet = () => {
@@ -12,6 +13,7 @@ const SellSheet = () => {
   const [showDemons, setShowDemons] = useState(false);
   const [showMore, setShowMore] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
 
   return (
     <PageWrapper>
@@ -31,6 +33,18 @@ const SellSheet = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
+
+      <PhotoGrid>
+        <Photo src="/images/ayakucho/1.JPG" alt="Ayakucho box cover" onClick={() => setLightbox('/images/ayakucho/1.JPG')} />
+        <Photo src="/images/ayakucho/2.JPG" alt="Ayakucho game board with tokens" onClick={() => setLightbox('/images/ayakucho/2.JPG')} />
+        <Photo src="/images/ayakucho/3.JPG" alt="Ayakucho role cards" onClick={() => setLightbox('/images/ayakucho/3.JPG')} />
+      </PhotoGrid>
+
+      {lightbox && (
+        <LightboxOverlay onClick={() => setLightbox(null)}>
+          <LightboxImg src={lightbox} alt="Ayakucho enlarged" />
+        </LightboxOverlay>
+      )}
 
       <StaticSection>
         <h3>Story</h3>

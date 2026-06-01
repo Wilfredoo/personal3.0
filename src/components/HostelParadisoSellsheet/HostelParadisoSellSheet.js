@@ -9,6 +9,8 @@ import hostelParadisoImage from '../../assets/images/Hostel_paradiso.jpeg';
 import hostel1 from '../../assets/images/hostel1.jpg';
 import hostel2 from '../../assets/images/hostel2.jpg';
 import hostel3 from '../../assets/images/hostel3.jpeg';
+import multiverse1 from '../../assets/images/multiverse1.jpg';
+import multiverse2 from '../../assets/images/multiverse2.jpg';
 
 const HostelParadisoSellSheet = () => {
   const [showKeyInfo, setShowKeyInfo] = useState(false);
@@ -72,10 +74,10 @@ const HostelParadisoSellSheet = () => {
         <a href="/">Home</a>
       </TopNav>
 
-      <Title>Hostel Paradiso</Title>
+      <Title>The Multiverse Hotel</Title>
       <Subtitle>Aim to take ownership of the quirkiest hostel in town.</Subtitle>
 
-      <HeroImage src={hostelParadisoImage} alt="Hostel Paradiso prototype" />
+      <HeroImage src={hostelParadisoImage} alt="The Multiverse Hotel prototype" />
 
       <StaticSection>
         <h3>Story</h3>
@@ -113,7 +115,7 @@ const HostelParadisoSellSheet = () => {
         {showOverview && (
           <SectionBody>
             <Paragraph>
-              Hostel Paradiso is a party game of misdirection, deduction and creative writing. Players craft short dialogue
+              The Multiverse Hotel is a party game of misdirection, deduction and creative writing. Players craft short dialogue
               lines that must fit both a shared sentence and a quirky two-character scene. When all dialogues are revealed,
               the group tries to figure out where in the hostel each exchange took place. Your goal is to be clear enough
               to convince most players, but ambiguous enough to fool at least one.
@@ -156,7 +158,7 @@ const HostelParadisoSellSheet = () => {
             <Paragraph>
               If everyone guesses your floor correctly, or if no one does, you score no points and the others do. Aim for a
               strong majority with at least one miss. After three rounds, the player with the most points becomes the new
-              owner of Hostel Paradiso.
+              owner of The Multiverse Hotel.
             </Paragraph>
           </SectionBody>
         )}
@@ -204,7 +206,7 @@ const HostelParadisoSellSheet = () => {
               </ContactLink>
             </Paragraph>
             <Paragraph><strong>Signal / Telegram / WhatsApp:</strong>{' '}
-              <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Hostel%20Paradiso%20and%20would%20love%20to%20talk%20publishing." target="_blank">
+              <WhatsAppLink href="https://wa.me/491757025622?text=Hi%20Wilfredo%2C%20I%20came%20across%20Multiverse%20Hotel%20and%20would%20love%20to%20talk%20publishing." target="_blank">
                 +491757025622
               </WhatsAppLink>
             </Paragraph>
@@ -217,18 +219,28 @@ const HostelParadisoSellSheet = () => {
         <GalleryRow>
           <SmallImage
             src={hostel1}
-            alt="Hostel Paradiso (1)"
-            onClick={() => setLightbox({ src: hostel1, alt: 'Hostel Paradiso (1)' })}
+            alt="The Multiverse Hotel (1)"
+            onClick={() => setLightbox({ src: hostel1, alt: 'The Multiverse Hotel (1)' })}
           />
           <RotatedSmallImage
             src={hostel2}
-            alt="Hostel Paradiso (2)"
-            onClick={() => setLightbox({ src: hostel2, alt: 'Hostel Paradiso (2)', rotate: true })}
+            alt="The Multiverse Hotel (2)"
+            onClick={() => setLightbox({ src: hostel2, alt: 'The Multiverse Hotel (2)', rotate: true })}
           />
           <SmallImage
             src={hostel3}
-            alt="Hostel Paradiso (3)"
-            onClick={() => setLightbox({ src: hostel3, alt: 'Hostel Paradiso (3)' })}
+            alt="The Multiverse Hotel (3)"
+            onClick={() => setLightbox({ src: hostel3, alt: 'The Multiverse Hotel (3)' })}
+          />
+          <SmallImage
+            src={multiverse1}
+            alt="The Multiverse Hotel (4)"
+            onClick={() => setLightbox({ src: multiverse1, alt: 'The Multiverse Hotel (4)' })}
+          />
+          <SmallImage
+            src={multiverse2}
+            alt="The Multiverse Hotel (5)"
+            onClick={() => setLightbox({ src: multiverse2, alt: 'The Multiverse Hotel (5)' })}
           />
         </GalleryRow>
       </StaticSection>

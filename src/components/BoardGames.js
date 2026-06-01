@@ -3,7 +3,7 @@ import React from 'react';
 const games = [
   { href: '/ayakucho', title: 'Ayakucho', accent: '#e53e3e' },
   { href: '/treecloudmountainsea', title: 'Tree Cloud Mountain Sea', accent: '#38bdf8' },
-  { href: '/hostelparadiso', title: 'Hostel Paradiso', accent: '#a78bfa' },
+  { href: '/hostelparadiso', title: 'The Multiverse Hotel', accent: '#a78bfa' },
 ];
 
 function BoardGames() {
