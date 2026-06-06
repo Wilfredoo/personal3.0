@@ -1,6 +1,18 @@
 // synopses.js
 const synopses = [
   {
+    version: 'v5.0 (Jun 2026)',
+    title: 'Synopsis',
+    paragraphs: [
+      `Sophie is a psychotherapist whose job is quickly becoming redundant in the face of a new paradigm - that traumas are no longer something to be confronted and worked through, but should instead be erased, even replaced and improved.`,
+      `This new way of thinking sprouted out of an emerging technology that quickly gained adoption and has now become part of the mainstream; Neuro-Emotional-Editing or NEE, a process in which people can delete their own memories, originally developed by the Chinese military in order to get soldiers with PTSD back into the fronts as quickly as possible.`,
+      `The technology leaked into the public and quickly gained adoption, first among teenagers, and now with the general public, who use their visors - headsets that work as the new smartphones - to edit their memory timeline as easily as one edits photo albums on an iPhone.`,
+      `After some controversial cases where users accidentally left their minds blank, companies started advertising a more structured service that offers safety and a quality deletion. Some go as far as offering to insert handcrafted memories to replace the deleted ones. The slogans of the most established companies go: don't fix yourself, edit yourself, bye to bad memories, bye to costly therapies! and the most famous healing is forgetting. These have transcended from commercial copy to catchy phrases and everyday truths.`,
+      `In her personal life, Sophie has a strong wish to have a baby, but she has not been able to conceive. The clock is ticking and she suspects that her partner might be the reason. During a fight, she blames him for her not getting pregnant. He leaves.`,
+      `In the midst of this technological shift, national economic decay, and an overseas war that impacts the global economy, Sophie tries to rearrange her own life, by questioning her own views and those of others, and moves towards healing and happiness in her own way.`,
+    ]
+  },
+  {
     version: 'v4.0 (Apr 2026)',
     title: 'Synopsis',
     paragraphs: [

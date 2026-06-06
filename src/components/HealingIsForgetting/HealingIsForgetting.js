@@ -110,7 +110,7 @@ export default function HealingIsForgetting() {
           <Title>Healing is Forgetting</Title>
           <Byline>A film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-            Last updated: April 8, 2026
+            Last updated: June 6, 2026
           </Paragraph>
         </HeaderContent>
       </Header>
@@ -120,7 +120,7 @@ export default function HealingIsForgetting() {
           <Card>
             <SectionTitle>Logline</SectionTitle>
             <Paragraph>
-              A woman who preserves other people&apos;s erased memories starts deleting her own, and has to piece herself back together from what she left behind.
+              Sophie is a psychotherapist whose job is quickly becoming redundant in the face of a new paradigm - that traumas are no longer something to be confronted and worked through, but should instead be erased, even replaced and improved.
             </Paragraph>
           </Card>
         </Section>
