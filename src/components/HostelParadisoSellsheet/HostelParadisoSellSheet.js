@@ -85,6 +85,9 @@ const HostelParadisoSellSheet = () => {
           Loving Codenames and Dixit, and having played them hundreds of times, I wanted to create a game that challenged
           me even more. This is the result.
         </Paragraph>
+        <Paragraph>
+          Art by <ContactLink href="https://www.theoddlittleworld.com/" target="_blank" rel="noreferrer noopener">Ashbee Wong</ContactLink>.
+        </Paragraph>
       </StaticSection>
 
       <Section>
@@ -177,7 +180,8 @@ const HostelParadisoSellSheet = () => {
             <List>
               <ListItem>
                 <strong>100 Unique Situations:</strong> Each image captures an unconventional two-character moment that begs
-                for an explanation and invites multiple interpretations.
+                for an explanation and invites multiple interpretations. Illustrated by{' '}
+                <ContactLink href="https://www.theoddlittleworld.com/" target="_blank" rel="noreferrer noopener">Ashbee Wong</ContactLink>.
               </ListItem>
               <ListItem>
                 <strong>Double-Fit Writing:</strong> One line must make sense for both the shared sentence and the chosen
