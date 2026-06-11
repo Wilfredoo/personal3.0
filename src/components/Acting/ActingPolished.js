@@ -1,4 +1,3 @@
-// ActingPolished.js — Option A: same bold energy, properly controlled
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
@@ -26,9 +25,6 @@ const photos = [
   wilfredo3, wilfredo22, wilfredo4, wilfredo5, wilfredo8, wilfredo15,
   wilfredo17, wilfredo19, wilfredo24, wilfredo30, wilfredo31, wilfredo32,
 ];
-
-const ACCESS_PASSWORD    = 'gingertea';
-const ACCESS_STORAGE_KEY = 'acting_page_unlocked';
 
 const texts = {
   EN: {
@@ -108,84 +104,6 @@ const Inner = styled.div`
   margin: 0 auto;
   padding: 3rem 1.5rem 5rem;
   animation: ${fadeUp} 0.5s ease-out;
-`;
-
-/* ─── Gate ───────────────────────────────────────────────── */
-
-const GateWrap = styled.div`
-  min-height: 100vh;
-  background: #0a0a0a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-`;
-
-const GateBox = styled.div`
-  width: 100%;
-  max-width: 380px;
-  padding: 2.5rem 2rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-top: 2px solid #e63946;
-  border-radius: 6px;
-  background: #111;
-  text-align: center;
-`;
-
-const GateTitle = styled.h2`
-  font-size: 0.68rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #e63946;
-  margin: 0 0 1.2rem;
-  font-weight: 700;
-`;
-
-const GateText = styled.p`
-  color: #555;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  margin: 0 0 1rem;
-`;
-
-const GateForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 1rem;
-`;
-
-const GateInput = styled.input`
-  padding: 0.75rem 1rem;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 4px;
-  color: #e8e4e0;
-  font-size: 0.95rem;
-  outline: none;
-  &:focus { border-color: rgba(230,57,70,0.5); }
-  &::placeholder { color: #333; }
-`;
-
-const GateButton = styled.button`
-  padding: 0.7rem;
-  background: rgba(230,57,70,0.1);
-  border: 1px solid rgba(230,57,70,0.4);
-  border-radius: 4px;
-  color: #e63946;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s;
-  &:hover { background: rgba(230,57,70,0.18); }
-`;
-
-const GateError = styled.p`
-  color: #a04040;
-  font-size: 0.8rem;
-  margin: 0;
 `;
 
 /* ─── Header / tagline ───────────────────────────────────── */
@@ -439,56 +357,15 @@ const ContactLine = styled.p`
 /* ─── Component ──────────────────────────────────────────── */
 
 const ActingPolished = () => {
-  const [isUnlocked, setIsUnlocked]       = useState(false);
-  const [passwordInput, setPasswordInput] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [language, setLanguage]           = useState('EN');
-  const [currentIndex, setCurrentIndex]   = useState(0);
+  const [language, setLanguage] = useState('EN');
+  const [currentIndex, setCurrentIndex] = useState(0);
   const t = texts[language];
-
-  useEffect(() => {
-    if (sessionStorage.getItem(ACCESS_STORAGE_KEY) === 'true') setIsUnlocked(true);
-  }, []);
 
   useEffect(() => {
     const prev = document.body.style.backgroundColor;
     document.body.style.backgroundColor = '#0a0a0a';
     return () => { document.body.style.backgroundColor = prev; };
   }, []);
-
-  const handleUnlock = (e) => {
-    e.preventDefault();
-    if (passwordInput === ACCESS_PASSWORD) {
-      sessionStorage.setItem(ACCESS_STORAGE_KEY, 'true');
-      setIsUnlocked(true);
-    } else {
-      setPasswordError('Wrong password.');
-      setPasswordInput('');
-    }
-  };
-
-  if (!isUnlocked) {
-    return (
-      <GateWrap>
-        <GateBox>
-          <GateTitle>Acting Portfolio</GateTitle>
-          <GateText>This page is password protected.</GateText>
-          <GateForm onSubmit={handleUnlock}>
-            <GateInput
-              type="password"
-              value={passwordInput}
-              onChange={e => setPasswordInput(e.target.value)}
-              placeholder="Password"
-              autoComplete="current-password"
-            />
-            <GateButton type="submit">Unlock</GateButton>
-          </GateForm>
-          <GateText>Request access: inbox@wilfredocasas.com</GateText>
-          {passwordError && <GateError>{passwordError}</GateError>}
-        </GateBox>
-      </GateWrap>
-    );
-  }
 
   return (
     <Page>
