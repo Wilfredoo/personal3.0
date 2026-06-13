@@ -5,8 +5,10 @@ import routes from './routes';
 
 const TRACKING_ID = "G-65B2W1RSZ2";
 
-ReactGA.initialize(TRACKING_ID);
-ReactGA.send(document.location.pathname);
+if (navigator.userAgent !== 'ReactSnap') {
+  ReactGA.initialize(TRACKING_ID);
+  ReactGA.send(document.location.pathname);
+}
 
 function App() {
   return (
