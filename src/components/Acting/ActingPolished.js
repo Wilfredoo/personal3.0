@@ -356,6 +356,38 @@ const ContactLine = styled.p`
 
 /* ─── Component ──────────────────────────────────────────── */
 
+const YTThumb = styled.div`
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #000 url(${p => p.$thumb}) center/cover no-repeat;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: '▶';
+    font-size: 2.5rem;
+    color: #fff;
+    opacity: 0.85;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+`;
+
+const LazyYT = ({ id, title }) => {
+  const [active, setActive] = useState(false);
+  const thumb = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  return (
+    <VideoWrap>
+      {active
+        ? <iframe src={`https://www.youtube.com/embed/${id}?autoplay=1`} title={title} allowFullScreen allow="autoplay" />
+        : <YTThumb $thumb={thumb} onClick={() => setActive(true)} role="button" aria-label={`Play ${title}`} />
+      }
+    </VideoWrap>
+  );
+};
+
 const ActingPolished = () => {
   const [language, setLanguage] = useState('EN');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -385,9 +417,7 @@ const ActingPolished = () => {
 
         {/* ── Reel ── */}
         <Label>Showreel</Label>
-        <VideoWrap>
-          <iframe src="https://www.youtube.com/embed/1EH66VoBrZY" title="Acting Reel" allowFullScreen />
-        </VideoWrap>
+        <LazyYT id="1EH66VoBrZY" title="Acting Reel" />
         <ReelNote>{t.reelText}</ReelNote>
 
         <Divider />
@@ -434,9 +464,7 @@ const ActingPolished = () => {
 
         {/* ── Video 2 ── */}
         <Label>Additional Work</Label>
-        <VideoWrap>
-          <iframe src="https://www.youtube.com/embed/lRrJgTUSww0" title="Acting Video 2" allowFullScreen />
-        </VideoWrap>
+        <LazyYT id="lRrJgTUSww0" title="Acting Video 2" />
 
         <Divider />
 
@@ -449,9 +477,7 @@ const ActingPolished = () => {
         <Divider />
 
         {/* ── Video 3 ── */}
-        <VideoWrap>
-          <iframe src="https://www.youtube.com/embed/7UNN4vHY5CU" title="Acting Video 3" allowFullScreen />
-        </VideoWrap>
+        <LazyYT id="7UNN4vHY5CU" title="Acting Video 3" />
 
         <Divider />
 
