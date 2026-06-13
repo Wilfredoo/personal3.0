@@ -29,6 +29,7 @@ import Decameron from './components/Decameron/Decameron';
 import Apps from './components/Apps';
 import TheExplorationMap from './components/TheExplorationMap';
 import BoardGames from './components/BoardGames';
+import Dogs from './components/Dogs';
 
 import TreeCloudMountainSea from './components/TreeCloudMountainSea/TreeCloudMountainSea';
 
@@ -48,6 +49,7 @@ const routes = [
     { path: "/the-exploration-map", component: <TheExplorationMap /> },
     { path: "/board-games", component: <BoardGames /> },
     { path: "/boardgames", component: <BoardGames /> },
+    { path: "/dogs", component: <Dogs /> },
 
     { path: "/treecloudmountainsea", component: <TreeCloudMountainSea /> },
 

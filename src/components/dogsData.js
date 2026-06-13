@@ -1,0 +1,94 @@
+// Shared dog data for all /dogs style variants.
+// Each pack is one sit / household. Add dogs to a pack, or add a new pack.
+
+export const intro =
+  "Even if I find affinity with all animals, I have a special relationship " +
+  "with dogs. Below are the ones I've cared for in recent times. I have a " +
+  "particular liking for medium-to-big-size dogs, as well as the challenge " +
+  "of working with dogs of difficult temperament — whether anxiety or " +
+  "aggression — trying to adjust to each one and find a way to build trust " +
+  "and a bond between them and me.";
+
+export const packs = [
+  {
+    place: 'Espinhal, Portugal',
+    year: '2026',
+    note: '',
+    dogs: [
+      { name: 'Yugen', breed: 'Greater Swiss Mountain Dog', age: 5 },
+      { name: 'Zuri', breed: 'Greater Swiss Mountain Dog', age: 5 },
+    ],
+  },
+  {
+    place: 'Ponte de Lima, Portugal',
+    year: '2026',
+    note: '',
+    dogs: [
+      { name: 'Sky', breed: 'Mix-Breed' },
+      { name: 'Walli', breed: 'Mix-Breed' },
+      { name: 'Luna', breed: 'Mix-Breed' },
+    ],
+  },
+  {
+    place: 'Vitinia, Italy',
+    year: '2026',
+    note: '',
+    dogs: [
+      { name: 'Rea', breed: 'Labrador Retriever', age: 9 },
+    ],
+  },
+  {
+    place: 'Bela, North-East Germany',
+    year: '2025',
+    note: '',
+    dogs: [
+      { name: 'Misty', breed: 'Border Collie Mix' },
+    ],
+  },
+  {
+    place: 'Weiden, Germany',
+    year: '2025',
+    note: '',
+    dogs: [
+      { name: 'Bo', breed: 'Rhodesian Ridgeback', age: 10 },
+      { name: 'Hendrix', breed: 'Mix-Breed', age: 6 },
+    ],
+  },
+  {
+    place: 'Landscheid, Germany',
+    year: '2025',
+    note: '',
+    dogs: [
+      { name: 'Dobby', breed: 'Australian Shepherd', age: 5 },
+      { name: 'Lucy', breed: 'Australian Shepherd', age: 7 },
+    ],
+  },
+  {
+    place: 'Louvain-la-Neuve, Belgium',
+    year: '2025',
+    note: '',
+    dogs: [
+      { name: 'Pitchou', breed: 'Mix-Breed', age: 6 },
+      { name: 'Trixie', breed: 'Mix-Breed', age: 3 },
+    ],
+  },
+  {
+    place: 'Nuremberg, Germany',
+    year: '2025',
+    note: '',
+    dogs: [
+      { name: 'Trixie', breed: 'Poodle' },
+    ],
+  },
+  {
+    place: 'Najac, Occitanie, France',
+    year: '2025',
+    note: 'Foster dogs.',
+    dogs: [
+      { name: 'Poppie', breed: 'Unknown' },
+      { name: 'Nazar', breed: 'Unknown' },
+    ],
+  },
+];
+
+export const dogCount = packs.reduce((n, p) => n + p.dogs.length, 0);
