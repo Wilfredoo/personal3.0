@@ -806,11 +806,8 @@ function PetSitterChecklist() {
                   Please print it and have it ready for Wilfredo's arrival. What will you do?
                 </p>
                 <div className="dlg-btns">
-                  <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it right away', { download: true, print: true })}>
-                    I will print it now
-                  </button>
-                  <button className="dlg-btn" onClick={() => handleChoice('Owner will print it later', { download: true })}>
-                    I'll save it and print it later
+                  <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it', { download: true, print: true })}>
+                    I will print it
                   </button>
                   <button className="dlg-btn" onClick={() => handleChoice('You have to print it')}>
                     I can't print — please bring it
