@@ -1,5 +1,5 @@
 import React from 'react';
-import { packs, dogCount, intro } from './dogsData';
+import { packs, dogCount, intro, introSub } from './dogsData';
 
 // BRUTALISM — a notch louder.
 // Monospace, hard black rules, uppercase, inverted place bars. Raw and
@@ -111,6 +111,7 @@ function Dogs() {
       </div>
 
       <p className="dogs-intro">{intro}</p>
+      <p className="dogs-intro">{introSub}</p>
 
       {packs.map((pack, i) => (
         <section className="pack" key={i}>

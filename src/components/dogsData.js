@@ -7,6 +7,8 @@ export const intro =
   "temperaments — whether anxiety or aggression — as they challenge me to understand " +
   "and adapt to them in order to build a bridge of trust between us.";
 
+export const introSub = "Below are all the doggies I've cared for in recent times.";
+
 export const packs = [
   {
     place: 'Espinhal, Portugal',
