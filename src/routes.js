@@ -30,6 +30,7 @@ import Apps from './components/Apps';
 import TheExplorationMap from './components/TheExplorationMap';
 import BoardGames from './components/BoardGames';
 import Dogs from './components/Dogs';
+import PetSitterChecklist from './components/PetSitterChecklist';
 
 import TreeCloudMountainSea from './components/TreeCloudMountainSea/TreeCloudMountainSea';
 
@@ -50,6 +51,7 @@ const routes = [
     { path: "/board-games", component: <BoardGames /> },
     { path: "/boardgames", component: <BoardGames /> },
     { path: "/dogs", component: <Dogs /> },
+    { path: "/petsitting", component: <PetSitterChecklist /> },
 
     { path: "/treecloudmountainsea", component: <TreeCloudMountainSea /> },
 
