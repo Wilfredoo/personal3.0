@@ -84,39 +84,51 @@ function PetSitterChecklist() {
   const set = (k) => (e) => setF((p) => ({ ...p, [k]: e.target.value }));
 
   const [dialog, setDialog] = useState(false);
-  const [submitted, setSubmitted] = useState(null); // null | 'saved' | 'wilfredo'
-  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState('choose'); // 'choose' | 'working' | 'saved' | 'wilfredo'
   const [sendError, setSendError] = useState('');
+  const [formError, setFormError] = useState('');
+
+  const mmToPx = (v) => Math.round((v * 96) / 25.4); // CSS mm → px at 96dpi
 
   const generatePDFs = async () => {
     const sheetsEl = document.querySelector('.sheets');
-    sheetsEl.style.display = 'block';
+    // Render off-screen with the print-equivalent A4 layout applied as a real
+    // class (html2canvas does NOT honor @media print, so we mirror it here).
+    sheetsEl.classList.add('sheets--capture');
     sheetsEl.style.position = 'absolute';
     sheetsEl.style.top = '-99999px';
     sheetsEl.style.left = '0';
-    sheetsEl.style.width = '794px';
+
+    const shoot = (el, wMm, hMm) => html2canvas(el, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      width: mmToPx(wMm),
+      height: mmToPx(hMm),
+      windowWidth: mmToPx(wMm),
+      windowHeight: mmToPx(hMm),
+    });
 
     const emergencyEl = document.querySelector('.sheet--emergency');
     const checklistEls = document.querySelectorAll('.sheet--checklist');
 
-    const emergencyCanvas = await html2canvas(emergencyEl, { scale: 1.5, useCORS: true });
+    const emergencyCanvas = await shoot(emergencyEl, 210, 297);
     const emergencyPdf = new jsPDF('p', 'mm', 'a4');
-    emergencyPdf.addImage(emergencyCanvas.toDataURL('image/jpeg', 0.9), 'JPEG', 0, 0, 210, 297);
+    emergencyPdf.addImage(emergencyCanvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, 210, 297);
     const emergencyB64 = emergencyPdf.output('datauristring').split(',')[1];
 
     const taskPdf = new jsPDF('l', 'mm', 'a4');
     for (let i = 0; i < checklistEls.length; i++) {
-      const canvas = await html2canvas(checklistEls[i], { scale: 1.5, useCORS: true });
+      const canvas = await shoot(checklistEls[i], 297, 210);
       if (i > 0) taskPdf.addPage();
-      taskPdf.addImage(canvas.toDataURL('image/jpeg', 0.9), 'JPEG', 0, 0, 297, 210);
+      taskPdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, 297, 210);
     }
     const taskB64 = taskPdf.output('datauristring').split(',')[1];
 
-    sheetsEl.style.display = '';
+    sheetsEl.classList.remove('sheets--capture');
     sheetsEl.style.position = '';
     sheetsEl.style.top = '';
     sheetsEl.style.left = '';
-    sheetsEl.style.width = '';
 
     return { emergencyB64, taskB64 };
   };
@@ -128,20 +140,39 @@ function PetSitterChecklist() {
     a.click();
   };
 
+  const openDialog = () => {
+    if (!f.petNames.trim() || !f.startDate || !f.endDate) {
+      setFormError('Please fill in at least the pet name(s) and the start and end dates first.');
+      return;
+    }
+    setFormError('');
+    setSendError('');
+    setStatus('choose');
+    setDialog(true);
+  };
+
+  const closeDialog = () => {
+    setDialog(false);
+    setStatus('choose');
+    setSendError('');
+  };
+
   const handleChoice = async (choiceLabel, opts = {}) => {
     setSendError('');
-    setSending(true);
+    setStatus('working');
+    // Yield so React paints the "working" screen before html2canvas blocks.
+    await new Promise((r) => setTimeout(r, 60));
     try {
       const { emergencyB64, taskB64 } = await generatePDFs();
 
-      // Download files to owner's device (options 1 and 2)
+      // Download both files to the owner's device (options 1 and 2)
       if (opts.download) {
-        const pet = f.petNames || 'pet';
+        const pet = (f.petNames || 'pet').trim();
         downloadB64(emergencyB64, `emergency-card-${pet}.pdf`);
         setTimeout(() => downloadB64(taskB64, `task-checklist-${pet}.pdf`), 400);
       }
 
-      // Send email to Wilfredo
+      // Email both PDFs to Wilfredo
       const res = await fetch('/.netlify/functions/notify-petsitter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -149,12 +180,11 @@ function PetSitterChecklist() {
       });
       if (!res.ok) throw new Error((await res.text()) || `HTTP ${res.status}`);
 
-      setSubmitted(opts.download ? 'saved' : 'wilfredo');
+      setStatus(opts.download ? 'saved' : 'wilfredo');
       if (opts.print) setTimeout(() => window.print(), 600);
     } catch (err) {
       setSendError(`Could not send: ${err.message}`);
-    } finally {
-      setSending(false);
+      setStatus('choose');
     }
   };
 
@@ -290,6 +320,13 @@ function PetSitterChecklist() {
           text-align: center;
           letter-spacing: 0.03em;
         }
+        .form-error {
+          margin-top: 12px;
+          font-size: 12px;
+          color: #c00;
+          text-align: center;
+          font-weight: 700;
+        }
 
         /* ---- DIALOG ---- */
         .dlg-overlay {
@@ -344,6 +381,28 @@ function PetSitterChecklist() {
 
         /* ---- SHEETS (print output only; hidden on screen) ---- */
         .sheets { display: none; }
+
+        /* PDF capture: mirrors @media print so html2canvas renders true A4. */
+        .sheets--capture { display: block !important; background: #fff; }
+        .sheets--capture .sheet { border: 0 !important; margin: 0 !important; background: #fff; }
+        .sheets--capture .sheet--emergency {
+          position: relative;
+          width: 210mm; height: 297mm;
+          padding: 13mm 0 0;
+          box-sizing: border-box;
+          overflow: hidden;
+        }
+        .sheets--capture .sheet--emergency .ecard { margin: 0 13mm; }
+        .sheets--capture .cutline {
+          position: absolute; left: 0; right: 0; top: 168mm; margin: 0;
+        }
+        .sheets--capture .sheet--checklist {
+          width: 297mm; height: 210mm;
+          padding: 11mm 12mm;
+          box-sizing: border-box;
+        }
+        .sheets--capture .chk-table td { height: 11mm; }
+        .sheets--capture .val--blank { min-width: 40mm; }
         .sheet {
           background: #fff;
           border: 3px solid #000;
@@ -537,7 +596,7 @@ function PetSitterChecklist() {
       <a href="/" className="card-back no-print">← Back</a>
 
       <p className="card-instruction no-print">
-        Dear owner, please fill this in and print it. It will generate two documents: one that I will carry with me at all times with emergency information, and one that I will use as a checklist that I will fill in as you run me through the chores. If you can print it, that'd be great — otherwise just fill it in and I will print it myself. Thanks!
+        Dear owner, please fill this in. It will generate two documents: one that I will carry with me at all times with emergency information, and one that I will use as a checklist that I will fill in as you walk me through the house and introduce me to your pets. If you can print them, that'd be great — otherwise just fill this in and I will print them myself. Thanks!
       </p>
 
       <div className="no-print">
@@ -563,7 +622,7 @@ function PetSitterChecklist() {
           <p className="block-label"><span className="block-num">1</span> Who to call</p>
           <div className="row2">
             <div className="field">
-              <span className="field-name">Primary</span>
+              <span className="field-name">Name of primary contact</span>
               <input type="text" value={f.primary} onChange={set('primary')} autoComplete="off" />
             </div>
             <div className="field">
@@ -573,7 +632,7 @@ function PetSitterChecklist() {
           </div>
           <div className="row2">
             <div className="field">
-              <span className="field-name">Backup (or vet)</span>
+              <span className="field-name">Name of backup contact (or vet)</span>
               <input type="text" value={f.backup} onChange={set('backup')} autoComplete="off" />
             </div>
             <div className="field">
@@ -675,57 +734,67 @@ function PetSitterChecklist() {
         <button
           type="button"
           className="print-btn"
-          onClick={() => setDialog(true)}
+          onClick={openDialog}
         >
           Generate printable PDF
         </button>
+        {formError && <p className="form-error">{formError}</p>}
         <p className="print-hint">On mobile: use your browser's Share → Print option to save as PDF</p>
       </div>
 
       {/* Dialog */}
       {dialog && (
-        <div className="dlg-overlay" onClick={() => !submitted && setDialog(false)}>
+        <div className="dlg-overlay" onClick={() => status === 'choose' && closeDialog()}>
           <div className="dlg" onClick={e => e.stopPropagation()}>
-            {!submitted ? (
+            {status === 'choose' && (
               <>
                 <p className="dlg-title">Almost done!</p>
                 <p className="dlg-body">
                   Please print it and have it ready for my arrival. What will you do?
                 </p>
-                {sending ? (
-                  <p style={{fontSize:13,color:'#555',margin:0}}>Generating PDFs… please wait.</p>
-                ) : (
-                  <div className="dlg-btns">
-                    <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it right away', { download: true, print: true })}>
-                      I will print it now
-                    </button>
-                    <button className="dlg-btn" onClick={() => handleChoice('Owner will print it later', { download: true })}>
-                      I'll save it and print it later
-                    </button>
-                    <button className="dlg-btn" onClick={() => handleChoice('You have to print it')}>
-                      I can't print — please bring it
-                    </button>
-                  </div>
-                )}
+                <div className="dlg-btns">
+                  <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it right away', { download: true, print: true })}>
+                    I will print it now
+                  </button>
+                  <button className="dlg-btn" onClick={() => handleChoice('Owner will print it later', { download: true })}>
+                    I'll save it and print it later
+                  </button>
+                  <button className="dlg-btn" onClick={() => handleChoice('You have to print it')}>
+                    I can't print — please bring it
+                  </button>
+                </div>
                 {sendError && <p style={{marginTop:16,fontSize:11,color:'red'}}>{sendError}</p>}
               </>
-            ) : submitted === 'saved' ? (
+            )}
+
+            {status === 'working' && (
+              <>
+                <p className="dlg-title">Working…</p>
+                <p className="dlg-body" style={{margin:0}}>
+                  Generating your PDFs. This takes a few seconds — please wait.
+                </p>
+              </>
+            )}
+
+            {status === 'saved' && (
               <>
                 <p className="dlg-title">Files saved!</p>
                 <p className="dlg-body">
                   Both PDFs have been downloaded to your device. See you soon!
                 </p>
-                <button className="dlg-btn dlg-btn--primary" onClick={() => { setDialog(false); setSubmitted(null); }}>
+                <button className="dlg-btn dlg-btn--primary" onClick={closeDialog}>
                   Close
                 </button>
               </>
-            ) : (
+            )}
+
+            {status === 'wilfredo' && (
               <>
                 <p className="dlg-title">Got it!</p>
                 <p className="dlg-body">
                   The PDFs have been sent to Wilfredo. He'll bring them. See you soon!
                 </p>
-                <button className="dlg-btn dlg-btn--primary" onClick={() => { setDialog(false); setSubmitted(null); }}>
+                <button className="dlg-btn dlg-btn--primary" onClick={closeDialog}>
                   Close
                 </button>
               </>
