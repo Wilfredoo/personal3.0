@@ -81,6 +81,25 @@ function PetSitterChecklist() {
   });
   const set = (k) => (e) => setF((p) => ({ ...p, [k]: e.target.value }));
 
+  const [dialog, setDialog] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const notifyWilfredo = async (choiceLabel) => {
+    try {
+      await fetch('/.netlify/functions/notify-petsitter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...f, ownerChoice: choiceLabel }),
+      });
+    } catch (_) {}
+  };
+
+  const handleChoice = async (choiceLabel, action) => {
+    await notifyWilfredo(choiceLabel);
+    setSubmitted(true);
+    if (action) action();
+  };
+
   // Browsers stamp the page <title> + date into the print header/footer. The
   // date we can't change, but @page { margin: 0 } below makes Chromium drop the
   // header entirely; this also swaps the title for browsers that still show it.
@@ -213,6 +232,57 @@ function PetSitterChecklist() {
           text-align: center;
           letter-spacing: 0.03em;
         }
+
+        /* ---- DIALOG ---- */
+        .dlg-overlay {
+          position: fixed; inset: 0;
+          background: rgba(0,0,0,0.6);
+          display: flex; align-items: center; justify-content: center;
+          z-index: 9999; padding: 24px;
+        }
+        .dlg {
+          background: #fff;
+          border: 3px solid #000;
+          padding: 36px 32px;
+          max-width: 440px;
+          width: 100%;
+          font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+        }
+        .dlg-title {
+          margin: 0 0 12px;
+          font-size: 1.2rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
+        .dlg-body {
+          margin: 0 0 28px;
+          font-size: 13px;
+          line-height: 1.7;
+          color: #333;
+        }
+        .dlg-btns {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .dlg-btn {
+          width: 100%;
+          padding: 14px 16px;
+          font-family: inherit;
+          font-size: 12px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          cursor: pointer;
+          border: 2px solid #000;
+          background: #fff;
+          color: #000;
+          text-align: left;
+        }
+        .dlg-btn:hover { background: #f3f3f3; }
+        .dlg-btn--primary { background: #000; color: #fff; }
+        .dlg-btn--primary:hover { background: #333; }
 
         /* ---- SHEETS (print output only; hidden on screen) ---- */
         .sheets { display: none; }
@@ -547,12 +617,49 @@ function PetSitterChecklist() {
         <button
           type="button"
           className="print-btn"
-          onClick={() => window.print()}
+          onClick={() => setDialog(true)}
         >
           Generate printable PDF
         </button>
         <p className="print-hint">On mobile: use your browser's Share → Print option to save as PDF</p>
       </div>
+
+      {/* Dialog */}
+      {dialog && (
+        <div className="dlg-overlay" onClick={() => !submitted && setDialog(false)}>
+          <div className="dlg" onClick={e => e.stopPropagation()}>
+            {!submitted ? (
+              <>
+                <p className="dlg-title">The PDF is ready!</p>
+                <p className="dlg-body">
+                  Please print it and have it ready for my arrival. What will you do?
+                </p>
+                <div className="dlg-btns">
+                  <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Print now', () => { setDialog(false); setTimeout(() => window.print(), 100); })}>
+                    I will print it now
+                  </button>
+                  <button className="dlg-btn" onClick={() => handleChoice('Save to print later', () => { setDialog(false); setTimeout(() => window.print(), 100); })}>
+                    I'll save it and print it later
+                  </button>
+                  <button className="dlg-btn" onClick={() => handleChoice('Asked Wilfredo to print')}>
+                    I can't print — please bring it
+                  </button>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="dlg-title">Got it!</p>
+                <p className="dlg-body">
+                  Wilfredo has been notified. See you soon!
+                </p>
+                <button className="dlg-btn dlg-btn--primary" onClick={() => { setDialog(false); setSubmitted(false); }}>
+                  Close
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }

@@ -9,6 +9,7 @@
     "framer-motion": "^12.4.10",
     "lucide-react": "^0.562.0",
     "moment": "^2.30.1",
+    "nodemailer": "^8.0.11",
     "pdf-viewer-reactjs": "^2.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -41,7 +42,10 @@
       "/the-exploration-map",
       "/treecloudmountainsea"
     ],
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
     "inlineCss": true,
     "crawl": false,
     "skipThirdPartyRequests": true
