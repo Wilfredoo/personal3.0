@@ -14,7 +14,8 @@ import html2canvas from 'html2canvas';
 
 const ROWS = 10;                 // blank task rows the sitter fills by hand
 const COLS_PER_SHEET = 14;       // day-columns per (landscape) page before splitting
-const MAX_DAYS = 120;            // safety cap
+const MAX_DAYS = 120;            // hard safety cap for column building
+const MAX_SIT_DAYS = 40;         // longest sitting an owner can book
 const WD = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
 function parseLocal(s) {
@@ -112,37 +113,70 @@ function PetSitterChecklist() {
     const emergencyEl = document.querySelector('.sheet--emergency');
     const checklistEls = document.querySelectorAll('.sheet--checklist');
 
-    const emergencyCanvas = await shoot(emergencyEl, 210, 297);
-    const emergencyPdf = new jsPDF('p', 'mm', 'a4');
-    emergencyPdf.addImage(emergencyCanvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, 210, 297);
-    const emergencyB64 = emergencyPdf.output('datauristring').split(',')[1];
-
-    const taskPdf = new jsPDF('l', 'mm', 'a4');
+    const emImg = (await shoot(emergencyEl, 210, 297)).toDataURL('image/jpeg', 0.92);
+    const taskImgs = [];
     for (let i = 0; i < checklistEls.length; i++) {
-      const canvas = await shoot(checklistEls[i], 297, 210);
-      if (i > 0) taskPdf.addPage();
-      taskPdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, 297, 210);
+      taskImgs.push((await shoot(checklistEls[i], 297, 210)).toDataURL('image/jpeg', 0.92));
     }
-    const taskB64 = taskPdf.output('datauristring').split(',')[1];
 
     sheetsEl.classList.remove('sheets--capture');
     sheetsEl.style.position = '';
     sheetsEl.style.top = '';
     sheetsEl.style.left = '';
 
-    return { emergencyB64, taskB64 };
+    // Emergency card (portrait) — email attachment 1
+    const emPdf = new jsPDF('p', 'mm', 'a4');
+    emPdf.addImage(emImg, 'JPEG', 0, 0, 210, 297);
+    const emergencyB64 = emPdf.output('datauristring').split(',')[1];
+
+    // Task checklist (landscape) — email attachment 2
+    const taskPdf = new jsPDF('l', 'mm', 'a4');
+    taskImgs.forEach((img, i) => {
+      if (i > 0) taskPdf.addPage();
+      taskPdf.addImage(img, 'JPEG', 0, 0, 297, 210);
+    });
+    const taskB64 = taskPdf.output('datauristring').split(',')[1];
+
+    // Combined pack (one file) — the owner's single download, prints in one job
+    const combined = new jsPDF('p', 'mm', 'a4');
+    combined.addImage(emImg, 'JPEG', 0, 0, 210, 297);
+    taskImgs.forEach((img) => {
+      combined.addPage('a4', 'l');
+      combined.addImage(img, 'JPEG', 0, 0, 297, 210);
+    });
+    const combinedB64 = combined.output('datauristring').split(',')[1];
+
+    return { emergencyB64, taskB64, combinedB64 };
   };
 
   const downloadB64 = (b64, filename) => {
     const a = document.createElement('a');
     a.href = 'data:application/pdf;base64,' + b64;
     a.download = filename;
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
   };
 
   const openDialog = () => {
     if (!f.petNames.trim() || !f.startDate || !f.endDate) {
       setFormError('Please fill in at least the pet name(s) and the start and end dates first.');
+      return;
+    }
+    const s = parseLocal(f.startDate);
+    const e = parseLocal(f.endDate);
+    const today = parseLocal(todayStr);
+    if (s < today) {
+      setFormError('The start date can’t be in the past.');
+      return;
+    }
+    if (e < s) {
+      setFormError('The end date must be on or after the start date.');
+      return;
+    }
+    const dayCount = Math.round((e - s) / 86400000) + 1;
+    if (dayCount > MAX_SIT_DAYS) {
+      setFormError(`A sitting can be at most ${MAX_SIT_DAYS} days long.`);
       return;
     }
     setFormError('');
@@ -163,13 +197,13 @@ function PetSitterChecklist() {
     // Yield so React paints the "working" screen before html2canvas blocks.
     await new Promise((r) => setTimeout(r, 60));
     try {
-      const { emergencyB64, taskB64 } = await generatePDFs();
+      const { emergencyB64, taskB64, combinedB64 } = await generatePDFs();
 
-      // Download both files to the owner's device (options 1 and 2)
+      // Download a single combined file to the owner's device (options 1 and 2).
+      // One file avoids browsers blocking a second programmatic download.
       if (opts.download) {
-        const pet = (f.petNames || 'pet').trim();
-        downloadB64(emergencyB64, `emergency-card-${pet}.pdf`);
-        setTimeout(() => downloadB64(taskB64, `task-checklist-${pet}.pdf`), 400);
+        const pet = (f.petNames || 'pet').trim().replace(/\s+/g, '-');
+        downloadB64(combinedB64, `pet-sitter-pack-${pet}.pdf`);
       }
 
       // Email both PDFs to Wilfredo
@@ -210,6 +244,14 @@ function PetSitterChecklist() {
   const rangeLabel = days.length
     ? `${fmtDate(days[0])} → ${fmtDate(days[days.length - 1])}  ·  ${days.length} day${days.length > 1 ? 's' : ''}`
     : 'Dates not set';
+
+  // Date input bounds: no past dates, sitting capped at MAX_SIT_DAYS.
+  const pad = (n) => String(n).padStart(2, '0');
+  const toStr = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  const todayStr = toStr(new Date());
+  const maxEndStr = f.startDate
+    ? (() => { const d = parseLocal(f.startDate); d.setDate(d.getDate() + (MAX_SIT_DAYS - 1)); return toStr(d); })()
+    : '';
 
   return (
     <main className="card-root">
@@ -292,6 +334,9 @@ function PetSitterChecklist() {
           -webkit-appearance: none;
         }
         .field textarea { resize: vertical; line-height: 1.6; min-height: 3.2em; }
+        /* keep the native calendar picker visible & tappable on date inputs */
+        .field input[type="date"] { -webkit-appearance: none; appearance: none; cursor: pointer; }
+        .field input[type="date"]::-webkit-calendar-picker-indicator { opacity: 1; cursor: pointer; }
         .field input:focus,
         .field textarea:focus { outline: none; background: #f3f3f3; }
         .row2 { display: flex; gap: 20px; }
@@ -609,11 +654,24 @@ function PetSitterChecklist() {
           <div className="row2">
             <div className="field">
               <span className="field-name">Start date</span>
-              <input type="date" value={f.startDate} onChange={set('startDate')} />
+              <input
+                type="date"
+                value={f.startDate}
+                min={todayStr}
+                onChange={set('startDate')}
+                onClick={(e) => { try { e.target.showPicker(); } catch (_) {} }}
+              />
             </div>
             <div className="field">
               <span className="field-name">End date</span>
-              <input type="date" value={f.endDate} onChange={set('endDate')} />
+              <input
+                type="date"
+                value={f.endDate}
+                min={f.startDate || todayStr}
+                max={maxEndStr || undefined}
+                onChange={set('endDate')}
+                onClick={(e) => { try { e.target.showPicker(); } catch (_) {} }}
+              />
             </div>
           </div>
         </section>
@@ -739,7 +797,6 @@ function PetSitterChecklist() {
           Generate printable PDF
         </button>
         {formError && <p className="form-error">{formError}</p>}
-        <p className="print-hint">On mobile: use your browser's Share → Print option to save as PDF</p>
       </div>
 
       {/* Dialog */}
@@ -778,9 +835,9 @@ function PetSitterChecklist() {
 
             {status === 'saved' && (
               <>
-                <p className="dlg-title">Files saved!</p>
+                <p className="dlg-title">File saved!</p>
                 <p className="dlg-body">
-                  Both PDFs have been downloaded to your device. See you soon!
+                  Your pet-sitter pack (both sheets in one PDF) has been downloaded to your device. If printing didn't start, you can print it from there — or no worries, I'll print it myself. See you soon!
                 </p>
                 <button className="dlg-btn dlg-btn--primary" onClick={closeDialog}>
                   Close
