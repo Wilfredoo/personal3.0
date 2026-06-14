@@ -2,12 +2,11 @@
 // Each pack is one sit / household. Add dogs to a pack, or add a new pack.
 
 export const intro =
-  "Even if I find affinity with all animals, I have a special relationship " +
-  "with dogs. Below are the ones I've cared for in recent times. I have a " +
-  "particular liking for medium-to-big-size dogs, as well as the challenge " +
-  "of working with dogs of difficult temperament — whether anxiety or " +
-  "aggression — trying to adjust to each one and find a way to build trust " +
-  "and a bond between them and me.";
+  "Even though I feel an affinity with all animals, I have a special relationship " +
+  "with dogs. I am particularly fond of medium and large dogs with difficult " +
+  "temperaments — whether anxiety or aggression — as they challenge me to understand " +
+  "and adapt to them in order to build a bridge of trust between us. " +
+  "Below are all the doggies I've cared for in recent times.";
 
 export const packs = [
   {
