@@ -84,18 +84,17 @@ function PetSitterChecklist() {
   const set = (k) => (e) => setF((p) => ({ ...p, [k]: e.target.value }));
 
   const [dialog, setDialog] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(null); // null | 'saved' | 'wilfredo'
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState('');
 
   const generatePDFs = async () => {
     const sheetsEl = document.querySelector('.sheets');
-    // Temporarily reveal sheets off-screen so html2canvas can capture them
     sheetsEl.style.display = 'block';
     sheetsEl.style.position = 'absolute';
     sheetsEl.style.top = '-99999px';
     sheetsEl.style.left = '0';
-    sheetsEl.style.width = '794px'; // ~A4 at 96dpi
+    sheetsEl.style.width = '794px';
 
     const emergencyEl = document.querySelector('.sheet--emergency');
     const checklistEls = document.querySelectorAll('.sheet--checklist');
@@ -113,7 +112,6 @@ function PetSitterChecklist() {
     }
     const taskB64 = taskPdf.output('datauristring').split(',')[1];
 
-    // Restore
     sheetsEl.style.display = '';
     sheetsEl.style.position = '';
     sheetsEl.style.top = '';
@@ -123,28 +121,38 @@ function PetSitterChecklist() {
     return { emergencyB64, taskB64 };
   };
 
-  const notifyWilfredo = async (choiceLabel) => {
-    const { emergencyB64, taskB64 } = await generatePDFs();
-    const res = await fetch('/.netlify/functions/notify-petsitter', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...f, ownerChoice: choiceLabel, emergencyB64, taskB64 }),
-    });
-    if (!res.ok) {
-      const msg = await res.text();
-      throw new Error(msg || `HTTP ${res.status}`);
-    }
+  const downloadB64 = (b64, filename) => {
+    const a = document.createElement('a');
+    a.href = 'data:application/pdf;base64,' + b64;
+    a.download = filename;
+    a.click();
   };
 
-  const handleChoice = async (choiceLabel, triggerPrint) => {
+  const handleChoice = async (choiceLabel, opts = {}) => {
     setSendError('');
     setSending(true);
     try {
-      await notifyWilfredo(choiceLabel);
-      setSubmitted(true);
-      if (triggerPrint) setTimeout(() => window.print(), 200);
+      const { emergencyB64, taskB64 } = await generatePDFs();
+
+      // Download files to owner's device (options 1 and 2)
+      if (opts.download) {
+        const pet = f.petNames || 'pet';
+        downloadB64(emergencyB64, `emergency-card-${pet}.pdf`);
+        setTimeout(() => downloadB64(taskB64, `task-checklist-${pet}.pdf`), 400);
+      }
+
+      // Send email to Wilfredo
+      const res = await fetch('/.netlify/functions/notify-petsitter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...f, ownerChoice: choiceLabel, emergencyB64, taskB64 }),
+      });
+      if (!res.ok) throw new Error((await res.text()) || `HTTP ${res.status}`);
+
+      setSubmitted(opts.download ? 'saved' : 'wilfredo');
+      if (opts.print) setTimeout(() => window.print(), 600);
     } catch (err) {
-      setSendError(`Could not send notification: ${err.message}`);
+      setSendError(`Could not send: ${err.message}`);
     } finally {
       setSending(false);
     }
@@ -685,13 +693,13 @@ function PetSitterChecklist() {
                   Please print it and have it ready for my arrival. What will you do?
                 </p>
                 {sending ? (
-                  <p style={{fontSize:13,color:'#555',margin:0}}>Sending… please wait.</p>
+                  <p style={{fontSize:13,color:'#555',margin:0}}>Generating PDFs… please wait.</p>
                 ) : (
                   <div className="dlg-btns">
-                    <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it right away', true)}>
+                    <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it right away', { download: true, print: true })}>
                       I will print it now
                     </button>
-                    <button className="dlg-btn" onClick={() => handleChoice('Owner will print it later', true)}>
+                    <button className="dlg-btn" onClick={() => handleChoice('Owner will print it later', { download: true })}>
                       I'll save it and print it later
                     </button>
                     <button className="dlg-btn" onClick={() => handleChoice('You have to print it')}>
@@ -701,13 +709,23 @@ function PetSitterChecklist() {
                 )}
                 {sendError && <p style={{marginTop:16,fontSize:11,color:'red'}}>{sendError}</p>}
               </>
+            ) : submitted === 'saved' ? (
+              <>
+                <p className="dlg-title">Files saved!</p>
+                <p className="dlg-body">
+                  Both PDFs have been downloaded to your device. See you soon!
+                </p>
+                <button className="dlg-btn dlg-btn--primary" onClick={() => { setDialog(false); setSubmitted(null); }}>
+                  Close
+                </button>
+              </>
             ) : (
               <>
                 <p className="dlg-title">Got it!</p>
                 <p className="dlg-body">
-                  Wilfredo has been notified. See you soon!
+                  The PDFs have been sent to Wilfredo. He'll bring them. See you soon!
                 </p>
-                <button className="dlg-btn dlg-btn--primary" onClick={() => { setDialog(false); setSubmitted(false); }}>
+                <button className="dlg-btn dlg-btn--primary" onClick={() => { setDialog(false); setSubmitted(null); }}>
                   Close
                 </button>
               </>
