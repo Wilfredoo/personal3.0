@@ -5,8 +5,7 @@ export const intro =
   "Even though I feel an affinity with all animals, I have a special relationship " +
   "with dogs. I am particularly fond of medium and large dogs with difficult " +
   "temperaments — whether anxiety or aggression — as they challenge me to understand " +
-  "and adapt to them in order to build a bridge of trust between us. " +
-  "Below are all the doggies I've cared for in recent times.";
+  "and adapt to them in order to build a bridge of trust between us.";
 
 export const packs = [
   {
@@ -82,7 +81,6 @@ export const packs = [
   {
     place: 'Najac, Occitanie, France',
     year: '2025',
-    note: 'Foster dogs.',
     dogs: [
       { name: 'Poppie', breed: 'Unknown' },
       { name: 'Nazar', breed: 'Unknown' },
