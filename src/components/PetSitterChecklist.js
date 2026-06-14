@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // BRUTALISM — monospace, hard black rules, uppercase labels.
 //
@@ -531,7 +531,22 @@ function PetSitterChecklist() {
       </div>
 
       <div className="no-print">
-        <button type="button" className="print-btn" onClick={() => window.print()}>
+        <button
+          type="button"
+          className="print-btn"
+          onClick={() => {
+            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            if (isMobile) {
+              alert(
+                'To save as PDF on mobile:\n\n' +
+                '• iPhone/iPad: tap the Share button (□↑) → Print → pinch out on the preview → tap the share icon again → Save to Files\n\n' +
+                '• Android: tap the browser menu (⋮) → Print → change destination to "Save as PDF" → Save'
+              );
+            } else {
+              window.print();
+            }
+          }}
+        >
           Generate printable PDF
         </button>
       </div>
