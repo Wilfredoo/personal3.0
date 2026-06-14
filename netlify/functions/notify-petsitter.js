@@ -18,6 +18,8 @@ exports.handler = async (event) => {
     backup, backupPhone,
     address, landmark, notes,
     ownerChoice,
+    emergencyB64,
+    taskB64,
   } = data;
 
   const transporter = nodemailer.createTransport({
@@ -48,12 +50,29 @@ exports.handler = async (event) => {
     </div>
   `;
 
+  const attachments = [];
+  if (emergencyB64) {
+    attachments.push({
+      filename: `emergency-card-${petNames || 'pet'}.pdf`,
+      content: Buffer.from(emergencyB64, 'base64'),
+      contentType: 'application/pdf',
+    });
+  }
+  if (taskB64) {
+    attachments.push({
+      filename: `task-checklist-${petNames || 'pet'}.pdf`,
+      content: Buffer.from(taskB64, 'base64'),
+      contentType: 'application/pdf',
+    });
+  }
+
   try {
     await transporter.sendMail({
       from: `"Pet Sitter Form" <${process.env.ZOHO_EMAIL}>`,
       to: process.env.ZOHO_EMAIL,
       subject: `[Pet sit] ${petNames || 'New submission'} — ${ownerChoice}`,
       html,
+      attachments,
     });
     return { statusCode: 200, body: 'OK' };
   } catch (err) {

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 // BRUTALISM — monospace, hard black rules, uppercase labels.
 //
@@ -83,13 +85,50 @@ function PetSitterChecklist() {
 
   const [dialog, setDialog] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState('');
 
+  const generatePDFs = async () => {
+    const sheetsEl = document.querySelector('.sheets');
+    // Temporarily reveal sheets off-screen so html2canvas can capture them
+    sheetsEl.style.display = 'block';
+    sheetsEl.style.position = 'absolute';
+    sheetsEl.style.top = '-99999px';
+    sheetsEl.style.left = '0';
+    sheetsEl.style.width = '794px'; // ~A4 at 96dpi
+
+    const emergencyEl = document.querySelector('.sheet--emergency');
+    const checklistEls = document.querySelectorAll('.sheet--checklist');
+
+    const emergencyCanvas = await html2canvas(emergencyEl, { scale: 1.5, useCORS: true });
+    const emergencyPdf = new jsPDF('p', 'mm', 'a4');
+    emergencyPdf.addImage(emergencyCanvas.toDataURL('image/jpeg', 0.9), 'JPEG', 0, 0, 210, 297);
+    const emergencyB64 = emergencyPdf.output('datauristring').split(',')[1];
+
+    const taskPdf = new jsPDF('l', 'mm', 'a4');
+    for (let i = 0; i < checklistEls.length; i++) {
+      const canvas = await html2canvas(checklistEls[i], { scale: 1.5, useCORS: true });
+      if (i > 0) taskPdf.addPage();
+      taskPdf.addImage(canvas.toDataURL('image/jpeg', 0.9), 'JPEG', 0, 0, 297, 210);
+    }
+    const taskB64 = taskPdf.output('datauristring').split(',')[1];
+
+    // Restore
+    sheetsEl.style.display = '';
+    sheetsEl.style.position = '';
+    sheetsEl.style.top = '';
+    sheetsEl.style.left = '';
+    sheetsEl.style.width = '';
+
+    return { emergencyB64, taskB64 };
+  };
+
   const notifyWilfredo = async (choiceLabel) => {
+    const { emergencyB64, taskB64 } = await generatePDFs();
     const res = await fetch('/.netlify/functions/notify-petsitter', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...f, ownerChoice: choiceLabel }),
+      body: JSON.stringify({ ...f, ownerChoice: choiceLabel, emergencyB64, taskB64 }),
     });
     if (!res.ok) {
       const msg = await res.text();
@@ -97,14 +136,17 @@ function PetSitterChecklist() {
     }
   };
 
-  const handleChoice = async (choiceLabel, action) => {
+  const handleChoice = async (choiceLabel, triggerPrint) => {
     setSendError('');
+    setSending(true);
     try {
       await notifyWilfredo(choiceLabel);
       setSubmitted(true);
-      if (action) action();
+      if (triggerPrint) setTimeout(() => window.print(), 200);
     } catch (err) {
       setSendError(`Could not send notification: ${err.message}`);
+    } finally {
+      setSending(false);
     }
   };
 
@@ -487,7 +529,7 @@ function PetSitterChecklist() {
       <a href="/" className="card-back no-print">← Back</a>
 
       <p className="card-instruction no-print">
-        Dear owner, please fill this in and print it. Thanks!
+        Dear owner, please fill this in and print it. It will generate two documents: one that I will carry with me at all times with emergency information, and one that I will use as a checklist that I will fill in as you run me through the chores. If you can print it, that'd be great — otherwise just fill it in and I will print it myself. Thanks!
       </p>
 
       <div className="no-print">
@@ -638,21 +680,25 @@ function PetSitterChecklist() {
           <div className="dlg" onClick={e => e.stopPropagation()}>
             {!submitted ? (
               <>
-                <p className="dlg-title">The PDF is ready!</p>
+                <p className="dlg-title">Almost done!</p>
                 <p className="dlg-body">
                   Please print it and have it ready for my arrival. What will you do?
                 </p>
-                <div className="dlg-btns">
-                  <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Print now', () => { setDialog(false); setTimeout(() => window.print(), 100); })}>
-                    I will print it now
-                  </button>
-                  <button className="dlg-btn" onClick={() => handleChoice('Save to print later', () => { setDialog(false); setTimeout(() => window.print(), 100); })}>
-                    I'll save it and print it later
-                  </button>
-                  <button className="dlg-btn" onClick={() => handleChoice('Asked Wilfredo to print')}>
-                    I can't print — please bring it
-                  </button>
-                </div>
+                {sending ? (
+                  <p style={{fontSize:13,color:'#555',margin:0}}>Sending… please wait.</p>
+                ) : (
+                  <div className="dlg-btns">
+                    <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it right away', true)}>
+                      I will print it now
+                    </button>
+                    <button className="dlg-btn" onClick={() => handleChoice('Owner will print it later', true)}>
+                      I'll save it and print it later
+                    </button>
+                    <button className="dlg-btn" onClick={() => handleChoice('You have to print it')}>
+                      I can't print — please bring it
+                    </button>
+                  </div>
+                )}
                 {sendError && <p style={{marginTop:16,fontSize:11,color:'red'}}>{sendError}</p>}
               </>
             ) : (
