@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // BRUTALISM — monospace, hard black rules, uppercase labels.
 //
@@ -294,6 +294,16 @@ function PetSitterChecklist() {
           line-height: 1.5;
         }
 
+        /* note above checklist table */
+        .chk-note {
+          margin: 16px 0 4px;
+          text-align: right;
+          font-size: 11px;
+          font-style: italic;
+          letter-spacing: 0.04em;
+          color: #555;
+        }
+
         /* checklist table */
         .chk-table {
           width: 100%;
@@ -448,14 +458,6 @@ function PetSitterChecklist() {
           </div>
         </section>
 
-        <section className="block">
-          <p className="block-label"><span className="block-num">3</span> Anything else</p>
-          <div className="field">
-            <span className="field-name">Allergies, medication, and any other essential info</span>
-            <textarea value={f.notes} onChange={set('notes')} rows={3} />
-          </div>
-        </section>
-
       </div>
 
       {/* ---------- SHEETS (preview + print) ---------- */}
@@ -496,6 +498,8 @@ function PetSitterChecklist() {
           <section className="sheet sheet--checklist" key={idx}>
             <h2 className="sheet-h">Care Checklist</h2>
             <p className="sheet-meta"><Val v={f.petNames} /> · {rangeLabel}</p>
+
+            <p className="chk-note">To be filled in together with Wilfredo</p>
 
             <table className="chk-table">
               <thead>
