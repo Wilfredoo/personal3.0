@@ -83,21 +83,29 @@ function PetSitterChecklist() {
 
   const [dialog, setDialog] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   const notifyWilfredo = async (choiceLabel) => {
-    try {
-      await fetch('/.netlify/functions/notify-petsitter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...f, ownerChoice: choiceLabel }),
-      });
-    } catch (_) {}
+    const res = await fetch('/.netlify/functions/notify-petsitter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...f, ownerChoice: choiceLabel }),
+    });
+    if (!res.ok) {
+      const msg = await res.text();
+      throw new Error(msg || `HTTP ${res.status}`);
+    }
   };
 
   const handleChoice = async (choiceLabel, action) => {
-    await notifyWilfredo(choiceLabel);
-    setSubmitted(true);
-    if (action) action();
+    setSendError('');
+    try {
+      await notifyWilfredo(choiceLabel);
+      setSubmitted(true);
+      if (action) action();
+    } catch (err) {
+      setSendError(`Could not send notification: ${err.message}`);
+    }
   };
 
   // Browsers stamp the page <title> + date into the print header/footer. The
@@ -645,6 +653,7 @@ function PetSitterChecklist() {
                     I can't print — please bring it
                   </button>
                 </div>
+                {sendError && <p style={{marginTop:16,fontSize:11,color:'red'}}>{sendError}</p>}
               </>
             ) : (
               <>

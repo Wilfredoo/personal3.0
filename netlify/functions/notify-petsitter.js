@@ -33,22 +33,15 @@ exports.handler = async (event) => {
   const html = `
     <div style="font-family:monospace;max-width:600px;margin:0 auto;padding:24px;border:2px solid #000">
       <h2 style="margin:0 0 20px;text-transform:uppercase;letter-spacing:0.05em">New Pet Sit Submission</h2>
-
       <p style="margin:0 0 6px"><strong>Owner choice:</strong> ${ownerChoice}</p>
-
       <hr style="border:1px solid #000;margin:20px 0"/>
-
       <p style="margin:0 0 6px"><strong>Pet(s):</strong> ${petNames || '—'}</p>
       <p style="margin:0 0 6px"><strong>Start:</strong> ${startDate || '—'}</p>
       <p style="margin:0 0 6px"><strong>End:</strong> ${endDate || '—'}</p>
-
       <hr style="border:1px solid #000;margin:20px 0"/>
-
       <p style="margin:0 0 6px"><strong>Primary contact:</strong> ${primary || '—'} · ${primaryPhone || '—'}</p>
       <p style="margin:0 0 6px"><strong>Backup contact:</strong> ${backup || '—'} · ${backupPhone || '—'}</p>
-
       <hr style="border:1px solid #000;margin:20px 0"/>
-
       <p style="margin:0 0 6px"><strong>Address:</strong> ${address || '—'}</p>
       <p style="margin:0 0 6px"><strong>Landmark:</strong> ${landmark || '—'}</p>
       <p style="margin:0 0 6px"><strong>Notes:</strong> ${notes || '—'}</p>
@@ -64,7 +57,7 @@ exports.handler = async (event) => {
     });
     return { statusCode: 200, body: 'OK' };
   } catch (err) {
-    console.error(err);
-    return { statusCode: 500, body: 'Failed to send email' };
+    console.error('Zoho SMTP error:', err.message);
+    return { statusCode: 500, body: err.message };
   }
 };
