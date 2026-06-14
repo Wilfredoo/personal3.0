@@ -66,6 +66,7 @@ function Reminders({ f, rangeLabel }) {
         <div><span className="rem-k">Address</span><Val v={f.address} /></div>
         <div><span className="rem-k">Landmark</span><Val v={f.landmark} /></div>
         <div className="rem-wide"><span className="rem-k">Notes</span><Val v={f.notes} /></div>
+        <div className="rem-wide rem-blank"><span className="rem-k">Other things to remember</span><span className="val val--blank rem-blank-line" /></div>
       </div>
     </div>
   );
@@ -205,6 +206,13 @@ function PetSitterChecklist() {
           cursor: pointer;
         }
         .print-btn:hover { color: #000; background: #fff; }
+        .print-hint {
+          margin-top: 12px;
+          font-size: 11px;
+          color: #888;
+          text-align: center;
+          letter-spacing: 0.03em;
+        }
 
         /* ---- SHEETS (print output only; hidden on screen) ---- */
         .sheets { display: none; }
@@ -335,6 +343,7 @@ function PetSitterChecklist() {
         }
         .rem-grid > div { display: flex; gap: 8px; align-items: baseline; }
         .rem-wide { grid-column: 1 / -1; }
+        .rem-blank-line { min-width: 100%; }
         .rem-k {
           min-width: 64px;
           font-size: 10px;
@@ -380,7 +389,7 @@ function PetSitterChecklist() {
           .cutline {
             position: absolute;
             left: 0; right: 0;
-            top: 148mm;
+            top: 168mm;
             margin: 0;
           }
 
@@ -538,21 +547,11 @@ function PetSitterChecklist() {
         <button
           type="button"
           className="print-btn"
-          onClick={() => {
-            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-            if (isMobile) {
-              alert(
-                'To save as PDF on mobile:\n\n' +
-                '• iPhone/iPad: tap the Share button (□↑) → Print → pinch out on the preview → tap the share icon again → Save to Files\n\n' +
-                '• Android: tap the browser menu (⋮) → Print → change destination to "Save as PDF" → Save'
-              );
-            } else {
-              window.print();
-            }
-          }}
+          onClick={() => window.print()}
         >
           Generate printable PDF
         </button>
+        <p className="print-hint">On mobile: use your browser's Share → Print option to save as PDF</p>
       </div>
     </main>
   );
