@@ -52,6 +52,13 @@ function namePhone(name, phone) {
   return [name, phone].map((x) => (x || '').trim()).filter(Boolean).join('  ·  ');
 }
 
+function composeAddress(f) {
+  const clean = (x) => (x || '').trim();
+  const streetLine = [clean(f.street), clean(f.houseNumber)].filter(Boolean).join(' ');
+  const co = clean(f.careOf) ? `c/o ${clean(f.careOf)}` : '';
+  return [streetLine, clean(f.postalCode), co].filter(Boolean).join(', ');
+}
+
 // A filled value, or a blank underline so the sheet still works hand-filled.
 function Val({ v }) {
   const has = v && String(v).trim();
@@ -66,7 +73,7 @@ function Reminders({ f, rangeLabel }) {
         <div><span className="rem-k">Dates</span><span className="val">{rangeLabel}</span></div>
         <div><span className="rem-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
         <div><span className="rem-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
-        <div><span className="rem-k">Address</span><Val v={f.address} /></div>
+        <div><span className="rem-k">Address</span><Val v={composeAddress(f)} /></div>
         <div><span className="rem-k">Landmark</span><Val v={f.landmark} /></div>
         <div className="rem-wide rem-blank"><span className="rem-k">Other things to remember</span><span className="val val--blank rem-blank-line" /></div>
       </div>
@@ -79,7 +86,8 @@ function PetSitterChecklist() {
     petNames: '', startDate: '', endDate: '',
     primary: '', primaryPhone: '',
     backup: '', backupPhone: '',
-    address: '', landmark: '', notes: '',
+    street: '', houseNumber: '', postalCode: '', careOf: '',
+    landmark: '', notes: '',
   });
   const set = (k) => (e) => setF((p) => ({ ...p, [k]: e.target.value }));
 
@@ -700,8 +708,22 @@ function PetSitterChecklist() {
         <section className="block">
           <p className="block-label"><span className="block-num">2</span> Where this is</p>
           <div className="field">
-            <span className="field-name">Full address</span>
-            <input type="text" value={f.address} onChange={set('address')} autoComplete="off" />
+            <span className="field-name">Street name</span>
+            <input type="text" value={f.street} onChange={set('street')} autoComplete="off" />
+          </div>
+          <div className="row2">
+            <div className="field">
+              <span className="field-name">House number</span>
+              <input type="text" value={f.houseNumber} onChange={set('houseNumber')} autoComplete="off" />
+            </div>
+            <div className="field">
+              <span className="field-name">Postal code</span>
+              <input type="text" value={f.postalCode} onChange={set('postalCode')} autoComplete="off" />
+            </div>
+          </div>
+          <div className="field">
+            <span className="field-name">c/o (name on the doorbell)</span>
+            <input type="text" value={f.careOf} onChange={set('careOf')} autoComplete="off" />
           </div>
           <div className="field">
             <span className="field-name">Nearest landmark (supermarket, station…)</span>
@@ -731,7 +753,7 @@ function PetSitterChecklist() {
 
             <div className="ec-block">
               <p className="ec-head"><b>2</b> Where this is</p>
-              <div className="ec-line"><span className="ec-k">Address</span><Val v={f.address} /></div>
+              <div className="ec-line"><span className="ec-k">Address</span><Val v={composeAddress(f)} /></div>
               <div className="ec-line"><span className="ec-k">Landmark</span><Val v={f.landmark} /></div>
             </div>
 
