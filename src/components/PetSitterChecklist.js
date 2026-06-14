@@ -648,7 +648,7 @@ function PetSitterChecklist() {
       <a href="/" className="card-back no-print">← Back</a>
 
       <p className="card-instruction no-print">
-        Dear owner, please fill this in. It will generate two documents: one that I will carry with me at all times with emergency information, and one that I will use as a checklist that I will fill in as you walk me through the house and introduce me to your pets. If you can print them, that'd be great — otherwise just fill this in and I will print them myself. Thanks!
+        Dear pet owner, please fill this in. It will generate two documents: one Emergency Card that I will carry with me at all times, and one Care Checklist that will stay at your home and that I will fill in as you walk me through the house and introduce me to your pets. If you can print them, that'd be great — otherwise just fill this in and I will print them myself. Thanks!
       </p>
 
       <div className="no-print">
