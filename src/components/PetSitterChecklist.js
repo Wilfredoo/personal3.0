@@ -68,7 +68,6 @@ function Reminders({ f, rangeLabel }) {
         <div><span className="rem-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
         <div><span className="rem-k">Address</span><Val v={f.address} /></div>
         <div><span className="rem-k">Landmark</span><Val v={f.landmark} /></div>
-        <div className="rem-wide"><span className="rem-k">Notes</span><Val v={f.notes} /></div>
         <div className="rem-wide rem-blank"><span className="rem-k">Other things to remember</span><span className="val val--blank rem-blank-line" /></div>
       </div>
     </div>
@@ -334,8 +333,8 @@ function PetSitterChecklist() {
           -webkit-appearance: none;
         }
         .field textarea { resize: vertical; line-height: 1.6; min-height: 3.2em; }
-        /* keep the native calendar picker visible & tappable on date inputs */
-        .field input[type="date"] { -webkit-appearance: none; appearance: none; cursor: pointer; }
+        /* let date inputs use their native widget (typing + calendar icon) */
+        .field input[type="date"] { -webkit-appearance: auto; appearance: auto; }
         .field input[type="date"]::-webkit-calendar-picker-indicator { opacity: 1; cursor: pointer; }
         .field input:focus,
         .field textarea:focus { outline: none; background: #f3f3f3; }
@@ -659,7 +658,6 @@ function PetSitterChecklist() {
                 value={f.startDate}
                 min={todayStr}
                 onChange={set('startDate')}
-                onClick={(e) => { try { e.target.showPicker(); } catch (_) {} }}
               />
             </div>
             <div className="field">
@@ -670,7 +668,6 @@ function PetSitterChecklist() {
                 min={f.startDate || todayStr}
                 max={maxEndStr || undefined}
                 onChange={set('endDate')}
-                onClick={(e) => { try { e.target.showPicker(); } catch (_) {} }}
               />
             </div>
           </div>
@@ -724,7 +721,6 @@ function PetSitterChecklist() {
             <div className="ec-block">
               <p className="ec-head">Basics</p>
               <div className="ec-line"><span className="ec-k">Pets</span><Val v={f.petNames} /></div>
-              <div className="ec-line"><span className="ec-k">Dates</span><span className="val">{rangeLabel}</span></div>
             </div>
 
             <div className="ec-block">
@@ -753,7 +749,7 @@ function PetSitterChecklist() {
             <h2 className="sheet-h">Care Checklist</h2>
             <p className="sheet-meta"><Val v={f.petNames} /> · {rangeLabel}</p>
 
-            <p className="chk-note">To be filled in together with Wilfredo</p>
+            <p className="chk-note">Wilfredo will fill this based on your instructions</p>
 
             <table className="chk-table">
               <thead>
@@ -807,7 +803,7 @@ function PetSitterChecklist() {
               <>
                 <p className="dlg-title">Almost done!</p>
                 <p className="dlg-body">
-                  Please print it and have it ready for my arrival. What will you do?
+                  Please print it and have it ready for Wilfredo's arrival. What will you do?
                 </p>
                 <div className="dlg-btns">
                   <button className="dlg-btn dlg-btn--primary" onClick={() => handleChoice('Owner will print it right away', { download: true, print: true })}>
@@ -835,9 +831,9 @@ function PetSitterChecklist() {
 
             {status === 'saved' && (
               <>
-                <p className="dlg-title">File saved!</p>
+                <p className="dlg-title">PDF saved!</p>
                 <p className="dlg-body">
-                  Your pet-sitter pack (both sheets in one PDF) has been downloaded to your device. If printing didn't start, you can print it from there — or no worries, I'll print it myself. See you soon!
+                  Please print it. Looking forward!
                 </p>
                 <button className="dlg-btn dlg-btn--primary" onClick={closeDialog}>
                   Close
@@ -849,7 +845,7 @@ function PetSitterChecklist() {
               <>
                 <p className="dlg-title">Got it!</p>
                 <p className="dlg-body">
-                  The PDFs have been sent to Wilfredo. He'll bring them. See you soon!
+                  The PDFs have been sent to Wilfredo, who will bring the printed sheets. Looking forward!
                 </p>
                 <button className="dlg-btn dlg-btn--primary" onClick={closeDialog}>
                   Close
