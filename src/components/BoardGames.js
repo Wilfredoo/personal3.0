@@ -1,7 +1,7 @@
 import React from 'react';
 
 const games = [
-  { href: '/ayakucho', title: 'Ayakucho', accent: '#e53e3e' },
+  { href: 'https://www.ayakucho.com', title: 'Ayakucho', accent: '#e53e3e', external: true },
   { href: '/treecloudmountainsea', title: 'Tree Cloud Mountain Sea', accent: '#38bdf8' },
   { href: '/hostelparadiso', title: 'The Humbiverse', accent: '#a78bfa' },
 ];
@@ -65,7 +65,13 @@ function BoardGames() {
 
       <div style={{ marginTop: 48 }}>
         {games.map(game => (
-          <a key={game.href} href={game.href} className="game-card" style={{ '--accent': game.accent }}>
+          <a
+            key={game.href}
+            href={game.href}
+            className="game-card"
+            style={{ '--accent': game.accent }}
+            {...(game.external ? { target: '_blank', rel: 'noreferrer noopener' } : {})}
+          >
             <span className="game-title">{game.title}</span>
             <span className="game-arrow">→</span>
           </a>
