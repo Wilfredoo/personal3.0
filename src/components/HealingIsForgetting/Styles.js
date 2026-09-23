@@ -304,3 +304,74 @@ export const ImageCaption = styled.p`
   margin-top: 0.8rem;
   letter-spacing: 0.08em;
 `;
+
+/* ─── Screenplay ─────────────────────────────────────────── */
+
+export const Screenplay = styled.div`
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #9a9288;
+  max-width: 38rem;
+  margin: 0 auto;
+`;
+
+export const ScriptCredit = styled.p`
+  text-align: center;
+  font-style: italic;
+  color: #6a6260;
+  margin: 0 0 2rem;
+`;
+
+export const ScriptLine = styled.p`
+  margin: 0 0 1rem;
+  white-space: pre-wrap;
+
+  ${({ $kind }) => $kind === 'scene' && `
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #c0b8ae;
+    margin-top: 2rem;
+  `}
+
+  ${({ $kind }) => $kind === 'transition' && `
+    text-align: right;
+    text-transform: uppercase;
+    color: #6a6260;
+  `}
+
+  ${({ $kind }) => $kind === 'titlecard' && `
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #c9a84c;
+    margin: 2.5rem 0 0.4rem;
+  `}
+
+  ${({ $kind }) => $kind === 'definition' && `
+    text-align: center;
+    font-style: italic;
+    color: #7a7268;
+    padding: 0 8%;
+  `}
+
+  ${({ $kind }) => $kind === 'character' && `
+    text-align: center;
+    text-transform: uppercase;
+    color: #c0b8ae;
+    margin: 1.2rem 0 0;
+  `}
+
+  ${({ $kind }) => $kind === 'dialogue' && `
+    padding: 0 18%;
+
+    @media (max-width: 600px) {
+      padding: 0 6%;
+    }
+  `}
+
+  ${({ $kind }) => $kind === 'note' && `
+    font-style: italic;
+    color: #7a7268;
+  `}
+`;

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Eye, EyeOff, ChevronDown, ChevronUp } from 'lucide-react';
 import synopses from './synopses';
 import treatments from './treatment';
+import scripts from './script';
+import { world, glossary } from './world';
 import {
   Container,
   Header,
@@ -27,7 +29,10 @@ import {
   PasswordInput,
   TogglePasswordButton,
   SubmitButton,
-  ErrorMessage
+  ErrorMessage,
+  Screenplay,
+  ScriptCredit,
+  ScriptLine
 } from './Styles';
 
 export default function HealingIsForgetting() {
@@ -35,6 +40,7 @@ export default function HealingIsForgetting() {
   const [isSynopsisExpanded, setIsSynopsisExpanded] = useState(false);
   const [isTreatmentExpanded, setIsTreatmentExpanded] = useState(false);
   const [expandedPastTreatments, setExpandedPastTreatments] = useState({});
+  const [isScriptExpanded, setIsScriptExpanded] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -46,6 +52,14 @@ export default function HealingIsForgetting() {
   const latestTreatment = treatments[0];
   const pastTreatments = treatments.slice(1);
   const treatmentPreviewCount = 5;
+  const latestScript = scripts[0];
+  const renderTreatmentBlock = (block, i) => (
+    <Paragraph key={i}>
+      {typeof block === 'object'
+        ? <><strong>{block.heading}:</strong> {block.text}</>
+        : isTreatmentHeading(block) ? <strong>{block}</strong> : block}
+    </Paragraph>
+  );
   const protectedSectionId = 'healing-protected-materials';
 
   const CORRECT_PASSWORD = 'healing2026';
@@ -108,9 +122,9 @@ export default function HealingIsForgetting() {
       <Header>
         <HeaderContent>
           <Title>Healing is Forgetting</Title>
-          <Byline>A film in progress</Byline>
+          <Byline>A short film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-            Last updated: June 6, 2026
+            Last updated: September 23, 2026
           </Paragraph>
         </HeaderContent>
       </Header>
@@ -120,7 +134,7 @@ export default function HealingIsForgetting() {
           <Card>
             <SectionTitle>Logline</SectionTitle>
             <Paragraph>
-              Sophie is a psychotherapist whose job is quickly becoming redundant in the face of a new paradigm - that traumas are no longer something to be confronted and worked through, but should instead be erased, even replaced and improved.
+              In a near-future Berlin where painful memories are edited away, a Record Keeper spends her last day at work and her last night with her boyfriend before he leaves for the war, a night she will later choose to rewrite.
             </Paragraph>
           </Card>
         </Section>
@@ -192,7 +206,7 @@ export default function HealingIsForgetting() {
             <Card>
               <SectionTitle>Protected Materials</SectionTitle>
               <Paragraph>
-              Treatment and the rest of this page are password-protected.
+              Treatment, script and the rest of this page are password-protected.
                 Email <strong>inbox@wilfredocasas.com</strong> to request access.
               </Paragraph>
               <PasswordForm onSubmit={handleSubmit}>
@@ -228,11 +242,7 @@ export default function HealingIsForgetting() {
               <Card>
                 <SectionTitle>Treatment – {latestTreatment.version}</SectionTitle>
                 {!isTreatmentExpanded &&
-                  latestTreatment.blocks.slice(0, treatmentPreviewCount).map((block, i) => (
-                    <Paragraph key={i}>
-                      {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
-                    </Paragraph>
-                  ))
+                  latestTreatment.blocks.slice(0, treatmentPreviewCount).map(renderTreatmentBlock)
                 }
 
                 <CollapsibleCard>
@@ -246,11 +256,7 @@ export default function HealingIsForgetting() {
                   </CollapsibleButton>
                   {isTreatmentExpanded && (
                     <CollapsibleContent id="treatment-latest">
-                      {latestTreatment.blocks.map((block, i) => (
-                        <Paragraph key={i}>
-                          {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
-                        </Paragraph>
-                      ))}
+                      {latestTreatment.blocks.map(renderTreatmentBlock)}
                     </CollapsibleContent>
                   )}
                 </CollapsibleCard>
@@ -274,11 +280,7 @@ export default function HealingIsForgetting() {
                           </CollapsibleButton>
                           {isExpanded && (
                             <CollapsibleContent id={contentId}>
-                              {t.blocks.map((block, i) => (
-                                <Paragraph key={i}>
-                                  {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
-                                </Paragraph>
-                              ))}
+                              {t.blocks.map(renderTreatmentBlock)}
                             </CollapsibleContent>
                           )}
                         </CollapsibleCard>
@@ -291,11 +293,58 @@ export default function HealingIsForgetting() {
 
             <Section>
               <Card>
+                <SectionTitle>Script – {latestScript.version}</SectionTitle>
+                <CollapsibleCard>
+                  <CollapsibleButton
+                    onClick={() => setIsScriptExpanded(!isScriptExpanded)}
+                    aria-expanded={isScriptExpanded}
+                    aria-controls="script-latest"
+                  >
+                    <span>{isScriptExpanded ? 'Hide Full Script' : 'Read Full Script'} – {latestScript.version}</span>
+                    {isScriptExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </CollapsibleButton>
+                  {isScriptExpanded && (
+                    <CollapsibleContent id="script-latest">
+                      <Screenplay>
+                        <ScriptLine $kind="titlecard">HEALING IS FORGETTING</ScriptLine>
+                        <ScriptCredit>{latestScript.credit}</ScriptCredit>
+                        {latestScript.blocks.map((block, i) => (
+                          <ScriptLine key={i} $kind={block.type}>{block.text}</ScriptLine>
+                        ))}
+                      </Screenplay>
+                    </CollapsibleContent>
+                  )}
+                </CollapsibleCard>
+              </Card>
+            </Section>
+
+            <Section>
+              <Card>
+                <SectionTitle>World</SectionTitle>
+                {world.paragraphs.map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
+              </Card>
+            </Section>
+
+            <Section>
+              <Card>
+                <SectionTitle>Extended Glossary</SectionTitle>
+                <Paragraph><em>Definitions not mentioned during the film.</em></Paragraph>
+                <List>
+                  {glossary.map(({ term, definition }) => (
+                    <ListItem key={term}><strong>{term}:</strong> {definition}</ListItem>
+                  ))}
+                </List>
+              </Card>
+            </Section>
+
+            <Section>
+              <Card>
                 <SectionTitle>Project Status</SectionTitle>
                 <Paragraph><strong>Development:</strong></Paragraph>
                 <List>
                   <ListItem>Synopsis: {latestSynopsis.version} - draft complete</ListItem>
                   <ListItem>Treatment: {latestTreatment.version} - in progress</ListItem>
+                  <ListItem>Script: {latestScript.version} - first draft</ListItem>
                 </List>
 
                 <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>

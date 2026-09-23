@@ -1,6 +1,22 @@
 // treatment.js
 const treatments = [
   {
+    version: 'v5.0 (Sep 2026)',
+    title: 'Treatment',
+    blocks: [
+      { heading: '1. Context and Intro to Sophie (2 min / 0 mins total)', text: `A montage of quick scenes that place us in an unknown year in Berlin, and slow scenes of Sophie decorating the room with dozens of ropes that intermingle with one another.` },
+      { heading: '2. U-Bahn (1 min / 3 mins)', text: `A swipe with a touchie takes us to the U-Bahn. Most commuters are minding. Multiple POVs: porn, news, socials, language learning. Sophie is one of the few who is just knitting.` },
+      { heading: '3. Way to work (1 min / 4 mins)', text: `Sophie walks to work. Unlike today, the streets have more beggars, vendors and a general feeling of decadence; something akin—although not as extreme—as the streets of Peru nowadays.` },
+      { heading: '4. At work (2 min / 7 mins)', text: `A man tells Sophie about his past. She listens patiently and guides him to talk about the record he wants deleted: his brother's suicide. She asks him: what would a better past look like?* He describes a more desirable past that explains how this death came to happen.` },
+      { heading: '5. Birthday Party (2 min / 9 min)', text: `It's Eric's birthday party, her boyfriend. The theme of the party: get lost! —a creative double meaning phrase, partly referring to Eric's impending trip to Taiwan—as in: get lost Eric!—and partly to the feeling of getting lost in a jungle of ropes. People have fun, dance, make out, get drinks and play games. They sing him happy birthday and he gives cheering words for the crowd.` },
+      { heading: '6. Late Party (3 mins / 12 mins)', text: `During a group conversation, we find out that Sophie recently lost her job. The reason for her dismissal—a new law in Germany in which people no longer need to archive their records, making her job as a Record Keeper redundant. Friends sympathize and the news sparks a debate with many different opinions on the topic, some pro-NEE and some against it.` },
+      { heading: '7. Intimacy (3 mins / 16 mins)', text: `After guests leave, Sophie and Eric have a sensual moment together on the floor. She ties him using one of the ropes. The key moment: when he mentions the rope being too tight. The story splits into two different realities.` },
+      { heading: '8. Montage (3 mins / 15 mins)', text: `In one reality, we see what really happened: she replies with a joke that ultimately leads to an argument and a bitter ending to their last night together. The second reality (a sweetened record): one in which she did not make that joke and they made love one last time before his departure.**` },
+      `* Usually Record Keepers don't ask these kinds of questions. We find out that she has made an exception because it was her last day at work.`,
+      `** Not explicitly shown is that, shortly after his departure, he broke up with her and later went missing. Not being able—or willing—to cope with the pain, she edited her record of their last night together.`
+    ]
+  },
+  {
     version: 'v4.0 (Jun 2026)',
     title: 'Treatment',
     blocks: [

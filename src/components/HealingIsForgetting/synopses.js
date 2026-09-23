@@ -1,6 +1,16 @@
 // synopses.js
 const synopses = [
   {
+    version: 'v6.0 (Sep 2026)',
+    title: 'Synopsis',
+    paragraphs: [
+      `Berlin, sometime in the late 2030s. Neuro-Emotional Editing (NEE), a technology originally developed by the Chinese military to return soldiers with PTSD to active duty, has hit the mainstream. People now use their visors to trim unwanted memories and sweeten their past with artificial ones. Therapy is seen as arduous, expensive and outdated. Healing is Forgetting is the leading NEE company in Germany and Europe.`,
+      `Sophie, 39, is a Record Keeper at Healing is Forgetting. Her job is to collect and document the records of people about to undergo an irreversible edit, in objects, photos and writing, before they are gone. On her last day at work, she sits with a man who wants to erase every memory of his brother, who died by suicide.`,
+      `That night is also the birthday party of her boyfriend Eric, who is about to leave for Taiwan to advise the NEE team on safer field application in the war. Among friends, the news spreads: NEE has been further deregulated. People no longer need to archive their records before editing, and Sophie's job has become redundant.`,
+      `After the guests leave, Sophie and Eric share one last intimate night. She ties him with one of the ropes she hung across the living room. When he says it is too tight, the story splits in two: in one version, her reply leads to an argument and a bitter goodbye. In the other, a sweetened record, they make love one last time before his departure.`,
+    ]
+  },
+  {
     version: 'v5.0 (Jun 2026)',
     title: 'Synopsis',
     paragraphs: [
