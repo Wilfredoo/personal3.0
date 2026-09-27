@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <title>The Exploration Map</title>
+  <meta name="description" content="A map that starts covered in fog. Wherever you go, it lifts, forever." />
+  <meta name="theme-color" content="#e9e5dc" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Exploration" />
+  <link rel="manifest" href="/exploration-map/manifest.webmanifest" />
+  <link rel="icon" href="/exploration-map/icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/exploration-map/icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/exploration-map/vendor/maplibre-gl.css" />
+  <link rel="stylesheet" href="/exploration-map/app.css" />
+</head>
+<body>
+  <div id="map"></div>
+
+  <header class="brand">the exploration map</header>
+
+  <div id="status" class="status" hidden></div>
+
+  <div class="controls">
+    <button id="recenter" class="round" aria-label="Find my soulleaf">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4" /><circle cx="12" cy="12" r="7.5" fill="none"/></svg>
+    </button>
+    <button id="open-profile" class="round profile-button" aria-label="Your world"></button>
+  </div>
+
+  <div id="wander-banner" class="wander-banner" hidden>Wander mode: tap the map to walk there</div>
+
+  <section id="intro" class="intro" hidden>
+    <div class="intro-card">
+      <div class="intro-leaf"></div>
+      <h1>The world is covered in fog.</h1>
+      <p>Wherever you go, it lifts, and it never comes back.<br />This map only shows what you have discovered yourself.</p>
+      <button id="begin" class="primary">Be born</button>
+      <p class="fine">Your journeys stay on this device. We'll ask for your location next.</p>
+    </div>
+  </section>
+
+  <section id="profile" class="sheet" hidden>
+    <div class="sheet-card">
+      <button id="close-profile" class="close" aria-label="Close">×</button>
+      <div class="profile-head">
+        <div class="profile-leaf"></div>
+        <div>
+          <h2>Your world</h2>
+          <p id="born" class="born"></p>
+        </div>
+      </div>
+      <dl class="stats">
+        <div><dt>Discovered</dt><dd id="stat-area">–</dd></div>
+        <div><dt>Travelled</dt><dd id="stat-distance">–</dd></div>
+        <div><dt>Days exploring</dt><dd id="stat-days">–</dd></div>
+      </dl>
+
+      <div class="row">
+        <label class="toggle"><input type="checkbox" id="wake" /> Keep screen awake while exploring</label>
+      </div>
+      <div class="row">
+        <label class="toggle"><input type="checkbox" id="wander" /> Wander mode: tap the map to walk (for testing at home)</label>
+      </div>
+
+      <div class="buttons">
+        <button id="import-gpx">Import GPX</button>
+        <button id="export">Save backup</button>
+        <button id="import-backup">Restore backup</button>
+      </div>
+      <input type="file" id="file" hidden />
+
+      <p class="fine">
+        Prototype: the fog only lifts while this page is open. Add it to your Home Screen
+        (Share → Add to Home Screen) so iOS keeps your world safe. Discovery in the background
+        comes with the native app.
+      </p>
+    </div>
+  </section>
+
+  <script src="/exploration-map/vendor/maplibre-gl.js"></script>
+  <script type="module" src="/exploration-map/js/main.js"></script>
+</body>
+</html>

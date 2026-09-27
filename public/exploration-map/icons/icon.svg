@@ -1,0 +1,27 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="fog" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#f7f4ec"/>
+      <stop offset="100%" stop-color="#d9d3c6"/>
+    </radialGradient>
+    <radialGradient id="aura" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#e9fff0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#bff0cf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9be3b0"/>
+      <stop offset="55%" stop-color="#4fae7c"/>
+      <stop offset="100%" stop-color="#2c7a55"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#fog)"/>
+  <path d="M60 400 C 150 360, 210 420, 300 370 S 430 330, 470 300" fill="none" stroke="#2c7a55" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+  <g transform="translate(256 250) scale(4.6) translate(-32 -42)">
+    <ellipse cx="32" cy="38" rx="31" ry="34" fill="url(#aura)"/>
+    <path d="M32 62 C 27 68, 38 71, 33 78 C 31 81, 28 80, 29 77" fill="none" stroke="#f3fbf5" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M32 8 C 50 21, 54 45, 32 63 C 10 45, 14 21, 32 8 Z" fill="url(#leaf)" stroke="#23654a" stroke-width="1.2"/>
+    <path d="M32 14 Q 30.5 36 32 58" fill="none" stroke="#dff7e7" stroke-width="1.2" opacity="0.7"/>
+    <circle cx="27.5" cy="39" r="2.3" fill="#123826"/>
+    <circle cx="36.5" cy="39" r="2.3" fill="#123826"/>
+  </g>
+</svg>

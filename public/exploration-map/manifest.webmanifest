@@ -1,0 +1,15 @@
+{
+  "name": "The Exploration Map",
+  "short_name": "Exploration",
+  "description": "A map that starts covered in fog. Wherever you go, it lifts, forever.",
+  "start_url": "/exploration-map/",
+  "scope": "/exploration-map/",
+  "display": "standalone",
+  "background_color": "#e9e5dc",
+  "theme_color": "#e9e5dc",
+  "icons": [
+    { "src": "/exploration-map/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/exploration-map/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/exploration-map/icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
