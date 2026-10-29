@@ -1,3 +1,4 @@
+import { Navigate } from 'react-router-dom';
 // Pages
 import Home from './components/Home';
 import HomePolished from './components/HomePolished';
@@ -59,8 +60,8 @@ const routes = [
     { path: "/filmequipment", component: <FilmEquipment /> },
     { path: "/videography", component: <FilmEquipment /> },
     { path: "/ayakucho", component: <SellSheet /> },
-    { path: "/hostelparadiso", component: <HostelParadisoSellSheet /> },
     { path: "/humbiverse", component: <HostelParadisoSellSheet /> },
+    { path: "/thehumbiverse", component: <Navigate to="/humbiverse" replace /> },
     { path: "/thewoodlands", component: <TheWoodlandsSellSheet /> },
     { path: "/workandtravel", component: <Workandtravelsecure /> },
     { path: "/cacao", component: <Cacao /> },

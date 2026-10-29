@@ -5,7 +5,7 @@ import {
   Paragraph, List, ListItem, ContactLink, WhatsAppLink,
   GalleryRow, SmallImage, RotatedSmallImage,
 } from './styles';
-import hostelParadisoImage from '../../assets/images/Hostel_paradiso.jpeg';
+import humbiverseMainImage from '../../assets/images/humbiverse_main.jpg';
 import hostel1 from '../../assets/images/hostel1.jpg';
 import hostel2 from '../../assets/images/hostel2.jpg';
 import hostel3 from '../../assets/images/hostel3.jpeg';
@@ -77,7 +77,7 @@ const HostelParadisoSellSheet = () => {
       <Title>The Humbiverse</Title>
       <Subtitle>Aim to take ownership of the quirkiest hostel in town.</Subtitle>
 
-      <HeroImage src={hostelParadisoImage} alt="The Humbiverse prototype" />
+      <HeroImage src={humbiverseMainImage} alt="The Humbiverse prototype" />
 
       <StaticSection>
         <h3>Story</h3>
