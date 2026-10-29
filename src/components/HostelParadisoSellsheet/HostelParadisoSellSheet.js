@@ -75,7 +75,7 @@ const HostelParadisoSellSheet = () => {
       </TopNav>
 
       <Title>The Humbiverse</Title>
-      <Subtitle>Aim to take ownership of the quirkiest hostel in town.</Subtitle>
+      <Subtitle>Push your creativity to the limit by creating unexpected connections across The Humbiverse.</Subtitle>
 
       <HeroImage src={humbiverseMainImage} alt="The Humbiverse prototype" />
 
