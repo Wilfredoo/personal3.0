@@ -21,7 +21,7 @@ import BatchOrders from './components/Cacao/BatchOrders';
 // Misc
 import SellSheet from './components/AyakuchoSellsheet/AyakuchoSellSheet';
 import TheWoodlandsSellSheet from './components/TheWoodlandsSellsheet/TheWoodlandsSellSheet';
-import HostelParadisoSellSheet from './components/HostelParadisoSellsheet/HostelParadisoSellSheet';
+import HumbiverseSellSheet from './components/HumbiverseSellsheet/HumbiverseSellSheet';
 import HealingIsForgetting from './components/HealingIsForgetting/HealingIsForgetting';
 import EmailProof from './components/EmailProof';
 import ReadShakespearePrivacyPolicy from './components/ReadShakespearePrivacyPolicy';
@@ -60,7 +60,7 @@ const routes = [
     { path: "/filmequipment", component: <FilmEquipment /> },
     { path: "/videography", component: <FilmEquipment /> },
     { path: "/ayakucho", component: <SellSheet /> },
-    { path: "/humbiverse", component: <HostelParadisoSellSheet /> },
+    { path: "/humbiverse", component: <HumbiverseSellSheet /> },
     { path: "/thehumbiverse", component: <Navigate to="/humbiverse" replace /> },
     { path: "/thewoodlands", component: <TheWoodlandsSellSheet /> },
     { path: "/workandtravel", component: <Workandtravelsecure /> },

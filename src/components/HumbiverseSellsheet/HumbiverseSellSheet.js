@@ -6,13 +6,13 @@ import {
   GalleryRow, SmallImage, RotatedSmallImage,
 } from './styles';
 import humbiverseMainImage from '../../assets/images/humbiverse_main.jpg';
-import hostel1 from '../../assets/images/hostel1.jpg';
-import hostel2 from '../../assets/images/hostel2.jpg';
-import hostel3 from '../../assets/images/hostel3.jpeg';
+import humbiverseImg1 from '../../assets/images/humbiverse1.jpg';
+import humbiverseImg2 from '../../assets/images/humbiverse2.jpg';
+import humbiverseImg3 from '../../assets/images/humbiverse3.jpeg';
 import multiverse1 from '../../assets/images/multiverse1.jpg';
 import multiverse2 from '../../assets/images/multiverse2.jpg';
 
-const HostelParadisoSellSheet = () => {
+const HumbiverseSellSheet = () => {
   const [showKeyInfo, setShowKeyInfo] = useState(false);
   const [showOverview, setShowOverview] = useState(false);
   const [showHowItPlays, setShowHowItPlays] = useState(false);
@@ -120,7 +120,7 @@ const HostelParadisoSellSheet = () => {
             <Paragraph>
               The Humbiverse is a party game of misdirection, deduction and creative writing. Players craft short dialogue
               lines that must fit both a shared sentence and a quirky two-character scene. When all dialogues are revealed,
-              the group tries to figure out where in the hostel each exchange took place. Your goal is to be clear enough
+              the group tries to figure out where in The Humbiverse each exchange took place. Your goal is to be clear enough
               to convince most players, but ambiguous enough to fool at least one.
             </Paragraph>
           </SectionBody>
@@ -222,19 +222,19 @@ const HostelParadisoSellSheet = () => {
         <h3>More Pictures</h3>
         <GalleryRow>
           <SmallImage
-            src={hostel1}
+            src={humbiverseImg1}
             alt="The Humbiverse (1)"
-            onClick={() => setLightbox({ src: hostel1, alt: 'The Humbiverse (1)' })}
+            onClick={() => setLightbox({ src: humbiverseImg1, alt: 'The Humbiverse (1)' })}
           />
           <RotatedSmallImage
-            src={hostel2}
+            src={humbiverseImg2}
             alt="The Humbiverse (2)"
-            onClick={() => setLightbox({ src: hostel2, alt: 'The Humbiverse (2)', rotate: true })}
+            onClick={() => setLightbox({ src: humbiverseImg2, alt: 'The Humbiverse (2)', rotate: true })}
           />
           <SmallImage
-            src={hostel3}
+            src={humbiverseImg3}
             alt="The Humbiverse (3)"
-            onClick={() => setLightbox({ src: hostel3, alt: 'The Humbiverse (3)' })}
+            onClick={() => setLightbox({ src: humbiverseImg3, alt: 'The Humbiverse (3)' })}
           />
           <SmallImage
             src={multiverse1}
@@ -274,4 +274,4 @@ const HostelParadisoSellSheet = () => {
   );
 };
 
-export default HostelParadisoSellSheet;
+export default HumbiverseSellSheet;
