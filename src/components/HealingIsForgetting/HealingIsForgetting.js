@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff, ChevronDown, ChevronUp } from 'lucide-react';
-import synopses from './synopses';
-import treatments from './treatment';
+import { treatment, world, glossary, script } from './shortFilm';
+import FeatureFilmArchive from './archive/FeatureFilmArchive';
 import {
   Container,
   Header,
@@ -17,8 +17,6 @@ import {
   ListItem,
   ContactCard,
   Footer,
-  IdeaBoardImage,
-  ImageCaption,
   CollapsibleCard,
   CollapsibleButton,
   CollapsibleContent,
@@ -30,23 +28,36 @@ import {
   ErrorMessage
 } from './Styles';
 
+// Shows text between underscores in italics.
+const withItalics = (text) =>
+  text.split(/_([^_]+)_/).map((part, i) => (i % 2 ? <em key={i}>{part}</em> : part));
+
+const renderScriptEntry = (entry, i) => {
+  if (typeof entry === 'string') return <Paragraph key={i}>{entry}</Paragraph>;
+  if (entry.scene) return <Paragraph key={i} style={{ marginTop: '2rem' }}><strong>{entry.scene}</strong></Paragraph>;
+  if (entry.list) {
+    return (
+      <List key={i}>
+        {entry.list.map((item, j) => <ListItem key={j}>{item}</ListItem>)}
+      </List>
+    );
+  }
+  return (
+    <Paragraph key={i} style={{ paddingLeft: '1.5rem' }}>
+      <strong>{entry.who}</strong>
+      <br />
+      {entry.line}
+    </Paragraph>
+  );
+};
+
 export default function HealingIsForgetting() {
-  const [expandedPastSynopses, setExpandedPastSynopses] = useState({});
-  const [isSynopsisExpanded, setIsSynopsisExpanded] = useState(false);
-  const [isTreatmentExpanded, setIsTreatmentExpanded] = useState(false);
-  const [expandedPastTreatments, setExpandedPastTreatments] = useState({});
+  const [isScriptExpanded, setIsScriptExpanded] = useState(false);
+  const [isArchiveExpanded, setIsArchiveExpanded] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
-  const latestSynopsis = synopses[0];
-  const pastSynopses = synopses.slice(1);
-  const synopsisPreviewCount = 3;
-  const isTreatmentHeading = (text) => /^[A-Z0-9 ,'-]+$/.test(text) && text.length <= 40;
-  const latestTreatment = treatments[0];
-  const pastTreatments = treatments.slice(1);
-  const treatmentPreviewCount = 5;
-  const protectedSectionId = 'healing-protected-materials';
 
   const CORRECT_PASSWORD = 'healing2026';
   const AUTH_STORAGE_KEY = 'healing-auth-v2';
@@ -69,25 +80,6 @@ export default function HealingIsForgetting() {
     setShowPassword(!showPassword);
   };
 
-  const togglePastSynopsis = (version) => {
-    setExpandedPastSynopses((prev) => ({
-      ...prev,
-      [version]: !prev[version]
-    }));
-  };
-
-  const togglePastTreatment = (version) => {
-    setExpandedPastTreatments((prev) => ({
-      ...prev,
-      [version]: !prev[version]
-    }));
-  };
-
-  const scrollToProtectedMaterials = () => {
-    const el = document.getElementById(protectedSectionId);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
   // Dark background for this page
   useEffect(() => {
     const prev = document.body.style.backgroundColor;
@@ -108,91 +100,20 @@ export default function HealingIsForgetting() {
       <Header>
         <HeaderContent>
           <Title>Healing is Forgetting</Title>
-          <Byline>A film in progress</Byline>
+          <Byline>A short film in progress</Byline>
           <Paragraph style={{ fontSize: '0.9rem', opacity: 0.7, marginTop: '0.5rem' }}>
-            Last updated: June 6, 2026
+            Last updated: September 30, 2026
           </Paragraph>
         </HeaderContent>
       </Header>
 
       <Main>
-        <Section>
-          <Card>
-            <SectionTitle>Logline</SectionTitle>
-            <Paragraph>
-              Sophie is a psychotherapist whose job is quickly becoming redundant in the face of a new paradigm - that traumas are no longer something to be confronted and worked through, but should instead be erased, even replaced and improved.
-            </Paragraph>
-          </Card>
-        </Section>
-
-        <Section>
-          <Card>
-            <SectionTitle>Synopsis – {latestSynopsis.version}</SectionTitle>
-            <div id="synopsis-latest">
-              {((isAuthenticated && isSynopsisExpanded)
-                ? latestSynopsis.paragraphs
-                : latestSynopsis.paragraphs.slice(0, synopsisPreviewCount)
-              ).map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
-            </div>
-
-            {latestSynopsis.paragraphs.length > synopsisPreviewCount && (
-              isAuthenticated ? (
-                <CollapsibleButton
-                  onClick={() => setIsSynopsisExpanded(!isSynopsisExpanded)}
-                  aria-expanded={isSynopsisExpanded}
-                  aria-controls="synopsis-latest"
-                >
-                  <span>{isSynopsisExpanded ? 'Hide Full Synopsis' : 'Read Full Synopsis'}</span>
-                  {isSynopsisExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                </CollapsibleButton>
-              ) : (
-                <CollapsibleButton
-                  onClick={scrollToProtectedMaterials}
-                  aria-expanded={false}
-                  aria-controls={protectedSectionId}
-                >
-                  <span>Unlock to read full synopsis</span>
-                  <ChevronDown size={18} />
-                </CollapsibleButton>
-              )
-            )}
-
-            {isAuthenticated && pastSynopses.length > 0 && (
-              <>
-                <Paragraph><strong>Past Versions</strong></Paragraph>
-                {pastSynopses.map((syn, index) => {
-                  const isExpanded = Boolean(expandedPastSynopses[syn.version]);
-                  const contentId = `synopsis-past-${index}`;
-
-                  return (
-                    <CollapsibleCard key={syn.version}>
-                      <CollapsibleButton
-                        onClick={() => togglePastSynopsis(syn.version)}
-                        aria-expanded={isExpanded}
-                        aria-controls={contentId}
-                      >
-                        <span>{syn.title} – {syn.version}</span>
-                        {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                      </CollapsibleButton>
-                      {isExpanded && (
-                        <CollapsibleContent id={contentId}>
-                          {syn.paragraphs.map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
-                        </CollapsibleContent>
-                      )}
-                    </CollapsibleCard>
-                  );
-                })}
-              </>
-            )}
-          </Card>
-        </Section>
-
         {!isAuthenticated && (
-          <Section id={protectedSectionId}>
+          <Section>
             <Card>
               <SectionTitle>Protected Materials</SectionTitle>
               <Paragraph>
-              Treatment and the rest of this page are password-protected.
+                This page is password-protected.
                 Email <strong>inbox@wilfredocasas.com</strong> to request access.
               </Paragraph>
               <PasswordForm onSubmit={handleSubmit}>
@@ -226,100 +147,80 @@ export default function HealingIsForgetting() {
           <>
             <Section>
               <Card>
-                <SectionTitle>Treatment – {latestTreatment.version}</SectionTitle>
-                {!isTreatmentExpanded &&
-                  latestTreatment.blocks.slice(0, treatmentPreviewCount).map((block, i) => (
-                    <Paragraph key={i}>
-                      {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
-                    </Paragraph>
-                  ))
-                }
-
-                <CollapsibleCard>
-                  <CollapsibleButton
-                    onClick={() => setIsTreatmentExpanded(!isTreatmentExpanded)}
-                    aria-expanded={isTreatmentExpanded}
-                    aria-controls="treatment-latest"
-                  >
-                    <span>{isTreatmentExpanded ? 'Hide Full Treatment' : 'Read Full Treatment'} – {latestTreatment.version}</span>
-                    {isTreatmentExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                  </CollapsibleButton>
-                  {isTreatmentExpanded && (
-                    <CollapsibleContent id="treatment-latest">
-                      {latestTreatment.blocks.map((block, i) => (
-                        <Paragraph key={i}>
-                          {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
-                        </Paragraph>
-                      ))}
-                    </CollapsibleContent>
-                  )}
-                </CollapsibleCard>
-
-                {pastTreatments.length > 0 && (
-                  <>
-                    <Paragraph><strong>Past Versions</strong></Paragraph>
-                    {pastTreatments.map((t, index) => {
-                      const isExpanded = Boolean(expandedPastTreatments[t.version]);
-                      const contentId = `treatment-past-${index}`;
-
-                      return (
-                        <CollapsibleCard key={t.version}>
-                          <CollapsibleButton
-                            onClick={() => togglePastTreatment(t.version)}
-                            aria-expanded={isExpanded}
-                            aria-controls={contentId}
-                          >
-                            <span>{t.title} – {t.version}</span>
-                            {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                          </CollapsibleButton>
-                          {isExpanded && (
-                            <CollapsibleContent id={contentId}>
-                              {t.blocks.map((block, i) => (
-                                <Paragraph key={i}>
-                                  {isTreatmentHeading(block) ? <strong>{block}</strong> : block}
-                                </Paragraph>
-                              ))}
-                            </CollapsibleContent>
-                          )}
-                        </CollapsibleCard>
-                      );
-                    })}
-                  </>
-                )}
+                <SectionTitle>Treatment</SectionTitle>
+                {treatment.scenes.map((scene, i) => (
+                  <Paragraph key={i}>
+                    <strong>{i + 1}. {scene.title}</strong> {withItalics(scene.text)}
+                  </Paragraph>
+                ))}
+                {treatment.footnotes.map((note, i) => (
+                  <Paragraph key={`note-${i}`} style={{ fontSize: '0.85rem', opacity: 0.8 }}>
+                    <em>{note}</em>
+                  </Paragraph>
+                ))}
               </Card>
             </Section>
 
             <Section>
               <Card>
-                <SectionTitle>Project Status</SectionTitle>
-                <Paragraph><strong>Development:</strong></Paragraph>
-                <List>
-                  <ListItem>Synopsis: {latestSynopsis.version} - draft complete</ListItem>
-                  <ListItem>Treatment: {latestTreatment.version} - in progress</ListItem>
-                </List>
-
-                <Paragraph><strong>Looking for key collaborators:</strong></Paragraph>
-                <List>
-                  <ListItem>Producer - in progress</ListItem>
-                  <ListItem>Screenwriting mentor - in progress</ListItem>
-                  <ListItem>Cinematographer - not yet started</ListItem>
-                  <ListItem>Neuroscience advisor - not yet started</ListItem>
-                  <ListItem>Psychotherapy advisor - not yet started</ListItem>
-                </List>
-
-                <Paragraph><strong>Books to read:</strong></Paragraph>
-                <List>
-                  <ListItem>"Searching for Memory" by Daniel Schacter - in progress</ListItem>
-                  <ListItem>"The Hero with a Thousand Faces" by Joseph Campbell - not yet started</ListItem>
-                  <ListItem>"Maybe You Should Talk to Someone" by Lori Gottlieb - not yet started</ListItem>
-                  <ListItem>"Reasons and Persons" (part 3) by Derek Parfit - not yet started</ListItem>
-                </List>
+                <SectionTitle>World</SectionTitle>
+                {world.map((p, i) => <Paragraph key={i}>{p}</Paragraph>)}
               </Card>
             </Section>
 
             <Section>
-              <IdeaBoardImage src={require('../../assets/images/idea_board.jpeg')} alt="Idea Board" />
-              <ImageCaption>Idea board</ImageCaption>
+              <Card>
+                <SectionTitle>Extended Glossary</SectionTitle>
+                <Paragraph><em>{glossary.intro}</em></Paragraph>
+                {glossary.terms.map(([term, definition]) => (
+                  <Paragraph key={term}>
+                    <strong>{term}:</strong> {withItalics(definition)}
+                  </Paragraph>
+                ))}
+              </Card>
+            </Section>
+
+            <Section>
+              <Card>
+                <SectionTitle>Script</SectionTitle>
+                {!isScriptExpanded && script.slice(0, 5).map(renderScriptEntry)}
+                <CollapsibleCard>
+                  <CollapsibleButton
+                    onClick={() => setIsScriptExpanded(!isScriptExpanded)}
+                    aria-expanded={isScriptExpanded}
+                    aria-controls="script-full"
+                  >
+                    <span>{isScriptExpanded ? 'Hide Full Script' : 'Read Full Script'}</span>
+                    {isScriptExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </CollapsibleButton>
+                  {isScriptExpanded && (
+                    <CollapsibleContent id="script-full">
+                      {script.map(renderScriptEntry)}
+                    </CollapsibleContent>
+                  )}
+                </CollapsibleCard>
+              </Card>
+            </Section>
+
+            <Section>
+              <Card>
+                <SectionTitle>Archive</SectionTitle>
+                <CollapsibleCard>
+                  <CollapsibleButton
+                    onClick={() => setIsArchiveExpanded(!isArchiveExpanded)}
+                    aria-expanded={isArchiveExpanded}
+                    aria-controls="feature-film-archive"
+                  >
+                    <span>Feature film version (Jan–Jun 2026)</span>
+                    {isArchiveExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  </CollapsibleButton>
+                  {isArchiveExpanded && (
+                    <CollapsibleContent id="feature-film-archive">
+                      <FeatureFilmArchive />
+                    </CollapsibleContent>
+                  )}
+                </CollapsibleCard>
+              </Card>
             </Section>
 
             <Section>
