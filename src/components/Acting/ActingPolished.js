@@ -499,7 +499,7 @@ const ActingPolished = () => {
           <ExtLink href="https://www.etalenta.eu/members/profile/wilfredo-casas" target="_blank" rel="noopener noreferrer">
             etalenta.eu Profile →
           </ExtLink>
-          <ExtLink href="https://www.instagram.com/wilfredocasas.actor/" target="_blank" rel="noopener noreferrer">
+          <ExtLink href="https://www.instagram.com/wilfredo.creates/" target="_blank" rel="noopener noreferrer">
             Instagram →
           </ExtLink>
         </LinksList>
