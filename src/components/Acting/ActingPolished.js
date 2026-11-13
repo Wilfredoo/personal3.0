@@ -43,7 +43,7 @@ const texts = {
     nextJobLabel: 'Next Job',
     nextJob: '', // leave empty to hide the Next Job row
     resumeButton: 'Download Acting Resume',
-    reelText: 'Film acting jobs from 2025 — short films in Berlin, Aachen and Cologne. Material of 2026 coming soon.',
+    reelText: 'Acting jobs from 2025 and 2026 in Breslau, Berlin, Aachen and Cologne.',
     agenciesLabel: 'Collaborations (non-exclusive)',
     moreLinks: 'More Links',
     moreAbout: 'More About Me',
@@ -70,7 +70,7 @@ const texts = {
     nextJobLabel: 'Nächster Job',
     nextJob: '', // leer lassen, um die Zeile auszublenden
     resumeButton: 'Schauspiel-Lebenslauf herunterladen',
-    reelText: 'Kurzfilme aus 2025 in Berlin, Aachen und Köln. Material aus 2026 folgt.',
+    reelText: 'Schauspieljobs aus 2025 und 2026 in Breslau, Berlin, Aachen und Köln.',
     agenciesLabel: 'Agentur-Kooperationen (nicht exklusiv)',
     moreLinks: 'Mehr Links',
     moreAbout: 'Mehr über mich',
