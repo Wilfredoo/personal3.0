@@ -19,11 +19,17 @@ import wilfredo32 from '../../assets/images/wilfredo_32.png';
 import wilfredo40 from '../../assets/images/wilfredo_40.png';
 import wilfredo41 from '../../assets/images/wilfredo_41.png';
 import wilfredo42 from '../../assets/images/wilfredo_42.png';
+import wilfredo43 from '../../assets/images/wilfredo_43.jpg';
+import wilfredo44 from '../../assets/images/wilfredo_44.jpg';
+import wilfredo45 from '../../assets/images/wilfredo_45.jpg';
+import wilfredo46 from '../../assets/images/wilfredo_46.jpg';
+import wilfredo47 from '../../assets/images/wilfredo_47.jpg';
 
 const photos = [
   wilfredo1, wilfredo2, wilfredo40, wilfredo41, wilfredo14, wilfredo42,
   wilfredo3, wilfredo22, wilfredo4, wilfredo5, wilfredo8, wilfredo15,
   wilfredo17, wilfredo19, wilfredo24, wilfredo30, wilfredo31, wilfredo32,
+  wilfredo43, wilfredo44, wilfredo45, wilfredo46, wilfredo47,
 ];
 
 const texts = {
@@ -33,9 +39,9 @@ const texts = {
     line3pre: 'and a ', line3em: 'WIDE', line3post: ' Acting Range.',
     declMain: 'Looking for Challenging Roles.',
     lastJobLabel: 'Last Job',
-    lastJob: 'First Love (Pierwsza Miłość) — Prisoner 2 — ATM Grupa / Polsat — Feb 2026',
+    lastJob: 'The Human Experience — The Human Tiger — Dir. Natalie McMahon — June 2026',
     nextJobLabel: 'Next Job',
-    nextJob: 'The Human Experience — The Human Tiger — Dir. Natalie McMahon — June 2026',
+    nextJob: '', // leave empty to hide the Next Job row
     resumeButton: 'Download Acting Resume',
     reelText: 'Film acting jobs from 2025 — short films in Berlin, Aachen and Cologne. Material of 2026 coming soon.',
     agenciesLabel: 'Collaborations (non-exclusive)',
@@ -60,9 +66,9 @@ const texts = {
     line3pre: 'und ', line3em: 'BREITER', line3post: ' schauspielerischer Bandbreite.',
     declMain: 'Auf der Suche nach Herausfordernden Rollen.',
     lastJobLabel: 'Letzter Job',
-    lastJob: 'First Love (Pierwsza Miłość) — Prisoner 2 — ATM Grupa / Polsat — Feb 2026',
+    lastJob: 'The Human Experience — The Human Tiger — Regie: Natalie McMahon — Juni 2026',
     nextJobLabel: 'Nächster Job',
-    nextJob: 'The Human Experience — The Human Tiger — Regie: Natalie McMahon — Juni 2026',
+    nextJob: '', // leer lassen, um die Zeile auszublenden
     resumeButton: 'Schauspiel-Lebenslauf herunterladen',
     reelText: 'Kurzfilme aus 2025 in Berlin, Aachen und Köln. Material aus 2026 folgt.',
     agenciesLabel: 'Agentur-Kooperationen (nicht exklusiv)',
@@ -263,10 +269,11 @@ const PhotoWrap = styled.div`
   text-align: center;
 `;
 
+// Fixed 4:5 box so the Next button doesn't jump between photos.
 const Photo = styled.img`
   width: 100%;
-  max-width: 500px;
-  max-height: 72vh;
+  max-width: min(500px, calc(72vh * 4 / 5));
+  aspect-ratio: 4 / 5;
   object-fit: contain;
   display: block;
   margin: 0 auto 1rem;
@@ -443,10 +450,12 @@ const ActingPolished = () => {
             <JobTag>{t.lastJobLabel}</JobTag>
             <JobText>{t.lastJob}</JobText>
           </JobRow>
-          <JobRow>
-            <JobTag>{t.nextJobLabel}</JobTag>
-            <JobText>{t.nextJob}</JobText>
-          </JobRow>
+          {t.nextJob && (
+            <JobRow>
+              <JobTag>{t.nextJobLabel}</JobTag>
+              <JobText>{t.nextJob}</JobText>
+            </JobRow>
+          )}
         </JobsCard>
 
         <Divider />
