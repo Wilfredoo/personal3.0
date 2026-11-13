@@ -41,6 +41,7 @@ const routes = [
     { path: "/home-legacy", component: <Home /> },
     { path: "/cv", component: <Curriculum /> },
     { path: "/acting", component: <ActingPolished /> },
+    { path: "/actor", component: <Navigate to="/acting" replace /> },
     { path: "/reference_letter", component: <Referenceletter /> },
     { path: "/healingisforgetting", component: <HealingIsForgetting /> },
     { path: "/emailproof", component: <EmailProof /> },

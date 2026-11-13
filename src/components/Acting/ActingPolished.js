@@ -424,7 +424,7 @@ const ActingPolished = () => {
 
         {/* ── Reel ── */}
         <Label>Showreel</Label>
-        <LazyYT id="1EH66VoBrZY" title="Acting Reel" />
+        <LazyYT id="y7peItehXQc" title="Acting Reel" />
         <ReelNote>{t.reelText}</ReelNote>
 
         <Divider />
