@@ -26,10 +26,10 @@ import wilfredo46 from '../../assets/images/wilfredo_46.jpg';
 import wilfredo47 from '../../assets/images/wilfredo_47.jpg';
 
 const photos = [
+  wilfredo43, wilfredo44, wilfredo45, wilfredo46, wilfredo47,
   wilfredo1, wilfredo2, wilfredo40, wilfredo41, wilfredo14, wilfredo42,
   wilfredo3, wilfredo22, wilfredo4, wilfredo5, wilfredo8, wilfredo15,
   wilfredo17, wilfredo19, wilfredo24, wilfredo30, wilfredo31, wilfredo32,
-  wilfredo43, wilfredo44, wilfredo45, wilfredo46, wilfredo47,
 ];
 
 const texts = {
