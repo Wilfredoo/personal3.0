@@ -557,13 +557,6 @@ function PetSitterChecklist() {
           font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
           border: 2px solid #000; padding: 3px 8px; white-space: nowrap;
         }
-        .addr-note {
-          margin: 6px 0 18px;
-          padding: 10px 12px;
-          border: 2px solid #000;
-          font-size: 13px;
-          line-height: 1.5;
-        }
         .ec-head {
           font-size: 12px;
           font-weight: 700;
@@ -703,7 +696,7 @@ function PetSitterChecklist() {
       <a href="/" className="card-back no-print">← Back</a>
 
       <p className="card-instruction no-print">
-        Dear pet owner, please fill this in. It will generate two documents: one Emergency Card (two copies on one page: one stays at your home, one I carry with me at all times), and one Care Checklist that will stay at your home and that I will fill in as you walk me through the house and introduce me to your pets. If you can print them, that'd be great — otherwise just fill this in and I will print them myself. Thanks!
+        Dear pet owner, please fill this in. It creates an Emergency Card (one copy stays at your home, one I carry with me) and a Care Checklist that I’ll fill in while you show me around. Print them if you can, otherwise I’ll print them myself. Thanks!
       </p>
 
       <div className="no-print">
@@ -719,7 +712,6 @@ function PetSitterChecklist() {
               rows={4}
               value={f.mostImportant}
               onChange={set('mostImportant')}
-              placeholder="The one thing you want me to get right, e.g. medication on time, never off the leash, lots of cuddles…"
             />
           </div>
         </section>
@@ -758,10 +750,6 @@ function PetSitterChecklist() {
             </div>
           </div>
 
-          <p className="addr-note">
-            <strong>Your home address</strong> — where the pets live and where the pet sitting happens.
-            Please don’t enter the address of your emergency contact here.
-          </p>
           <div className="field">
             <span className="field-name">Street name (your home)</span>
             <input type="text" value={f.street} onChange={set('street')} autoComplete="off" />
