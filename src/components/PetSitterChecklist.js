@@ -49,8 +49,10 @@ function fmtDate(d) {
   return `${WD[d.getDay()]} ${d.getMonth() + 1}/${d.getDate()}`;
 }
 
-function namePhone(name, phone) {
-  return [name, phone].map((x) => (x || '').trim()).filter(Boolean).join('  ·  ');
+function namePhone(name, code, phone) {
+  const num = (phone || '').trim();
+  const full = num ? [(code || '').trim(), num].filter(Boolean).join(' ') : '';
+  return [(name || '').trim(), full].filter(Boolean).join('  ·  ');
 }
 
 function timesLabel(f) {
@@ -81,8 +83,8 @@ function Reminders({ f, rangeLabel }) {
         <div><span className="rem-k">Dates</span><span className="val">{rangeLabel}</span></div>
         <div><span className="rem-k">Times</span><Val v={timesLabel(f)} /></div>
         <div className="rem-wide"><span className="rem-k">Most important</span><Val v={(f.mostImportant || '').trim()} /></div>
-        <div><span className="rem-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
-        <div><span className="rem-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
+        <div><span className="rem-k">Primary</span><Val v={namePhone(f.primary, f.primaryCode, f.primaryPhone)} /></div>
+        <div><span className="rem-k">Backup</span><Val v={namePhone(f.backup, f.backupCode, f.backupPhone)} /></div>
         <div><span className="rem-k">Address</span><Val v={composeAddress(f)} /></div>
         <div><span className="rem-k">Landmark</span><Val v={f.landmark} /></div>
         <div className="rem-wide rem-blank"><span className="rem-k">Other things to remember</span><span className="val val--blank rem-blank-line" /></div>
@@ -101,24 +103,13 @@ function EmergencyCard({ f, copy }) {
 
       <div className="ec-block">
         <p className="ec-head">Basics</p>
-        <div className="ec-line"><span className="ec-k">Pets</span><Val v={f.petNames} /></div>
+        <div className="ec-line"><span className="ec-k">Pet name(s)</span><Val v={f.petNames} /></div>
       </div>
 
       <div className="ec-block">
-        <p className="ec-head"><b>1</b> Who to call</p>
-        <div className="ec-line"><span className="ec-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
-        <div className="ec-line"><span className="ec-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
-      </div>
-
-      <div className="ec-block">
-        <p className="ec-head"><b>2</b> Where this is</p>
-        <div className="ec-line"><span className="ec-k">Address</span><Val v={composeAddress(f)} /></div>
-        <div className="ec-line"><span className="ec-k">Landmark</span><Val v={f.landmark} /></div>
-      </div>
-
-      <div className="ec-block">
-        <p className="ec-head"><b>3</b> Anything else</p>
-        <div className="ec-note">{(f.notes || '').trim()}</div>
+        <p className="ec-head">Emergency</p>
+        <div className="ec-line"><span className="ec-k">Primary contact</span><Val v={namePhone(f.primary, f.primaryCode, f.primaryPhone)} /></div>
+        <div className="ec-line"><span className="ec-k">Backup contact (or vet)</span><Val v={namePhone(f.backup, f.backupCode, f.backupPhone)} /></div>
       </div>
     </div>
   );
@@ -129,8 +120,8 @@ function PetSitterChecklist() {
     petNames: '', startDate: '', endDate: '',
     arrivalTime: '', departureTime: '',
     mostImportant: '',
-    primary: '', primaryPhone: '',
-    backup: '', backupPhone: '',
+    primary: '', primaryCode: '+49', primaryPhone: '',
+    backup: '', backupCode: '+49', backupPhone: '',
     street: '', houseNumber: '', postalCode: '', careOf: '',
     landmark: '', notes: '',
   });
@@ -395,6 +386,9 @@ function PetSitterChecklist() {
         .field input:focus,
         .field textarea:focus { outline: none; background: #f3f3f3; }
         .row2 { display: flex; gap: 20px; }
+        .phone-row { display: flex; gap: 10px; }
+        .phone-row .phone-code { flex: 0 0 64px; width: 64px; }
+        .phone-row input:last-child { flex: 1; min-width: 0; }
         .row2 > * { flex: 1; }
 
         .print-btn {
@@ -580,7 +574,7 @@ function PetSitterChecklist() {
         }
         .ec-line { display: flex; gap: 12px; align-items: baseline; margin: 0 0 7px; font-size: 13px; line-height: 1.35; }
         .ec-k {
-          min-width: 110px;
+          min-width: 180px;
           flex-shrink: 0;
           font-size: 11px;
           text-transform: uppercase;
@@ -791,7 +785,17 @@ function PetSitterChecklist() {
             </div>
             <div className="field">
               <span className="field-name">Phone</span>
-              <input type="tel" value={f.primaryPhone} onChange={set('primaryPhone')} autoComplete="off" />
+              <div className="phone-row">
+                <input
+                  type="tel"
+                  className="phone-code"
+                  aria-label="Country code"
+                  value={f.primaryCode}
+                  onChange={set('primaryCode')}
+                  autoComplete="off"
+                />
+                <input type="tel" value={f.primaryPhone} onChange={set('primaryPhone')} autoComplete="off" />
+              </div>
             </div>
           </div>
           <div className="row2">
@@ -801,7 +805,17 @@ function PetSitterChecklist() {
             </div>
             <div className="field">
               <span className="field-name">Phone</span>
-              <input type="tel" value={f.backupPhone} onChange={set('backupPhone')} autoComplete="off" />
+              <div className="phone-row">
+                <input
+                  type="tel"
+                  className="phone-code"
+                  aria-label="Country code"
+                  value={f.backupCode}
+                  onChange={set('backupCode')}
+                  autoComplete="off"
+                />
+                <input type="tel" value={f.backupPhone} onChange={set('backupPhone')} autoComplete="off" />
+              </div>
             </div>
           </div>
         </section>
