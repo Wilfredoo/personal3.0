@@ -71,6 +71,8 @@ function Reminders({ f, rangeLabel }) {
       <div className="rem-grid">
         <div><span className="rem-k">Pets</span><Val v={f.petNames} /></div>
         <div><span className="rem-k">Dates</span><span className="val">{rangeLabel}</span></div>
+        <div><span className="rem-k">Arrival</span><Val v={f.arrivalTime} /></div>
+        <div><span className="rem-k">Departure</span><Val v={f.departureTime} /></div>
         <div><span className="rem-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
         <div><span className="rem-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
         <div><span className="rem-k">Address</span><Val v={composeAddress(f)} /></div>
@@ -84,6 +86,7 @@ function Reminders({ f, rangeLabel }) {
 function PetSitterChecklist() {
   const [f, setF] = useState({
     petNames: '', startDate: '', endDate: '',
+    arrivalTime: '', departureTime: '',
     primary: '', primaryPhone: '',
     backup: '', backupPhone: '',
     street: '', houseNumber: '', postalCode: '', careOf: '',
@@ -677,6 +680,16 @@ function PetSitterChecklist() {
                 max={maxEndStr || undefined}
                 onChange={set('endDate')}
               />
+            </div>
+          </div>
+          <div className="row2">
+            <div className="field">
+              <span className="field-name">Suggested time of arrival</span>
+              <input type="time" value={f.arrivalTime} onChange={set('arrivalTime')} />
+            </div>
+            <div className="field">
+              <span className="field-name">Suggested time of departure</span>
+              <input type="time" value={f.departureTime} onChange={set('departureTime')} />
             </div>
           </div>
         </section>
