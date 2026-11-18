@@ -15,6 +15,7 @@ const layout = {
   action: { x: LEFT, width: 5.77, before: 1 },
   note: { x: LEFT, width: 5.77, before: 1, style: 'italic' },
   character: { x: 3.7, width: 3.2, before: 1 },
+  parenthetical: { x: 3.1, width: 2.3, before: 0 },
   dialogue: { x: 2.5, width: 3.5, before: 0 },
   transition: { x: RIGHT_EDGE, width: 2.5, before: 1, align: 'right' },
   titlecard: { x: LEFT, width: 5.77, before: 2, align: 'center', style: 'bold' },
@@ -31,8 +32,9 @@ export default function downloadScriptPdf() {
   doc.setFont('courier', 'bold');
   doc.text('HEALING IS FORGETTING', 4.13, 4.2, { align: 'center' });
   doc.setFont('courier', 'normal');
-  doc.text('Written by', 4.13, 4.8, { align: 'center' });
-  doc.text('Wilfredo Casas', 4.13, 5.05, { align: 'center' });
+  doc.text('A Short Film', 4.13, 4.45, { align: 'center' });
+  doc.text('Written by', 4.13, 5.05, { align: 'center' });
+  doc.text('Wilfredo Casas', 4.13, 5.3, { align: 'center' });
   doc.text(script.version, 1.5, 10.2);
   doc.text('inbox@wilfredocasas.com', 1.5, 10.45);
 
@@ -56,7 +58,7 @@ export default function downloadScriptPdf() {
     const lines = doc.splitTextToSize(text, spec.width);
     const before = i === 0 ? 0 : spec.before * LINE;
     // Keep a character cue together with its first dialogue line
-    const keep = block.type === 'character' || block.type === 'scene' ? 2 : 1;
+    const keep = ['character', 'scene', 'titlecard', 'note'].includes(block.type) ? 2 : 1;
     if (y + before + (lines.length + keep - 1) * LINE > PAGE_H - BOTTOM) {
       newPage();
       doc.setFont('courier', spec.style || 'normal');

@@ -126,7 +126,7 @@ export default function HealingIsForgetting() {
         </Synopsis>
 
         <Status>
-          <StatusItem>Script complete <span>— Nov 2026</span></StatusItem>
+          <StatusItem>Script in development</StatusItem>
           <StatusItem>Funding applied <span>— Kuratorium junger deutscher Film (pending)</span></StatusItem>
           <StatusItem>Special Mention <span>— Interfilm Berlin 2023</span></StatusItem>
         </Status>
