@@ -6,7 +6,8 @@ import html2canvas from 'html2canvas';
 //
 // The owner fills the form, then "Generate printable PDF" opens the browser
 // print dialog. The PDF comes out as multiple sheets:
-//   • Sheet 1  — EMERGENCY CARD (the sitter carries this)
+//   • Sheet 1  — EMERGENCY CARD, two copies on one page: one stays at the
+//                home, one the sitter carries everywhere
 //   • Sheet 2+ — CARE CHECKLIST (left at home): a 10-row grid with one column
 //                per day of the sit, plus the emergency info repeated as a
 //                reminder. Long sits split across extra sheets automatically.
@@ -52,6 +53,13 @@ function namePhone(name, phone) {
   return [name, phone].map((x) => (x || '').trim()).filter(Boolean).join('  ·  ');
 }
 
+function timesLabel(f) {
+  const a = (f.arrivalTime || '').trim();
+  const d = (f.departureTime || '').trim();
+  if (!a && !d) return '';
+  return `arrive ${a || '—'}  ·  leave ${d || '—'}`;
+}
+
 function composeAddress(f) {
   const clean = (x) => (x || '').trim();
   const streetLine = [clean(f.street), clean(f.houseNumber)].filter(Boolean).join(' ');
@@ -71,6 +79,7 @@ function Reminders({ f, rangeLabel }) {
       <div className="rem-grid">
         <div><span className="rem-k">Pets</span><Val v={f.petNames} /></div>
         <div><span className="rem-k">Dates</span><span className="val">{rangeLabel}</span></div>
+        <div><span className="rem-k">Times</span><Val v={timesLabel(f)} /></div>
         <div><span className="rem-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
         <div><span className="rem-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
         <div><span className="rem-k">Address</span><Val v={composeAddress(f)} /></div>
@@ -81,9 +90,42 @@ function Reminders({ f, rangeLabel }) {
   );
 }
 
+function EmergencyCard({ f, rangeLabel, copy }) {
+  return (
+    <div className="ecard">
+      <div className="ec-top">
+        <h2 className="sheet-h">Emergency Card</h2>
+        <span className="ec-copy">{copy}</span>
+      </div>
+
+      <div className="ec-block">
+        <p className="ec-head"><b>1</b> Basics</p>
+        <div className="ec-line"><span className="ec-k">Pets</span><Val v={f.petNames} /></div>
+        <div className="ec-line"><span className="ec-k">Most important</span><Val v={(f.mostImportant || '').trim()} /></div>
+      </div>
+
+      <div className="ec-block">
+        <p className="ec-head"><b>2</b> Logistics</p>
+        <div className="ec-line"><span className="ec-k">Dates</span><span className="val">{rangeLabel}</span></div>
+        <div className="ec-line"><span className="ec-k">Times</span><Val v={timesLabel(f)} /></div>
+        <div className="ec-line"><span className="ec-k">Address</span><Val v={composeAddress(f)} /></div>
+        <div className="ec-line"><span className="ec-k">Landmark</span><Val v={f.landmark} /></div>
+      </div>
+
+      <div className="ec-block">
+        <p className="ec-head"><b>3</b> Emergency</p>
+        <div className="ec-line"><span className="ec-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
+        <div className="ec-line"><span className="ec-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
+      </div>
+    </div>
+  );
+}
+
 function PetSitterChecklist() {
   const [f, setF] = useState({
     petNames: '', startDate: '', endDate: '',
+    arrivalTime: '', departureTime: '',
+    mostImportant: '',
     primary: '', primaryPhone: '',
     backup: '', backupPhone: '',
     street: '', houseNumber: '', postalCode: '', careOf: '',
@@ -440,13 +482,14 @@ function PetSitterChecklist() {
         .sheets--capture .sheet--emergency {
           position: relative;
           width: 210mm; height: 297mm;
-          padding: 13mm 0 0;
+          padding: 0;
           box-sizing: border-box;
           overflow: hidden;
         }
-        .sheets--capture .sheet--emergency .ecard { margin: 0 13mm; }
+        .sheets--capture .ecard-slot { height: 148.5mm; padding: 8mm 13mm; box-sizing: border-box; }
+        .sheets--capture .ecard { height: 100%; overflow: hidden; }
         .sheets--capture .cutline {
-          position: absolute; left: 0; right: 0; top: 168mm; margin: 0;
+          position: absolute; left: 0; right: 0; top: 148.5mm; margin: 0;
         }
         .sheets--capture .sheet--checklist {
           width: 297mm; height: 210mm;
@@ -508,14 +551,19 @@ function PetSitterChecklist() {
         }
 
         /* emergency card body */
-        .ec-block { margin-top: 22px; }
+        .ec-block { margin-top: 14px; }
+        .ec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+        .ec-copy {
+          font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+          border: 2px solid #000; padding: 3px 8px; white-space: nowrap;
+        }
         .ec-head {
           font-size: 12px;
           font-weight: 700;
           letter-spacing: 0.06em;
           text-transform: uppercase;
-          padding-bottom: 8px;
-          margin: 0 0 12px;
+          padding-bottom: 6px;
+          margin: 0 0 8px;
           border-bottom: 2px solid #000;
         }
         .ec-head b {
@@ -524,9 +572,10 @@ function PetSitterChecklist() {
           text-align: center; background: #000; color: #fff;
           margin-right: 8px;
         }
-        .ec-line { display: flex; gap: 12px; align-items: baseline; margin: 0 0 12px; font-size: 13px; }
+        .ec-line { display: flex; gap: 12px; align-items: baseline; margin: 0 0 7px; font-size: 13px; line-height: 1.35; }
         .ec-k {
-          min-width: 88px;
+          min-width: 110px;
+          flex-shrink: 0;
           font-size: 11px;
           text-transform: uppercase;
           letter-spacing: 0.04em;
@@ -614,21 +663,20 @@ function PetSitterChecklist() {
           }
           .sheet:last-child { break-after: auto; }
 
-          /* Emergency: top half of a portrait page, cut line at the middle */
+          /* Emergency: two copies per portrait page, cut line at the middle */
           .sheet--emergency {
             position: relative;
             height: 296mm;
-            padding: 13mm 0 0;
+            padding: 0;
             box-sizing: border-box;
             overflow: hidden;
           }
-          .sheet--emergency .ecard {
-            margin: 0 13mm;
-          }
+          .ecard-slot { height: 148mm; padding: 8mm 13mm; box-sizing: border-box; }
+          .ecard { height: 100%; overflow: hidden; }
           .cutline {
             position: absolute;
             left: 0; right: 0;
-            top: 168mm;
+            top: 148mm;
             margin: 0;
           }
 
@@ -648,19 +696,31 @@ function PetSitterChecklist() {
       <a href="/" className="card-back no-print">← Back</a>
 
       <p className="card-instruction no-print">
-        Dear pet owner, please fill this in. It will generate two documents: one Emergency Card that I will carry with me at all times, and one Care Checklist that will stay at your home and that I will fill in as you walk me through the house and introduce me to your pets. If you can print them, that'd be great — otherwise just fill this in and I will print them myself. Thanks!
+        Dear pet owner, please fill this in. It creates an Emergency Card (one copy stays at your home, one I carry with me) and a Care Checklist that I’ll fill in while you show me around. Print them if you can, otherwise I’ll print them myself. Thanks!
       </p>
 
       <div className="no-print">
         <section className="block">
-          <p className="block-label">Basics</p>
+          <p className="block-label"><span className="block-num">1</span> Basics</p>
           <div className="field">
             <span className="field-name">Pet name(s)</span>
             <input type="text" value={f.petNames} onChange={set('petNames')} autoComplete="off" />
           </div>
+          <div className="field">
+            <span className="field-name">What matters most to you during this pet sitting?</span>
+            <textarea
+              rows={4}
+              value={f.mostImportant}
+              onChange={set('mostImportant')}
+            />
+          </div>
+        </section>
+
+        <section className="block">
+          <p className="block-label"><span className="block-num">2</span> Logistics</p>
           <div className="row2">
             <div className="field">
-              <span className="field-name">Start date</span>
+              <span className="field-name">Date of arrival</span>
               <input
                 type="date"
                 value={f.startDate}
@@ -669,7 +729,7 @@ function PetSitterChecklist() {
               />
             </div>
             <div className="field">
-              <span className="field-name">End date</span>
+              <span className="field-name">Date of departure</span>
               <input
                 type="date"
                 value={f.endDate}
@@ -679,10 +739,43 @@ function PetSitterChecklist() {
               />
             </div>
           </div>
+          <div className="row2">
+            <div className="field">
+              <span className="field-name">Suggested time of arrival</span>
+              <input type="time" value={f.arrivalTime} onChange={set('arrivalTime')} />
+            </div>
+            <div className="field">
+              <span className="field-name">Suggested time of departure</span>
+              <input type="time" value={f.departureTime} onChange={set('departureTime')} />
+            </div>
+          </div>
+
+          <div className="field">
+            <span className="field-name">Street name (your home)</span>
+            <input type="text" value={f.street} onChange={set('street')} autoComplete="off" />
+          </div>
+          <div className="row2">
+            <div className="field">
+              <span className="field-name">House number</span>
+              <input type="text" value={f.houseNumber} onChange={set('houseNumber')} autoComplete="off" />
+            </div>
+            <div className="field">
+              <span className="field-name">Postal code</span>
+              <input type="text" value={f.postalCode} onChange={set('postalCode')} autoComplete="off" />
+            </div>
+          </div>
+          <div className="field">
+            <span className="field-name">c/o (name on your doorbell)</span>
+            <input type="text" value={f.careOf} onChange={set('careOf')} autoComplete="off" />
+          </div>
+          <div className="field">
+            <span className="field-name">Nearest landmark to your home (supermarket, station…)</span>
+            <input type="text" value={f.landmark} onChange={set('landmark')} autoComplete="off" />
+          </div>
         </section>
 
         <section className="block">
-          <p className="block-label"><span className="block-num">1</span> Who to call</p>
+          <p className="block-label"><span className="block-num">3</span> Emergency</p>
           <div className="row2">
             <div className="field">
               <span className="field-name">Name of primary contact</span>
@@ -705,64 +798,19 @@ function PetSitterChecklist() {
           </div>
         </section>
 
-        <section className="block">
-          <p className="block-label"><span className="block-num">2</span> Where this is</p>
-          <div className="field">
-            <span className="field-name">Street name</span>
-            <input type="text" value={f.street} onChange={set('street')} autoComplete="off" />
-          </div>
-          <div className="row2">
-            <div className="field">
-              <span className="field-name">House number</span>
-              <input type="text" value={f.houseNumber} onChange={set('houseNumber')} autoComplete="off" />
-            </div>
-            <div className="field">
-              <span className="field-name">Postal code</span>
-              <input type="text" value={f.postalCode} onChange={set('postalCode')} autoComplete="off" />
-            </div>
-          </div>
-          <div className="field">
-            <span className="field-name">c/o (name on the doorbell)</span>
-            <input type="text" value={f.careOf} onChange={set('careOf')} autoComplete="off" />
-          </div>
-          <div className="field">
-            <span className="field-name">Nearest landmark (supermarket, station…)</span>
-            <input type="text" value={f.landmark} onChange={set('landmark')} autoComplete="off" />
-          </div>
-        </section>
-
       </div>
 
       {/* ---------- SHEETS (preview + print) ---------- */}
       <div className="sheets">
-        {/* Sheet 1 — EMERGENCY CARD (carry) */}
+        {/* Sheet 1 — EMERGENCY CARD, two copies on one page */}
         <section className="sheet sheet--emergency">
-          <div className="ecard">
-            <h2 className="sheet-h">Emergency Card</h2>
-
-            <div className="ec-block">
-              <p className="ec-head">Basics</p>
-              <div className="ec-line"><span className="ec-k">Pets</span><Val v={f.petNames} /></div>
-            </div>
-
-            <div className="ec-block">
-              <p className="ec-head"><b>1</b> Who to call</p>
-              <div className="ec-line"><span className="ec-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
-              <div className="ec-line"><span className="ec-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
-            </div>
-
-            <div className="ec-block">
-              <p className="ec-head"><b>2</b> Where this is</p>
-              <div className="ec-line"><span className="ec-k">Address</span><Val v={composeAddress(f)} /></div>
-              <div className="ec-line"><span className="ec-k">Landmark</span><Val v={f.landmark} /></div>
-            </div>
-
-            <div className="ec-block">
-              <p className="ec-head"><b>3</b> Anything else</p>
-              <div className="ec-note">{(f.notes || '').trim()}</div>
-            </div>
+          <div className="ecard-slot">
+            <EmergencyCard f={f} rangeLabel={rangeLabel} copy="Stays at home" />
           </div>
           <div className="cutline"><span>✂ cut here</span></div>
+          <div className="ecard-slot">
+            <EmergencyCard f={f} rangeLabel={rangeLabel} copy="Sitter carries" />
+          </div>
         </section>
 
         {/* Sheet 2+ — CARE CHECKLIST (leave at home) */}
