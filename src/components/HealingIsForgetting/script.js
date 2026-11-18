@@ -2,7 +2,6 @@
 // Block types: transition, titlecard, definition, scene, action, character, parenthetical, dialogue, note
 const scripts = [
   {
-    version: 'Draft — November 2026',
     title: 'Script',
     blocks: [
       { type: 'note', text: 'A black screen and white text.' },

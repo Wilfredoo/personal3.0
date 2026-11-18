@@ -1,6 +1,7 @@
 // scriptPdf.js — builds a screenplay-formatted PDF from script.js (loaded on demand)
 import { jsPDF } from 'jspdf';
 import scripts from './script';
+import scriptVersion from './scriptVersion';
 
 // Screenplay layout on A4, in inches
 const PAGE_H = 11.69;
@@ -35,7 +36,7 @@ export default function downloadScriptPdf() {
   doc.text('A Short Film', 4.13, 4.45, { align: 'center' });
   doc.text('Written by', 4.13, 5.05, { align: 'center' });
   doc.text('Wilfredo Casas', 4.13, 5.3, { align: 'center' });
-  doc.text(script.version, 1.5, 10.2);
+  doc.text(`${scriptVersion.version} — ${scriptVersion.date}`, 1.5, 10.2);
   doc.text('inbox@wilfredocasas.com', 1.5, 10.45);
 
   let page = 1;
@@ -76,5 +77,5 @@ export default function downloadScriptPdf() {
     });
   });
 
-  doc.save('Healing_is_Forgetting_Script.pdf');
+  doc.save(`Healing_is_Forgetting_Script_${scriptVersion.version}.pdf`);
 }
