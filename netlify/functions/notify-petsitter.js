@@ -12,7 +12,8 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: 'Bad Request' };
   }
 
-  const { petNames, ownerChoice, emergencyB64, taskB64 } = data;
+  const { petNames, mostImportant, ownerChoice, emergencyB64, taskB64 } = data;
+  const esc = (v) => String(v || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   const transporter = nodemailer.createTransport({
     host: 'smtp.zoho.eu',
@@ -27,7 +28,8 @@ exports.handler = async (event) => {
   const html = `
     <div style="font-family:monospace;max-width:600px;margin:0 auto;padding:24px;border:2px solid #000">
       <h2 style="margin:0 0 16px;text-transform:uppercase;letter-spacing:0.05em">New Pet Sit Submission</h2>
-      <p style="margin:0 0 6px"><strong>Pet(s):</strong> ${petNames || '—'}</p>
+      <p style="margin:0 0 6px"><strong>Pet(s):</strong> ${esc(petNames) || '—'}</p>
+      <p style="margin:0 0 6px"><strong>Most important:</strong> ${esc(mostImportant) || '—'}</p>
       <p style="margin:0 0 6px"><strong>Owner choice:</strong> ${ownerChoice}</p>
       <p style="margin:16px 0 0;color:#555">The full details are in the two attached PDFs.</p>
     </div>

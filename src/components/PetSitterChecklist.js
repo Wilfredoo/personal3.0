@@ -80,6 +80,7 @@ function Reminders({ f, rangeLabel }) {
         <div><span className="rem-k">Pets</span><Val v={f.petNames} /></div>
         <div><span className="rem-k">Dates</span><span className="val">{rangeLabel}</span></div>
         <div><span className="rem-k">Times</span><Val v={timesLabel(f)} /></div>
+        <div className="rem-wide"><span className="rem-k">Most important</span><Val v={(f.mostImportant || '').trim()} /></div>
         <div><span className="rem-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
         <div><span className="rem-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
         <div><span className="rem-k">Address</span><Val v={composeAddress(f)} /></div>
@@ -90,7 +91,7 @@ function Reminders({ f, rangeLabel }) {
   );
 }
 
-function EmergencyCard({ f, rangeLabel, copy }) {
+function EmergencyCard({ f, copy }) {
   return (
     <div className="ecard">
       <div className="ec-top">
@@ -99,23 +100,25 @@ function EmergencyCard({ f, rangeLabel, copy }) {
       </div>
 
       <div className="ec-block">
-        <p className="ec-head"><b>1</b> Basics</p>
+        <p className="ec-head">Basics</p>
         <div className="ec-line"><span className="ec-k">Pets</span><Val v={f.petNames} /></div>
-        <div className="ec-line"><span className="ec-k">Most important</span><Val v={(f.mostImportant || '').trim()} /></div>
       </div>
 
       <div className="ec-block">
-        <p className="ec-head"><b>2</b> Logistics</p>
-        <div className="ec-line"><span className="ec-k">Dates</span><span className="val">{rangeLabel}</span></div>
-        <div className="ec-line"><span className="ec-k">Times</span><Val v={timesLabel(f)} /></div>
+        <p className="ec-head"><b>1</b> Who to call</p>
+        <div className="ec-line"><span className="ec-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
+        <div className="ec-line"><span className="ec-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
+      </div>
+
+      <div className="ec-block">
+        <p className="ec-head"><b>2</b> Where this is</p>
         <div className="ec-line"><span className="ec-k">Address</span><Val v={composeAddress(f)} /></div>
         <div className="ec-line"><span className="ec-k">Landmark</span><Val v={f.landmark} /></div>
       </div>
 
       <div className="ec-block">
-        <p className="ec-head"><b>3</b> Emergency</p>
-        <div className="ec-line"><span className="ec-k">Primary</span><Val v={namePhone(f.primary, f.primaryPhone)} /></div>
-        <div className="ec-line"><span className="ec-k">Backup</span><Val v={namePhone(f.backup, f.backupPhone)} /></div>
+        <p className="ec-head"><b>3</b> Anything else</p>
+        <div className="ec-note">{(f.notes || '').trim()}</div>
       </div>
     </div>
   );
@@ -384,8 +387,11 @@ function PetSitterChecklist() {
         }
         .field textarea { resize: vertical; line-height: 1.6; min-height: 3.2em; }
         /* let date inputs use their native widget (typing + calendar icon) */
-        .field input[type="date"] { -webkit-appearance: auto; appearance: auto; }
-        .field input[type="date"]::-webkit-calendar-picker-indicator { opacity: 1; cursor: pointer; }
+        .field input[type="date"],
+        .field input[type="time"] { -webkit-appearance: auto; appearance: auto; cursor: pointer; }
+        .field input[type="time"] { min-height: 44px; }
+        .field input[type="date"]::-webkit-calendar-picker-indicator,
+        .field input[type="time"]::-webkit-calendar-picker-indicator { opacity: 1; cursor: pointer; }
         .field input:focus,
         .field textarea:focus { outline: none; background: #f3f3f3; }
         .row2 { display: flex; gap: 20px; }
@@ -708,10 +714,12 @@ function PetSitterChecklist() {
           </div>
           <div className="field">
             <span className="field-name">What matters most to you during this pet sitting?</span>
-            <textarea
-              rows={4}
+<input
+              type="text"
+              maxLength={80}
               value={f.mostImportant}
               onChange={set('mostImportant')}
+              autoComplete="off"
             />
           </div>
         </section>
@@ -742,11 +750,11 @@ function PetSitterChecklist() {
           <div className="row2">
             <div className="field">
               <span className="field-name">Suggested time of arrival</span>
-              <input type="time" value={f.arrivalTime} onChange={set('arrivalTime')} />
+              <input type="time" value={f.arrivalTime} onChange={set('arrivalTime')} onClick={(e) => { try { e.currentTarget.showPicker(); } catch (_) {} }} />
             </div>
             <div className="field">
               <span className="field-name">Suggested time of departure</span>
-              <input type="time" value={f.departureTime} onChange={set('departureTime')} />
+              <input type="time" value={f.departureTime} onChange={set('departureTime')} onClick={(e) => { try { e.currentTarget.showPicker(); } catch (_) {} }} />
             </div>
           </div>
 
@@ -805,11 +813,11 @@ function PetSitterChecklist() {
         {/* Sheet 1 — EMERGENCY CARD, two copies on one page */}
         <section className="sheet sheet--emergency">
           <div className="ecard-slot">
-            <EmergencyCard f={f} rangeLabel={rangeLabel} copy="Stays at home" />
+            <EmergencyCard f={f} copy="Stays at home" />
           </div>
           <div className="cutline"><span>✂ cut here</span></div>
           <div className="ecard-slot">
-            <EmergencyCard f={f} rangeLabel={rangeLabel} copy="Sitter carries" />
+            <EmergencyCard f={f} copy="Sitter carries" />
           </div>
         </section>
 
