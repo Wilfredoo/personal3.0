@@ -262,6 +262,21 @@ export const ScriptTitle = styled.h2`
   margin: 0 0 0.3rem;
 `;
 
+export const ScriptVersion = styled.p`
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: ${accent};
+  margin: 0 0 0.5rem;
+`;
+
+export const Updated = styled.span`
+  display: block;
+  font-family: ${sans};
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+`;
+
 export const ScriptNote = styled.p`
   font-size: 0.92rem;
   color: ${muted};

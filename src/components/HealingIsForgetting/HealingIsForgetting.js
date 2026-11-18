@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff, Download } from 'lucide-react';
 import sketch from '../../assets/images/healing_sketch_maja_ola.jpg';
+import scriptVersion from './scriptVersion';
 import {
   Page,
   Sheet,
@@ -26,6 +27,8 @@ import {
   ScriptBox,
   ScriptTitle,
   ScriptNote,
+  ScriptVersion,
+  Updated,
   ScriptForm,
   PasswordWrapper,
   PasswordInput,
@@ -36,6 +39,7 @@ import {
 } from './Styles';
 
 const CORRECT_PASSWORD = 'healing2026';
+const LAST_UPDATED = 'November 18, 2026';
 const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;600&display=swap';
 
 const openTo = [
@@ -97,7 +101,10 @@ export default function HealingIsForgetting() {
             <Title>Healing is Forgetting</Title>
             <Subtitle>Heilung ist Vergessen</Subtitle>
           </div>
-          <Meta>approx. 15 min · Fiction / <span style={{ whiteSpace: 'nowrap' }}>Near-future</span> · German / English</Meta>
+          <Meta>
+            approx. 15 min · Fiction / <span style={{ whiteSpace: 'nowrap' }}>Near-future</span> · German / English
+            <Updated>Last updated: {LAST_UPDATED}</Updated>
+          </Meta>
         </Header>
 
         <Figure>
@@ -126,7 +133,7 @@ export default function HealingIsForgetting() {
         </Synopsis>
 
         <Status>
-          <StatusItem>Script in development</StatusItem>
+          <StatusItem>Script complete <span>— {scriptVersion.version}, {scriptVersion.date} (still revising)</span></StatusItem>
           <StatusItem>Funding applied <span>— Kuratorium junger deutscher Film (pending)</span></StatusItem>
           <StatusItem>Special Mention <span>— Interfilm Berlin 2023</span></StatusItem>
         </Status>
@@ -148,6 +155,7 @@ export default function HealingIsForgetting() {
 
         <ScriptBox>
           <ScriptTitle>Read the script</ScriptTitle>
+          <ScriptVersion>Current version: {scriptVersion.version} — {scriptVersion.date}</ScriptVersion>
           <ScriptNote>
             The script is password-protected. Email{' '}
             <a href="mailto:inbox@wilfredocasas.com">inbox@wilfredocasas.com</a> to request access.
