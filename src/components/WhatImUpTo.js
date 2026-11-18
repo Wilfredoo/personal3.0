@@ -6,6 +6,9 @@ const WhatImUpTo = () => (
 <Text>
 I'm currently launching <a href="https://www.kickstarter.com/projects/1418360767/ayakucho" target="_blank" rel="noopener noreferrer">Ayakucho</a> and improving the script for <a href="/healingisforgetting">Healing Is Forgetting</a>.
 </Text>
+<Text>
+I also design <a href="/boardgames">board games</a>.
+</Text>
   </TextContainer>
 );
 
