@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import EastAsiaBanner from './EastAsiaBanner';
 
 import wilfredo1  from '../../assets/images/wilfredo_1.png';
 import wilfredo2  from '../../assets/images/wilfredo_2.png';
@@ -408,6 +409,7 @@ const ActingPolished = () => {
 
   return (
     <Page>
+      <EastAsiaBanner />
       <Inner>
 
         {/* ── Tagline ── */}
