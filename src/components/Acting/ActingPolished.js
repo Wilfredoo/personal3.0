@@ -473,7 +473,7 @@ const ActingPolished = () => {
 
         {/* ── Video 2 ── */}
         <Label>Additional Work</Label>
-        <LazyYT id="lRrJgTUSww0" title="Acting Video 2" />
+        <LazyYT id="0mJ_6PqynhI" title="Acting Reel 2" />
 
         <Divider />
 
