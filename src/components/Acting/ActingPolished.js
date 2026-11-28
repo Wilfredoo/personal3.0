@@ -217,21 +217,28 @@ const ReelNote = styled.p`
 /* ─── Resume ─────────────────────────────────────────────── */
 
 const ResumeBtn = styled.a`
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   width: fit-content;
   margin: 0 auto;
-  padding: 0.7rem 1.6rem;
-  background: rgba(249,199,79,0.1);
-  border: 1px solid rgba(249,199,79,0.4);
+  padding: 0.95rem 2.1rem;
+  background: #f9c74f;
+  border: 1px solid #f9c74f;
   border-radius: 4px;
-  color: #f9c74f;
-  font-size: 0.72rem;
-  font-weight: 700;
+  color: #111;
+  font-size: 0.8rem;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
+  box-shadow: 0 0 0 0 rgba(249,199,79,0.4), 0 6px 24px rgba(249,199,79,0.25);
   transition: all 0.2s;
-  &:hover { background: rgba(249,199,79,0.18); border-color: rgba(249,199,79,0.65); }
+  &:hover {
+    background: #ffd76a;
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 4px rgba(249,199,79,0.18), 0 8px 28px rgba(249,199,79,0.35);
+  }
 `;
 
 /* ─── Jobs ───────────────────────────────────────────────── */
@@ -436,6 +443,7 @@ const ActingPolished = () => {
           href={`${process.env.PUBLIC_URL}/Resume_Acting_Wilfredo_Casas.pdf`}
           download="Resume_Acting_Wilfredo_Casas.pdf"
         >
+          <span aria-hidden="true">↓</span>
           {t.resumeButton}
         </ResumeBtn>
                 <Divider />
